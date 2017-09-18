@@ -481,5 +481,4 @@ problems:
     limit: 3
     name: 'Pile : utilisation'
     type: multiple-choice
-stored_submissions: 0
 weight: 1.0

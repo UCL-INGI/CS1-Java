@@ -279,5 +279,4 @@ problems:
              public static int count(String s, char c) {
 
             Un seul des corps de méthode ci-dessous est une implémentation correcte. Lequel ?
-stored_submissions: 0
 weight: 1.0

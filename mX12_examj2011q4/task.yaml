@@ -42,5 +42,4 @@ problems:
         type: code
         header: Veillez à n'implémenter que le corps de la méthode, ne réécrivez pas
             la signature.
-stored_submissions: 0
 weight: 1.0

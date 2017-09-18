@@ -39,5 +39,4 @@ problems:
         name: Méthode removeComputer
         type: code
         header: Veillez à ne pas oublier d'écrire la signature de la méthode.
-stored_submissions: 0
 weight: 1.0

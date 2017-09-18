@@ -75,5 +75,4 @@ problems:
         header: Écrivez la signature et le corps de la méthode ``identique``
         name: méthode identique
         language: Java
-stored_submissions: 0
 weight: 1.0

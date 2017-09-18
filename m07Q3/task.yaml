@@ -91,5 +91,4 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``equals``.
         name: Méthode equals
         language: Java
-stored_submissions: 0
 weight: 1.0

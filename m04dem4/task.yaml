@@ -29,5 +29,4 @@ problems:
         language: Java
         header: Implémentez ici le corps de la méthode toUpper. Veillez bien à n'implémenter
             que le corps, ne recopiez pas la signature.
-stored_submissions: 0
 weight: 1.0

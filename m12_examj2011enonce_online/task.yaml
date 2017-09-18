@@ -184,5 +184,4 @@ network_grading: false
 order: 195
 problems:
   q1: {header: '**Ne rien soumettre ici !**', language: java, name: '', type: code-single-line}
-stored_submissions: 0
 weight: 0.0

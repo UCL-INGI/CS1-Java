@@ -26,5 +26,4 @@ problems:
         header: 'Ecrivez la méthode saveVector, signature et corps de la méthode compris:'
         language: Java
         name: saveVector
-stored_submissions: 0
 weight: 1.0

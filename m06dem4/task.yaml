@@ -40,5 +40,4 @@ problems:
         name: La condition /*2*/
         language: java
         type: code-single-line
-stored_submissions: 0
 weight: 1.0

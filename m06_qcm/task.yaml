@@ -499,5 +499,4 @@ problems:
     limit: 3
     name: ' TextIO'
     type: multiple-choice
-stored_submissions: 0
 weight: 1.0

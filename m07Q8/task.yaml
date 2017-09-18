@@ -163,5 +163,4 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``lance`` de la classe ``DeStats``.
         name: lance
         language: Java
-stored_submissions: 0
 weight: 1.0

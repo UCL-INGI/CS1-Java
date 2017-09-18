@@ -26,5 +26,4 @@ problems:
         language: java
         header: ''
         name: Calcul de la saison d'une date donnée
-stored_submissions: 0
 weight: 1.0

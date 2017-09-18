@@ -594,5 +594,4 @@ problems:
     limit: 3
     name: Opérations arithmétiques
     type: multiple-choice
-stored_submissions: 0
 weight: 1.0

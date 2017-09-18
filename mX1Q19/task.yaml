@@ -46,5 +46,4 @@ problems:
                 double number; // le nombre à évaluer
                 int floor_number; // l'entier inférieur du nombre
         language: java
-stored_submissions: 0
 weight: 1.0

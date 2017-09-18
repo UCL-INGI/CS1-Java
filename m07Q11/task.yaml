@@ -163,5 +163,4 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``equals`` de la classe ``DeStats``.
         name: equals
         language: Java
-stored_submissions: 0
 weight: 1.0

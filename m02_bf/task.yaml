@@ -32,5 +32,4 @@ problems:
         header: Écrivez ici directement le code de la méthode ``main``. Vous ne devez
             pas déclarer, ni initialiser la variable ``n``.
         type: code
-stored_submissions: 0
 weight: 1.0
