@@ -22,4 +22,3 @@ problems:
         name: Définir si x est dans ou en dehors de l'intervalle.
         language: java
         type: code
-weight: 1.0

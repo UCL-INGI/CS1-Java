@@ -52,4 +52,3 @@ problems:
         type: code
         header: |
             Complétez ici le corps de la méthode ``rotateRight`` dont la spécification est donnée dans l'énoncé.
-weight: 1.0

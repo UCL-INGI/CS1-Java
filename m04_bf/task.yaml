@@ -61,4 +61,3 @@ problems:
         header: |+
             Déclarez ici les méthodes privées que vous souhaitez utiliser pour décomposer le problème en sous-problèmes. Attention, veillez à n'utiliser que des méthodes de classe ``static``. Si une exception survient dans ce code, le feedback sera indiqué dans la question 1.
 
-weight: 1.0

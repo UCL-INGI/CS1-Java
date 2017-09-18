@@ -22,4 +22,3 @@ problems:
         header: Écrivez la signature et le corps de la méthode isIn
         name: Présence
         language: Java
-weight: 1.0

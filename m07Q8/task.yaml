@@ -163,4 +163,3 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``lance`` de la classe ``DeStats``.
         name: lance
         language: Java
-weight: 1.0

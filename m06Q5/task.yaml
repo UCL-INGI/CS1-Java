@@ -54,4 +54,3 @@ problems:
         header: Écrivez ici les deux méthodes ``getDen`` et ``getNum``
         name: getters
         language: Java
-weight: 1.0

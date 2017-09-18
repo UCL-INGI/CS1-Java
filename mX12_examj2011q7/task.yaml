@@ -44,4 +44,3 @@ problems:
         type: code
         header: Implémentez ici le corps de la méthode loadState. Veillez à n'implémenter
             que le corps, ne recopiez pas la signature. Vérifiez bien les spécifications.
-weight: 1.0

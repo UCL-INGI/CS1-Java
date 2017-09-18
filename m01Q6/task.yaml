@@ -30,4 +30,3 @@ problems:
         header: Écrivez le programme pour jouer au Fizzbuzz
         name: Fizzbuzz
         language: Java
-weight: 1.0

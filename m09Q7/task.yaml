@@ -31,4 +31,3 @@ problems:
         header: 'Ecrivez le corps de la méthode ``readVector``:'
         name: readVector
         language: Java
-weight: 1.0

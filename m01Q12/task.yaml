@@ -22,4 +22,3 @@ problems:
         language: java
         type: code
         name: Calcul le nombre le plus grand
-weight: 1.0

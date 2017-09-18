@@ -108,4 +108,3 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``getSalaire``.
         name: getSalaire
         language: Java
-weight: 1.0

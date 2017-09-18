@@ -20,4 +20,3 @@ problems:
         type: code
         name: Déterminer le siècle d'une année
         language: java
-weight: 1.0

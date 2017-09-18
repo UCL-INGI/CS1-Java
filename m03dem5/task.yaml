@@ -27,4 +27,3 @@ problems:
         language: java
         type: code
         header: Ecrivez ici le **corps** de la méthode ``nDiv``.
-weight: 1.0

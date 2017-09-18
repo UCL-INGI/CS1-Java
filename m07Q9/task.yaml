@@ -163,4 +163,3 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``getResultat`` de la classe ``DeStats``.
         name: getResultats
         language: Java
-weight: 1.0

@@ -35,4 +35,3 @@ problems:
       \ de Double se trouvant dans la liste\n         */\n        public int size()\n\
       \        {\n            return l.size();\n        }\n    }\n", language: java,
     name: '', type: code}
-weight: 1.0

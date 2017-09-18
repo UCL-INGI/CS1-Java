@@ -31,4 +31,3 @@ problems:
         name: Indice de Quételet
         header: 'Écrivez ici le bout de programme permettant de mettre dans la variable
             ``état`` l\''état d''une personne sur base de son indice de Quételet :'
-weight: 1.0

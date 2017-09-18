@@ -89,4 +89,3 @@ problems:
         header: Réécrivez entièrement l'intérieur de la boucle for (/\*1\*/). Veillez
             à n'écrire que l'intérieur de la boucle.
         name: L'intérieur de la boucle for
-weight: 1.0

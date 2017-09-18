@@ -109,4 +109,3 @@ problems:
         header: Ecrivez le *contenu* de la méthode equals.
         name: equals
         language: Java
-weight: 1.0

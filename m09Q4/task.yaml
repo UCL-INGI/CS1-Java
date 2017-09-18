@@ -27,4 +27,3 @@ problems:
         header: Ecrivez le corps de la méthode ``contains``
         name: Contains
         language: Java
-weight: 1.0

@@ -24,4 +24,3 @@ problems:
         type: code
         name: Calcul du nombre de secondes depuis minuit
         language: java
-weight: 1.0

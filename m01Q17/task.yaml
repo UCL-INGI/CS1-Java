@@ -24,4 +24,3 @@ problems:
         type: code
         name: Déterminer si une année est bissextile
         language: java
-weight: 1.0

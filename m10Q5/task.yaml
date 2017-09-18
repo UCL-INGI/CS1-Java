@@ -47,4 +47,3 @@ problems:
         type: code
         header: Ecrivez le corps de la méthode loadVector
         name: loadVector
-weight: 1.0

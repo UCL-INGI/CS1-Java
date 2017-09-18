@@ -519,4 +519,3 @@ problems:
     limit: 3
     name: Calcul de la valeur absolue
     type: multiple-choice
-weight: 1.0

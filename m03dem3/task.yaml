@@ -23,4 +23,3 @@ problems:
         language: java
         header: Ecrivez ici la *signature* (sur une seule ligne) et le *corps* de
             votre méthode.
-weight: 1.0

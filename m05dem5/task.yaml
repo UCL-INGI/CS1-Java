@@ -58,4 +58,3 @@ problems:
                 }
 
             Il compile ce programme et l'exécute avec BlueJ. En testant son programme avec ``"1","2"`` comme argument, il s'étonne de voir ``12`` affiché à l'écran. Pouvez-vous corriger son code afin d'afficher la somme des deux arguments et non la concaténation des deux Strings ? Ecrivez ci-dessous *le corps de la méthode main* (**sans sa signature**). Pensez à consulter l'API de la classe http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html
-weight: 1.0

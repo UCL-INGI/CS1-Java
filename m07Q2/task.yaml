@@ -64,4 +64,3 @@ problems:
         header: Ecrivez le *contenu* de la méthode toString.
         name: Méthode toString
         language: Java
-weight: 1.0

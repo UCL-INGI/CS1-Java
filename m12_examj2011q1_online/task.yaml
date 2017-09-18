@@ -24,4 +24,3 @@ problems:
       \ toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.\
       \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n\n",
     language: java, name: Fonction de test optionnelle, optional: true, type: code}
-weight: 1.5

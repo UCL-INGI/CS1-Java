@@ -44,4 +44,3 @@ problems:
         name: La méthode cat avec un String et un caractère
         language: Java
         type: code
-weight: 1.0

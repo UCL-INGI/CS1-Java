@@ -46,4 +46,3 @@ problems:
         name: ''
         header: Proposez une implémentation correcte du *corps* de la méthode ``egal``
             ci-dessus (Vous ne devez pas écrire la signature de la méthode).
-weight: 1.0

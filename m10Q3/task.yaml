@@ -55,4 +55,3 @@ problems:
         header: Ecrivez le corps du constructeur
         type: code
         language: Java
-weight: 1.0

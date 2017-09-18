@@ -162,4 +162,3 @@ problems:
         header: Ecrivez le *contenu* du constructeur de la classe ``DeStats``.
         name: Constructeur
         language: Java
-weight: 1.0

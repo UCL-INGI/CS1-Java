@@ -166,4 +166,3 @@ problems:
         header: Ecrivez le *contenu* de la méthode ``toString`` de la classe ``DeStats``.
         name: toString
         language: Java
-weight: 1.0

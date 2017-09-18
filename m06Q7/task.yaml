@@ -42,4 +42,3 @@ problems:
         header: Écrivez ici les méthodes ``getX`` et ``getY``
         name: getters Point
         language: Java
-weight: 1.0

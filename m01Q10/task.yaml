@@ -22,4 +22,3 @@ problems:
         header: ''
         name: Les valeurs sont-elles ordonnées ?
         language: java
-weight: 1.0

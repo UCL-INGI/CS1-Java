@@ -89,4 +89,3 @@ problems:
         header: Écrivez ici la méthode ``demain`` (signature comprise)
         name: méthode demain
         language: Java
-weight: 1.0

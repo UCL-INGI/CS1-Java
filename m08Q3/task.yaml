@@ -70,4 +70,3 @@ problems:
         header: Ecrivez ici le contenu de la méthode ``contains`` de la classe ``StringTab``
         name: Méthode Contains
         language: Java
-weight: 1.0

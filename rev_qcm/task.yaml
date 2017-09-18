@@ -279,4 +279,3 @@ problems:
              public static int count(String s, char c) {
 
             Un seul des corps de méthode ci-dessous est une implémentation correcte. Lequel ?
-weight: 1.0

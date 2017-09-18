@@ -481,4 +481,3 @@ problems:
     limit: 3
     name: 'Pile : utilisation'
     type: multiple-choice
-weight: 1.0

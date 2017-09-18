@@ -40,4 +40,3 @@ problems:
         name: La condition /*2*/
         language: java
         type: code-single-line
-weight: 1.0

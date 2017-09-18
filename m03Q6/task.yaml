@@ -24,4 +24,3 @@ problems:
         language: java
         name: Signature et corps de la méthode fact
         type: code
-weight: 1.0

@@ -28,4 +28,3 @@ problems:
         language: Java
         header: 'Écrivez ici le bout de programme permettant de calculer la somme
             des entiers pairs entre 0 et n :'
-weight: 1.0

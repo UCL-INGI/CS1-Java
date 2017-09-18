@@ -42,4 +42,3 @@ problems:
         type: code
         header: Veillez à n'implémenter que le corps de la méthode, ne réécrivez pas
             la signature.
-weight: 1.0

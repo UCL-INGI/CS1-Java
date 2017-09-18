@@ -33,4 +33,3 @@ problems:
         name: Le corps de la méthode showLength
         language: Java
         header: 'Écrivez ici le corps de la méthode showLength :'
-weight: 1.0

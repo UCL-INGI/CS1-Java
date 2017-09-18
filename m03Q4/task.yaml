@@ -35,4 +35,3 @@ problems:
         name: Trouver la médiane parmi 3 nombres
         type: code
         header: Écrivez ici la méthode permettant de calculer la médiane
-weight: 1.0

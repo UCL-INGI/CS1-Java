@@ -32,4 +32,3 @@ problems:
         header: Écrivez ici directement le code de la méthode ``main``. Vous ne devez
             pas déclarer, ni initialiser la variable ``n``.
         type: code
-weight: 1.0

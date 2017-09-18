@@ -24,4 +24,3 @@ problems:
         type: code
         name: Déterminer si un caractère est un chiffre, une voyelle, une consonne
         language: java
-weight: 1.0

@@ -25,4 +25,3 @@ problems:
         header: Écrivez ici la signature et le corps de cette méthode.
         name: containsOnly
         language: Java
-weight: 1.0

@@ -40,4 +40,3 @@ problems:
         header: Ecrivez ici **la signature et le corps** de la méthode ``equals``.
         name: ''
         language: java
-weight: 1.0

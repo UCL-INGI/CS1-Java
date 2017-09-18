@@ -27,4 +27,3 @@ problems:
         header: Ecrivez le corps de la méthode ``countLines``
         name: CountLines
         language: Java
-weight: 1.0
