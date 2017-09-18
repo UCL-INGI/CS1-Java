@@ -28,7 +28,4 @@ problems:
         name: Contains
         language: Java
 stored_submissions: 0
-submission_limit:
-    amount: 10
-    period: 1
 weight: 1.0

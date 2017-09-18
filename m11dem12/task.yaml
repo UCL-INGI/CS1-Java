@@ -67,5 +67,4 @@ problems:
   q12: {header: '', language: java, name: '', type: code-single-line}
   q13: {header: '', language: java, name: '', type: code-single-line}
 stored_submissions: 0
-submission_limit: {amount: -1, period: -1}
 weight: 1.0

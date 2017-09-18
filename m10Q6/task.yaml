@@ -23,5 +23,4 @@ problems:
   q1: {header: Ecrivez le corps de la méthode loadMatrix, language: Java, name: loadMatrix,
     type: code}
 stored_submissions: 0
-submission_limit: {amount: 10, period: 1}
 weight: 1.0

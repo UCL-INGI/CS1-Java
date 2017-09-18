@@ -45,7 +45,4 @@ problems:
         header: Implémentez ici le corps de la méthode loadState. Veillez à n'implémenter
             que le corps, ne recopiez pas la signature. Vérifiez bien les spécifications.
 stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
 weight: 1.0

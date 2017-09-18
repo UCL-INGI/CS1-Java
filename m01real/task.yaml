@@ -21,5 +21,4 @@ problems:
     name: Phase de réalisation de la Mission 1
     type: code-file
 stored_submissions: 0
-submission_limit: {amount: -1, period: -1}
 weight: 1.0

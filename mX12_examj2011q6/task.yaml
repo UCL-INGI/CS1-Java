@@ -40,7 +40,4 @@ problems:
         type: code
         header: Veillez à ne pas oublier d'écrire la signature de la méthode.
 stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
 weight: 1.0

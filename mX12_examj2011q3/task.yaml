@@ -44,7 +44,4 @@ problems:
             que le corps, ne recopiez pas "public class Process{...}". Vérifiez bien
             la description de la classe et ne vous trompez pas dans le nom des méthodes.
 stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
 weight: 1.0

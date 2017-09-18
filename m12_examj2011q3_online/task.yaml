@@ -36,5 +36,4 @@ problems:
       \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n",
     language: java, name: Fonction de test optionnelle, optional: true, type: code}
 stored_submissions: 0
-submission_limit: {amount: -1, period: -1}
 weight: 4.5

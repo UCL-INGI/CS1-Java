@@ -42,7 +42,4 @@ problems:
             que le corps de la méthode, ne recopiez pas sa signature. Pensez à respecter
             scrupuleusement les spécifications.
 stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
 weight: 1.0

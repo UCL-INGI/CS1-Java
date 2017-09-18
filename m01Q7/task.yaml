@@ -29,7 +29,4 @@ problems:
         header: 'Écrivez ici le bout de programme permettant de calculer la somme
             des entiers pairs entre 0 et n :'
 stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
 weight: 1.0
