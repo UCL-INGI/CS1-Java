@@ -22,7 +22,6 @@ context: |+
         double amende = 0; // modifié par votre programme et renvoie la valeur de l'amende
 
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

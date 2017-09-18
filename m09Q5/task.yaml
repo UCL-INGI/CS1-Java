@@ -13,7 +13,6 @@ context: |
 
     On vous demande d'utiliser un ``BufferedReader`` si vous devez lire le fichier.
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '1'

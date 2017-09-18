@@ -70,7 +70,6 @@ context: |-
 
     Remarquez que chaque ``Item`` possède un serial qui est un numéro de série unique propre à l’objet (pour pouvoir différencier plusieurs exemplaires du même livre par exemple). Il doit être généré automatiquement et être supérieur à 100000 pour un CD.
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '200'

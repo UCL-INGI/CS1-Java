@@ -34,7 +34,6 @@ context: |-
 
     On vous demande d'utiliser ``BufferedReader`` pour répondre à cette question.
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

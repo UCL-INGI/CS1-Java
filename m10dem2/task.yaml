@@ -16,7 +16,6 @@ context: |-
 
     Faites bien attention à gérer les erreurs d'I/O.
 environment: java7mockito
-groups: false
 limits:
     memory: '100'
     time: '30'

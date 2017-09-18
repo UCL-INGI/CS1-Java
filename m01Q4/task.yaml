@@ -18,7 +18,6 @@ context: |-
 
     - Si ``sectionEntree`` vaut 2 et ``sectionSortie`` vaut 2, la voiture a parcouru 1 section (la section 2), donc le prix est 1€.
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

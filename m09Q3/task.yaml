@@ -14,7 +14,6 @@ context: |-
 
     Pour lire le fichier, nous vous demandons d'utilisez un ``BufferedReader``.
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

@@ -48,7 +48,6 @@ context: "Suite de la question de démarrage 1.\n\nLa classe sous test:\n\n.. co
   \                    + \" ne sont plus dans la liste devrait renvoyer false\",/*(12)???*/,/*(13)???*/);\n\
   \        }\n\n    }\n"
 environment: java7
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 11: Question de Démarrage 2 : JUnit (partie 2)'
 network_grading: false

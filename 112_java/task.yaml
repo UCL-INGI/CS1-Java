@@ -7,7 +7,6 @@ context: |+
         </p>
 
 environment: pythia0compat
-groups: false
 limits:
     time: '30'
     output: '5210'

@@ -59,7 +59,6 @@ context: |-
 
     Complétez cette classe.
 environment: java7mockito
-groups: false
 limits:
     output: '1'
     time: '30'

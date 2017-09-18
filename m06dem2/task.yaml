@@ -69,7 +69,6 @@ context: |-
 
     Le but de l'exercice est d'implémenter les méthodes ``setA()`` et ``setB()`` sans oublier de mettre à jour ``ordered`` en fonction des nouvelles valeurs des nombres dans la paire.
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '2'

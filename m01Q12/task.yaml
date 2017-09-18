@@ -9,7 +9,6 @@ context: |-
         int c;
         int maximum; // le plus grand parmi a, b, c
 environment: java7mockito
-groups: false
 limits:
     output: '2'
     time: '30'

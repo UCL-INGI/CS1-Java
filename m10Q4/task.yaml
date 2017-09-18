@@ -83,7 +83,6 @@ context: |-
 
     Vous pouvez tester vos méthodes individuellement.
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     time: '30'

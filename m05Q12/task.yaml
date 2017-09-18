@@ -18,7 +18,6 @@ context: |+
         public static void oppose2(int[] v)
 
 environment: java7mockito
-groups: false
 limits:
     output: '2'
     time: '30'

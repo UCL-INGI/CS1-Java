@@ -7,7 +7,6 @@ context: |-
         int n = // n peut prendre n'importe quelle valeur
         int sum = 0;
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '2'

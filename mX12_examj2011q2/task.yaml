@@ -25,7 +25,6 @@ context: |-
 
     **Souvenez-vous qu'une réponse correcte sur INGInious ne correspond pas d'office à un 20 à l'examen (la clarté, la simplicité du code, les spécifications sont aussi des critères importants non vérifiés par INGInious).**
 environment: java7
-groups: false
 limits:
     time: '30'
     output: '2'

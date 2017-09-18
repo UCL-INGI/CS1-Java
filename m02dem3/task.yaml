@@ -13,7 +13,6 @@ context: |+
         int valeur = 1;
 
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '2'

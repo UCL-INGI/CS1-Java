@@ -178,7 +178,6 @@ context: "--------\nContexte\n--------\n\nUne *grappe d'ordinateurs* (computer c
   \         */\n        public void loadState(String fileName)\n\n             QUESTION\
   \ 7\n\n    }\n\n\n\n"
 environment: default
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Examen Juin 2011 online : Enoncé'
 network_grading: false

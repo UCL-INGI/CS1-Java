@@ -2,7 +2,6 @@ author: François MICHEL
 context: Voici quelques questions QCM pour vérifier votre compréhension de la Mission
   2 du cours, après lecture du livre de référence.
 environment: mcq
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 2: Question de démarrage 1: Les bases'
 network_grading: false

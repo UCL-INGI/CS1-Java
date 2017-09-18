@@ -9,7 +9,6 @@ context: |-
         int b;
         int c;
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '100'

@@ -7,7 +7,6 @@ context: |
         int n = // n est plus grand ou égal à zéro
         boolean prime = true;
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '2'

@@ -13,7 +13,6 @@ context: |
        */
        public void saveVector(int [] v, String fileName)
 environment: java7mockito
-groups: false
 limits:
     output: '1'
     time: '30'

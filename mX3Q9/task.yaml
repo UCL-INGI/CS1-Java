@@ -4,7 +4,6 @@ context: |-
     On passe a,b et c en paramètre de votre méthode.
     La méthode s'appelle eqsecdegsol1 pour la première partie et eqsecdegsol2 pour la seconde On vous donne accès à eqsecdeg2 permettant de connaître le nombre de solutions . Pour la deuxième version s'il y a plus qu'une solution, vous renvoyez -1
 environment: java7
-groups: false
 limits:
     output: '2'
     memory: '100'

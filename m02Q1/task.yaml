@@ -10,7 +10,6 @@ context: |-
         int b; //b un entier strictement positif
         int reste; // le reste de la division entière.
 environment: java7mockito
-groups: false
 limits:
     memory: '100'
     output: '2'

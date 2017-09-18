@@ -107,7 +107,6 @@ context: |+
             }
 
 environment: java7
-groups: false
 limits:
     output: '2'
     time: '30'

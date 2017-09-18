@@ -8,7 +8,6 @@ context: |
         int a; // l'entier a
         int resultat = 0;
 environment: java7mockito
-groups: false
 limits:
     memory: '100'
     output: '2'

@@ -26,7 +26,6 @@ context: "=====================\nMission 8. Interfaces\n=====================\n\
   \ `5.7.1 : Interfaces`\n\n.. _jn5.7.2 : http://math.hws.edu/javanotes/c5/s7.html#OOP.7.2\n\
   .. |jn5.7.2| replace:: `5.7.2 : Nested Classes`\n"
 environment: mcq
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 8: QCM'
 network_grading: false

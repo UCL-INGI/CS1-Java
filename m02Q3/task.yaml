@@ -18,7 +18,6 @@ context: |-
 
         int cote = // la longueur du cote
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '1'

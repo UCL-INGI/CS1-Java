@@ -15,7 +15,6 @@ context: |+
     La méthode ci-dessous pourrait vous aider à résoudre facilement cette question : `<http://docs.oracle.com/javase/6/docs/api/java/lang/Character.html#getNumericValue(char)>`_
 
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     time: '30'

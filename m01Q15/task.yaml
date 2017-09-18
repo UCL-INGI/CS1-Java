@@ -13,7 +13,6 @@ context: |-
         int mois; // le mois
         String saison; // le nom de la saison (automne, hiver, printemps, été)
 environment: java7mockito
-groups: false
 limits:
     memory: '100'
     time: '30'

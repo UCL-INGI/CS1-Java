@@ -9,7 +9,6 @@ context: 'A la suite de l''écriture de la classe ``DListTest`` faite aux questi
   attributs et les mêmes méthodes. Seul le corps des méthodes et les valeurs des attributs
   peuvent être différents.**'
 environment: java7
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 11 : Question de Démarrage 3 : JUnit (partie3) une DList correcte'
 network_grading: false

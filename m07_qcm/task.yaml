@@ -27,7 +27,6 @@ context: "================================\nMission 7. Extension et Héritage\n=
   \ _jn5.7.4 : http://math.hws.edu/javanotes/c5/s7.html#OOP.7.4\n.. |jn5.7.4| replace::\
   \ `5.7.4 : Mixing Static and Non-static`\n"
 environment: mcq
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 7: QCM'
 network_grading: false

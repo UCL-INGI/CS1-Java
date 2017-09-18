@@ -6,7 +6,6 @@ context: 'Vous soumettrez votre soumission de la phase de réalisation de la Mis
   Veuillez soumettre une archive **zip** contenant uniquement les fichiers **.java**
   utilisés pour votre mission, ainsi qu''n fichier nommé "README.TXT".'
 environment: java7
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 10: Phase de réalisation: Soumission'
 network_grading: false

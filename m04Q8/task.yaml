@@ -11,7 +11,6 @@ context: |-
          *     dans la chaîne de caractères s
          */
 environment: java7mockito
-groups: false
 limits:
     output: '1'
     memory: '200'

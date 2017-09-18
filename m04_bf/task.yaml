@@ -34,7 +34,6 @@ context: |-
 
     Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '100'

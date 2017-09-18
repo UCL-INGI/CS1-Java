@@ -7,7 +7,6 @@ context: |-
     - MiseEnRoute.java
     - README.txt
 environment: java7
-groups: false
 limits:
     memory: '100'
     output: '2'

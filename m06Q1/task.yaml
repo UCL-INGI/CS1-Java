@@ -39,7 +39,6 @@ context: |-
 
     Ecrivez le constructeur de cette classe ``Date``.
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

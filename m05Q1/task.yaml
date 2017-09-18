@@ -10,7 +10,6 @@ context: |-
          * @post retourne vrai si tous les éléments du tableau ont la même valeur, false sinon
          */
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '1'

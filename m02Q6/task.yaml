@@ -17,7 +17,6 @@ context: |-
 
         int hauteur; // la hauteur du S
 environment: java7mockito
-groups: false
 limits:
     memory: '200'
     output: '1'

@@ -10,7 +10,6 @@ context: |-
         double b;
         double c;
 environment: java7mockito
-groups: false
 limits:
     output: '2'
     time: '30'

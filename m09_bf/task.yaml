@@ -25,7 +25,6 @@ context: |
          */
         public static double getMax (String filename)
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     output: '5210'

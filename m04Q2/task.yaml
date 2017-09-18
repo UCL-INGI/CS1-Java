@@ -9,7 +9,6 @@ context: |-
         * @post retourne true si le caractère c est dans s, false sinon
         */
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

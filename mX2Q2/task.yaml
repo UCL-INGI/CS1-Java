@@ -10,7 +10,6 @@ context: |-
         int reste = 0;
         int quotient = 0;
 environment: java7
-groups: false
 limits:
     memory: '100'
     output: '2'

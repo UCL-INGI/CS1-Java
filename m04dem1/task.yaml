@@ -10,7 +10,6 @@ context: |
         boolean b; // à assigner dans la Question 1
         char e;    // à assigner dans la Question 2
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '100'

@@ -18,7 +18,6 @@ context: "================================================\nMission 4. Manipulat
   \ `4.7.2 : Named Constants`\n\n.. _jn4.7.3 : http://math.hws.edu/javanotes/c4/s7.html#subroutines.7.3\n\
   .. |jn4.7.3| replace:: `4.7.3 : Naming and Scope Rules`\n"
 environment: mcq
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 4: QCM'
 network_grading: false

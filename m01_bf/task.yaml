@@ -17,7 +17,6 @@ context: |-
 
     Vous devez afficher chaque élément de la suite sur la sortie standard, avec ``System.out.println()``. La valeur de départ vous est déjà fournie et se trouve dans une variable de type ``int`` nommée ``s0``.
 environment: java7mockito
-groups: false
 limits:
     output: '5'
     time: '30'

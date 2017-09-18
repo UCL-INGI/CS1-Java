@@ -4,7 +4,6 @@ context: |
     Revision
     ========
 environment: mcq
-groups: false
 limits:
     output: '2'
     time: '30'

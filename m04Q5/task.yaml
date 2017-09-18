@@ -12,7 +12,6 @@ context: |-
          *       s ne contient que les caractères 0 ou 1
          */
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

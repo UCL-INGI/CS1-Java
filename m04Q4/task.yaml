@@ -17,7 +17,6 @@ context: |
 
     Vous trouverez dans la classe `Character <https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html>`_ des méthodes utiles pour cette tâche.
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

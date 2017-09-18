@@ -10,7 +10,6 @@ context: |-
          * @post retourne la moyenne arithmétique du tableau de réels v
          */
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     output: '1'

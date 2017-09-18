@@ -19,7 +19,6 @@ context: |-
           *       et qui contient les n plus grands entiers du tableau v
           */
 environment: java7mockito
-groups: false
 limits:
     output: '1'
     time: '30'

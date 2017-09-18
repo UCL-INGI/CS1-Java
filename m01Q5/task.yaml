@@ -16,7 +16,6 @@ context: |
          boolean b;
          boolean xor; // placer dans cette variable votre résultat
 environment: java7mockito
-groups: false
 limits:
     memory: '100'
     output: '2'

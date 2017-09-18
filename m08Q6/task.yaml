@@ -59,7 +59,6 @@ context: |-
           //A COMPLETER
       }
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

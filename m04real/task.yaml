@@ -10,7 +10,6 @@ context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pou
 
   - README.txt'
 environment: java7
-groups: true
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 4: Phase de réalisation: Soumission'
 network_grading: false

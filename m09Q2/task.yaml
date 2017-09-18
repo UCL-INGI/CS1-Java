@@ -86,7 +86,6 @@ context: |-
 
     Pour rappel, la documentation de l'interface Comparable est disponible via https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

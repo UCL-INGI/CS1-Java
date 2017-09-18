@@ -10,7 +10,6 @@ context: |-
          * @post retourne un vecteur de n éléments tous initialisés à la valeur i
          */
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

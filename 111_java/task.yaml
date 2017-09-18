@@ -7,7 +7,6 @@ context: |+
         </p>
 
 environment: pythia0compat
-groups: false
 limits:
     output: '5210'
     memory: '32'

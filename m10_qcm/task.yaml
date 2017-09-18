@@ -26,7 +26,6 @@ context: "=====================\nMission 10. ArrayList\n=====================\n\
   .. |jn11.4| replace:: `11.4 : Networking`\n\n.. _jn11.4.1 : http://math.hws.edu/javanotes/c11/s4.html#IO.4.1\n\
   .. |jn11.4.1| replace:: `11.4.1 : URLs and URLConnections`\n"
 environment: mcq
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 10: QCM'
 network_grading: false

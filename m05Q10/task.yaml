@@ -11,7 +11,6 @@ context: |-
          *       des tableaux a et b au même indice
          */
 environment: java7mockito
-groups: false
 limits:
     output: '1'
     memory: '200'

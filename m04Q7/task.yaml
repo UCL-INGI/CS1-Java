@@ -13,7 +13,6 @@ context: |-
          * @post retourne true si s est un palindrome, false sinon
          */
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

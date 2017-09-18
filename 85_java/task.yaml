@@ -13,7 +13,6 @@ context: |+
         </p>
 
 environment: pythia0compat
-groups: false
 limits:
     memory: '32'
     output: '5210'

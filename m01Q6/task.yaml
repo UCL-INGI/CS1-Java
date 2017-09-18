@@ -17,7 +17,6 @@ context: |+
         String temp = "" // fizz, buzz, fizzbuzz, non
 
 environment: java7mockito
-groups: false
 limits:
     time: '30'
     memory: '200'

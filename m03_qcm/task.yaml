@@ -29,7 +29,6 @@ context: "====================================\nMission 3. Méthodes et sous-rou
   .. |jn4.6| replace:: `4.6 : More on Program Design`\n\n.. _jn4.6.1 : http://math.hws.edu/javanotes/c4/s6.html#subroutines.6.1\n\
   .. |jn4.6.1| replace:: `4.6.1 : Preconditions and Postconditions`\n"
 environment: mcq
-groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 3: QCM'
 network_grading: false

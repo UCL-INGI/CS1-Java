@@ -9,7 +9,6 @@ context: |
         double base; // l'argent sur le compte sans les intérêts
         double resultat; // le resultat du calcul
 environment: java7mockito
-groups: false
 limits:
     memory: '100'
     output: '2'
