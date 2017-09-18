@@ -1,0 +1,65 @@
+accessible: 2016-12-01 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Dans la classe ``Student``, implémentez le second ``constructeur`` qui prend comme argument un ``String``.
+
+    .. code-block:: java
+
+        /**
+         * Une classe décrivant un étudiant
+         *
+         * @author O. Bonaventure
+         * @version Novembre 2016
+         */
+        import java.util.Arrays;
+        public class Student {
+            public String nom;
+            public double[] cotes;
+
+            /**
+             * @pre nom != null, cotes != null
+             * @post a construit une instance de la classe Student
+             *       lance une exception StudentFormatException si une des
+             *       cotes est invalide (non comprise entre 0 et 20)
+             */
+            public Student(String nom, double[] cotes) throws StudentFormatException {
+                //code non fourni
+            }
+
+            /*
+             * @pre -
+             * @post construit une instance de la classe Student
+             *      en supposant que le String s a le format suivant
+             *      nom; 2.5, 3.0, 6.7
+             *      Le nom est suivi de ; et une virgule sépare les cotes.
+             *       Celles-ci doivent être entre 0 et 20
+             *       Il faut au moins une cote
+             *       Si le format n'est pas respecté, le constructeur
+             *       lance une StudentFormatException
+             *       avec comme argument le String passé
+             */
+            public Student(String s) throws StudentFormatException {
+                // Question
+            }
+        }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '200'
+    time: '30'
+    output: '1'
+name: 'Mission 10 : Q* Student - Constructeur'
+network_grading: false
+order: 170
+problems:
+    q1:
+        name: Constructeur de Student
+        header: Ecrivez le corps du constructeur
+        type: code
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

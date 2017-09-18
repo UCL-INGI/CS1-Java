@@ -1,0 +1,68 @@
+accessible: true
+author: François MICHEL
+context: |-
+    Un étudiant a écrit la classe ``Drapeau`` ci-dessous. Il aimerait y ajouter la méthode ``same`` permettant de savoir si deux objets ``Drapeau`` sont dans le même état, mais il ne sait pas bien comment s'y prendre et vous demande votre aide pour y arriver.
+
+    Voici la classe ``Drapeau`` :
+
+    .. code-block:: java
+
+        /**
+         * Une classe simple avec un objet contenant un booleen
+         */
+
+        public static class Drapeau {
+            private boolean drapeau; // la valeur du drapeau
+
+            // Constructeur
+            /**
+             * @pre : -
+             * @post : un objet de type Drapeau est cree et
+             *            represente le booleen passe en argument
+             */
+            public Drapeau(boolean b) {
+                drapeau = b;
+            }
+
+            /**
+             * @pre -
+             * @post le drapeau vaut b
+             */
+            public void set(boolean b) {
+                drapeau = b;
+            }
+
+            /**
+             * @pre -
+             * @post retourne la valeur du drapeau
+             */
+            public boolean get() {
+                return drapeau;
+            }
+
+            /**
+             *    @pre     -
+             *    @post     Retourne true si d.get() == this.get().
+             *            Retourne false sinon
+             */
+            public boolean same(Drapeau d){
+                // À implémenter
+            }
+
+        }
+
+    Aidez cet étudiant en détresse et implémentez la méthode ``same`` dont les spécifications sont fournies ci-dessus. Pensez à gérer le cas où ``d == null``, car les préconditions ne font aucune supposition.
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 6: Question de démarrage 3: Drapeau.same()'
+problems:
+    q1:
+        language: Java
+        name: La méthode same()
+        type: code
+        header: Implémentez ici le corps de la méthode same()
+weight: 1.0
+order: 31

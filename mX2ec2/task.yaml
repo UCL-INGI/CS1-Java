@@ -1,0 +1,52 @@
+accessible: false
+author: 'Clémentine Munyabarenzi (ressource : syllabus d''exercices LSINF1101)'
+context: |
+    Ecrivez un programme qui permet de donner, lorsqu'elles sont réelles, les solutions de l'`équation du second degré <https://fr.wikipedia.org/wiki/Équation_du_second_degré>`_
+
+    .. math ::
+
+       ax^2+bx+c=0
+
+    Pour cela, écrivez un programme qui demande à l'utilisateur de taper les valeurs de *a*, *b* et *c* et ensuite écrit sur sa sortie standard les racines si celles-ci sont réelles. Pensez aux différents cas possibles en fonction des différentes valeurs respectives de *a*, *b* et *c*.
+
+    Pour rappel, vous pouvez calculer la racine carrée du réel ``x`` en utilisant ``Math.sqrt(x)``.
+
+    Votre réponse devra compléter le code ci-dessous:
+
+    .. code-block :: java
+
+            System.out.print("Entrez la valeur du coefficient a :");
+            double a=TextIO.getlnDouble();
+
+            System.out.print("Entrez la valeur du coefficient b :");
+            double b=TextIO.getlnDouble();
+
+            System.out.print("Entrez la valeur du coefficient c :");
+            double c=TextIO.getlnDouble();
+environment: java7
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'NON Mission 2 : Exercice complémentaire 2 : Equations du second degré'
+network_grading: false
+order: 41
+problems:
+    q1:
+        header: |-
+            Une réponse affichée *doit* ressembler à ceci:
+
+            .. code-block :: java
+
+                0.606048584047038
+                5.283827730287069
+        type: code
+        name: ''
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

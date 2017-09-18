@@ -1,0 +1,345 @@
+accessible: 2016-11-10 08:00:00/2017-09-20 16:00:00
+author: Olivier BONAVENTURE
+context: "=====================\nMission 8. Interfaces\n=====================\n\n\n\
+  Ces questions supposent que vous avez lu les sections suivantes du livre de référence\
+  \ |jn|_\n\n    - |jn4.5|_\n        - |jn4.5.1|_\n        - |jn4.5.2|_\n        -\
+  \ |jn4.5.3|_\n        - |jn4.5.4|_\n    - |jn5.3|_\n        - |jn5.3.1|_\n     \
+  \   - |jn5.3.2|_\n        - |jn5.3.3|_\n        - |jn5.3.4|_\n    - |jn5.5|_\n \
+  \       - |jn5.5.5|_\n    - |jn5.7|_\n        - |jn5.7.1|_\n        - |jn5.7.2|_\n\
+  \n.. _jn: http://math.hws.edu/javanotes/\n.. |jn| replace:: JavaNotes\n\n.. _jn4.5\
+  \ : http://math.hws.edu/javanotes/c4/s5.html\n.. |jn4.5| replace:: `4.5 : APIs,\
+  \ Packages, and Javadoc`\n\n.. _jn4.5.1 : http://math.hws.edu/javanotes/c4/s5.html#subroutines.5.1\n\
+  .. |jn4.5.1| replace:: `4.5.2 : Toolboxes`\n\n.. _jn4.5.2 : http://math.hws.edu/javanotes/c4/s5.html#subroutines.5.2\n\
+  .. |jn4.5.2| replace:: `4.5.3 : Java's Standard Packages`\n\n.. _jn4.5.3 : http://math.hws.edu/javanotes/c4/s5.html#subroutines.5.3\n\
+  .. |jn4.5.3| replace:: `4.5.4 : Using Classes from Packages`\n\n.. _jn4.5.4 : http://math.hws.edu/javanotes/c4/s5.html#subroutines.5.4\n\
+  .. |jn4.5.4| replace:: `4.5.4 : Javadoc`\n\n.. _jn5.3 : http://math.hws.edu/javanotes/c5/s3.html\n\
+  .. |jn5.3| replace:: `5.3 : Programming with Objects`\n\n.. _jn5.3.1 : http://math.hws.edu/javanotes/c5/s3.html#OOP.3.1\n\
+  .. |jn5.3.1| replace:: `5.3.1 : Some Built-in Classes`\n\n.. _jn5.3.2 : http://math.hws.edu/javanotes/c5/s3.html#OOP.3.2\n\
+  .. |jn5.3.2| replace:: `5.3.2 : Wrapper Classes and Autoboxing`\n\n.. _jn5.3.3 :\
+  \ http://math.hws.edu/javanotes/c5/s3.html#OOP.3.3\n.. |jn5.3.3| replace:: `5.3.3\
+  \ : The class \"Object\"`\n\n.. _jn5.3.4 : http://math.hws.edu/javanotes/c5/s3.html#OOP.3.4\n\
+  .. |jn5.3.4| replace:: `5.3.4 : Object-oriented Analysis and Design`\n\n.. _jn5.5\
+  \ : http://math.hws.edu/javanotes/c5/s5.html\n.. |jn5.5| replace:: `5.5 : Inheritance,\
+  \ Polymorphism, and Abstract Classes`\n\n.. _jn5.5.5 : http://math.hws.edu/javanotes/c5/s5.html#OOP.5.5\n\
+  .. |jn5.5.5| replace:: `5.5.5 : Abstract Classes`\n\n.. _jn5.7 : http://math.hws.edu/javanotes/c5/s7.html\n\
+  .. |jn5.7| replace:: `5.7 : Interfaces, Nested Classes, and Other Details`\n\n..\
+  \ _jn5.7.1 : http://math.hws.edu/javanotes/c5/s7.html#OOP.7.1\n.. |jn5.7.1| replace::\
+  \ `5.7.1 : Interfaces`\n\n.. _jn5.7.2 : http://math.hws.edu/javanotes/c5/s7.html#OOP.7.2\n\
+  .. |jn5.7.2| replace:: `5.7.2 : Nested Classes`\n"
+environment: mcq
+evaluate: best
+groups: false
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Mission 8: QCM'
+network_grading: false
+order: 141
+problems:
+  q1:
+    choices:
+    - {text: ".. code-block:: java\n\n   import java.util.List;\n   public Class MyList\
+        \ implements List {\n       private List l;\n       public MyList() {\n  \
+        \         l = new java.util.ArrayList();\n       }\n       // ... autres méthodes\
+        \ de l'interface List\n   }\n", valid: true}
+    - {text: ".. code-block:: java\n\n   import java.util.*;\n   public Class MyList\
+        \ implements List {\n       private List l;\n       public MyList() {\n  \
+        \         l = new ArrayList();\n       }\n       // ... autres méthodes de\
+        \ l'interface List\n   }\n", valid: true}
+    - {text: ".. code-block:: java\n\n   public Class MyList implements java.util.List\
+        \ {\n       private java.util.List l;\n       public MyList() {\n        \
+        \   l = new java.util.ArrayList();\n       }\n       // ... autres méthodes\
+        \ de l'interface List\n   }\n", valid: true}
+    - {feedback: '
+
+        Il faut soit importer ``ArrayList``, soit mettre ``java.util.ArrayList`` dans
+        le constructeur.
+
+        ', text: ".. code-block:: java\n\n   import java.util.List;\n   public Class\
+        \ MyList implements List {\n       private List l;\n       public MyList()\
+        \ {\n           l = new ArrayList();\n       }\n       // ... autres méthodes\
+        \ de l'interface List\n   }\n"}
+    - {feedback: '
+
+        Il faut importer ``List`` et non ``ArrayList``.
+
+        ', text: ".. code-block:: java\n\n   import java.util.ArrayList;\n   public\
+        \ Class MyList implements List {\n       private List l;\n       public MyList()\
+        \ {\n           l = new java.util.ArrayList();\n       }\n       // ... autres\
+        \ méthodes de l'interface List\n   }\n"}
+    - {feedback: '
+
+        ``import java.*`` importe les classes (inexistantes) du package ``java`` ,
+        pas celles de ``java.util``.
+
+        ', text: ".. code-block:: java\n\n   import java.*;\n   public Class MyList\
+        \ implements List {\n       private List l;\n       public MyList() {\n  \
+        \         l = new ArrayList();\n       }\n       // ... autres méthodes de\
+        \ l'interface List\n   }\n\n"}
+    - {feedback: '
+
+        Il faut soit importer ``List``, soit mettre ``java.util.List`` dans la déclaration
+        de classe.
+
+        ', text: ".. code-block:: java\n\n   public Class MyList implements List {\n\
+        \       private java.util.List l;\n       public MyList() {\n           l\
+        \ = new java.util.ArrayList();\n       }\n       // ... autres méthodes de\
+        \ l'interface List\n   }\n"}
+    - {feedback: '
+
+        Il faut importer ``List`` et ``ArrayList``.
+
+        ', text: ".. code-block:: java\n\n   public Class MyList implements List {\n\
+        \       private List l;\n       public MyList() {\n           l = new ArrayList();\n\
+        \       }\n       // ... autres méthodes de l'interface List\n   }\n"}
+    - {feedback: '
+
+        Il faut soit importer ``List``, soit mettre ``java.util.List`` dans la déclaration
+        de la variable ``l``.
+
+        ', text: ".. code-block:: java\n\n   public Class MyList implements java.util.List\
+        \ {\n       private List l;\n       public MyList() {\n           l = new\
+        \ java.util.ArrayList();\n       }\n       // ... autres méthodes de l'interface\
+        \ List\n   }\n"}
+    header: '
+
+      Le package ``java.util`` définit (entre autres) l''interface ``List`` et une
+      classe ``ArrayList`` qui implémente ``List``.  Sachant cela, parmi les fragments
+      de programmes suivants, lequel est correct pour le compilateur Java ?
+
+      '
+    limit: 3
+    name: Packages
+    type: multiple-choice
+  q2:
+    choices:
+    - {text: '
+
+
+        - Une classe ne peut étendre qu''une seule classe.
+
+        - Une classe peut implémenter plusieurs interfaces.
+
+        ', valid: true}
+    - {feedback: '
+
+        Une classe ne peut pas étendre plusieurs classes.
+
+        ', text: '
+
+
+        - Une classe peut étendre plusieurs classes.
+
+        - Une classe peut implémenter plusieurs interfaces.
+
+        '}
+    - {feedback: '
+
+        Une classe peut implémenter plusieurs interfaces.
+
+        ', text: '
+
+
+        - Une classe ne peut étendre qu''une seule classe.
+
+        - Une classe ne peut implémenter qu''une seule interface.
+
+        '}
+    - {feedback: '
+
+        Une interface ne peut rien implémenter.
+
+        ', text: '
+
+
+        - Une classe peut implémenter plusieurs interfaces.
+
+        - Une interface peut implémenter une autre interface.
+
+        '}
+    - {feedback: '
+
+        Une interface ne peut pas étendre une classe.
+
+
+
+        ', text: '
+
+
+        - Une classe peut implémenter plusieurs interfaces.
+
+        - Une interface peut étendre une classe.
+
+        '}
+    header: '
+
+      Parmi les ensembles d''affirmations suivantes, lequel est correct ?
+
+      '
+    limit: 3
+    name: Extension et implémentation
+    type: multiple-choice
+  q3:
+    choices:
+    - {text: ".. code-block:: java\n\n   public interface Direction {\n       /**\
+        \ ... */\n       public int value();\n\n       /** ... */\n       public void\
+        \ pivote(int angle);\n   }\n", valid: true}
+    - {feedback: '
+
+        Une interface contient des signatures de méthodes, pas uniquement des noms.
+
+        ', text: ".. code-block:: java\n\n   public interface Direction {\n      \
+        \ /** ... */\n       value();\n\n       /** ... */\n       pivote(int angle);\n\
+        \   }\n"}
+    - {feedback: '
+
+        Une interface ne contient pas de variables d''instance.
+
+        ', text: ".. code-block:: java\n\n   public interface Direction {\n      \
+        \ private int value;  // la direction courante\n\n       /** ... */\n    \
+        \   public int value();\n\n       /** ... */\n       public void pivote(int\
+        \ angle);\n   }\n"}
+    - {feedback: '
+
+        Une interface ne contient pas de constructeur.
+
+        ', text: ".. code-block:: java\n\n   public interface Direction {\n      \
+        \ /** ... */\n       public Direction(int val);\n\n       /** ... */\n   \
+        \    public int value();\n\n       /** ... */\n       public void pivote(int\
+        \ angle);\n   }\n"}
+    - {feedback: '
+
+        Une interface ne contient que des signatures, pas de corps de méthodes.
+
+        ', text: ".. code-block:: java\n\n   public interface Direction {\n      \
+        \ /** ... */\n       public int value() {\n           return 0;\n       }\n\
+        \n       /** ... */\n       public void pivote(int angle) {\n           //\
+        \ rien\n       }\n   }\n"}
+    - {feedback: '
+
+        Une interface ne contient in variable d''instance, ni constructeur.
+
+        ', text: ".. code-block:: java\n\n   public interface Direction {\n      \
+        \ private int value;  // la direction courante\n\n       /** ... */\n    \
+        \   public Direction(int val);\n\n       /** ... */\n       public int value();\n\
+        \n       /** ... */\n       public void pivote(int angle);\n   }\n"}
+    header: '
+
+      Parmi les définitions de l''interface ``Direction`` ci-dessous, laquelle est
+      correcte pour le compilateur Java?
+
+      '
+    limit: 3
+    name: Interface
+    type: multiple-choice
+  q4:
+    choices:
+    - {text: ".. code-block:: java\n\n   public class MyPrix implements Prix {\n \
+        \      private it val;  // montant du prix\n       public MyPrix(int v) {\n\
+        \           val = v;\n       }\n       public int getVal() {\n           return\
+        \ val;\n       }\n       public int getVal(double tax) {\n           return\
+        \ (int) (val * (1 + tax));\n       }\n       public void setVal(int x) {\n\
+        \           val = x;\n       }\n       public void setVal(double x) {\n  \
+        \         val = (int) x;\n       }\n   }\n", valid: true}
+    - {text: ".. code-block:: java\n\n   public class MyPrix implements Prix {\n \
+        \      private it val;  // montant du prix\n       public MyPrix(int v) {\n\
+        \           val = v;\n       }\n       public int getVal() {\n           return\
+        \ val;\n       }\n       public void setVal(int x) {\n           val = x;\n\
+        \       }\n   }\n", valid: true}
+    - {feedback: '
+
+        Il manque la clausse ``implements`` dans l''en-tête de classe.
+
+        ', text: ".. code-block:: java\n\n   public class MyPrix {\n       private\
+        \ it val;  // montant du prix\n       public MyPrix(int v) {\n           val\
+        \ = v;\n       }\n       public int getVal() {\n           return val;\n \
+        \      }\n       public void setVal(int x) {\n           val = x;\n      \
+        \ }\n   }\n"}
+    - {feedback: '
+
+        La méthode ``void setVal(int x)`` n''est pas implémentée, attention à la signature!
+
+        ', text: ".. code-block:: java\n\n   public class MyPrix implements Prix {\n\
+        \       private it val;  // montant du prix\n       public MyPrix(int v) {\n\
+        \           val = v;\n       }\n       public int getVal() {\n           return\
+        \ val;\n       }\n       public int getVal(double tax) {\n           return\
+        \ (int) (val * (1 + tax));\n       }\n       public void setVal(double x)\
+        \ {\n           val = (int) x;\n       }\n   }\n"}
+    - {feedback: '
+
+        La méthode ``int getVal()`` n''est pas implémentée, attention à la signature!
+
+        ', text: ".. code-block:: java\n\n\n   public class MyPrix implements Prix\
+        \ {\n       private it val;  // montant du prix\n       public MyPrix(int\
+        \ v) {\n           val = v;\n       }\n       public int getVal(double tax)\
+        \ {\n           return (int) (val * (1 + tax));\n       }\n       public void\
+        \ setVal(int x) {\n           val = x;\n       }\n   }\n"}
+    - {feedback: '
+
+        C''est ``MyPrix`` qui implémente ``Prix`` et non l''inverse.
+
+        ', text: ".. code-block:: java\n\n\n   public class Prix implements MyPrix\
+        \ {\n       private it val;  // montant du prix\n       public MyPrix(int\
+        \ v) {\n           val = v;\n       }\n       public int getVal() {\n    \
+        \       return val;\n       }\n       public void setVal(int x) {\n      \
+        \     val = x;\n       }\n   }\n"}
+    - {feedback: '
+
+        La signature de ``setVal`` ne correspond pas à celle de l''interface.
+
+        ', text: ".. code-block:: java\n\n   public class MyPrix implements Prix {\n\
+        \       private it val;  // montant du prix\n       public MyPrix(int v) {\n\
+        \           val = v;\n       }\n       public int getVal() {\n           return\
+        \ val;\n       }\n       public int getVal(double tax) {\n           return\
+        \ (int) (val * (1 + tax));\n       }\n       public int setVal(int x) {\n\
+        \           val = x;\n           return x;\n       }\n   }\n"}
+    header: "\nOn considère l'interface ``Prix`` définie comme suit\n\n.. code-block::\
+      \ java\n\n    public interface Prix {\n        /**\n         * @pre  -\n   \
+      \      * @post retourne le montant du prix\n         */\n        public int\
+      \ getVal();\n        /**\n         * @pre  -\n         * @post change le montant\
+      \ du prix\n         */\n        public void setVal(int x);\n    }\n\nParmi les\
+      \ classes suivantes, laquelle est une implémentation correcte de ``Prix`` ?\n"
+    limit: 3
+    name: Interface et implémentation
+    type: multiple-choice
+  q5:
+    choices:
+    - {text: ".. code-block:: java\n\n   C2 obj2 = new C2();\n   C3 obj3 = new C3();\n\
+        \   I1 ojb1 = obj2;\n", valid: true}
+    - {text: ".. code-block:: java\n\n   C3 obj3 = new C3();\n   I1 obj1 = new C3();\n\
+        \   C2 obj2 = new C2();\n", valid: true}
+    - {feedback: '
+
+        ``C2 obj2`` ne peut pas recevoir une expression de type ``I1``.
+
+        ', text: ".. code-block:: java\n\n   I1 ojb1 = new C2();\n   C2 obj2 = obj1;\n\
+        \   C3 obj3 = new C3();\n"}
+    - {feedback: '
+
+        ``I1 obj1`` ne peut pas recevoir une expression de type ``C2``.
+
+        ', text: ".. code-block:: java\n\n   C3 obj3 = new C2();\n   I1 obj1 = new\
+        \ C2();\n   C2 obj2 = obj3;\n"}
+    - {feedback: '
+
+        ``C3 obj3`` ne peut pas recevoir une expression de type ``I2``.
+
+        ', text: ".. code-block:: java\n\n   C2 obj2 = new C2();\n   I1 ojb1 = obj2;\n\
+        \   C3 obj3 = obj2;\n"}
+    - {feedback: '
+
+        ``C2 obj2`` ne peut pas recevoir une expression de type ``I1``.
+
+        ', text: ".. code-block:: java\n\n   C3 obj3 = new C3();\n   I1 obj1 = new\
+        \ C2();\n   C2 obj2 = obj1;\n"}
+    header: "\n\nSoit l'interface ``I1`` et les classes ``C2`` et ``C3`` définies\
+      \ comme suit\n\n.. code-block:: java\n\n    public interface I1 {\n        //\
+      \ ...\n    }\n\n    public class C2 implements I1 {\n        public C2() {\n\
+      \            // ...\n        }\n        // ...\n    }\n\n    public class C3\
+      \ extends C2 {\n        public C3() {\n            // ...\n        }\n     \
+      \   // ...\n    }\n\nParmi les portions de code suivantes, laquelle est valide\
+      \ pour le compilateur Java ?\n"
+    limit: 3
+    name: ' Interfaces et types'
+    type: multiple-choice
+stored_submissions: 0
+submission_limit: {amount: -1, period: -1}
+weight: 1.0

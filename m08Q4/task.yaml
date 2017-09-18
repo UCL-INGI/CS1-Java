@@ -1,0 +1,124 @@
+accessible: 2016-11-17 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    On vous donne linterface ``Byte`` suivante :
+
+    .. code-block:: java
+
+      public interface Byte {
+        /*
+        * @pre i est un entier positif et 0<=i<=7
+        * @post On retourne la valeur du bit à la position i
+        */
+        public int getBit(int i);
+        /*
+        * @pre i est un entier positif  et 0<=i<=7
+        * @post le bit à la position i est mis à 1
+        */
+        public void setBit(int i);
+        /*
+        * @pre i est un entier positif  et 0<=i<=7
+        * @post le bit à la position i est remis à 0
+        */
+        public void resetBit(int i);
+        /*
+        * @pre -
+        * @post La chaîne est décallée d'un bit vers la droite
+        * (attention à la structure interne)
+        * Le bit de poids faible est mis à 0.
+        */
+        public void shiftLeft();
+        /*
+        * @pre -
+        * @post La chaîne est décallée d'un bit vers la gauche
+        * (attention à la structure interne)
+        * Le bit de poids fort prend la valeur du bit de poids faible avant rotation
+        */
+        public void rotateRight();
+        /*
+        * @pre -
+        * @post On effectue un ET logique entre chaque bit de b et b1
+        */
+        public Byte and(Byte b1);
+      }
+
+    Ainsi que la classe (à compléter) ``ByteString`` suivante :
+
+    .. code-block:: java
+
+      public class ByteString implements Byte {
+       private StringBuilder b; // contient les caractères représentant le byte
+
+       /*
+        * @pre -
+        * @post a construit un byte dont les huit bits sont mis à zéro
+        *       le bit de poids fort est en position 7 dans le StringBuilder
+        */
+       public ByteString() {
+           //A COMPLETER
+       }
+
+       /*
+        * @pre s.length==8, s ne contient que des caractères 0 et 1
+        * @post a construit un byte dont la représentation naturelle en String est s
+        *       La représentation naturelle d'un byte sous la forme d'un String est
+        *       le bit de poids fort à gauche. Dans le StringBuilder, on stocke
+        *       le byte de façon à avoir le bit de poids faible (resp. fort)
+        *       en position 0 (resp. 7).
+        *
+        *       Exemple
+        *
+        *       5 en décimal correspond à 00000101 en binaire et
+        *       sera stocké dans le StringBuilder 10100000
+        */
+       public ByteString(String s) {
+           //A COMPLETER
+       }
+
+        /*
+         * @pre -
+         * @post retourne la représentation naturelle du nombre binaire
+         *       c'est-à-dire celle où le bit de poids fort est à gauche
+         */
+        public String toString() {
+            String r="";
+            for(int i=b.length()-1; i>=0;i--) {
+                r=r+b.charAt(i);
+            }
+            return r;
+        }
+
+       //A COMPLETER
+      }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 8 : Q* ByteString'
+network_grading: false
+order: 147
+problems:
+    q1:
+        type: code
+        header: Ecrivez le corps du premier constructeur
+        name: Premier constrcuteur
+        language: Java
+    q2:
+        header: Ecrivez le corps du second constructeur
+        name: Deuxième constrcuteur
+        language: Java
+        type: code
+    q3:
+        name: Complétez votre classe
+        optional: true
+        header: Ecrivez ici les méthodes qui pourraient manquer
+        type: code
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

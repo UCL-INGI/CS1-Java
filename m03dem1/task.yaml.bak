@@ -1,0 +1,56 @@
+accessible: true
+author: ''
+context: |
+    Considérez les déclaratons suivantes :
+
+    .. code-block ::
+
+        double money = 210.7 ;
+        int euro = 25 ;
+        double wallet_d;
+        int wallet_i;
+
+    L'on souhaite faire en sorte que d'une part la valeur le la variable *money* se retrouve dans la variable *wallet_i* et que d'autre part la valeur de la variable *euro* se retrouve dans la variable *wallet_d*.
+environment: java7
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 3 : Question de Démarrage 1: Conversions'
+problems:
+    q1:
+        name: ''
+        header: 'Indiquez les instructions acceptées par le compilateur:'
+        choices:
+        -   text: wallet_i = (int) money ;
+            valid: true
+        -   text: wallet_i = 210.7
+        -   text: wallet_i = money ;
+        type: multiple-choice
+        limit: 0
+    q2:
+        choices:
+        -   text: wallet_d = euro;
+            valid: true
+        -   text: wallet_d = 25
+        -   valid: true
+            text: wallet_d = (double) euro;
+        name: ''
+        type: multiple-choice
+        header: 'Indiquez les instructions acceptées par le compilateur:'
+        limit: 0
+    q3:
+        choices:
+        -   text: wallet_d parcequ'il contient des valeurs de type double
+        -   text: wallet_i parceque je ne perds rien
+        -   text: wallet_d parceque je ne perds rien
+            valid: true
+        name: ''
+        limit: 0
+        header: Les instructions correctes des questions 1 et 2 servent régulièrement
+            à "remplir" *wallet_i* et *wallet_d*. L'on voudrait vous offrir l'un de
+            ces deux "wallets", lequel devriez-vous préférer au cas où vous tennez
+            à votre argent et pourquoi?
+        type: multiple-choice
+weight: 1.0
+order: 60

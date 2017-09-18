@@ -1,0 +1,101 @@
+accessible: 2016-11-10 11:45:00/2017-09-20 16:00:00
+author: Sébastien Combéfis
+context: |-
+    Dans le contexte de gestion d'une bibliothèque de média, chacun des objets de cette bibliothèque est une instance de la classe Java ``Item`` ci-dessous :
+
+    .. code-block:: java
+
+        public class Item {
+           private final String author, title;
+           private final int serial;
+
+           /**
+            * Constructeur
+            * @pre author != null , title != null , serial > 0
+            * @post Une instance de la classe est créée, et représente un objet ayant comme
+            *       auteur author, comme titre title et comme numéro de série serial
+            */
+           public Item (String author, String title, Integer serial) {
+              this.author = author;
+              this.title = title;
+              this.serial = serial;
+           }
+
+           /**
+            * @pre -
+            * @post Retourne l'auteur
+            */
+            public String getAuthor(){
+                return this.author;
+            }
+
+            /**
+            * @pre -
+            * @post Retourne le titre
+            */
+            public String getAuthor(){
+                return this.title;
+            }
+
+            /**
+            * @pre -
+            * @post Retourne le numéro de série
+            */
+            public String getAuthor(){
+                return this.serial;
+            }
+
+           /**
+            * @pre -
+            * @post La valeur renvoyée contient une représentation de cet objet
+            *       sous la forme : [num série] Auteur, Titre
+            */
+           public String toString(){
+              // À compléter
+           }
+        }
+
+    Vous devez tout d'abord compléter la méthode ``toString`` de la classe ``Item``.
+
+    On vous demande ensuite d'écrire une classe ``CD`` permettant de représenter des CD. Un CD est lui même un item de la bibliothèque avec une information supplémentaire : la durée de l'album en secondes (cette durée doit être stockée dans un ``int``). On doit pouvoir créer un nouvel objet CD par exemple avec l'instruction :
+
+    .. code-block:: java
+
+        CD r = new CD ("Radiohead", "The Bends", 2917);  // auteur, titre et durée en secondes
+
+    et obtenir une représentation textuelle de ce CD grâce à sa méthode ``toString``, qui renvoie par exemple :
+
+    .. code-block:: java
+
+        [100001] Radiohead, The Bends (2917 s)
+
+    Remarquez que chaque ``Item`` possède un serial qui est un numéro de série unique propre à l’objet (pour pouvoir différencier plusieurs exemplaires du même livre par exemple). Il doit être généré automatiquement et être supérieur à 100000 pour un CD.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '200'
+    output: '200'
+    time: '30'
+name: 'Mission 7 : Question de Bilan Final'
+network_grading: false
+order: 140
+problems:
+    q1:
+        language: java
+        type: code
+        name: ''
+        header: Complétez ici le corps de la méthode ``toString`` de la classe ``Item``
+            dont la spécification est donnée dans l'énoncé.
+    q2:
+        name: ''
+        header: |+
+            Complétez ici le corps de la classe ``CD``.
+
+        language: java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

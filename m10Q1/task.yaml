@@ -1,0 +1,61 @@
+accessible: 2016-12-01 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Un étudiant a écrit la classe suivante, mais il lui manque une méthode pour qu'elle puisse être compilée. Pourriez-vous implémenter cette méthode ?
+
+    .. code-block:: java
+
+      public class Fraction implements Comparable<Fraction> {
+            private int num; // numerateur
+            private int den; // denominateur
+
+            /**
+             * @pre num >= 0, den > 0
+             * @post construit la fraction num/den
+             */
+            public Fraction(int num, int den) {
+                this.num = num;
+                this.den = den;
+            }
+
+            /*
+             * @pre -
+             * @post retourne le dénominateur de la fraction
+             */
+            public int getDen() {
+                return this.den;
+            }
+
+            /*
+             * @pre -
+             * @post retourne le numérateur de la fraction
+             */
+            public int getNum() {
+                return this.num;
+            }
+
+            // Insérez le code manquant
+      }
+
+    Tel qu'il est écrit, ce code ne compile pas. Il manque une méthode. Pourriez-vous l'ajouter (signature et corps) ?
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '1'
+    memory: '200'
+name: 'Mission 10 : Q* Fraction'
+network_grading: false
+order: 168
+problems:
+    q1:
+        header: Ecrivez la/les méthode(s) manquante(s)
+        name: Fraction
+        type: code
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

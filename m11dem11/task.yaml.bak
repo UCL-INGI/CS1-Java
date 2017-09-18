@@ -1,0 +1,174 @@
+accessible: true
+author: 'Munyabarenzi Clémentine Zaninka (ressource : Syllabus d''exercices LSINF1101)'
+context: |+
+    Dans la phase de réalisation, vous devez utiliser des méthodes provenant du framework de test **JUnit** afin de tester votre implémentation dans BlueJ. L'objectif de cet exercice est d'utiliser les méthodes de JUnit pour vérifier le bon fonctionnement de la classe ``DList``. ci-après :
+
+    .. code-block :: java
+
+        class DList
+        {
+            List<Double> l;
+
+            /**
+             * @pre
+             * @post a construit une liste initialement vide
+             */
+            public DList()
+            {
+                l=new LinkedList<Double>();
+            }
+
+            /**
+             * @pre d!=null
+             * @post a ajout le Double d dans la liste
+             */
+            public void add(Double d)
+            {
+                assert d!=null;
+                l.add(d);
+            }
+            /**
+             * @pre d!=null
+             * @post retourne true si d se trouvait dans la liste et false sinon
+             *       a retire de la liste toutes les instances de Double egales
+             *       a d
+             */
+            public boolean remove(Double d)
+            {
+                assert d!=null;
+                int i=l.indexOf(d);
+                if(i>=0)
+                {
+                    Double d1=l.remove(i);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            /**
+             * @pre d!=null
+             * @post retourne true si d se trouve dans la liste et false sinon
+             */
+            public boolean contains(Double d)
+            {
+                return l.contains(d);
+            }
+
+            /**
+             * @pre -
+             * @post retourne le nombre de Double se trouvant dans la liste
+             */
+            public int size()
+            {
+                return l.size();
+            }
+        }
+
+    Il vous est proposé une classe de test comme exemple dans laquelle les assertions JUnit ne sont que partiellement écrites . Lisez attentivement le code de cette classe afin de remplacer les blocs de commentaires  du type ``/*(numero)???*/`` par le code qui convient. Si cela est fait correctement, JUnit pourra détecter l'erreur contenue dans l'implémentation de la classe ``DList``.
+
+    .. code-block :: java
+
+        public static class DListTest extends junit.framework.TestCase
+        {
+
+            /**
+             * @pre -
+             * @post verifie le bon fonctionnement de la methode contains sur plusieurs
+             *       exemples d'utilisation de la liste de Double: cette méthode vérifie
+             *       que l'appel à la méthode contains réussit quand il le faut.
+             */
+            public void testReussiteContains()
+            {
+                // Creation de la liste
+                DList l=new DList();
+
+                // Ajout de trois Double
+                l.add(new Double(2.3));
+                l.add(new Double(2.4));
+                l.add(new Double(2.4));
+
+                // Verification sur base des elements ajoutes
+                assertEquals("La verification de la presence d'un element present une fois"
+                        + " dans la liste devrait renvoyer true",/*(1)???*/,/*(2)???*/);
+                assertEquals("La verification de la presence d'un element present deux fois"
+                        + " dans la liste devrait renvoyer true",/*(3)???*/,/*(4)???*/);
+            }
+
+            /**
+             * @pre -
+             * @post verifie le bon fonctionnement de la methode contains sur plusieurs
+             *       exemples d'utilisation de la liste de Double: cette méthode vérifie
+             *       que l'appel à la méthode contains échoue quand il le faut.
+             */
+            public void testEchecContains()
+            {
+                // Creation de la DList
+                DList l=new DList();
+
+                // Ajout de trois Double dans la DList
+                 l.add(new Double(2.3));
+                 l.add(new Double(2.4));
+                 l.add(new Double(2.4));
+
+                // Verification vérification prennant en compte les éléments précédemment ajoutés
+                assertEquals("La verification de la presence d'un element absent de la "
+                        + "liste devrait renvoyer false",/*(5)???*/,/*(6)???*/);
+
+                // Verification qu'un element supprimé n'est plus contenu dans la liste
+                l.remove(new Double(2.3));
+                assertEquals("La verification de la presence d'un element qui n'est plus"
+                        + " present dans la liste devrait renvoyer false",/*(7)???*/,/*(8)???*/);
+            }
+
+environment: java7
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 11: Question de Démarrage 1 : JUnit (partie1)'
+problems:
+    q1:
+        name: ''
+        header: ''
+        language: java
+        type: code-single-line
+    q2:
+        language: java
+        name: ''
+        type: code-single-line
+        header: ''
+    q3:
+        name: ''
+        language: java
+        header: ''
+        type: code-single-line
+    q4:
+        type: code-single-line
+        language: java
+        name: ''
+        header: ''
+    q5:
+        type: code-single-line
+        language: java
+        name: ''
+        header: ''
+    q6:
+        name: ''
+        language: java
+        header: ''
+        type: code-single-line
+    q7:
+        language: java
+        header: ''
+        type: code-single-line
+        name: ''
+    q8:
+        type: code-single-line
+        language: java
+        header: ''
+        name: ''
+weight: 1.0
+order: 61

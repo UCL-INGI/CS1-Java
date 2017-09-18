@@ -1,0 +1,37 @@
+accessible: 2016-09-26 10:45:00/2017-09-26 16:00:00
+author: François MICHEL, Brandon NAITALI
+context: |+
+    Les langages de programmation sont souvent utilisés à des fins mathématiques et il est intéressant de savoir implémenter certaines fonctions mathématiques simples.
+
+    Dans cet exercice, il vous est demandé d'implémenter à l'aide d'une boucle une portion de programme qui permet de calculer un entier ``a`` élevé à la puissance ``n``.
+
+    Notez que ``n`` est plus grand ou égal à zéro et vous ne devez donc pas gérer le cas où ``n`` est négatif. Le résultat final doit être stocké dans la variable ``valeur``, qui est déjà initialisée à 1 pour vous.
+
+    .. code-block:: java
+
+        int n = // n est non-négatif
+        int a = // a peut prendre n'importe quelle valeur
+        int valeur = 1;
+
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '200'
+    output: '2'
+    time: '30'
+name: 'Mission 2 : Question de démarrage 3 : Puissances'
+network_grading: false
+order: 26
+problems:
+    q1:
+        name: Puissance d'un entier
+        header: Écrivez ici le bout de programme permettant de calculer l'entier ``a``
+            élevé à la puissance ``n``.
+        language: Java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,32 @@
+accessible: false
+author: François MICHEL
+context: |-
+    En Java, concaténer des ``String`` avec l'opérateur ``+`` implique la création et la desctruction successive d'un grand nombre de ``String``. On utilise en général un ``StringBuffer`` (http://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html) pour éviter ce problème. En utilisant l'API de la classe ``StringBuffer``, implémentez le corps de la méthode ``repeat()`` qui permet de répéter un ``String`` un certain nombre de fois. Voici la signature de cette méthode :
+
+    .. code-block:: java
+
+        /**
+         *    @pre    -
+         *    @post    retourne le String s
+         *             répété n fois. Si s == null || n == 0, retourne null.
+         */
+        public static String repeat(String s, int n){
+            // À implémenter
+        }
+environment: java7
+groups: false
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 8: Question de démarrage 2: StringBuffer'
+network_grading: false
+order: 1
+problems:
+    q1:
+        language: Java
+        type: code
+        name: La méthode repeat
+        header: Implémentez ici le corps de la méthode repeat. Veillez à bien respecter
+            les spécifications.
+weight: 1.0

@@ -1,0 +1,284 @@
+accessible: false
+author: Olivier BONAVENTURE
+context: |
+    ========
+    Revision
+    ========
+environment: default
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Révisions : QCM'
+network_grading: false
+order: 6
+problems:
+    q1:
+        type: multiple-choice
+        name: Utilisation de méthodes
+        choices:
+        -   text: |4
+
+                .. code-block:: java
+
+                   public static double min3(double a, double b, double c) {
+                      double m1=Math.min(a,b);
+                      return Math.min(m1,c);
+                   }
+            valid: true
+        -   text: |4
+
+                .. code-block:: java
+
+                   public static double min3(double a, double b, double c) {
+                      double m=Math.min(b,c);
+                      return Math.min(a,m);
+                   }
+            valid: true
+        -   text: |4
+
+                .. code-block:: java
+
+                   public static double min3(double a, double b, double c) {
+                      double m1=Math.min(a,b);
+                      double min3=Math.min(m1,c);
+                   }
+            feedback: |4
+
+                Cette méthode ne se compile pas. Elle est déclarée comme retournant un ``double``, mais elle ne retourne rien du tout.
+        -   text: |4
+
+                .. code-block:: java
+
+                   public static double min3(double a, double b, double c) {
+                      double m1=Math.min(c,b);
+                      double min3=Math.min(m1,a);
+                      System.out.println(min3);
+                   }
+            feedback: |4
+
+                Cette méthode ne se compile pas. Elle est déclarée comme retournant un ``double``, mais elle ne retourne rien du tout. Elle affiche le minimum à l'écran, mais ce n'est pas ce qui est demandé. Ne confondez pas une méthode qui affiche un résultat et une méthode qui retourne un résultat.
+        -   feedback: |4
+
+                Cette méthode ne se compile pas pour plusieurs raisons. Tout d'abord, la méthode ``Math.min`` est une méthode qui retourne, lorsqu'elle est utilisée avec deux arguments de type ``double``, un ``double``. Or cette méthode utilise ``Math.min`` comme si il s'agissait d'une méthode de type ``void``. Ensuite, la méthode ``min3`` est déclarée comme retournant un ``double`` mais ne comprend aucune instruction ``return``.
+            text: |4
+
+                .. code-block:: java
+
+                   public static double min3(double a, double b, double c) {
+                      Math.min(b,c);
+                      Math.min(a,m);
+                   }
+        header: |4
+
+            Les méthodes implémentées dans la  librairie standard Java sont souvent très utile pour faciliter l'écriture de méthodes plus compliquées. Considérons l'implémentation d'une méthode permettant de calculer le minimum entre trois réels passés en argument. Une telle méthode peut s'écrire en utilisant une suite d'instructions conditionnelles, mais il est aussi possible de réutiliser la méthode ``Math.min`` qui retourne le minimum entre ses deux arguments. Laquelle des méthodes ci-dessous est un calcul correct du minimum entre trois nombres réels ?
+        limit: 3
+    q2:
+        choices:
+        -   valid: true
+            text: |4
+
+                .. code-block:: java
+
+                   public static int ndiv(int a) {
+                      int n=0;
+                      for(int i=1;i<=a;i++)
+                      {
+                         int reste=a%i;
+                     if(reste==0) {
+                        n++;
+                     }
+                      }
+                      return n;
+                   }
+        -   valid: true
+            text: |4
+
+                .. code-block:: java
+
+                   public static int ndiv(int a) {
+                      int n=2;
+                      for(int i=a-1;i>1;i--)
+                      {
+                         int r=a%i;
+                     if(reste==0) {
+                        n=n+1;
+                     }
+                      }
+                      return n;
+                   }
+        -   text: |4
+
+                .. code-block:: java
+
+                   public static int ndiv(int a) {
+                      int n=0;
+                      for(int i=1;i<=n;i++)
+                      {
+                         int reste=n%i;
+                     if(reste==0) {
+                        n++;
+                     }
+                      }
+                      return n;
+                   }
+            feedback: |4
+
+                Cette méthode retourne toujours la valeur ``0``. Voyez-vous pourquoi ?
+        -   feedback: |4
+
+                Cette méthode ne retourne pas le nombre de diviseurs. Elle retourne le premier diviseurs, c'est-à-dire ``1``.
+            text: |4
+
+                .. code-block:: java
+
+                   public static int ndiv(int a) {
+                      int n=0;
+                      for(int i=1;i<=a;i++)
+                      {
+                         int reste=n%i;
+                     if(reste==0) {
+                        return n;
+                     }
+                      }
+                      return n;
+                   }
+        -   text: |4
+
+                .. code-block:: java
+
+                   public static int ndiv(int a) {
+                      int n=2;
+                      for(int i=a;i>0;i--)
+                      {
+                         int r=a%i;
+                     if(reste==0) {
+                        n=n+1;
+                     }
+                      }
+                      return n;
+                   }
+            feedback: |4
+
+                Cette méthode ne retourne pas exactement le nombre de diviseurs entiers. Vérifiez les limites de la boucle ``for``.
+        type: multiple-choice
+        header: |4
+
+            Parmi les méthodes ci-dessous, laquelle est-elle une implémentation correcte d'une méthode qui retourne le nombre de diviseurs entiers de l'entier (strictement positif) passé en argument ?
+        name: Diviseurs entiers
+        limit: 3
+    q4:
+        choices:
+        -   valid: true
+            text: |4
+
+                .. code-block:: java
+
+                 int count=0;
+                 for(int i=0; i< s.length(); i=i+1) {
+                   if(s.charAt(i)==c) {
+                      count=count+1;
+                   }
+                 }
+                 return count;
+        -   valid: true
+            text: |4
+
+                .. code-block:: java
+
+                 int count=0;
+                 for(int i=s.length()-1; i>=0; i=i-1) {
+                   if(s.charAt(i)==c) {
+                      count=count+1;
+                   }
+                 }
+                 return count;
+        -   valid: true
+            text: |4
+
+                .. code-block:: java
+
+                 int count=s.length();
+                 for(int i=0; i< s.length(); i=i+1) {
+                   if(s.charAt(i)!=c) {
+                      count=count-1;
+                   }
+                 }
+                 return count;
+            feedback: |4
+
+                Cette solution fonctionne, mais elle n'est pas très naturelle. Il est préférable de d'abord initialiser la variable ``count`` à 0 et d'ensuite l'incrémenter pour chaque occurence du caractère ``c`` plutôt que de faire l'inverse.
+        -   feedback: |4
+
+                Cette solution ne fonctionne pas et ``javac`` refusera de la compiler. La variable ``count`` est déclarée uniquement dans le bloc de la boucle ``for``. Elle ne peut donc pas être utilisée en dehors de cette boucle.
+            text: |4
+
+                .. code-block:: java
+
+                 for(int i=0; i< s.length(); i=i+1) {
+                   int count=0;
+                   if(s.charAt(i)==c) {
+                      count=count+1;
+                   }
+                 }
+                 return count;
+        -   text: |4
+
+                .. code-block:: java
+
+                 int count=0;
+                 for(int i=0; i<= s.length(); i=i+1) {
+                   if(s.charAt(i)==c) {
+                      count=count+1;
+                   }
+                 }
+                 return count;
+            feedback: |4
+
+                Cette solution ne fonctionne pas. Lors de son exécution, elle va tenter de lire le caractère à l'indice ``s.length()`` de la chaîne de caractère ``s``. Cela va provoquer une exception ``java.lang.StringIndexOutOfBoundsException``.
+        -   text: |4
+
+                .. code-block:: java
+
+                 int count=0;
+                 for(int i=1; i< s.length(); i=i+1) {
+                   if(s.charAt(i)==c) {
+                      count=count+1;
+                   }
+                 }
+                 return count;
+            feedback: |4
+
+                Cette solution ne fonctionne pas. Elle ne teste pas le premier caractère de la chaîne de caractères.
+        -   feedback: |4
+
+                Cette solution ne fonctionne pas. Lors de son exécution, elle va tenter de lire le caractère à l'indice ``s.length()`` de la chaîne de caractère ``s``. Cela va provoquer une exception ``java.lang.StringIndexOutOfBoundsException``.
+            text: |4
+
+                .. code-block:: java
+
+                 int count=0;
+                 for(int i=s.length(); i>=0; i=i-1) {
+                   if(s.charAt(i)==c) {
+                      count=count+1;
+                   }
+                 }
+                 return count;
+        type: multiple-choice
+        name: Méthode count
+        limit: 3
+        header: |4
+
+            Implémentez une méthode ``count`` que permet de compter le nombre de fois qu'un caractère passé en argument est présent dans une chaîne de données donnée. La spécification de cette méthode est
+
+            .. code-block:: java
+
+             /*
+              * @pre -
+              * @post retourne le nombre d'occurences du caractère c dans la chaîne s
+              */
+             public static int count(String s, char c) {
+
+            Un seul des corps de méthode ci-dessous est une implémentation correcte. Lequel ?
+weight: 1.0

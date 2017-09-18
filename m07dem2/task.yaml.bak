@@ -1,0 +1,51 @@
+accessible: true
+author: ''
+context: |4-
+     Complétez la classe ``Ticket`` ci-dessous :
+
+    .. code-block :: java
+
+         /**
+         * Un ticket de parking
+         */
+        public class Ticket {
+
+            // A COMPLETER (1)
+            private int numero;  // numéro du ticket
+
+            /**
+             * @pre  -
+             * @post Crée un ticket avec un nouveau numéro.   Les numéros
+             *       sont attribués séquentiellement à partir de 1.
+             */
+            public Ticket() {
+                // A COMPLETER (2)
+            }
+
+            /**
+             * @pre  -
+             * @post retourne le numero de billet
+             */
+            public int getNumero() {
+                return numero;
+            }
+        }
+environment: java7
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 7: Question de Démarrage 2: Tickets de Parking'
+problems:
+    q1:
+        name: ''
+        header: Complétez le fragment de code **(1)** ici.
+        language: java
+        type: code
+    q2:
+        name: ''
+        type: code
+        language: java
+        header: Complétez le fragment de code **(2)** ici.
+weight: 1.0
+order: 19

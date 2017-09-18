@@ -1,0 +1,117 @@
+accessible: 2016-11-10 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    On vous donne la classe Directeur dont voici le corps:
+
+    .. code-block:: java
+
+      public class Directeur extends Employe{
+        private double prime; // en pourcents du salaire
+
+       /*
+        * Constructeur
+        * @pre nom != null, salaire > 0, 0 <= prime < 1
+        * @post a construit une instance de la classe Directeur
+        */
+        public Directeur(String nom, double salaire, double prime){
+            //a compléter
+        }
+
+       /*
+        * @pre -
+        * @post retourne la salaire du directeur. Ce salaire est (1+prime)*salaire
+        */
+        public double getSalaire() {
+            // non fourni
+        }
+
+       /*
+        * @pre -
+        * @post retourne true si this et other sont identiques
+        *      (même nom, même salaire, même prime)
+        */
+        public boolean equals(Object other){
+            // non fourni
+        }
+
+       /*
+        * @pre -
+        * @post retourne la prime de ce directeur
+        */
+        public double getPrime() {
+            // code non fourni
+        }
+      }
+
+    Pour information, la classe Employé ressemble à ceci :
+
+    .. code-block:: java
+
+      public class Employe{
+        private String nom ;
+        private double salaire ;
+
+        /*
+         * Constructeur
+         * @pre nom != null, salaire > 0
+         * @post a construit une instance de la classe Employe avec nom et salaire
+         */
+        public Employe (String nom, double salaire){
+            this.nom = nom ;
+            this.salaire = salaire ;
+        }
+
+        /*
+         * @pre -
+         * @post retourne le nom de l'employé this
+         */
+        public String getNom(){
+            return nom ;
+        }
+
+        /*
+         * @pre -
+         * @post retourne le salaire de l'employé this
+         */
+        public double getSalaire() {
+            return salaire ;
+        }
+
+        /*
+         * @pre -
+         * @post retourne un String décrivant l'employé this
+         */
+        public String toString() {
+            // Non fourni
+        }
+
+        /*
+         * @pre -
+         * @post retourne true si this et other sont deux employés
+         *       qui ont le même nom et le même salaire
+         */
+        public boolean equals(Object other){
+            // Non fourni
+        }
+      }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 7 : Q* Directeur - Constructeur'
+network_grading: false
+order: 130
+problems:
+    q1:
+        type: code
+        header: Ecrivez le *contenu* du constructeur.
+        name: Constructeur
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

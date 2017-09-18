@@ -1,0 +1,32 @@
+accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
+author: Ludovic Taffin
+context: |
+    Vous avez aujourd'hui ``base`` € sur votre livret d'épargne. Si vous le laissez ``x`` années à un taux d'intérêt supposé fixe de ``y`` pourcents, quel sera le solde de votre livret après ces ``x`` années ?
+
+    .. code-block:: java
+
+        int x; // le nombre d'années
+        double y; // le pourcentage
+        double base; // l'argent sur le compte sans les intérêts
+        double resultat; // le resultat du calcul
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 2 : Question supplémentaire : Calcul d''intérêts'
+network_grading: false
+order: 37
+problems:
+    q1:
+        name: Donner le code permettant de calculer les intérêts sur X années.
+        header: ''
+        language: java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

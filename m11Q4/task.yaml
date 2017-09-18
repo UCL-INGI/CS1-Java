@@ -1,0 +1,87 @@
+accessible: 2016-12-15 14:00:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN, Olivier Martin
+context: |-
+    Une queue est une structure de données qui dispose d'une entrée et d'une sortie. Les objets sont ajoutés à la queue via son entrée et sont retirés via sa sortie. La queue garantit un fonctionnement First-In First-Out (FIFO, premier entré, premier sorti)
+    On vous donne la classe ``Queue`` incomplète suivante :
+
+    .. code-block:: java
+
+      /**
+       * Une queue représentée sous la forme d'une structure chaînée
+       *
+       * @author O. Bonaventure
+       * @version Novembre 2016
+       */
+        public class Queue {
+
+            // une classe interne représentant un noeud de la queue
+            private class Noeud {
+                Object element;
+                Noeud suivant;
+                Noeud precedent;
+
+                public Noeud(Object o, Noeud n, Noeud p) {
+                    element = o;
+                    suivant = n;
+                    precedent = p;
+                }
+             }
+
+            private Noeud entree; // l'entrée de la queue
+            private Noeud sortie; // la sortie de la queue
+
+           /*
+            * @pre -
+            * @post initialise une queue vide
+            */
+            public Queue() {
+                entree = null;
+                sortie = null;
+            }
+
+           /**
+            * @pre o != null
+            * @post ajoute l'objet à la queue
+            */
+            public void ajoute(Object o) {
+                // Question 1
+            }
+
+           /**
+            * @pre -
+            * @post retourne le plus ancien objet de la queue via le noeud sortie et
+            *       le retire de la queue.
+            *       Retourne null si la queue est vide
+            */
+            public Object retire() {
+                // Question 2
+            }
+        }
+
+    Complétez cette classe.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '1'
+    time: '30'
+    memory: '200'
+name: 'Mission 11 : Q** Queue'
+network_grading: false
+order: 183
+problems:
+    q1:
+        type: code
+        language: Java
+        name: Ajoute
+        header: Ecrivez le corps de la méthode ajoute
+    q2:
+        header: Ecrivez le corps de la méthode retire
+        type: code
+        name: Retire
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

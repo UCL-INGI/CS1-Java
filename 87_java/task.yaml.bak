@@ -1,0 +1,74 @@
+author: Virginie Van den Schreick
+context: |+
+    .. raw:: html
+
+        <p>
+          Un palindrome est un mot dont l’ordre des caractères reste le même qu’on le lise de gauche à droite ou de droite à gauche, comme radar ou kayak. Votre objectif dans cet exercice est de trouver le plus long palindrome contenu dans une chaîne de caractères, et d'en renvoyer la longueur.
+        </p>
+        <p>
+          Détecter le plus long palindrome dans une chaîne de caractères est un problème compliqué. En informatique, lorsqu'on est face à un problème compliqué, la meilleure approche pour le résoudre est de le découper en petits problèmes plus simples. Il suffit ensuite d'écrire une méthode pour résoudre chaque sous-problème, et de combiner ces méthodes pour résoudre le problème compliqué.
+        </p>
+        <p>
+          Pour rechercher le plus long palindrome, une piste est d'abord d'écrire une méthode permettant d'extraire d'une chaîne de caractères de longueur n les sous-chaînes de longueur n-1, n-2, etc. Notez que la classe String contient des méthodes qui pourraient vous aider pour cela.
+        </p>
+        <p>
+          Vous devez donc écrire une méthode dont la spécification est la suivante :
+        </p>
+        <pre class="code">
+        /*
+         * @pre - s != null
+         *
+         * @post retourne la longueur du plus long palindrome trouvé dans s.
+         */
+        <b>public static int</b> longueurPlusLongPalindrome(String s);
+        </pre>
+        <p>
+          À titre d’exemple, le code ci-dessous :
+        </p>
+        <pre class="code">
+        System.out.println (longueurPluslongPalindrome ("KAYAKAK"));
+        System.out.println (longueurPluslongPalindrome ("AVABCD"));
+
+        </pre>
+        <p>
+          Affiche les valeurs 5 et 3.
+        </p>
+        <p>
+          Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
+        </p>
+
+responseIsHTML: true
+order: 76
+name: 'Mission 4 : Recherche du plus long palindrome'
+problems:
+    q1:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le corps de la méthode <code>count</code> dont la spécification est donnée dans l'énoncé.
+                </p>public static int longueurPlusLongPalindrome (String s)
+
+        type: code
+        multiple: true
+        language: java
+    subproblems:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Déclarez ici les méthodes privées que vous souhaitez utiliser pour décomposer le problème en sous-problèmes. Attention, veillez à n'utiliser que des méthodes de classe (<code>static</code>).
+                </p>
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

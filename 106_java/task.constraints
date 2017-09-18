@@ -1,0 +1,21 @@
+<task>
+	<constraints>
+		<language>java</language>
+		<maxtime>30</maxtime>
+		<maxmem>32</maxmem>
+		<submission>
+			<maxsub>-1</maxsub>
+			<freq>-1</freq>
+			<end>-1</end>
+		</submission>
+		<checkempty>1</checkempty>
+	</constraints>
+	<questions>
+		<question id="temps" header="public class Temps" />
+		<question id="chanson" header="public class Chanson" />
+	</questions>
+	<skeletons>
+		<file path="input/Temps.java" />
+		<file path="input/Chanson.java" />
+	</skeletons>
+</task>

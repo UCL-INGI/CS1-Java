@@ -1,0 +1,179 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+#
+#  Copyright (c)  2016 François Michel, edited by Alexandre Dubray 2017
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU Affero General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU Affero General Public License for more details.
+#
+#  You should have received a copy of the GNU Affero General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+import os
+import json
+import subprocess
+import shlex
+import sys
+import re
+from json import JSONDecodeError
+
+from inginious import feedback
+from inginious import input
+
+from inginious import feedback
+from inginious import input
+
+# Translations definition
+import gettext
+current_locale = input.get_input("@lang")
+# This file will be used by Java to get the correct lang
+with open("student/lang","w+") as f:
+    f.write(current_locale)
+# Try to load translations.
+try:
+    language = gettext.translation ('run', 'student/Translations/translations_run', [current_locale])
+    _ = language.gettext
+except OSError:
+    _ = gettext.gettext # This will use String id if an error occurs
+
+
+def getfilename(file):
+    return os.path.splitext(file)[0]
+
+def add_indentation_level(to_indent):
+    return '   ' + '   '.join(to_indent.splitlines(keepends=True))
+
+def parsetemplate():
+    os.mkdir('./StudentCode')
+    for file in os.listdir('./Templates'):
+        filename = getfilename(file)
+        subprocess.call(['parsetemplate', '-o', './StudentCode/' + filename + '.java', './Templates/' + file], universal_newlines=True)
+
+def librairies():
+    lib = '.'
+    lib += ':/usr/share/java/powermock-mockito2-junit-1.7.1/*'
+    lib += ':./student'
+    lib += ':./src'
+    lib += ':./StudentCode'
+    return lib
+
+def compile_files(dir,list_files=[]):
+    Log = ""
+    javac_cmd = "javac -d ./student -encoding UTF8 -cp " + librairies()
+    # Compiling student file
+    for file in os.listdir(dir):
+        if not file.endswith('.java'):
+            continue
+        filename = getfilename(file)
+        if filename in list_files or len(list_files) == 0:
+            with open(filename + '.log', 'w+') as f:
+                subprocess.call(shlex.split(javac_cmd) + [dir + file], universal_newlines=True,stderr=f)
+                if os.path.getsize(filename + '.log') > 0:
+                    f.seek(0)
+                    Log += f.read() + '\n'
+    return Log
+
+def get_test_files(runner):
+    files = []
+    for file in os.listdir('./src'):
+        if getfilename(file) != runner and getfilename(file) != 'Correction' and not os.path.isdir("./src/"+file) and file.endswith('.java'):
+            files.append(getfilename(file))
+    return files
+
+def has_corr():
+    return os.path.exists('./src/Correction.java')
+
+def run(customscript,corr,execcustom,nexercices,tests=[],runner=None):
+    if runner is None:
+        runner = 'Runner'
+    if not tests:
+        tests = get_test_files(runner)
+    code_litteral = ".. code-block::\n\n"
+    parsetemplate()
+    if execcustom != 0:
+        outcustom = subprocess.call(['./' + customscript],universal_newlines=True)
+        if outcustom != 0:
+            exit()
+    LogStudent = compile_files('./StudentCode/')
+    # TODO: execute correction file if needed
+    if LogStudent == "":
+        LogTeacher = compile_files('./src/',list_files=tests+[runner,'Correction'] if has_corr()  else tests+[runner])
+        LogLib = ""
+        if os.path.isdir('./src/librairies/'):
+            LogLib = compile_files('./src/librairies/')
+        if LogTeacher != "": # Files from teacher do not compile
+            LogTeacher = add_indentation_level(LogTeacher)
+            feedback.set_global_result('failed')
+            feedback.set_global_feedback(_("Le programme ne compile pas : \n") + code_litteral + LogTeacher + "\n")
+            sys.exit(0)
+        if LogLib != "":
+            LogLib = add_indentation_level(LogLib)
+            feedback.set_global_result('failed')
+            feedback.set_global_feedback(_("Le programme ne compile pas : \n") + code_litteral + LogLib + "\n")
+            sys.exit(0)
+        with open('err.txt', 'w+', encoding="utf-8") as f:
+            #On lance le runner
+            os.chdir('./student')
+            java_cmd = "run_student java -ea -cp " + librairies()
+            resproc = subprocess.Popen( shlex.split(java_cmd) + ['src/' + runner] + tests, universal_newlines=True, stderr=f, stdout=subprocess.PIPE)
+            resproc.communicate()
+            resultat = resproc.returncode
+            f.flush()
+            f.seek(0)
+            outerr = f.read()
+            if resultat == 127: # Les tests ont réussis
+                feedback.set_global_result('success')
+                j = 1
+                while j <= nexercices:
+                    feedback.set_problem_feedback(_("Bravo, votre code est correct !"), "q" + str(j))
+                    j += 1
+            elif resultat == 252:
+                feedback.set_global_result('failed')
+                feedback.set_global_feedback(_("La limite de mémoire de votre programme est dépassée"))
+                sys.exit(0)
+            elif resultat == 253:
+                feedback.set_global_result('failed')
+                feedback.set_gloabal_feedback(_("La limite de temps d'exécution de votre programme est dépassée"))
+                sys.exit(0)
+            else: # Les tests ont échouées
+                print(outerr)
+                if nexercices == 1:
+                    outerr = add_indentation_level(outerr)
+                    feedback.set_global_result('failed')
+                    feedback.set_problem_feedback(_("Il semble que vous ayiez fait des erreurs dans votre code…\n") + code_litteral + outerr + "\n", "q1")
+                else:
+                    i = 1
+                    while i <= nexercices:
+                        regex = '@' + str(i) + ' :\n(.*?)(?=@\d+ :|$)'
+                        regex_question = re.findall(regex, outerr, re.DOTALL)
+                        if len(regex_question) == 0:
+                            feedback.set_problem_feedback(_("Vous avez bien répondu à cette question"), "q" + str(i))
+                        else:
+                            outerr_question = ''.join(regex_question)
+                            outerr_question = add_indentation_level(outerr_question)
+                            feed = _("Il semble que vous ayiez fait des erreurs dans votre code…\n") + code_litteral + outerr_question + "\n"
+                            feedback.set_problem_feedback(feed,"q"+str(i))
+                        i += 1
+    else:
+        with open('outputglobal.out' , 'w+', encoding="utf8") as f:
+            LogStudent = add_indentation_level(LogStudent)
+            feed = _("Le programme ne compile pas : \n") + code_litteral + LogStudent + "\n"
+            feedback.set_global_result('failed')
+            feedback.set_global_feedback(feed)
+
+if __name__ == '__main__':
+    try:
+        task_options = json.load(open('config.json', 'r', encoding="utf-8"))
+    except JSONDecodeError as e:
+        print(_("Impossible de décoder le config.json"))
+        print(e)
+        task_options = None
+        exit()
+    run(**task_options)

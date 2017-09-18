@@ -1,0 +1,42 @@
+accessible: true
+author: 'Munyabarenzi Clémentine Zaninka (ressource : sources examen LFSAB1401 juin
+    2011)'
+context: |-
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  http://icampus.uclouvain.be/claroline/backends/download.php?url=Ly00LV9JbnRlcnJvc19ldF9FeGFtZW5zL0FuY2llbnNfZXhhbWVucy9qdW4xMS5wZGY%3D&cidReset=true&cidReq=FSAB1401
+
+    __ juin2011_
+
+    Répondez ici à la Question 6 : Ecrivez complètement la méthode ``removeComputer`` de la classe ``Cluster`` dont la spécification et la signature sont ci-desosus. Indice: vous pouvez utiliser la valeur de ``count``.
+
+    .. code-block:: java
+
+       /**
+        * @pr e comp != null
+        * @po st L'ordinateur comp a été retiré du cluster, s'il s'y
+        * trouvait. Si comp est en tête de liste, la tête de liste passe au
+        * noeud suivant, sinon elle est inchangée. Retourne true si comp a
+        * été retiré, false sinon.
+        */
+
+        // À implémenter
+
+
+    **Comme l'examen est sur papier, il est préférable que vous rédigiez la réponse sur une feuille de papier et que vous la recopiiez ici une fois que vous êtes sûr de vous. INGInious vous permettra de vérifier si votre code est correct mais n'oubliez pas qu'à l'examen, vous n'aurez pas plusieurs essais. Il est donc important de s'entraîner à rédiger du code sur papier pour se mettre en situation d'examen et évaluer votre temps pour répondre.**
+
+    **Souvenez-vous qu'une réponse correcte sur INGInious ne correspond pas d'office à un 20 à l'examen.**
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Examen juin 2011: Question 6'
+problems:
+    q1:
+        language: java
+        name: Méthode removeComputer
+        type: code
+        header: Veillez à ne pas oublier d'écrire la signature de la méthode.
+weight: 1.0
+order: 9

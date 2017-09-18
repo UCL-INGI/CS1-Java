@@ -1,0 +1,32 @@
+accessible: 2016-12-15 12:00:00/2017-09-20 16:00:00
+author: François MICHEL
+context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. _juin2011:\
+  \  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online\n\
+  \n__ juin2011_\n\nQuestion 1 : Implémentez la méthode ``removeProcess`` de la classe\
+  \ ``BasicComputer``, dont la signature est ci-dessous :\n\n.. code-block:: java\n\
+  \n    /**\n     * @pre p != null\n     * @post le processus p a été retiré de cet\
+  \ ordinateur, s'il\n     *         s'agit bien du processus présent. Retourne true\
+  \ si\n     *         le processus a été supprimé, false sinon.\n     */\n    public\
+  \ boolean removeProcess(Process p)\n    {\n        /*** VOTRE REPONSE ***/\n   \
+  \ }"
+environment: java7
+evaluate: best
+groups: false
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Examen Juin 2011 online : Question 1'
+network_grading: false
+order: 196
+problems:
+  q1: {header: 'Veillez à n''implémenter que le corps de la méthode, ne recopiez pas
+      sa signature.', language: Java, name: Le corps de la méthode removeProcess,
+    type: code}
+  zmontest: {header: "Insérez votre code de test optionnel ci-dessous. Vous pouvez\
+      \ utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.\
+      \  Votre code sera exécuté dans une méthode ``montest``:\n\n.. code-block::\
+      \ java\n\n    public static void montest() { /* VOTRE CODE */ }\n\nAttention,\
+      \ toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.\
+      \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n\n",
+    language: java, name: Fonction de test optionnelle, optional: true, type: code}
+stored_submissions: 0
+submission_limit: {amount: -1, period: -1}
+weight: 1.5

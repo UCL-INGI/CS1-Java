@@ -1,0 +1,9 @@
+init 0
+BlueJ2_0 1
+Waterfox 3
+Eclipse 5
+gedit 4
+shell 0
+geany 2
+NetworkManager 6
+Xorg 0

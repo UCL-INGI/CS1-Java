@@ -1,0 +1,71 @@
+accessible: 2016-10-13 12:45:00/2017-09-20 16:00:00
+author: Sébastien Combéfis, Olivier Martin
+context: |-
+    La classe **String** contient de nombreuses méthodes permettant de manipuler les chaînes de caractères. Parmi celles-ci, on peut citer ``length()`` qui retourne la longueur de la chaîne de caractères, ``charAt(int i)`` qui retourne le caractère de la ième position ou ``substring(int begin, int end)`` qui retourne la sous-chaîne de caractères démarrant à la position ``begin`` et se terminant à la position ``end - 1``.
+
+    En utilisant ces méthodes, vous devez écrire une méthode dont la spécification est la suivante :
+
+    .. code-block:: java
+
+        /*
+         * @pre - p != null, s != null
+         *      - p est un pattern, c’est-à-dire une chaîne de caractères composées de
+         *        lettres, de chiffres et de zéro, une ou plusieurs fois le caractère ?
+         *      - s contient des lettres et des chiffres, mais pas le caractère ?
+         * @post - retourne le nombre d’occurrences du pattern p à l’intérieur de la chaîne
+         *         de caractères s.
+         *       - Une occurrence est une sous-chaîne de s de même longueur
+         *         que p qui contient les mêmes caractères que p à toutes les positions
+         *         où p ne contient pas de caractère ?
+         */
+        public static int count (String p, String s);
+
+
+    À titre d’exemple, le code ci-dessous :
+
+    .. code-block:: java
+
+        System.out.println(count("AB","CDEF"));
+        System.out.println(count("?B","CABDEF"));
+        System.out.println(count("A?","CABDEACF"));
+        System.out.println(count("AA","CAAABDEAAF"));
+        System.out.println(count("??","CAAAB"));
+
+    Affiche les valeurs 0, 1, 2, 3 et 4.
+
+    Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: 'Mission 4 : Question de bilan final'
+network_grading: false
+order: 84
+problems:
+    q1:
+        name: ''
+        language: java
+        header: |+
+            Complétez ici le corps de la méthode
+
+            .. code-block:: java
+
+                public static int count (String p, String s)
+
+        type: code
+    q2:
+        optional: true
+        language: java
+        name: ''
+        type: code
+        header: |+
+            Déclarez ici les méthodes privées que vous souhaitez utiliser pour décomposer le problème en sous-problèmes. Attention, veillez à n'utiliser que des méthodes de classe ``static``. Si une exception survient dans ce code, le feedback sera indiqué dans la question 1.
+
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

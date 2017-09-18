@@ -1,0 +1,45 @@
+accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN, Olivier Martin
+context: |+
+    Ecrivez la méthode ``mediane`` qui prend comme arguments trois entiers et retourne la `médiane <https://fr.wikipedia.org/wiki/Médiane_(statistiques)>`_ entre ces nombres.
+
+    Pour vous aider on vous donne les méthodes ``public static int min(int x, int y)`` et ``public static int max(int x, int y)`` que vous pouvez utiliser dans votre code. Leurs spécifications sont :
+
+
+    .. code-block:: java
+
+       /*
+        * @pre -
+        * @post retourne le minimum entre a et b
+        */
+       public static int min(int a, int b);
+
+       /*
+        * @pre -
+        * @post retourne le maximum entre a et b
+        */
+       public static int max(int a, int b);
+
+
+
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '2'
+name: 'Mission 3 : Q** Médiane'
+network_grading: false
+order: 56
+problems:
+    q1:
+        language: Java
+        name: Trouver la médiane parmi 3 nombres
+        type: code
+        header: Écrivez ici la méthode permettant de calculer la médiane
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

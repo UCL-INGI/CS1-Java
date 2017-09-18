@@ -1,0 +1,77 @@
+accessible: 2016-11-04 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Considérons la classe ``Rectangle``:
+
+    .. code-block:: java
+
+        /**
+          * Un objet Java représentant un rectangle
+          *
+          * @author O. Bonaventure
+          * @version Oct. 2016
+          */
+         public class Rectangle{
+             private double longueur;
+             private double largeur;
+
+             /**
+              * @pre long, larg >0
+              * @post a construit un rectangle de longueur lon et de largeur larg
+              */
+             public Rectangle(double lon, double larg){
+                 longueur = lon;
+                 largeur = larg;
+             }
+
+             /*
+              * @pre -
+              * @post retourne la longueur du rectangle
+              */
+             public double getLongueur(){
+                 return longueur;
+             }
+
+             /*
+              * @pre -
+              * @post retourne la largeur du rectangle
+              */
+             public double getLargeur(){
+                 return largeur;
+             }
+
+             /*
+              * @pre -
+              * @post retourne la surface du rectangle
+              */
+             // A compléter
+         }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 6 : Q* surface'
+network_grading: false
+order: 118
+problems:
+    q1:
+        type: code
+        header: |-
+            Écrivez ici la méthode ``surface`` dont les spécifications sont:
+
+            .. code-block:: java
+
+                /*
+                 * @pre -
+                 * @post retourne la surface du rectangle
+                 */
+        name: surface
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

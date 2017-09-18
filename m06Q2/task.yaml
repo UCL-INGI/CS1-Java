@@ -1,0 +1,76 @@
+accessible: 2016-11-04 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Considérons à nouveau la classe ``Date`` qui permet de représenter une date. Le squelette du code de cette classe est le suivant :
+
+    .. code-block:: java
+
+       /**
+        * Une classe pour encoder une date
+        *
+        * @author Olivier Bonaventure
+        * @version Oct. 2016
+        */
+       public class Date
+       {
+        public int jour; // le jour du mois
+        public int mois; // le mois
+        public int annee; // l'année
+
+        /*
+         * @pre 1<= jour <=31, 1<= mois <=12
+         * @post retourne une date, les mois commencent à 1 pour janvier
+         *       On ne gère pas les années bissextiles, février est supposé toujours
+         *       contenir 28 jours
+         */
+
+        public Date(int jour, int mois, int annee){
+          // code non fourni
+        }
+
+
+        /*
+         * @pre -
+         * @post retourne le jour
+         */
+        public int getJour(){
+           // a compléter
+        }
+
+        /*
+         * @pre -
+         * @post retourne le mois (1=janvier, 2=février, ...
+         */
+        public int getMois(){
+           // a compléter
+        }
+
+        /*
+         * @pre -
+         * @post retourne l'année
+         */
+        public int getAnnee(){
+           // a compléter
+        }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 6 : Q* getters Date'
+network_grading: false
+order: 111
+problems:
+    q1:
+        type: code
+        header: Écrivez les trois méthodes ``getJour``, ``getMois`` et ``getAnnee``
+            (avec les signatures)
+        name: getters de Date
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

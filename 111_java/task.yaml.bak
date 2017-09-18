@@ -1,0 +1,91 @@
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          Complétez les champs ci-dessous conformément à l'énoncé de la phase de réalisation de la mission 3.
+        </p>
+
+responseIsHTML: true
+order: 71
+name: 'Mission 3 : Phase de réalisation'
+problems:
+    average:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la méthode average
+                </p>public static double average(double a, double b, double c)
+
+        type: code
+        multiple: true
+        language: java
+    minimum:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la méthode minimum
+                </p>public static double minimum(double a, double b, double c)
+
+        type: code
+        multiple: true
+        language: java
+    maximum:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la méthode maximum
+                </p>public static double maximum(double a, double b, double c)
+
+        type: code
+        multiple: true
+        language: java
+    median:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la méthode median
+                </p>public static double median(double a, double b, double c)
+
+        type: code
+        multiple: true
+        language: java
+    sublime:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la méthode sublime
+                </p>public static boolean sublime(int n)
+
+        type: code
+        multiple: true
+        language: java
+    sub_help:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Si vous souhaitez ajouter des méthodes résolvant des sous-problèmes, écrivez-les ici
+                </p>
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

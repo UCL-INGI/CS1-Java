@@ -1,0 +1,68 @@
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          Complétez les champs ci-dessous conformément à l'énoncé de la phase de réalisation de la mission 7.
+        </p>
+
+responseIsHTML: true
+order: 80
+accessible: true
+name: 'Mission 7 : Phase de réalisation'
+problems:
+    ArticleReparation:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe ArticleReparation
+                </p>Classe ArticleReparation.java, étendant Article
+
+        type: code
+        multiple: true
+        language: java
+    Piece:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe Piece
+                </p>Classe Piece.java, étendant Article :
+
+        type: code
+        multiple: true
+        language: java
+    ArticlePiece:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe ArticlePiece
+                </p>Classe ArticlePiece.java, étendant Article :
+
+        type: code
+        multiple: true
+        language: java
+    Facture:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe Facture, avec les modifications et les méthodes supplémentaires demandées
+                </p>Classe Facture.java :
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

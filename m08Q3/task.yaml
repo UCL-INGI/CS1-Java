@@ -1,0 +1,80 @@
+accessible: 2016-11-17 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    On vous donne l'interface ``MyString`` suivante:
+
+    .. code-block:: java
+
+      public interface MyString {
+        /*
+         * @pre -
+         * @post retourne la longueur de la chaîne de caractère
+         */
+        public int length();
+
+        /*
+         * @pre 0<=i<this.length()
+         * @post retourne le caractère à l'indice i de this
+         */
+        public char charAt(int i);
+
+        /*
+         * @pre s != null
+         * @post retourne true si la chaine de caratères s est comprise dans la chaine this, false sinon
+         */
+        public boolean contains(MyString s);
+
+        /*
+         * @pre -
+         * @post retourne la chaine de caractères qui est la concaténation entre this et le caractère c
+         */
+        public MyString concat(char c);
+      }
+
+    Ainsi que la classe suivante :
+
+    .. code-block:: java
+
+      public class StringTab implements MyString {
+        private char[] s;
+
+        /*
+         * @pre -
+         * @post construit une instance de la classe StringTab
+         */
+        public StringTab(char c) {
+            // Non fourni
+        }
+        public StringTab(char[] c) {
+            // Non fourni
+        }
+        //Partie de code non fournie
+
+        public MyString concat(char c) {
+            // Non fourni
+        }
+        public boolean contains(MyString s) {
+            // A compléter
+        }
+      }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 8 : Q* MyString - Contains'
+network_grading: false
+order: 146
+problems:
+    q1:
+        type: code
+        header: Ecrivez ici le contenu de la méthode ``contains`` de la classe ``StringTab``
+        name: Méthode Contains
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

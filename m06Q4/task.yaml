@@ -1,0 +1,99 @@
+accessible: 2016-11-04 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    La classe ``Date`` représente une date. Dans cette classe, écrivez la méthode ``demain`` qui permet de retourner la date qui suit celle-ci.
+
+    .. code-block:: java
+
+       /**
+        * Une classe pour encoder une date
+        *
+        * @author Olivier Bonaventure
+        * @version Oct. 2016
+        */
+       public class Date
+       {
+        public int jour; // le jour du mois
+        public int mois; // le mois
+        public int annee; // l'année
+
+        /*
+         * @pre 1<= jour <=31, 1<= mois <=12
+         * @post retourne une date, les mois commencent à 1 pour janvier
+         *       On ne gère pas les années bissextiles, février est supposé toujours
+         *       contenir 28 jours
+         */
+
+        public Date(int jour, int mois, int annee)
+        {
+            // code non fourni
+        }
+
+        /*
+         * @pre -
+         * @post retourne le jour
+         */
+        public int getJour()
+        {
+            // code non fourni
+        }
+
+
+        /*
+         * @pre -
+         * @post retourne le mois (1=janvier, 2=février, ...
+         */
+        public int getMois()
+        {
+            // code non fourni
+        }
+
+        /*
+         * @pre -
+         * @post retourne l'année
+         */
+        public int getAnnee()
+        {
+            // code non fourni
+        }
+
+
+        /*
+         * @pre d!=null
+         * @post retourne true si this et d correspondent à la même date, false sinon
+         */
+        public boolean identique(Date d) {
+          // code non fourni
+        }
+
+        /*
+         * @pre -
+         * @post retourne la date correspondant au jour qui suit this. Cette méthode
+         *       ne supporte pas les années bissextiles, février est supposé avoir toujours
+         *       28 jours.
+         */
+        public Date demain() {
+        // à compléter
+        }
+       }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 6 : Q* demain'
+network_grading: false
+order: 113
+problems:
+    q1:
+        type: code
+        header: Écrivez ici la méthode ``demain`` (signature comprise)
+        name: méthode demain
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

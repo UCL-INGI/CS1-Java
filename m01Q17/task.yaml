@@ -1,0 +1,34 @@
+accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
+author: Ludovic Taffin, Olivier Martin
+context: |-
+    Ecrivez un programme qui place la valeur ``true`` dans la variable ``resultat`` si ``annee`` correspond à une année bissextile et ``false`` sinon.
+
+    Pour rappel, une année sera `bissextile <https://fr.wikipedia.org/wiki/Année_bissextile>`_ :
+     - si l'année est divisible par 4 et non divisible par 100, ou
+     - si l'année est divisible par 400.
+
+    .. code-block:: java
+
+        int annee; // l'année à vérifier
+        boolean resultat;
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: 'Mission 1 : Question supplémentaire : Année bissextile'
+network_grading: false
+order: 6
+problems:
+    q1:
+        header: ''
+        type: code
+        name: Déterminer si une année est bissextile
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,30 @@
+accessible: false
+author: François MICHEL
+context: |-
+    Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pour la Mission 8.
+
+    Vous attendons une archive **.zip** contenant uniquement les fichiers :
+
+    - Square.java
+    - DrawPanel.java
+    - Equilateral.java
+    - MyShape.java
+    - Segment.java
+    - Shape.java
+    - Triangle.java
+    - README.txt
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 8: Phase de réalisation: Soumission'
+problems:
+    q1:
+        allowed_exts:
+        - .zip
+        name: Phase de réalisation de la Mission 8
+        type: code-file
+        header: Soumettez ici l'archive zip ou faites-le directement via BlueJ.
+weight: 1.0
+order: 40

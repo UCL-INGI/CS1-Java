@@ -1,0 +1,36 @@
+accessible: 2016-11-24 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |
+    La classe ``Fichiers`` est une classe permettant de réaliser quelques tâches sur un fichier. On vous demande ici d'écrire la méthodes ``accessible`` dont les spécifications et la signature sont :
+
+    .. code-block:: java
+
+      /*
+       * @pre -
+       * @post retourne true si le fichier de nom fileName est accessible (c'est-à-dire qu'il peut être ouvert)
+       *       false sinon
+       */
+       public static boolean accessible(String fileName)
+
+    On vous demande d'utiliser un ``BufferedReader`` si vous devez lire le fichier.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '200'
+    output: '1'
+    time: '30'
+name: 'Mission 9: Q* Fichiers:Accessible'
+network_grading: false
+order: 159
+problems:
+    q1:
+        header: 'Ecrivez la méthode Accessible, signature et corps de la méthode compris:'
+        language: Java
+        type: code
+        name: Accessible
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

@@ -1,0 +1,36 @@
+accessible: 2016-10-17 17:15:00/2017-09-20 16:00:00
+author: 'Clémentine Munyabarenzi (ressource : syllabus d''exercices LSINF1101), Olivier
+    Martin'
+context: |-
+    Ecrivez la méthode suivante :
+
+    .. code-block :: java
+
+        /**
+         * @pre n > 0
+         * @post retourne la matrice unité d'ordre n, c'est-à-dire la matrice
+         *       carrée de n lignes/colonnes dont les éléments de la diagonale
+         *       principale valent 1 et tous les autres valent 0
+         */
+        public static int[][] unite(int n)
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'Mission 5 : Question de démarrage 3 : Matrice unité'
+network_grading: false
+order: 88
+problems:
+    q1:
+        language: java
+        header: Ecrivez ici le *corps* de la méthode.
+        type: code
+        name: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,179 @@
+accessible: true
+author: François MICHEL
+context: Voici quelques questions QCM pour vérifier votre compréhension de la Mission
+    2 du cours, après lecture du livre de référence.
+environment: java7
+groups: false
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 2: Question de démarrage 1: Les bases'
+problems:
+    q1:
+        name: Choix multiple
+        choices:
+        -   text: Une partie de la mémoire réservée pour contenir des données
+            valid: true
+        -   text: Un morceau d'information qui peut être manipulé par un programme
+        -   text: Un ensemble de valeurs contigues dans la mémoire auxquelles on peut
+                accéder en fonction de leur position dans la mémoire
+        -   text: Une entité abstraite qui possède un ensemble d'attributs et d'opérations
+                qui lui sont propres.
+        -   text: Une liste d'entités qui disposent chacune de la référence vers l'entité
+                suivante de la liste
+        -   text: Une chaine de caractères, dans le code du programme, qui se situe
+                devant le caractère "="
+        type: multiple-choice
+        limit: 3
+        header: Quelle est la définition la plus appropriée pour une variable ?
+    q2:
+        choices:
+        -   text: Une partie de la mémoire réservée pour contenir des données
+        -   valid: true
+            text: Un morceau d'information qui peut être manipulé par un programme
+        -   text: Une entité abstraite qui possède un ensemble d'attributs et d'opérations
+                qui lui sont propres.
+        -   text: Une suite d'instructions exécutables ou non par un programme
+        -   text: Un entier ou un caractère
+        name: Choix multiple
+        type: multiple-choice
+        header: Quelle est la définition la plus appropriée pour une valeur ?
+        limit: 3
+    q3:
+        name: Choix multiple
+        header: Selon vous, quelle portion de code correspond le mieux à une boucle
+            en Java ?
+        choices:
+        -   text: |
+                .. code-block:: java
+
+                    int a = 1;
+                    int b = 2;
+                    int c = 3;
+                    a = c;
+                    b = a;
+                    c = b;
+                    a = c;
+                    // ...
+        -   text: |-
+                .. code-block:: java
+
+                    int a = 1;
+                    while(a < 10){
+                        // do something
+                        a++;
+                    }
+            valid: true
+        -   feedback: '"while ... do" n''existe pas en Java. '
+            text: |-
+                .. code-block:: java
+
+                    int a = 1;
+                    while(a < 10) do {
+                        // do something
+                        a++;
+                    }
+        -   text: |-
+                .. code-block:: java
+
+                    for(int i = 0 ; i < 37 ; i++){
+                        // do something iterative
+                    }
+            valid: true
+        -   text: |
+                .. code-block:: bash
+
+                    for i in 1..15
+                    do
+                        # do something in bash
+                    done
+            feedback: Cette boucle n'est pas écrite en Java
+        -   text: |-
+                .. code-block:: java
+
+                    int a = 1;
+                    if(a < 10){
+                        // do something conditionnaly
+                    }
+                    else{
+                        // do something otherwise
+                    }
+            feedback: Ce n'est pas une boucle mais un branchement ``if``
+        limit: 3
+        type: multiple-choice
+    q4:
+        choices:
+        -   feedback: La variable pi est de type ``int`` et ne peut contenir que des
+                entiers.
+            text: |-
+                .. code-block:: java
+
+                    int pi = 3.1415;
+                    int rayon = 3;
+                    int perimetre = 2*pi*r;
+                    // ...
+        -   text: |-
+                .. code-block:: java
+
+                    for(int i = 0 ; i < 10 ; i++){
+                        // affiche i à l'écran
+                        println(i);
+                    }
+            feedback: Il faut utiliser ``System.out.println()`` et non ``println()``
+        -   feedback: Dans les parenthèses du ``for``, il faut mettre des ";" et non
+                des ",".
+            text: |-
+                .. code-block:: java
+
+                    for(int i = 0 , i < 10 , i++){
+                        System.out.println(i);
+                    }
+        -   text: |-
+                .. code-block:: java
+
+                    int i = 1
+                    while(i < 10){
+                        System.out.println(i)
+                        i++
+                    }
+        -   text: |-
+                .. code-block:: java
+
+                    int a = 1;
+                    int b = 2;
+                    if (a - b < 0){
+                        System.out.println(-(a-b));
+                    }
+                    else{
+                        System.out.println(a-b);
+                    }
+            valid: true
+        -   text: |-
+                .. code-block:: java
+
+                    for(int i = 1 ; i <= 10 ; i++){
+                        System.out.print(i);
+                    }
+            valid: true
+            feedback: Correct. System.out.print permet d'afficher sans mettre un retour
+                à la ligne à la fin.
+        -   text: |-
+                .. code-block:: java
+
+                    int a;
+                    int b = 2;
+                    if (a - b < 0){
+                        System.out.println(-(a-b));
+                    }
+                    else{
+                        System.out.println(a-b);
+                    }
+            feedback: Ne compile pas car ``a`` n'est pas initialisée.
+        limit: 3
+        name: Choix multiple
+        header: Lequel de ces bouts de programmes ne va causer aucune erreur de compilation
+            ?
+        type: multiple-choice
+weight: 1.0
+order: 16

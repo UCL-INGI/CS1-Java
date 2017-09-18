@@ -1,0 +1,33 @@
+accessible: 2016-10-13 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Ecrivez la méthode ``int countChar(String s, char c)`` permettant de compter le nombre d'occurences du caractère ``c`` dans ``s`` et dont
+    la spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre s != null
+         * @post retourne le nombre d’occurrences du caractère c dans la chaîne s
+         */
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 4 : Question supplémentaire : Occurences de c dans s'
+network_grading: false
+order: 72
+problems:
+    q1:
+        type: code
+        header: Écrivez ici la méthode
+        name: Occurence
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

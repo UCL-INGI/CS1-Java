@@ -1,0 +1,38 @@
+accessible: false
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          Complétez la classe BioInfo conformément à l'énoncé de la phase de réalisation de la mission 4.
+        </p>
+
+environment: pythia0compat
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '5210'
+    memory: '32'
+name: 'DELETE Mission 4 : Phase de réalisation'
+network_grading: false
+order: 82
+problems:
+    bioinfo:
+        language: java
+        name: ''
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe BioInfo
+                </p>Classe BioInfo.java :
+
+        type: code
+responseIsHTML: true
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

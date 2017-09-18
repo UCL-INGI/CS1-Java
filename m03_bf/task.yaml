@@ -1,0 +1,69 @@
+accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
+author: Olivier Martin
+context: |
+    Un étudiant a écrit le programme Java suivant qui permet de compter le nombre de chiffres de la représentation décimale d'un nombre naturel donné.
+
+    .. code-block :: java
+
+        public static void main(String[] args) {
+            String strPair = " a un nombre pair de chiffres dans sa représentation décimale";
+            String strImpair = " a un nombre impair de chiffres dans sa représentation décimale";
+            int n = 0;
+            while (n != -1) {
+                System.out.print("Entrez un nombre (-1 pour arrêter) :");
+                n = TextIO.getlnInt();
+                if (n != -1) {
+                    System.out.print(n);
+                    if (chiffresPairs(n)) {
+                        System.out.println(strPair);
+                    } else {
+                        System.out.println(strImpair);
+                    }
+                }
+            }
+        }
+
+    Vous devez définir la méthode ``chiffresPairs`` qui renvoie ``true`` si le nombre de chiffres de son paramètre est pair et ``false`` sinon. N'hésitez pas à décomposer le problème en sous-problèmes et de définir des méthodes privées complémentaires.
+
+    Voici un exemple :
+
+    - ``chiffresPairs(5555)`` doit retourner ``true``
+    - ``chiffresPairs(555)`` doit retourner ``false``
+    - ``chiffresPairs(-555)`` doit retourner ``false``
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: 'Mission 3 : Question de Bilan Final'
+network_grading: false
+order: 63
+problems:
+    q1:
+        header: |-
+            Complétez ici le corps de la méthode ``chiffresPairs``.
+
+            .. code-block :: java
+
+                /*
+                 * @pre -
+                 * @post Renvoie true si le nombre de chiffres n est pair et false sinon
+                 */
+                public static boolean chiffresPairs(int n)
+        name: ''
+        type: code
+        language: java
+    q2:
+        header: |
+            Déclarez ici les méthodes que vous souhaitez utiliser pour décomposer le problème en sous-problèmes. Attention, veillez à n'utiliser que des méthodes de classe ``static``.
+        name: ''
+        language: java
+        type: code
+        optional: true
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

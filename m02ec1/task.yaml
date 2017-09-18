@@ -1,0 +1,46 @@
+accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
+author: Clémentine Munyabarenzi
+context: "Pouvez-vous prédire la sortie du code suivant en moins de 5 secondes?\n\n\
+  .. code-block:: java\n\n    for( int i = 0 ; i < 5; i++)\n    {\n        System.out.println(\"\
+  ∗∗∗∗∗\") ;\n    }"
+environment: mcq
+evaluate: best
+groups: false
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Mission 2 : Exercice complémentaire 1 : Exercice rapide'
+network_grading: false
+order: 40
+problems:
+  Question1:
+    choices:
+    - {text: '∗∗∗∗∗
+
+
+        ∗∗∗∗∗
+
+
+        ∗∗∗∗∗
+
+
+        ∗∗∗∗∗'}
+    - {text: '∗∗∗∗∗
+
+
+        ∗∗∗∗∗
+
+
+        ∗∗∗∗∗
+
+
+        ∗∗∗∗∗
+
+
+        ∗∗∗∗∗', valid: true}
+    - {text: ∗∗∗∗∗}
+    header: ''
+    limit: 3
+    name: choix multiple
+    type: multiple-choice
+stored_submissions: 0
+submission_limit: {amount: -1, period: -1}
+weight: 1.0

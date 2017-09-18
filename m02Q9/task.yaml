@@ -1,0 +1,33 @@
+accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
+author: Ludovic Taffin, Brandon Naitali
+context: |
+    ``a`` et ``b`` sont deux entiers tels que :math:`a<b`. Calculez la somme des entiers se trouvant dans l'intervalle fermé :math:`[a,b]`  en utilisant une boucle ``for``.
+
+
+    .. code-block:: java
+
+        int a; // l'entier a
+        int b; // l'entier b
+        int resultat = 0;
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 2 : Question supplémentaire : Somme des entiers entre a et b'
+network_grading: false
+order: 36
+problems:
+    q1:
+        name: Donner le code permettant de calculer la somme des entiers entre a et
+            b.
+        header: ''
+        language: java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

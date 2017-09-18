@@ -1,0 +1,25 @@
+<task>
+	<constraints>
+		<language>java</language>
+		<maxtime>30</maxtime>
+		<maxmem>32</maxmem>
+		<submission>
+			<maxsub>-1</maxsub>
+			<freq>-1</freq>
+			<end>-1</end>
+		</submission>
+		<checkempty>1</checkempty>
+	</constraints>
+	<questions>
+		<question id="word" header="Word.java :  " />
+		<question id="dictionary" header="Dictionary.java : " />
+		<question id="dico" header="Dico.java :" />
+
+	</questions>
+	<skeletons>
+		<file path="input/Word.java" />
+		<file path="input/Dictionary.java" />
+		<file path="input/Dico.java" />
+
+	</skeletons>
+</task>

@@ -1,0 +1,126 @@
+accessible: 2016-11-17 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    On vous donne linterface ``Byte`` suivante :
+
+    .. code-block:: java
+
+      public interface Byte {
+        /*
+        * @pre i est un entier positif et 0<=i<=7
+        * @post On retourne la valeur du bit à la position i
+        */
+        public int getBit(int i);
+        /*
+        * @pre i est un entier positif  et 0<=i<=7
+        * @post le bit à la position i est mis à 1
+        */
+        public void setBit(int i);
+        /*
+        * @pre i est un entier positif  et 0<=i<=7
+        * @post le bit à la position i est remis à 0
+        */
+        public void resetBit(int i);
+        /*
+        * @pre -
+        * @post Le tableau est décallée d'un bit vers la droite
+        * (attention à la structure interne)
+        * Le bit de poids faible est mis à 0.
+        */
+        public void shiftLeft();
+        /*
+        * @pre -
+        * @post Le tableau est décallée d'un bit vers la gauche
+        * (attention à la structure interne)
+        * Le bit de poids fort prend la valeur du bit de poids faible avant rotation
+        */
+        public void rotateRight();
+        /*
+        * @pre -
+        * @post On effectue un ET logique entre chaque bit de b et b1
+        */
+        public Byte and(Byte b1);
+      }
+
+    Ainsi que la classe (à compléter) ``ByteTab`` suivante :
+
+    .. code-block:: java
+
+      public class ByteTab implements Byte {
+        private boolean b[];
+        // true signifie 1
+        // false signifie 0
+
+        /*
+         * @pre -
+         * @post a construit un Byte dont tous les bits sont mis à 0
+         */
+        public ByteTab() {
+            b=new boolean[8];
+            for(int i=0;i<b.length;i++) {
+                b[i]=false;
+            }
+        }
+
+        /*
+        * @pre s.length==8, s ne contient que des caractères 0 et 1
+        * @post a construit un byte dont la représentation naturelle en String est s
+        *       La représentation naturelle d'un byte sous la forme d'un String est
+        *       le bit de poids fort à gauche. Dans le tableau de char, on stocke
+        *       le byte de façon à avoir le bit de poids faible (resp. fort)
+        *       en position 0 (resp. 7).
+        *
+        *       Exemple
+        *
+        *       5 en décimal correspond à 00000101 en binaire et
+        *       sera stocké dans le tableau 10100000
+        */
+        public ByteTab(String s) {
+            b=new boolean[8];
+            for(int i=0;i<s.length();i++) {
+                if(s.charAt(i)=='0')
+                    b[7-i]=false;
+                else
+                    b[7-i]=true;
+            }
+        }
+
+        /*
+         * @pre -
+         * @post retourne la représentation naturelle du nombre binaire
+         *       c'est-à-dire celle où le bit de poids fort est à gauche
+         */
+        public String toString() {
+            String r="";
+            for(int i=b.length-1;i>=0;i--) {
+                if(b[i])
+                    r+='1';
+                else
+                    r+='0';
+            }
+            return r;
+        }
+
+        //A compléter
+      }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 8 : Q* ByteTab'
+network_grading: false
+order: 148
+problems:
+    q1:
+        type: code
+        header: Ecrivez ici les méthodes qui pourraient manquer
+        name: Complétez votre classe
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

@@ -1,0 +1,53 @@
+accessible: false
+author: François MICHEL
+context: |-
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  https://inginious.info.ucl.ac.be/course/LSINF1101/examj2011q1/jun11.pdf
+
+    __ juin2011_
+
+    Répondez ici à la Question 3 : Implémentez la classe ``Process`` ci-dessous :
+
+    .. code-block:: java
+
+       /**
+         * Un processus, avec un nom (String), une capacité de stockage
+         * requise (int) et un identifiant de processus, ou PID (int).
+         * Les PIDs sont attribués séquentiellement à la création de chaque
+         * nouveau processus (1 pour le premier, 2 pour le deuxième, etc.).
+         * Le premier argument du constructeur doit être le nom du processus.
+         */
+        public class Process
+        {
+            // À implémenter
+        }
+
+    N'oubliez pas d'implémenter les méthodes demandées dans la question.
+
+    **Comme l'examen est sur papier, il est préférable que vous rédigiez la réponse sur une feuille de papier et que vous la recopiiez ici une fois que vous êtes sûr de vous. INGInious vous permettra de vérifier si votre code est correct mais n'oubliez pas qu'à l'examen, vous n'aurez pas plusieurs essais. Il est donc important de s'entraîner à rédiger du code sur papier pour se mettre en situation d'examen et évaluer votre temps pour répondre.**
+
+    **Souvenez-vous qu'une réponse correcte sur INGInious ne correspond pas d'office à un 20 à l'examen (la clarté, la simplicité du code, les spécifications sont aussi des critères importants non vérifiés par INGInious).**
+environment: java7
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: 'Examen Juin 2011: Question 3'
+network_grading: false
+order: 190
+problems:
+    q1:
+        language: Java
+        name: La classe Process
+        type: code
+        header: Implémentez ici le corps de la classe Process. Veillez à n'implémenter
+            que le corps, ne recopiez pas "public class Process{...}". Vérifiez bien
+            la description de la classe et ne vous trompez pas dans le nom des méthodes.
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

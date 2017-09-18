@@ -1,0 +1,74 @@
+accessible: 2016-11-10 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    On vous donne la classe Employe dont voici le corps:
+
+    .. code-block:: java
+
+      public class Employe{
+        private String nom ;
+        private double salaire ;
+
+        /*
+         * Constructeur
+         * @pre nom != null, salaire > 0
+         * @post a construit une instance de la classe Employe avec nom et salaire
+         */
+        public Employe ( String nom, double salaire){
+            this.nom = nom ;
+            this.salaire = salaire ;
+        }
+
+        /*
+         * @pre -
+         * @post retourne le nom de l'employé this
+         */
+        public String getNom(){
+            return nom ;
+        }
+
+        /*
+         * @pre -
+         * @post retourne le salaire de l'employé this
+         */
+        public double getSalaire() {
+            return salaire ;
+        }
+
+        /*
+         * @pre -
+         * @post retourne un String décrivant l'employé this
+         */
+        public String toString() {
+            // A compléter
+        }
+
+        /*
+         * @pre -
+         * @post retourne true si this et other sont deux employés qui ont le même nom et le même salaire
+         */
+        public boolean equals(Object other){
+            // Non fourni
+        }
+      }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 7 : Q* Employe - Méthode toString'
+network_grading: false
+order: 128
+problems:
+    q1:
+        type: code
+        header: Ecrivez le *contenu* de la méthode toString.
+        name: Méthode toString
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

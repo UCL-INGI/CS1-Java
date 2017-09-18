@@ -1,0 +1,41 @@
+accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN, Brandon NAITALI
+context: |-
+    En utilisant des boucle(s) ``for``, écrivez le code permettant d'afficher un triangle rectangle isocèle dont la longueur du côté vous est fournié.
+
+    Pour rappel, ``System.out.print('0')`` permet d'afficher le caractère ``0`` à l'écran et ``System.out.println()`` permet d'aller à la ligne.
+
+    A titre d'exemple, voici un triangle dont le côté est de ``4`` :
+
+    .. code-block:: console
+
+       0
+       00
+       000
+       0000
+
+
+    .. code-block:: java
+
+        int cote = // la longueur du cote
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '200'
+    output: '1'
+    time: '30'
+name: 'Mission 2 : Question supplémentaire : Dessin d''un triangle'
+network_grading: false
+order: 29
+problems:
+    q1:
+        name: Triangle
+        header: Écrivez ici le bout de programme permettant de dessiner un triangle
+        language: Java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

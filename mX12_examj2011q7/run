@@ -1,0 +1,235 @@
+#! /usr/bin/python3
+# -*- coding: utf-8 -*-
+
+#   Copyright (c) 2016 François Michel
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU Affero General Public License for more details.
+#
+#   You should have received a copy of the GNU Affero General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+# Ce script est un template pour lancer les exercices sur INGINIOUS.
+
+# Il tire ses arguments du fichier config.json
+# Ce script va compiler et exécuter les fichiers suivants :
+# {exercice}.java,
+# {exercice}Vide.java
+# {exercice}Stu.java (qui sera créé par ce script)
+# et optionnellement {exercice}Corr.java
+# Ce script va parser le fichier {exercice}Vide.java pour insérer la réponse de l'étudiant
+# à l'intérieur et mettre le tout dans un fichier nommé {exercice}Stu.java
+# Il est important de bien respecter les noms des fichiers !
+
+# Le fichier {exercice}.java contiendra la main qui lancera les tests. Losque les tests ont réussi, la main se termine avec System.exit(127). Lorsqu'un problème survient, la main se termine avec une autre valeur que 127.
+
+# Le fichier {exercice}Vide.java contient un template java avec le code à compléter par l'étudiant.
+
+# Le fichier {exercice}Corr.java est un fichier java optionnel, sensé contenir une résolution correcte de l'exercice dans le cas où il serait utile de comparer les réponses renvoyées par le code de l'étudiant avec celles renvoyées par la fonction correcte, pour le feedback.
+
+# Le fichier custom est un fichier optionnel, qui contient un fichier exécutable pour par exemple procéder à des vérifications dans le code (comme détecter l'utilisation de Math.pow à un endroit on on ne pourrait pas l'utiliser). Ce script doit renvoyer 0 (avec exit, par exemple), lorsque l'exécution du script s'est bien déroulée. Il doit renvoyer une autre valeur quand un probème est survenu (par exemple, on a détecté l'utilisation de Math.pow alors que c'est interdit). Lorsqu'un problème est survenu, le script doit retourner un feedback négatif pour la question en cours ainsi qu'un feedback négatif pour la tâche. Lorsqu'une erreur est survenue dans custom, ce script run arrêtera automatiquement sa propre exécution directement avec exit, une fois custom terminé.
+
+# Pour utiliser ce script pour corriger plusieurs exercices en une seule tâche, il faut respecter des conventions. Tout d'abord, le premier exercice doit s'appeler q1, le second doit s'appeler q2, le ième doit s'appeler qi.
+# Pour pourvoir faire un feedback spécialisé par exercice de la tâche, il faut impérativement que les erreurs (lorsque le code n'est pas correct) soient afficheées sur System.err avec comme première ligne une ligne qui comprend "Question i :" (pour le ième exercice). Par exemple :
+
+
+# Sur System.err :
+# in testMethode : Question 1 :
+# la réponse obtenue n'est pas correcte
+# in testMethode2 : Question 1 :
+# la réponse obtenue vaut null mais ce ne devrait pas être le cas
+# in testMethodeEx2 : Question 2 :
+# assertequals : la réponse devrait valoir 3
+# Question 2 :
+# une ArrayIndexOutOfBounds s'est lancée
+
+# ... etc
+
+# L'ordre des labels "Question i :" n'a pas d'importance, les messages peuvent être désordonnés et s'entremêler par question.
+# La ligne qui contient le label "Question i : " sera supprimée dans le feedback
+
+# Pour utiliser ce template sur une de vos tâches, les champs du fichier config.json à modifier sont
+# "exercice" (string), qui contient l'identifiant de l'exercice. Cet identifiant doit se retrouver dans les noms de fichiers java comme indiqué ci-dessus.
+# "corr" (int), qui vaudra 0 lorsqu'il n'y a pas de fichier {exercice}Corr.java à compiler. (Attention, mettre CORR à une autre valeur que 0 alors qu'il n'y a pas de fichier {exercice}Corr.java provoquera une erreur de compilation.
+# "execcustom" (int), qui vaudra 0 lorsqu'il n'y a pas de script custom à exécuter et une autre valeur quand il faut en exécuter un.
+# "customscript" (string) qui indique le nom du fichier exécitable custom à exécuter. Il sera exécuté après le parsetemplate et avant la compilation des fichiers java.
+#  "nexercices" (int), qui indique le nombre d'exercices que comprend la tâche. Laisser à 1 s'il n'y a qu'un exercice dans la tâche (le cas idéal)
+
+
+import json
+import subprocess
+import shlex
+import sys
+import re
+from json import JSONDecodeError
+
+from inginious import feedback
+
+
+def add_indentation_level(to_indent):
+    return '    ' + '    '.join(to_indent.splitlines(keepends=True))
+
+
+def parsetemplate(exercice):
+    subprocess.call(['parsetemplate', '-o', 'student/' + exercice + 'Stu.java', 'student/' + exercice + 'Vide.java'],
+                    universal_newlines=True)
+
+
+def run_custom(customscript, execcustom):
+    outcustom = 0
+    if execcustom != 0:
+        outcustom = subprocess.call(['./' + customscript], universal_newlines=True)
+
+    if outcustom != 0:
+        exit()
+
+
+def compile_files(args, exercice):
+    """
+    :param args: the javac command with the javac args, whithout the files to compile
+    :return: (outother, output), the stderr of the compilation of student/Exercice.java and student/ExerciceStu.java
+    """
+    outother = ""
+    output = ""
+    with open('logOther.out', 'w+', encoding="utf-8") as f:
+        subprocess.call(args + ['student/' + exercice + '.java'], universal_newlines=True, stderr=f)
+        f.seek(0)
+        outother = f.read()
+
+    with open('log.out', 'w+', encoding="utf-8") as f:
+        subprocess.call(args + ['student/' + exercice + 'Stu.java'], universal_newlines=True, stderr=f)
+        output = f.read()
+        f.seek(0)
+    return outother, output
+
+
+def compile_corr(args, exercice):
+    proc = subprocess.Popen(args + ['student/' + exercice + 'Corr.java'], stdout=subprocess.PIPE,
+                            universal_newlines=True)
+    outcorr = proc.stdout.read()
+    proc.communicate()
+    return outcorr
+
+
+def run(exercice, customscript, corr, execcustom, nexercices, javac_args, java_args, code_litteral):
+    parsetemplate(exercice=exercice)
+    run_custom(customscript=customscript, execcustom=execcustom)
+    outother, output = compile_files(javac_args, exercice)
+    outcorr = ""
+    if corr != 0:
+        outcorr = compile_corr(javac_args, exercice)
+    erreur_enseignant = 0
+    message_enseignant = ""
+    if outcorr != "":
+        outcorr = add_indentation_level(outcorr)
+        erreur_enseignant = 1
+        message_enseignant = outcorr
+
+    if outother != "":
+        # On indente le message pour le faire passer dans le code-block rst
+        outother = add_indentation_level(outother)
+        erreur_enseignant = 1
+        message_enseignant = message_enseignant + "\n" + outother
+
+    if erreur_enseignant != 0:
+        feedback.set_global_result('failed')
+        feedback.set_global_feedback("Le programme ne compile pas: \n " + code_litteral + message_enseignant + "\n")
+        sys.exit(0)
+
+    error = 0
+    # Si output est vide et qu'il n'y a donc pas d'erreur de compilation
+    if output == "":
+        with open('err.txt', 'w+', encoding="utf-8") as f:
+            # On lance l'exercice 1
+            resproc = subprocess.Popen(java_args + ['student/' + exercice], universal_newlines=True, stderr=f,
+                                       stdout=subprocess.PIPE)
+            resproc.communicate()
+            resultat = resproc.returncode
+            f.flush()
+            f.seek(0)
+            outerr = f.read()
+        # Si les tests se sont bien passés (valeur de retour = 127)
+        if resultat == 127:
+            if nexercices == 1:
+                feedback.set_global_result('success')
+                feedback.set_problem_feedback("Bravo, votre code est correct !", "q1")
+            else:
+                j = 1
+                while j <= nexercices:
+                    # On fait un feedback positif par question
+                    feedback.set_global_result('success')
+                    feedback.set_problem_feedback("Vous avez bien répondu à cette question", "q" + str(j))
+                    j += 1
+        elif resultat == 252:
+            feedback.set_global_result('failed')
+            feedback.set_global_feedback("La limite de mémoire de votre programme est dépassée")
+            sys.exit(0)
+        elif resultat == 253:
+            feedback.set_global_result('timeout')
+            feedback.set_global_feedback("La limite de temps d'exécution de votre programme est dépassée")
+            exit()
+        else:
+            # Sinon c'est que les tests ont échoué, le programme possède des erreurs.
+            if nexercices == 1:
+                outerr = add_indentation_level(outerr).replace('%', '%%')
+                feedback.set_global_result('failed')
+                feedback.set_problem_feedback("Il semble que vous ayiez fait des erreurs dans votre code...\n " +
+                                              code_litteral + outerr + "\n", "q1")
+                error = 1
+            else:
+                i = 1
+                while i <= nexercices:
+                    # On récupère un feedback par question dans le System.err, en suivant le format imposé par convention
+                    regex_question = re.findall('Question ' + str(i) + ' :\n(.*?)\n^(?:[^\n]*Question [^\D1] :)?',
+                                                outerr, re.DOTALL | re.MULTILINE)
+                    if len(regex_question) == 0:
+                        feedback.set_global_result('success')
+                        feedback.set_problem_feedback("Vous avez bien répondu à cette question", "q" + str(i))
+                    else:
+                        # On joint les matchs de la regex dans un seul string
+                        outerr_question = ''.join(regex_question)
+                        outerr_question = add_indentation_level(outerr_question)
+                        feed = "Il semble que vous ayiez fait des erreurs dans votre code...\n " + code_litteral + outerr_question + "\n"
+                        feedback.set_global_result('failed')
+                        feedback.set_problem_feedback(feed, "q" + str(i))
+                    i += 1
+                error = 1
+
+                # On vérifie si la tâche s'est bien déroulée ou s'il y a eu un souci, et on fait un feedback de la tâche complète
+        if error == 0:
+            feedback.set_global_result('success')
+            feedback.set_global_feedback("Bravo, votre code est correct !")
+        else:
+            feedback.set_global_result('failed')
+            feedback.set_global_feedback("Vous n'avez pas réussi tous les exercices")
+    # erreur de compilation
+    else:
+        with open('outputglobal.out', 'w+', encoding="utf-8") as f:
+            output = add_indentation_level(output)
+            feed = "Votre programme ne compile pas: \n " + code_litteral + output + "\n"
+            feedback.set_global_result('failed')
+            feedback.set_global_feedback(feed)
+
+if __name__ == '__main__':
+    try:
+        task_options = json.load(open('config.json', 'r', encoding="utf-8"))
+    except JSONDecodeError as e:
+        print('impossible to parse config.json :')
+        print(e)
+        task_options = None
+        exit()
+    code_litteral = ".. code-block::\n\n"
+    javac = "javac -encoding UTF8 -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
+    java = "run_student --time 20 java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
+    javac_args = shlex.split(javac)
+    java_args = shlex.split(java)
+    run(code_litteral=code_litteral, javac_args=javac_args, java_args=java_args, **task_options)
+

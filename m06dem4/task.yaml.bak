@@ -1,0 +1,43 @@
+accessible: true
+author: François MICHEL
+context: |-
+    Depuis le début du cours, la librairie ``TextIO`` (http://math.hws.edu/eck/cs124/javanotes6/source/TextIO.java) vous permet de lire des messages sur l'entrée standard. Cependant, ``TextIO`` permet aussi de lire des fichiers. En analysant la librairie ``TextIO``, complétez les deux lignes incomplètes de manière à lire complètement le fichier ``student/cotes.txt`` qui contient les cotes de plusieurs personnes.
+
+    Voici le code à compléter :
+
+    .. code-block:: java
+
+        public static void lireCotes() {
+            /*1*/
+            while (/*2*/) {
+                String prenom = TextIO.getWord();
+                String nom = TextIO.getWord();
+                int cote = TextIO.getInt();
+                TextIO.getln();
+                System.out.println(nom + ", " + prenom + ": " + cote);
+            }
+            System.out.println("Le fichier a été lu entièrement.");
+        }
+environment: java7
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 6: Question de démarrage 4: Lecture de fichiers'
+problems:
+    q1:
+        name: La ligne /*1*/
+        header: Écrivez ici la ligne 1 permettant d'effectuer des opérations sur le
+            fichier "student/cotes.txt".
+        language: Java
+        type: code-single-line
+    q2:
+        name: La condition /*2*/
+        type: code-single-line
+        language: java
+        header: Écrivez ici la contition dans le while permettant à la boucle de s'arrêter
+            une fois le fichier cotes.txt entièrement lu. Ne recopiez pas l'instruction
+            while, écrivez juste la condition nécessaire au bon fonctionnement du
+            programme.
+weight: 1.0
+order: 33

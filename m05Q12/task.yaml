@@ -1,0 +1,49 @@
+accessible: 2016-10-20 11:45:00/2017-09-20 16:00:00
+author: Ludovic Taffin
+context: |+
+    Ecrivez les méthodes ``oppose`` et ``oppose2`` dont les spécifications et signatures sont :
+
+    .. code-block :: java
+
+        /*
+         * @pre v != null
+         * @post retourne un tableau de même longueur que v et dont tous les
+         *       éléments ont la valeur opposée de ceux de v
+         */
+        public static int[] oppose(int[] v)
+
+        /*
+         * @pre v != null
+         * @post modifie le tableau v et remplace chaque élément de v par son opposé
+         */
+        public static void oppose2(int[] v)
+
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'Mission 5 : Q* : Oppose'
+network_grading: false
+order: 90
+problems:
+    q1:
+        type: code
+        header: Ecrivez une première version de oppose qui permet de retourner l'opposé
+            du tableau v, c'est-à-dire un tableau de même longueur que v et dont tous
+            les éléments sont l'opposé de l'élément correspondant du tableau v
+        name: ''
+        language: java
+    q2:
+        header: Ecrivez une deuxième version de oppose qui permet de modifier le tableau
+            v, afin que ce dernier contienne l'opposé des éléments qu'il contient.
+        name: ''
+        type: code
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

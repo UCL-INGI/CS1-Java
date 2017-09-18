@@ -1,0 +1,54 @@
+accessible: 2016-10-10 17:15:00/2017-09-20 16:00:00
+author: François MICHEL, Brandon NAITALI
+context: |-
+    En java, on retrouve des types de variables primitifs comme ``int``, ``char``, ``double``, qui commencent par une minuscule, mais aussi des objets, dont les ``String`` font partie. Cependant, les ``String`` sont des objets un peu particuliers qui permettent certaines opérations qui les différencient des objets, comme la concaténation des ``String``. La concaténation de deux ``String`` consiste à former un nouveau ``String`` qui contient le contenu du premier et du deuxième mis bout à bout. Ainsi, concaténer le ``String`` ``"Harry"`` et le ``String`` ``"gateau"`` nous donne le ``String`` ``"Harrygateau"``.
+
+    Nous allons maintenant vous demander d'implémenter le corps de la méthode ``cat``, qui permet de renvoyer la concaténation de deux ``String``, ``s1`` et ``s2``. Voici les signatures de la méthode ``cat``. Veillez bien à respecter scrupuleusement les spécifications
+
+    .. code-block :: java
+
+        /**
+         *    @pre -
+         *    @post Retourne la concaténation de s1 et s2.
+         */
+        public static String cat(String s1, String s2) {
+            // À compléter
+        }
+
+        /**
+         *    @pre -
+         *    @post Retourne la concaténation de s1 et c.
+         */
+        public static String cat(String s1, char c) {
+            // À compléter
+        }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: 'Mission 4 : Question de démarrage 2 : Concaténation'
+network_grading: false
+order: 66
+problems:
+    q1:
+        type: code
+        header: Veuillez écrire le corps de la méthode cat servant à concaténer deux
+            Strings s1 et s2. Veillez bien à écrire le corps uniquement. N'oubliez
+            pas l'instruction return.
+        name: La méthode cat avec deux Strings
+        language: Java
+    q2:
+        header: Veuillez maintenant implémenter la méthode cat servant à concaténer
+            un String et un char. Veillez bien à écrire le corps uniquement. N'oubliez
+            pas l'instruction return.
+        name: La méthode cat avec un String et un caractère
+        language: Java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

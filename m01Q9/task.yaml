@@ -1,0 +1,32 @@
+accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
+author: Ludovic Taffin
+context: |-
+    Mettre la variable ``in`` à la valeur ``true`` si ``x`` se trouve dans l’intervalle fermé :math:`[a,b]` et ``false`` sinon.
+
+    .. code-block:: java
+
+        boolean in; // résultat de votre calcul à placer ici
+        int x; // la valeur à vérifier
+        int a; // borne inférieure de l'intervalle
+        int b; // borne supérieure de l'intervalle
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: 'Mission 1 : Question supplémentaire : IN/OUT'
+network_grading: false
+order: 19
+problems:
+    q1:
+        header: ''
+        name: Définir si x est dans ou en dehors de l'intervalle.
+        language: java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

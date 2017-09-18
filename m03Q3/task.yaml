@@ -1,0 +1,34 @@
+accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
+author: Ludovic Taffin, Olivier Martin
+context: |-
+    Ecrivez la signature et le corps de la méthode ``max`` qui prend comme  paramètres les entiers ``a``, ``b`` , ``c`` qui retourne le maximum de 3 nombres et dont la spécification est:
+
+    .. code-block:: java
+
+       /*
+        * @pre
+        * @post retourne le maximum entre les entiers a, b et c
+        */
+
+    Vous pouvez réutiliser votre code de la question supplémentaire maximum de la mission 1.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'Mission 3 :  Q*  Maximum'
+network_grading: false
+order: 50
+problems:
+    q1:
+        name: Ecrivez la signature et le corps de la méthode max.
+        language: java
+        type: code
+        header: ''
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

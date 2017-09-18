@@ -1,0 +1,37 @@
+accessible: 2016-11-24 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    La classe ``Fichiers`` est une classe permettant de réaliser quelques tâches sur un fichier. On vous demande ici d'écrire la méthodes ``countLines`` dont les spécifications et la signature sont :
+
+    .. code-block:: java
+
+      /*
+       * @pre -
+       * @post ouvre le fichier filename et retourne le nombre
+       *       de lignes présentes dans ce fichier.
+       *       Retourne -1 en cas d'erreur de lecture ou d'accès au fichier
+       */
+        public int countLines(String fileName);
+
+    Pour lire le fichier, nous vous demandons d'utilisez un ``BufferedReader``.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 9 : Q* Fichiers'
+network_grading: false
+order: 157
+problems:
+    q1:
+        type: code
+        header: Ecrivez le corps de la méthode ``countLines``
+        name: CountLines
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

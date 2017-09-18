@@ -1,0 +1,39 @@
+accessible: 2016-10-13 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Les ordinateurs manipulent les nombres en utilisant le `système binaire <https://fr.wikipedia.org/wiki/Système_binaire>`_.
+
+    Ecrivez la méthode ``int b2i(String s)`` qui permet de transformer un nombre en notation binaire en sa représentation sous forme d'entier .
+
+    La spécification de cette méthode est :
+
+    .. code-block:: java
+
+        /*
+         * @pre s != null
+         *      s est la représentation d'un nombre binaire
+         *      s contient uniquement des 1 et des 0
+         * @post retourne la représentation entière du nombre binaire
+         *      correspondant à cette chaîne
+         */
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 4 : Q* notation binaire'
+network_grading: false
+order: 78
+problems:
+    q1:
+        type: code
+        header: Écrivez ici la méthode
+        name: b2i
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

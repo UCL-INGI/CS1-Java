@@ -1,0 +1,25 @@
+<task>
+	<constraints>
+		<language>java</language>
+		<maxtime>30</maxtime>
+		<maxmem>32</maxmem>
+		<submission>
+			<maxsub>-1</maxsub>
+			<freq>-1</freq>
+			<end>-1</end>
+		</submission>
+		<checkempty>1</checkempty>
+	</constraints>
+	<questions>
+		<question id="ArticleReparation" header="Classe ArticleReparation.java, étendant Article" />
+		<question id="Piece" header="Classe Piece.java, étendant Article : " />
+		<question id="ArticlePiece" header="Classe ArticlePiece.java, étendant Article : " />
+		<question id="Facture" header="Classe Facture.java : " />
+	</questions>
+	<skeletons>
+		<file path="input/ArticleReparation.java" />
+		<file path="input/Piece.java" />
+		<file path="input/ArticlePiece.java" />
+		<file path="input/Facture.java" />
+	</skeletons>
+</task>

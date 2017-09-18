@@ -1,0 +1,33 @@
+accessible: 2016-10-20 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN, Olivier MARTIN
+context: |-
+    Ecrivez la méthode ``boolean croissant(int[] t)`` qui retourne true si les éléments du tableau ``t`` sont croissants, false sinon.
+    la spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre t != null
+         * @post retourne true si les éléments du tableau t sont croissants, false sinon
+         */
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 5 : Q* : Tableau croissant'
+network_grading: false
+order: 93
+problems:
+    q1:
+        header: Écrivez ici la méthode
+        language: Java
+        type: code
+        name: Croissant
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

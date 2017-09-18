@@ -1,0 +1,23 @@
+<task>
+	<constraints>
+		<language>java</language>
+		<maxtime>30</maxtime>
+		<maxmem>32</maxmem>
+		<submission>
+			<maxsub>-1</maxsub>
+			<freq>-1</freq>
+			<end>-1</end>
+		</submission>
+		<checkempty>1</checkempty>
+	</constraints>
+	<questions>
+		<question id="average" header="public static double average(double a, double b, double c)" />
+		<question id="minimum" header="public static double minimum(double a, double b, double c)" />
+		<question id="maximum" header="public static double maximum(double a, double b, double c)" />
+		<question id="median" header="public static double median(double a, double b, double c)" />
+		<question id="sublime" header="public static boolean sublime(int n)" />
+	</questions>
+	<skeletons>
+		<file path="input/LibMath.java" />
+	</skeletons>
+</task>

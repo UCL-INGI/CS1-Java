@@ -1,0 +1,49 @@
+accessible: 2016-10-10 17:15:00/2017-09-20 16:00:00
+author: François MICHEL
+context: |-
+    Écrivez le corps de la méthode de la méthode ``containsChar()`` qui prend deux arguments, ``s1`` et ``s2``, et qui vérifie si tous les caractères présents dans ``s1`` sont aussi présents dans ``s2``. Si c'est le cas, la méthode retourne ``true``. Le cas des ``String`` vides ne doit pas être géré.
+
+    Voici les spécifications de la méthode ``containsChar()`` :
+
+    .. code-block:: java
+
+        /**
+         *    @pre  s1 et s2 non-vides
+         *    @post Retourne true si s1 contient uniquement des
+         *          caractères qui sont aussi dans s2.
+         *          Retourne false sinon.
+         */
+         public static boolean containsChar(String s1, String s2){
+                 // À implémenter
+         }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: 'Mission 4 : Question de démarrage 5 : La méthode containsChar()'
+network_grading: false
+order: 69
+problems:
+    q1:
+        type: code
+        header: Implémentez ici le corps de la méthode containsChar(). Vérifiez bien
+            les spécifications. Veillez à n'implémenter que le corps, ne recopiez
+            pas sa signature
+        name: Méthode containsChar()
+        language: java
+    q2:
+        header: Si vous souhaitez diviser ce problème en sous-problèmes, définissez
+            ici les méthodes que vous allez utiliser dans la méthode containsChar().
+            Vous n'êtes pas obligé d'en définir.
+        name: Méthode auxiliaires
+        language: java
+        type: code
+        optional: true
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

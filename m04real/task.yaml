@@ -1,0 +1,25 @@
+accessible: 2016-10-10 17:15:00/2017-09-20 16:00:00
+author: François MICHEL
+context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pour la
+  mission 4.
+
+
+  Vous attendons une archive **.zip** contenant uniquement les fichiers :
+
+
+  - BioInfo.java
+
+  - README.txt'
+environment: java7
+groups: true
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Mission 4: Phase de réalisation: Soumission'
+network_grading: false
+order: 83
+problems:
+  q1:
+    allowed_exts: [.zip]
+    header: Soumettez ici l'archive zip ou faites-le directement via BlueJ.
+    name: Phase de réalisation de la Mission 4
+    type: code-file
+weight: 1.0

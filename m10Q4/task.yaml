@@ -1,0 +1,121 @@
+accessible: 2016-12-01 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN, Brandon NAITALI
+context: |-
+    La classe AList contient une implémentation simple d'un ArrayList sur base d'un tableau dont la taille augmente au fur et à mesure que l'on modifie la liste. Ecrivez le code des principales méthodes de cette classe:
+
+    .. code-block:: java
+
+        /**
+         * Une implémentation partielle d'une ArrayList en utilisant un tableau
+         *
+         * Cette implémentation supporte les méthodes suivantes :
+         *
+         * Constructeur : crée une liste vide  •  AList()
+         * Insère d’un élément à la position index  •  void add (int index, Object obj)
+         * Renvoie l’objet en position index  •  Object get (int index)
+         * Remplace l’élément en position index  •  void set (int index, Object obj)
+         * Retire et renvoie l’élément en position index  •  Object remove (int index)
+         * Renvoie true si obj appartient à la liste  •  boolean contains (Object obj)
+         *
+         * @author O; Bonaventure
+         * @version Novembre 2016
+         */
+        public class AList {
+            private Object[] l;
+
+            public static final int INIT_SIZE = 5; // taille initiale d'un AList
+
+            /*
+             * @pre -
+             * @post a créé une AList initialement vide
+             *       permettant de stocker 5 références
+             */
+            public AList() {
+                l = new Object[INIT_SIZE];
+            }
+
+            /*
+             * @pre o != null
+             * @post retourne true si l'objet o se trouve dans l'AList
+             */
+            public boolean contains(Object o) {
+                // Question
+            }
+
+            /*
+             * @pre -
+             * @post retourne l'objet se trouvant à la position index
+             *       et null si rien n'est stocké à cette position
+             *       ou si index >= length
+             */
+            public Object get(int index) {
+                // Question
+            }
+
+            /*
+             * @pre -
+             * @retourne la taille actuelle de la liste
+             */
+            public int length() {
+                return l.length;
+            }
+
+            /*
+             * @pre 0 <= index < this.length()
+             * @post remplace la référence se trouvant à l'index dans
+             *       la liste par la référence à o
+             */
+            public void set(int index, Object o) {
+                // Question
+            }
+
+            /*
+             * @pre -
+             * @post remplace l'objet o dans la liste en position index
+             *       Si index >= length, augmente d'abord la taille
+             *       de la liste en créant un nouveau tableau et
+             *       en y recopiant toutes les références de la liste
+             *       this avant de remplacer l'objet o à l'indice index
+             */
+            public void add(int index, Object o) {
+                // Question
+            }
+        }
+
+    Vous pouvez tester vos méthodes individuellement.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    memory: '200'
+    time: '30'
+    output: '1'
+name: 'Mission 10 : Q* AList'
+network_grading: false
+order: 171
+problems:
+    q1:
+        type: code
+        name: Contains
+        language: Java
+        header: Ecrivez le corps de la méthode contains
+    q2:
+        name: Get
+        language: Java
+        type: code
+        header: Ecrivez le corps de la méthode get
+    q3:
+        header: Ecrivez le corps de la méthode add
+        name: Add
+        language: Java
+        type: code
+    q4:
+        language: Java
+        type: code
+        name: Set
+        header: Ecrivez le corps de la méthode set
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

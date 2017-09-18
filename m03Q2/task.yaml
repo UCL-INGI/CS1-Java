@@ -1,0 +1,34 @@
+accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
+author: Ludovic Taffin
+context: |
+    On vous demande d'écrire la méthode ``surface`` qui permet de calculer la surface d'un rectangle. On supposera que la ``longueur`` et la ``largeur`` qui sont passées en arguments sont des entiers positifs.
+
+
+    .. code-block:: java
+
+       /*
+        * @pre largeur > 0, longueur > 0
+        * @post retourne la surface du rectangle dont les
+        *       largeur et longueur sont données.
+        */
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: 'Mission 3 : Q* Calculer la surface d''un rectangle'
+network_grading: false
+order: 51
+problems:
+    q1:
+        name: Surface
+        language: java
+        type: code
+        header: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

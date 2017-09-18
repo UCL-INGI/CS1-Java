@@ -1,0 +1,117 @@
+accessible: 2016-11-02 09:30:00/2017-09-20 16:00:00
+author: François MICHEL
+context: |+
+    Maintenant que les objets sont une notion un peu plus familière, nous allons vous demander de travailler avec des classes en Java, qui ne sont maintenant plus de simple conteneurs à méthodes ``static``.
+
+    Considérez la classe ``Pair`` suivante :
+
+    .. code-block:: java
+
+        public static class Pair{
+            private int a;    // le premier élément de la paire
+            private int b;    // le second élément de la paire
+
+            /**
+             *     @pre     -
+             *     @post    crée une paire avec a et b non-initialisés
+             */
+             public Pair(){
+
+             }
+
+            /**
+             * @pre    -
+             * @post    crée une paire composée de x et y
+             */
+             public Pair(int x, int y){
+                a = x;
+                b = y;
+             }
+
+            /**
+             * @pre    -
+             * @post    donne au premier élément de la paire la valeur nA
+             */
+             public void setA(int nA){
+                a = nA;
+             }
+
+            /**
+             * @pre    -
+             * @post    donne au second élément de la paire la valeur nB
+             */
+             public void setB(int nB){
+                b = nB;
+             }
+
+            /**
+             * @pre     -
+             * @post    retourne le premier élément de la paire
+             */
+             public int getA(){
+                return a;
+             }
+
+            /**
+             * @pre    -
+             * @post    retourne le second élément de la paire
+             */
+             public int getB(){
+                return b;
+             }
+
+            /**
+             *     Surcharge la méthode equals() de la classe Object
+             */
+             public boolean equals(Object o){
+                 if(o instanceof Pair){
+                     return (((Pair) o).getA() == a) && (((Pair) o).getB() == b);
+                 }
+                 return false;
+             }
+
+            /**
+             * @pre        -
+             * @post    retourne une nouvelle instance de Pair dont les deux
+             *             éléments sont les opposés de ceux de cette paire-ci.
+             *            L'instance appelante reste inchangée.
+             */
+             public Pair opposite(){
+                 // À implémenter
+             }
+        }
+
+    Prenez le temps d'analyser cette classe, puis, une fois que vous l'aurez bien comprise, implémentez le corps de la méthode ``opposite`` de la classe pair. Cette méthode renvoie une nouvelle instance de la classe ``Pair`` telle que ses variables d'instance, ``a`` et ``b``, valent l'opposé des variables ``a`` et ``b`` de l'instance qui y fait appel. Voici un exemple de l'utilisation de cette méthode :
+
+    .. code-block:: java
+
+        Pair p,q;
+        p = new Pair();
+        p.setA(10);
+        p.setB(-2);
+        q = p.opposite();
+        System.out.println(q.getA() +  ", " + q.getB());    // affiche "-10, 2"
+
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: 'Mission 6 : Question de démarrage 1 : Pair.opposite()'
+network_grading: false
+order: 106
+problems:
+    q1:
+        type: code
+        header: Implémentez ici le corps de la méthode opposite. Vérifiez bien les
+            spécifications. Veillez à n'implémenter que le corps de la méthode, ne
+            recopiez pas sa signature.
+        name: La méthode opposite
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

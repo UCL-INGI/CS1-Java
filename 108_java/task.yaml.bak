@@ -1,0 +1,56 @@
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          Complétez les champs ci-dessous conformément à l'énoncé de la phase de réalisation de la mission 9.
+        </p>
+
+responseIsHTML: true
+order: 83
+accessible: true
+name: 'Mission 9 : Phase de réalisation'
+problems:
+    word:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de votre classe Word
+                </p>Word.java :
+
+        type: code
+        multiple: true
+        language: java
+    dictionary:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de votre classe Dictionary
+                </p>Dictionary.java :
+
+        type: code
+        multiple: true
+        language: java
+    dico:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de votre classe Dico
+                </p>Dico.java :
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

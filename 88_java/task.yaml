@@ -1,0 +1,36 @@
+accessible: false
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          On souhaite compter le nombre d'entiers distincts parmi une série de cinq entiers
+        </p>
+        <p>
+          Vous devez définir la méthode <code>countDistinctInt</code> qui compte le nombre d'entiers uniques parmi les cinq paramètres a, b, c, d et e
+        </p>
+
+environment: pythia0compat
+groups: false
+limits:
+    memory: '32'
+    output: '5210'
+    time: '30'
+name: 'Mission 3 : Exercice complémentaire 2'
+network_grading: false
+order: 60
+problems:
+    q1:
+        name: ''
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le corps de la méthode <code>countDistinctInt</code> dont la spécification est donnée dans l'énoncé.
+                </p>public static int countDistinctInt (int a, int b, int c, int d, int e)
+
+        language: java
+        type: code
+responseIsHTML: true
+weight: 1.0

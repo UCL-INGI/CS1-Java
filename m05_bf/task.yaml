@@ -1,0 +1,62 @@
+accessible: 2016-10-20 12:45:00/2017-09-20 16:00:00
+author: Olivier Martin
+context: |-
+    Dans cette question de bilan final, on va s'intéresser à l'écriture de méthodes dont le but est de modifier les éléments d'un tableau passé en paramètre. Le but de ces méthodes est de déplacer tous les éléments du tableau d'un certain nombre de cases vers la droite.
+
+    Commençons par la méthode ``rotateRightOne``. Elle va décaler tous les éléments du tableau passé en paramètre, d'une case vers la droite. Voici sa spécification précise :
+
+    .. code-block:: java
+
+        /*
+         * @pre tab != null
+         * @post Le tableau tab a été modifié et tous ses éléments sont décalés
+         *       d'une position vers la droite (le dernier élément revenant
+         *       en première position)
+         */
+         public static void rotateRightOne(int[] tab) {
+             // Question 1
+         }
+
+    Ensuite, vous devez écrire une méthode ``rotateRight`` qui déplace tous les éléments d'un tableau, vers la droite, d'un certain nombre ``n`` de positions. Voici sa spécification précise :
+
+    .. code-block:: java
+
+        /*
+         * @pre tab != null
+         * @post Le tableau tab a été modifié et tous ses éléments sont décalés
+         *       de n positions vers la droite, c'est-à-dire que les éléments
+         *       qui se trouvaient en i se retrouvent en (i + n) % tab.length
+         */
+        public static void rotateRight(int[] tab, int n) {
+            // Question 2
+        }
+
+    N'oubliez pas d'éviter la duplication de code, et d'éventuellement réutiliser l'une des deux méthodes dans l'autre.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '500'
+    output: '5210'
+name: 'Mission 5(a) : Question de Bilan Final'
+network_grading: false
+order: 104
+problems:
+    q1:
+        name: RotateRightOne
+        language: java
+        header: |
+            Complétez ici le corps de la méthode ``rotateRightOne`` dont la spécification est donnée dans l'énoncé.
+        type: code
+    q2:
+        language: java
+        name: RotateRightN
+        type: code
+        header: |
+            Complétez ici le corps de la méthode ``rotateRight`` dont la spécification est donnée dans l'énoncé.
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,93 @@
+accessible: 2016-11-17 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    On vous donne l'interface ``MyString`` suivante:
+
+    .. code-block:: java
+
+      public interface MyString {
+        /*
+         * @pre -
+         * @post retourne la longueur de la chaîne de caractère
+         */
+        public int length();
+
+        /*
+         * @pre 0<=i<this.length()
+         * @post retourne le caractère à l'indice i de this
+         */
+        public char charAt(int i);
+
+        /*
+         * @pre s!=null
+         * @post retourne true si la chaine de caratères s est comprise dans la chaine this, false sinon
+         */
+        public boolean contains(MyString s);
+
+        /*
+         * @pre -
+         * @post retourne la chaine de caractères qui est la concaténation entre this et le caractère c
+         */
+        public MyString concat(char c);
+      }
+
+    Ainsi que la classe suivante :
+
+    .. code-block:: java
+
+      public class StringTab implements MyString {
+        private char[] s;
+
+        /*
+         * @pre -
+         * @post construit une instance de la classe StringTab
+         */
+        public StringTab(char c) {
+            // A compléter
+            // Constructeur 1
+        }
+
+        public StringTab(char[] c) {
+            // A compléter
+            // Constructeur 2
+        }
+
+        public MyString concat(char c){
+            // Non fourni
+        }
+        public boolean contains(MyString s) {
+            // Non fourni
+        }
+      }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 8 : Q* MyString - Constructeur'
+network_grading: false
+order: 144
+problems:
+    q1:
+        type: code
+        header: Ecrivez le constructeur
+        name: Premier constrcuteur
+        language: Java
+    q2:
+        header: Ecrivez le constructeur
+        name: Deuxième constrcuteur
+        language: Java
+        type: code
+    q3:
+        name: Complétez votre classe
+        optional: true
+        header: Ecrivez ici les méthodes qui pourraient manquer
+        type: code
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0

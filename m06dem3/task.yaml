@@ -1,0 +1,75 @@
+accessible: 2016-11-02 09:30:00/2017-09-20 16:00:00
+author: François MICHEL
+context: |-
+    Un étudiant a écrit la classe ``Drapeau`` ci-dessous. Il aimerait y ajouter la méthode ``same`` permettant de savoir si deux objets ``Drapeau`` sont dans le même état, mais il ne sait pas bien comment s'y prendre et vous demande votre aide pour y arriver.
+
+    Voici la classe ``Drapeau`` :
+
+    .. code-block:: java
+
+        /**
+         * Une classe simple avec un objet contenant un booleen
+         */
+
+        public static class Drapeau {
+            private boolean drapeau; // la valeur du drapeau
+
+            // Constructeur
+            /**
+             * @pre : -
+             * @post : un objet de type Drapeau est cree et
+             *            represente le booleen passe en argument
+             */
+            public Drapeau(boolean b) {
+                drapeau = b;
+            }
+
+            /**
+             * @pre -
+             * @post le drapeau vaut b
+             */
+            public void set(boolean b) {
+                drapeau = b;
+            }
+
+            /**
+             * @pre -
+             * @post retourne la valeur du drapeau
+             */
+            public boolean get() {
+                return drapeau;
+            }
+
+            /**
+             *    @pre     -
+             *    @post     Retourne true si d.get() == this.get().
+             *            Retourne false sinon
+             */
+            public boolean same(Drapeau d){
+                // À implémenter
+            }
+        }
+
+    Aidez cet étudiant en détresse et implémentez la méthode ``same`` dont les spécifications sont fournies ci-dessus. Pensez à gérer le cas où ``d == null``, car les préconditions ne font aucune supposition.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: 'Mission 6 : Question de démarrage 3 : Drapeau.same()'
+network_grading: false
+order: 108
+problems:
+    q1:
+        type: code
+        header: Implémentez ici le corps de la méthode ``public boolean same(Drapeau
+            d)``
+        name: La méthode same()
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

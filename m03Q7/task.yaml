@@ -1,0 +1,35 @@
+accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
+author: Ludovic Taffin, Olivier Martin
+context: |-
+    En mathématiques, un nombre entier est un `carré parfait <https://fr.wikipedia.org/wiki/Carré_parfait>`_ si il est le carré d'un autre nombre entier.
+
+    Ecrivez la méthode ``carparf`` dont les spécifications sont (``x`` est un entier) :
+
+    .. code-block :: java
+
+       /*
+        * @pre -
+        * @post retourne true si l'entier x est
+        * un carré parfait, false sinon
+        */
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '20'
+    memory: '100'
+name: 'Mission 3 : Q** Carré parfait'
+network_grading: false
+order: 55
+problems:
+    q1:
+        header: Ecrivez ici la méthode carparf
+        language: java
+        name: ''
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

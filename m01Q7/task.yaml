@@ -1,0 +1,38 @@
+accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
+author: François MICHEL & Ludovic TAFFIN
+context: |+
+    On vous demande d\'écrire un programme permettant de calculer la somme des entiers pairs entre 1 et ``n`` (inclus).
+
+    *Exemple* :  pour ``n=5`` votre programme retourner 6 (2+4)
+
+    Pour vous aider dans cette tâche, il vous est possible d'utiliser le symbole ``%`` qui calcule un modulo.
+
+    Votre code utilisera la variable ``n`` et placera son résultat dans la variable ``sum``.
+
+    .. code-block:: java
+
+        int n = // n peut prendre n'importe quelle valeur supérieure à zéro
+        int sum = 0; // sum est la variable dans laquelle vous devez écrire le résultat final
+
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '200'
+name: 'Mission 1 : Question supplémentaire : Somme d''entiers pairs'
+network_grading: false
+order: 18
+problems:
+    q1:
+        type: code
+        name: Somme des entiers pairs entre 1 et n
+        language: Java
+        header: 'Écrivez ici le bout de programme permettant de calculer la somme
+            des entiers pairs entre 0 et n :'
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

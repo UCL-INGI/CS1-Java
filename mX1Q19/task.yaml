@@ -1,0 +1,56 @@
+accessible: false
+author: Ludovic Taffin
+context: 'Créer un programme permettant de calculer des fonctions mathématiques. Vous
+    ne pouvez pas utiliser les fonctions mathématiques natives de Java. '
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: 'Mission 1 : Question supplémentaire : Fonctions mathématiques'
+network_grading: false
+order: 12
+problems:
+    q1:
+        header: |-
+            .. code-block:: java
+
+                double number; // le nombre à évaluer
+                double abs_number; // la valeur absolue du nombre
+        type: code
+        name: Fonction abs - donne la valeur absolue d'un nombre entier
+        language: java
+    q2:
+        language: java
+        type: code
+        header: |-
+            .. code-block:: java
+
+                double number; // le nombre à évaluer
+                int ceil_number; // l'entier supérieur du nombre
+        name: Fonction ceil - retourne l'entier supérieur d'un nombre
+    q3:
+        type: code
+        name: Fonction round - retourne la valeur arrondie d'un nombre
+        header: |-
+            .. code-block:: java
+
+                double number; // le nombre à évaluer
+                int round_number; // l'entier arrondi du nombre
+        language: java
+    q4:
+        type: code
+        name: Fonction floor - retourne l'entier inférieur d'un nombre
+        header: |-
+            .. code-block:: java
+
+                double number; // le nombre à évaluer
+                int floor_number; // l'entier inférieur du nombre
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

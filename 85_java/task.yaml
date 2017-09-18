@@ -1,0 +1,39 @@
+accessible: false
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          On souhaite compter le nombre d'entiers positifs compris entre deux bornes a et b, non incluses.
+        </p>
+        <p>
+          Vous devez définir la méthode <code>countPosIntBetween</code> qui compte le nombre d'entiers compris entre les deux paramètres entiers a et b, non inclus.
+        </p>
+        <p>
+          Par exemple, le nombre d'entiers positifs compris entre -1 et 2, bornes non incluses, sera égal à 2.
+        </p>
+
+environment: pythia0compat
+groups: false
+limits:
+    memory: '32'
+    output: '5210'
+    time: '30'
+name: 'Mission 3: Exercice complémentaire 1'
+network_grading: false
+order: 57
+problems:
+    q1:
+        name: ''
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le corps de la méthode <code>countPosIntBetween</code> dont la spécification est donnée dans l'énoncé.
+                </p>public static int countPosIntBetween (int a, int b)
+
+        language: java
+        type: code
+responseIsHTML: true
+weight: 1.0

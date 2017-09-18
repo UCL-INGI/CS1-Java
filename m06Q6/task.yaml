@@ -1,0 +1,78 @@
+accessible: 2016-11-04 11:45:00/2017-09-20 16:00:00
+author: Ludovic TAFFIN
+context: |-
+    Considérons la classe ``Fraction`` qui permet de représenter une fraction. Le squelette du code de cette classe est le suivant :
+
+    .. code-block:: java
+
+
+         /**
+          * Une classe représentant une fraction
+          *
+          * @author O. Bonaventure
+          * @version Oct. 2016
+          */
+         public class Fraction{
+             private int num; // numerateur
+             private int den; // denominateur
+
+             /**
+              * @pre num>=0, den>0
+              * @post construit la fraction num/den
+              */
+             public Fraction(int num, int den){
+                 //code non fourni
+             }
+
+             /*
+              * @pre -
+              * @post retourne le dénominateur de la fraction
+              */
+             public int getDen(){
+                 //code non fourni
+             }
+
+             /*
+              * @pre -
+              * @post retourne le numérateur de la fraction
+              */
+             public int getNum(){
+                 //code non fourni
+             }
+             /*
+              * @pre -
+              * @post retourne true si la valeur numérique de la fraction est égale à une valeur entière
+              */
+             //Code à compléter
+
+     }
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    memory: '200'
+    output: '1'
+name: 'Mission 6 : Q* entier'
+network_grading: false
+order: 115
+problems:
+    q1:
+        type: code
+        header: |-
+            Écrivez ici la méthode ``entier`` (signature comprise) dont les spécifications sont:
+
+            .. code-block:: java
+
+                 /*
+                  * @pre -
+                  * @post retourne true si la valeur numérique de la
+                  *       fraction est égale à une valeur entière
+                  */
+        name: entier
+        language: Java
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0
