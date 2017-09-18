@@ -9,7 +9,6 @@ context: |-
          ∗ @post retourne true lorsque n est un nombre entier impair et false sinon.
          ∗ /
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '20'

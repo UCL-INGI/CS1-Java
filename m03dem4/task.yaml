@@ -35,7 +35,6 @@ context: |+
           XXXXX
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

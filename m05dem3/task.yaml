@@ -13,7 +13,6 @@ context: |-
          */
         public static int[][] unite(int n)
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

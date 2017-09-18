@@ -24,7 +24,6 @@ context: "============================\nMission 6. Classes et Objets\n==========
   .. |jn5.4.3| replace:: `5.4.3 : Example: A Simple Card Game`\n\n.. _TextIO : http://math.hws.edu/eck/cs124/javanotes6/source/TextIO.java\n\
   .. |TextIO| replace:: ``TextIO``\n"
 environment: mcq
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 6: QCM'

@@ -31,7 +31,6 @@ context: "=========================\nMission 1 : Mise en Route\n================
   .. |jn3| replace:: `3 : Programming in the Small II: Control`\n\n.. _jn3.1: http://math.hws.edu/javanotes/c3/s1.html\n\
   .. |jn3.1| replace:: `3.1 : Blocks, Loops, and Branches`\n"
 environment: mcq
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 1: QCM'

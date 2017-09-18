@@ -2,7 +2,6 @@ author: Ludovic Taffin
 context: 'Créer un programme permettant de calculer des fonctions mathématiques. Vous
     ne pouvez pas utiliser les fonctions mathématiques natives de Java. '
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

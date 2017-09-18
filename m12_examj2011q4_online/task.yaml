@@ -12,7 +12,6 @@ context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. 
   \ sinon.\n    */\n       public boolean addProcess(Process p)\n    {\n        /***\
   \ VOTRE REPONSE ***/\n    }"
 environment: java7
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Examen juin 2011 online : Question 4'

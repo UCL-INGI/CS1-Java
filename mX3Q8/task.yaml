@@ -4,7 +4,6 @@ context: |-
     On passe a,b et c en paramètre de votre méthode.
     La méthode s'appelle eqsecdeg1 pour la première partie et eqsecdeg2 pour la seconde.
 environment: java7
-evaluate: best
 groups: false
 limits:
     output: '2'

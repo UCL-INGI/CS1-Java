@@ -17,7 +17,6 @@ context: |+
         String etat; // état de la personne (mince, normal, embonpoint, obèse)
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

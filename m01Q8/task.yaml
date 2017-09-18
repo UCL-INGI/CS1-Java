@@ -14,7 +14,6 @@ context: |+
         int mediane; // La médiane à déterminer
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

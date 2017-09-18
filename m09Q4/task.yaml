@@ -14,7 +14,6 @@ context: |-
 
     On vous demande d'utiliser un ``BufferedReader`` pour lire le fichier
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

@@ -19,7 +19,6 @@ context: |+
         int largeur; // la largeur du H
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     memory: '200'

@@ -92,7 +92,6 @@ context: |+
         System.out.println(q.getA() +  ", " + q.getB());    // affiche "-10, 2"
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

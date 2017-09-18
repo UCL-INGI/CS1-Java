@@ -37,7 +37,6 @@ context: |-
             // Insérez le code manquant
       }
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

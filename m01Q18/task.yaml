@@ -7,7 +7,6 @@ context: |-
         int annee;  // l'année à vérifier
         int siecle; // le siècle de l'année
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

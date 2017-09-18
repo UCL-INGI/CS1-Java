@@ -10,7 +10,6 @@ context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. 
   \ n processus\n    * et avec une capacité de stockage égale à storage\n    */\n\n\
   \    /*** VOTRE REPONSE ***/\n"
 environment: java7
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Examen Juin 2011 online : Question 2'

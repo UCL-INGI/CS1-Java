@@ -9,7 +9,6 @@ context: |-
         int b;
         int c;
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

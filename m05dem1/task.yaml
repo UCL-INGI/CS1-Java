@@ -3,7 +3,6 @@ context: |-
     Répondez aux questions simples suivantes au sujet de la syntaxe des tableaux. Vous *devez* respecter les noms de variables suggérés.
     (Nous utilisons le type ``int`` pour les entiers et le type ``double`` pour les réels.)
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

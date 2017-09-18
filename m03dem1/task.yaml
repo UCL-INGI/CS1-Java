@@ -5,7 +5,6 @@ context: "Considérez les déclaratons suivantes :\n\n.. code-block ::\n\n    do
   \ retrouve dans la variable *wallet_i* et que d'autre part la valeur de la variable\
   \ *euro* se retrouve dans la variable *wallet_d*.\n"
 environment: mcq
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 3 : Question de Démarrage 1: Conversions'

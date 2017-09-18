@@ -7,7 +7,6 @@ context: |+
         int hauteur; // la hauteur du X
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     memory: '200'

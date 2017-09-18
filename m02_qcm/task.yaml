@@ -22,7 +22,6 @@ context: "============================\nMission 2. Les bases de Java\n==========
   .. |jn3.4.4| replace:: `3.4.4 : Enums and for-each Loops`\n\n.. _jn3.5 : http://math.hws.edu/javanotes/c3/s5.html\n\
   .. |jn3.5| replace:: `3.5 : The if Statement`\n"
 environment: mcq
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 2: QCM'

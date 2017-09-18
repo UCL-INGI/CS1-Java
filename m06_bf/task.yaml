@@ -43,7 +43,6 @@ context: |-
          */
         public void augmente(float pourcentage);
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

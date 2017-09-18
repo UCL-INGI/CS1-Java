@@ -31,7 +31,6 @@ context: "===================\nMission 5. Tableaux\n===================\n\n\nCes
   .. |jn8.4| replace:: `8.4 : Assertions and Annotations`\n\n.. _jn8.4.1 : http://math.hws.edu/javanotes/c8/s4.html#robustness.4.1\n\
   .. |jn8.4.1| replace:: `8.4.1 : Assertions`\n"
 environment: mcq
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 5: QCM'

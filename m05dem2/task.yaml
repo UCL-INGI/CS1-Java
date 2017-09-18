@@ -24,7 +24,6 @@ context: |-
     Il teste sa méthode sur les deux tableaux ci-dessus et conclut que sa
     méthode est correcte. Qu'en pensez-vous ?
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

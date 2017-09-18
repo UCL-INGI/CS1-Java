@@ -34,7 +34,6 @@ context: "================================\nMission 11. Structures chaînées\n=
   .. |jn9.3.1| replace:: `9.3.1 : Stacks`\n\n.. _jn9.3.2 : http://math.hws.edu/javanotes/c9/s3.html#recursion.3.2\n\
   .. |jn9.3.2| replace:: `9.3.2 : Queues`\n"
 environment: mcq
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Mission 11: QCM'

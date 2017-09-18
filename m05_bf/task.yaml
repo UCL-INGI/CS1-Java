@@ -32,7 +32,6 @@ context: |-
 
     N'oubliez pas d'éviter la duplication de code, et d'éventuellement réutiliser l'une des deux méthodes dans l'autre.
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

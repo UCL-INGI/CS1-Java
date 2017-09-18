@@ -81,7 +81,6 @@ context: |
 
     Implémentez les deux alternatives de la méthode ``set()`` de la classe ``Drapeau`` en vous référant aux spécifications énoncées dans l'interface ``DrapeauIF``.
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

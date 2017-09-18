@@ -7,7 +7,6 @@ context: |+
         </p>
 
 environment: pythia0compat
-evaluate: best
 groups: false
 limits:
     time: '30'

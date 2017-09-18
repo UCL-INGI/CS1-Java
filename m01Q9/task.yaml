@@ -9,7 +9,6 @@ context: |-
         int a; // borne inférieure de l'intervalle
         int b; // borne supérieure de l'intervalle
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

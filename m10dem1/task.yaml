@@ -75,7 +75,6 @@ context: |-
 
         La chaîne de caractères passée à parseInt() ne contient pas que des chiffres.
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

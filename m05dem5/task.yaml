@@ -7,7 +7,6 @@ context: |+
         public static void main(String[] args)
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     memory: '100'

@@ -11,7 +11,6 @@ context: |-
         int seconde; // le nombre de secondes
         int total = 0; // le nombre de secondes depuis minuit
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

@@ -4,7 +4,6 @@ context: |
     Revision
     ========
 environment: mcq
-evaluate: best
 groups: false
 limits:
     output: '2'

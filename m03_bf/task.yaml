@@ -30,7 +30,6 @@ context: |
     - ``chiffresPairs(555)`` doit retourner ``false``
     - ``chiffresPairs(-555)`` doit retourner ``false``
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     time: '30'

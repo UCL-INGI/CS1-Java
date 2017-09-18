@@ -15,7 +15,6 @@ context: "On vous fournit une classe ``Matrix`` contenant uniquement une méthod
   \           //A compléter\n        }\n    }\n\n\n\n\nOn vous demande d'utiliser\
   \ ``BufferedReader`` pour répondre à cette question."
 environment: java7
-evaluate: best
 groups: false
 limits: {memory: '200', output: '1', time: '30'}
 name: 'Mission 10: Q* Matrix'

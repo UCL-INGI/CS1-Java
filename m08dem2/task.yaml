@@ -13,7 +13,6 @@ context: |-
             // À implémenter
         }
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

@@ -14,7 +14,6 @@ context: |+
         int sum = 0; // sum est la variable dans laquelle vous devez écrire le résultat final
 
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

@@ -13,7 +13,6 @@ context: |-
         ∗ @post affiche le maximum entre les nombres entiers a et b
         ∗ /
 environment: java7mockito
-evaluate: best
 groups: false
 limits:
     output: '2'

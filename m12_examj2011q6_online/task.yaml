@@ -10,7 +10,6 @@ context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. 
   \    *          sinon elle est inchangée.\n    *        Retourne true si comp a\
   \ été retiré, false sinon.\n    */\n\n    /*** VOTRE REPONSE ***/"
 environment: java7
-evaluate: best
 groups: false
 limits: {memory: '100', output: '2', time: '30'}
 name: 'Examen juin 2011 online : Question 6'
