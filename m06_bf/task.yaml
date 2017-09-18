@@ -1,4 +1,3 @@
-accessible: 2016-11-05 11:45:00/2017-09-20 16:00:00
 author: Virginie Van den Schrieck
 context: |-
     Écrivez une classe complète ``Employe`` dont les instances représentent un employé d’entreprise. Un employé est caractérisé par son nom (un string) et son salaire (un entier positif). Il doit être possible de créer un nouvel employé avec un nom et un salaire et d’effectuer les opérations suivantes sur un objet Employe :

@@ -1,4 +1,3 @@
-accessible: 2016-12-01 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN
 context: |-
     Dans la classe ``Student``, implémentez le second ``constructeur`` qui prend comme argument un ``String``.

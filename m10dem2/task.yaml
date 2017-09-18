@@ -1,4 +1,3 @@
-accessible: 2016-11-29 09:30:00/2017-09-20 16:00:00
 author: François MICHEL, Brandon NAITALI
 context: |-
     Écrivez le corps de la méthode ``write``, qui prend en argument un entier ``n`` et un nom de fichier ``filename`` et qui écrit les ``n`` premiers entiers strictement positifs dans un fichier dont le nom est contenu dans ``filename``, en affichant un seul nombre par ligne. Voici la signature de la méthode ``write`` :

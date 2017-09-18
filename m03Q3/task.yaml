@@ -1,4 +1,3 @@
-accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
 author: Ludovic Taffin, Olivier Martin
 context: |-
     Ecrivez la signature et le corps de la méthode ``max`` qui prend comme  paramètres les entiers ``a``, ``b`` , ``c`` qui retourne le maximum de 3 nombres et dont la spécification est:

@@ -1,4 +1,3 @@
-accessible: 2016-12-01 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Brandon NAITALI
 context: |-
     La classe AList contient une implémentation simple d'un ArrayList sur base d'un tableau dont la taille augmente au fur et à mesure que l'on modifie la liste. Ecrivez le code des principales méthodes de cette classe:

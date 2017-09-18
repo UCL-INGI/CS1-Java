@@ -1,4 +1,3 @@
-accessible: false
 author: 'Clémentine Munyabarenzi (ressource : syllabus d''exercices LSINF1101)'
 context: |
     Ecrivez un programme qui permet de donner, lorsqu'elles sont réelles, les solutions de l'`équation du second degré <https://fr.wikipedia.org/wiki/Équation_du_second_degré>`_

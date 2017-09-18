@@ -1,4 +1,3 @@
-accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
 author: Ludovic Taffin
 context: |
     On vous demande d'écrire la méthode ``surface`` qui permet de calculer la surface d'un rectangle. On supposera que la ``longueur`` et la ``largeur`` qui sont passées en arguments sont des entiers positifs.

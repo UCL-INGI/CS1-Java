@@ -1,4 +1,3 @@
-accessible: 2016-10-20 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Olivier Martin
 context: |-
     Ecrivez la méthode ``double[] initVector(int n, double i)`` qui retourne un vecteur de n éléments tous initialisés à la valeur i.

@@ -1,4 +1,3 @@
-accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
 author: Clémentine Munyabarenzi, Olivier Martin
 context: |-
     Ecrivez la signature et le corps d'une méthode baptisée ``impair`` qui prend comme argument un entier **n** positif et retourne ``true`` si **n** est impair et ``false`` sinon. Pour rappel, si **n** est un entier positif ``n % 2`` vaut le reste de la division entière de **n** par 2. La spécification de cette méthode est:

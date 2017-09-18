@@ -1,4 +1,3 @@
-accessible: 2016-11-25 11:45:00/2017-09-20 16:00:00
 author: Sébastien Combéfis, Naitali Brandon
 context: |
     Vous devez implémenter une méthode ``getMax`` dont le but est de retrouver, dans un fichier, la ligne contenant le nombre flottant avec la plus grande valeur. Si un tel nombre n'existe pas, la méthode doit renvoyer -∞. En cas d'erreur lors de la lecture du fichier, le programme doit se quitter et afficher exactement ``ERREUR`` sur ``System.err``.

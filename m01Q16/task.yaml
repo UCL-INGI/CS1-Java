@@ -1,4 +1,3 @@
-accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
 author: Ludovic Taffin, Olivier Martin
 context: |-
     Dans un programme gérant une horloge, vous devez calculer le nombre de secondes qui se sont écoulées depuis minuit. Placer le résultat de votre calcul dans la variable ``total``.

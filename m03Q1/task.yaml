@@ -1,4 +1,3 @@
-accessible: 2016-10-06 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN
 context: |+
     On vous demande d'écrire une méthode permettant de dire si un nombre se trouve dans l'intervalle fermé :math:`[a,b]` dont les spécifications sont les suivantes:

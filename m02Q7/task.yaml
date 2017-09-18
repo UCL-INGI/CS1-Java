@@ -1,4 +1,3 @@
-accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
 author: Ludovic Taffin
 context: |
     Vous avez aujourd'hui ``base`` € sur votre livret d'épargne. Si vous le laissez ``x`` années à un taux d'intérêt supposé fixe de ``y`` pourcents, quel sera le solde de votre livret après ces ``x`` années ?

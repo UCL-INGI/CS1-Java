@@ -1,4 +1,3 @@
-accessible: false
 author: Lucas Ody & Tom Rousseaux
 context: |-
     Utilisez une boucle pour réaliser une division euclidienne! le diviseur et dividende vous sont donnés, vous devez trouver le quotient et le reste.

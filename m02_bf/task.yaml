@@ -1,4 +1,3 @@
-accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
 author: Sébastien Combéfis, Olivier Martin
 context: |-
     Soit un naturel non-nul :math:`x`, le naturel non-nul :math:`d` est un **diviseur propre** de :math:`x` s'il est compris entre :math:`x` (exclus) et qu'il divise :math:`x`.

@@ -8,7 +8,6 @@ context: |+
 
 responseIsHTML: true
 order: 162
-accessible: false
 name: 'Mission 9 : Phase de réalisation'
 problems:
     word:

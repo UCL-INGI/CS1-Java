@@ -1,4 +1,3 @@
-accessible: 2016-09-26 18:15:00/2017-09-27 16:00:00
 author: Sébastien Combéfis, Olivier Martin
 context: |-
     La `suite de Syracuse <https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse>`_ est une suite de naturels, définie de la manière suivante. Le premier naturel de la suite est n'importe quel naturel non-nul, que nous noterons :math:`s_0`. On peut ensuite calculer les éléments suivants de la suite en appliquant la formule suivante :

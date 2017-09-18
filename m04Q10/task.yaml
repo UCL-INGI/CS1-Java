@@ -1,4 +1,3 @@
-accessible: 2016-10-13 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Brandon NAITALI
 context: |+
     Ecrivez la méthode ``int d2i(String s)`` qui retourne la représentation entière d'un nombre entier fourni sous la forme d'un String. Par exemple, "012345" doit renvoyer 1235. N'utilisez pas de méthode de parsing comme ``parseInt`` ou ``parseDouble``.

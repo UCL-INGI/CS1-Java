@@ -1,4 +1,3 @@
-accessible: 2016-12-14 08:00:00/2017-09-20 16:00:00
 author: 'Munyabarenzi Clémentine Zaninka (ressource : Syllabus d''exercices LSINF1101)'
 context: |+
     Dans la phase de réalisation, vous devez utiliser des méthodes provenant du framework de test **JUnit** afin de tester votre implémentation dans BlueJ. L'objectif de cet exercice est d'utiliser les méthodes de JUnit pour vérifier le bon fonctionnement de la classe ``DList``. ci-après :

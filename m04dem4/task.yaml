@@ -1,4 +1,3 @@
-accessible: 2016-10-10 17:15:00/2017-09-20 16:00:00
 author: François MICHEL, Brandon NAITALI
 context: |+
     Il est parfois utile de s'assurer qu'un String est en majuscule. La méthode ``Character.toUpperCase()`` de la classe ``Character`` de l'API Java permet de récupérer la majuscule d'un caractère qu'on lui passe en argument. En utilisant cette méthode, implémentez la méthode ``toUpper`` qui retourne un ``String`` identique à celui passé en argument, mais en majuscule. Attention à ne pas utiliser une autre méthode que ``Character.toUpperCase()``.

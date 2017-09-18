@@ -1,4 +1,3 @@
-accessible: 2016-10-10 17:15:00/2017-09-20 16:00:00
 author: François MICHEL
 context: |-
     Écrivez le corps de la méthode de la méthode ``containsChar()`` qui prend deux arguments, ``s1`` et ``s2``, et qui vérifie si tous les caractères présents dans ``s1`` sont aussi présents dans ``s2``. Si c'est le cas, la méthode retourne ``true``. Le cas des ``String`` vides ne doit pas être géré.

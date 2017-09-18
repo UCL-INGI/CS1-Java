@@ -1,4 +1,3 @@
-accessible: 2016-12-15 14:00:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Olivier Martin
 context: |-
     Une queue est une structure de donnée qui dispose d'une entrée et d'une sortie. Les objets sont ajoutés à la queue via son entrée et sont retirés via sa sortie. La queue garantit un fonctionnement First-In First-Out (FIFO, premier entré, premier sorti)

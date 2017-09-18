@@ -1,4 +1,3 @@
-accessible: 2016-10-10 17:15:00/2017-09-20 16:00:00
 author: François MICHEL, Brandon NAITALI
 context: |
     Comme dit précédemment, le type ``String`` est un type quelque peu particulier en Java. Pour faire des opérations sur des ``String``, on a très souvent besoin de leur longueur. En vous référant à l'API Java de la classe ``String`` (http://docs.oracle.com/javase/7/docs/api/java/lang/String.html), écrivez en une seule ligne le corps de la méthode ``showLength()``, qui affiche sur la sortie standard la longueur de l'argument ``s``. La méthode doit être implémenté de sorte que lorsqu'on l'appelle trois fois de suite avec comme argument ``"Popol"``, ``"Jeanjean"`` et ``"abc"``, de longueurs 5, 8 et 3, on retrouve la sortie standard dans cet état :

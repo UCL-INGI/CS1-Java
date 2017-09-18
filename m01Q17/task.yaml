@@ -1,4 +1,3 @@
-accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
 author: Ludovic Taffin, Olivier Martin
 context: |-
     Ecrivez un programme qui place la valeur ``true`` dans la variable ``resultat`` si ``annee`` correspond à une année bissextile et ``false`` sinon.

@@ -1,4 +1,3 @@
-accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
 author: François MICHEL & Ludovic TAFFIN & Olivier Martin
 context: |+
     Considérons un programme utilisant trois variables entières : ``int a``, ``int b``, ``int c``.

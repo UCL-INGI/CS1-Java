@@ -8,7 +8,6 @@ context: |+
 
 responseIsHTML: true
 order: 138
-accessible: false
 name: 'Mission 7 : Phase de réalisation'
 problems:
     ArticleReparation:

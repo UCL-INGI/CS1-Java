@@ -1,4 +1,3 @@
-accessible: 2016-10-20 12:45:00/2017-09-20 16:00:00
 author: Olivier Martin
 context: |-
     Dans cette question de bilan final, on va s'intéresser à l'écriture de méthodes dont le but est de modifier les éléments d'un tableau passé en paramètre. Le but de ces méthodes est de déplacer tous les éléments du tableau d'un certain nombre de cases vers la droite.

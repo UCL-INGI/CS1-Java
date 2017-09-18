@@ -1,4 +1,3 @@
-accessible: 2016-10-20 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Olivier Martin
 context: |-
     Ecrivez la méthode ``double mean(double[] v)`` qui retourne la moyenne arithmétique du tableau de réels v.

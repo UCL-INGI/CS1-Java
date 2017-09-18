@@ -1,4 +1,3 @@
-accessible: 2016-09-26 10:45:00/2017-09-26 16:00:00
 author: François MICHEL, Brandon NAITALI
 context: |
     Les nombres premiers sont un concept important en mathématiques. Un nombre premier est un nombre entier qui n'a pour diviseurs que 1 et lui-même. Notez que 0 et 1 ne sont pas des nombres premiers. En utilisant une boucle for, écrivez un petit bout de code permettant de vérifier si le nombre n est premier ou non. Vous devez stocker votre réponse dans la variable booléenne ``prime`` une fois la boucle terminée, déjà initialisée à ``true`` pour vous. Une fois votre programme terminé, prime vaudra ``true`` si n est premier, et ``false`` si n n'est pas premier.

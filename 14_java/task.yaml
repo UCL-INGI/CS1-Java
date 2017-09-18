@@ -49,7 +49,6 @@ context: |+
 
 responseIsHTML: true
 order: 179
-accessible: false
 name: 'Mission 11: Structures chainées'
 problems:
     q1:

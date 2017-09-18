@@ -1,4 +1,3 @@
-accessible: 2016-11-15 09:30:00/2017-09-20 16:00:00
 author: François MICHEL
 context: |
     Les interfaces sont très pratiques en termes de conception orientée objet et permettent d'avoir une vision globale cohérente du fonctionnement d'un programme, de ses différents acteurs et de la manière dont ils interagissent. Il est donc important de savoir implémenter des interfaces en respectant leurs spécifications. Voici l'interface ``DrapeauIF``:

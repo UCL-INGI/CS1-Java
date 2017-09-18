@@ -1,4 +1,3 @@
-accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Brandon NAITALI
 context: |+
     Dessiner la lettre H en utilisant de l'ASCII-art avec le caractère ``*``. Votre programme reçoit comme entrée la hauteur de la lettre à dessiner (supposée impaire) et sa largeur. N'affichez pas d'espaces inutiles à droite de votre lettre.

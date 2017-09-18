@@ -1,4 +1,3 @@
-accessible: 2016-09-23 10:45:00/2017-09-26 16:00:00
 author: Lucas Ody & Tom Rousseaux
 context: |
     Le `OU exclusif <https://fr.wikipedia.org/wiki/Fonction_OU_exclusif>`_ (XOR en anglais) est un opérateur logique à l'instar du "et" et du "ou". Il vous est demandé d'implémenter ce XOR, sachant que, pour ``a`` et ``b`` deux booléens, le résultat de ``a XOR b`` est ``true`` si un et un seul des booléens est ``true``, et ``false`` sinon.

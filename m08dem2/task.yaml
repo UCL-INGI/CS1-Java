@@ -1,4 +1,3 @@
-accessible: 2016-11-15 09:30:00/2017-09-20 16:00:00
 author: François MICHEL
 context: |-
     En Java, concaténer des ``String`` avec l'opérateur ``+`` implique la création et la desctruction successive d'un grand nombre de ``String``. On utilise en général un ``StringBuffer`` (http://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html) pour éviter ce problème. En utilisant l'API de la classe ``StringBuffer``, implémentez le corps de la méthode ``repeat()`` qui permet de répéter un ``String`` un certain nombre de fois. Voici la signature de cette méthode :

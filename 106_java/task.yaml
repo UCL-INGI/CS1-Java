@@ -40,7 +40,6 @@ context: |+
 
 responseIsHTML: true
 order: 121
-accessible: false
 name: 'Mission 6 : Phase de réalisation'
 problems:
     temps:
