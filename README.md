@@ -4,5 +4,6 @@ Ce répertoire contient un ensemble de tâche INGInious pouvant être données �
 
 Les tâches viennent initialement des cours LSINF1101 et LFSAB1401 donné à l'Université Catholique de Louvain. Le support de cours utilisé est le livre [Introduction to programming using Java - David J. Eck](http://math.hws.edu/javanotes/index.html).
 
-##Documentation et contribuer
+## Documentation et contribuer
+
 Pour savoir comment contribuer et comment les tâches ont été faîtes, voir le [wiki](https://github.com/UCL-INGI/CS1-Java/wiki).
