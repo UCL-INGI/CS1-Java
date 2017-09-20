@@ -1,14 +1,14 @@
-package student;
+package src;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+import StudentCode.*;
 /**
  * @author ogoletti
  * @version 30/11/16
  */
-public class Matrix {
+public class Correction {
     /**
      * @pre     filename != null
      * @post    lit dans le fichier dont le nom est fileName le contenu d'une matrice mxn

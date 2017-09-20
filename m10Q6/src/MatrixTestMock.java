@@ -1,4 +1,4 @@
-package student;
+package src;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,17 +16,22 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.*;
 
-
+import StudentCode.*;
+import static student.Translations.Translator._;
+import java.text.MessageFormat;
 /**
  * @author ogoletti
  * @version 01/12/16
  */
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(MatrixStu.class)
+@PrepareForTest(Etudiant.class)
 public class MatrixTestMock {
 
     public static final String FILENAME = "file.txt";
-
+    String msgError = _("génère une IOException");
+    String msgException = _("Lors de l''exécution de votre méthode loadMatrix avec un fichier qui {0}, votre méthode a lancé une exception.");
+    String msgNull =  _("Lors de l''exécution de votre méthode loadMatrix avec un fichier qui {0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est null. ");
+    
     @Test
     public void testLoadMatrixIOExceptionInReadLine() {
         try {
@@ -43,20 +48,19 @@ public class MatrixTestMock {
             String msg, msge;
             double[][] r = {{}};
 
-            String msgError = "génère une IOExpetion";
-            msge = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a lancé une exception ";
+            msge = MessageFormat.format(msgException, msgError);
             try {
-                r = MatrixStu.loadMatrix(FILENAME);
+                r = Etudiant.loadMatrix(FILENAME);
             } catch (Exception e) {
                 fail(msge + e.toString() + " : " + e.getMessage());
             }
-            msg = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a retourné le tableau " + MatrixTest.matrixToString(r) + " alors que le résultat attendu est null";
+            msg = MessageFormat.format(msgNull, msgError, MatrixTest.matrixToString(r));
             assertNull(msg, r);
 
             try {
                 verify(mockedBR, times(1)).close();
             } catch (MockitoAssertionError e) {
-                throw new AssertionError("Lors de l'exécution de votre méthode loadVector avec une IOException lancée par le readLine() du BufferedReader, le fichier n'a pas été fermé correctement.", e);
+                throw new AssertionError(_("Lors de l'exécution de votre méthode loadVector avec une IOException lancée par le readLine() du BufferedReader, le fichier n'a pas été fermé correctement."), e);
             }
         } catch (Exception e) {
         }
@@ -70,15 +74,13 @@ public class MatrixTestMock {
 
             String msg, msge;
             double[][] r = {{}};
-
-            String msgError = "génère une IOExpetion";
-            msge = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a lancé une exception ";
+            msge = MessageFormat.format(msgException, msgError);
             try {
-                r = MatrixStu.loadMatrix(FILENAME);
+                r = Etudiant.loadMatrix(FILENAME);
             } catch (Exception e) {
                 fail(msge + e.toString() + " : " + e.getMessage());
             }
-            msg = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a retourné le tableau " + MatrixTest.matrixToString(r) + " alors que le résultat attendu est null";
+            msg = MessageFormat.format(msgNull, msgError, MatrixTest.matrixToString(r));
             assertNull(msg, r);
 
         } catch (Exception e) {
@@ -101,15 +103,13 @@ public class MatrixTestMock {
 
             String msg, msge;
             double[][] r = {{}};
-
-            String msgError = "génère une IOExpetion";
-            msge = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a lancé une exception ";
+            msge = MessageFormat.format(msgException, msgError);
             try {
-                r = MatrixStu.loadMatrix(FILENAME);
+                r = Etudiant.loadMatrix(FILENAME);
             } catch (Exception e) {
                 fail(msge + e.toString() + " : " + e.getMessage());
             }
-            msg = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a retourné le tableau " + MatrixTest.matrixToString(r) + " alors que le résultat attendu est null";
+            msg = MessageFormat.format(msgNull, msgError, MatrixTest.matrixToString(r));
             assertNull(msg, r);
         } catch (Exception e) {
         }
@@ -122,14 +122,14 @@ public class MatrixTestMock {
             String msg, msge;
             double[][] r = {{}};
 
-            String msgError = "n'existe pas";
-            msge = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a lancé une exception ";
+            String msgError = _("n'existe pas");
+            msge = MessageFormat.format(msgException, msgError);
             try {
-                r = MatrixStu.loadMatrix(FILENAME);
+                r = Etudiant.loadMatrix(FILENAME);
             } catch (Exception e) {
                 fail(msge + e.toString() + " : " + e.getMessage());
             }
-            msg = "Lors de l'exécution de votre méthode loadMatrix avec un fichier qui " + msgError + ", votre méthode a retourné le tableau " + MatrixTest.matrixToString(r) + " alors que le résultat attendu est null";
+            msg = MessageFormat.format(msgNull, msgError, MatrixTest.matrixToString(r));
             assertNull(msg, r);
         } catch (Exception e) {
         }

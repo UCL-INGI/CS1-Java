@@ -1,24 +1,55 @@
+accessible: 2016-12-01 11:45:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN
-context: "On vous fournit une classe ``Matrix`` contenant uniquement une méthode ``loadMatrix``\
-  \ prenant en paramètre un ``String`` appelé filename.\nLa méthode à les spécifications\
-  \ suivantes:\n\n.. code-block:: java\n\n    import java.io.BufferedReader;\n   \
-  \ import java.io.FileReader;\n    import java.io.IOException;\n    import java.io.FileNotFoundException;\n\
-  \n    public class Matrix {\n        /**\n         * @pre     filename != null\n\
-  \         * @post    lit dans le fichier dont le nom est fileName le contenu d'une\
-  \ matrice mxn\n         *          le format du fichier est :\n         *      \
-  \    première ligne : l'entier m\n         *          deuxième ligne : l'entier\
-  \ n\n         *          lignes suivantes : une chaîne du format i,j val\n     \
-  \    *                             où 0<=i<m et 0<=j<n et val est un réel\n    \
-  \     *          En cas d'erreur d'entrée/sortie (exception, fichier non lisible,\n\
-  \         *          nombre incorrect d'éléments, mauvais format) retourne null\n\
-  \         */\n        public static double[][] loadMatrix(String filename) {\n \
-  \           //A compléter\n        }\n    }\n\n\n\n\nOn vous demande d'utiliser\
-  \ ``BufferedReader`` pour répondre à cette question."
-environment: java7
-limits: {memory: '200', output: '1', time: '30'}
+context: |-
+    On vous fournit une classe ``Matrix`` contenant uniquement une méthode ``loadMatrix`` prenant en paramètre un ``String`` appelé filename.
+    La méthode à les spécifications suivantes:
+
+    .. code-block:: java
+
+        import java.io.BufferedReader;
+        import java.io.FileReader;
+        import java.io.IOException;
+        import java.io.FileNotFoundException;
+
+        public class Matrix {
+            /**
+             * @pre     filename != null
+             * @post    lit dans le fichier dont le nom est fileName le contenu d'une matrice mxn
+             *          le format du fichier est :
+             *          première ligne : l'entier m
+             *          deuxième ligne : l'entier n
+             *          lignes suivantes : une chaîne du format i,j val
+             *                             où 0<=i<m et 0<=j<n et val est un réel
+             *          En cas d'erreur d'entrée/sortie (exception, fichier non lisible,
+             *          nombre incorrect d'éléments, mauvais format) retourne null
+             */
+            public static double[][] loadMatrix(String filename) {
+                //A compléter
+            }
+        }
+
+
+
+
+    On vous demande d'utiliser ``BufferedReader`` pour répondre à cette question.
+environment: java7mockito
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '1'
+    memory: '200'
 name: 'Mission 10: Q* Matrix'
 network_grading: false
 order: 173
 problems:
-  q1: {header: Ecrivez le corps de la méthode loadMatrix, language: Java, name: loadMatrix,
-    type: code}
+    q1:
+        type: code
+        language: Java
+        name: loadMatrix
+        header: Ecrivez le corps de la méthode loadMatrix
+stored_submissions: 0
+submission_limit:
+    amount: 10
+    period: 1
+weight: 1.0
