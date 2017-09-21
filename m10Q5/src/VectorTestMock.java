@@ -30,8 +30,8 @@ public class VectorTestMock {
 
     public static final String FILENAME = "file.txt";
     String msgError = _("génère une IOException");
-    String msgException = _("Lors de l'exécution de votre méthode loadVector avec un fichier qui {0}, votre méthode a lancé une exception ");
-    String msgNull =  _("Lors de l'exécution de votre méthode loadVector avec un fichier qui {0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est null");
+    String msgException = _("Lors de l''exécution de votre méthode loadVector avec un fichier qui {0}, votre méthode a lancé une exception ");
+    String msgNull =  _("Lors de l''exécution de votre méthode loadVector avec un fichier qui {0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est null. ");
     @Test
     public void testLoadVectorIOExceptionInReadLine() {
 
@@ -126,7 +126,7 @@ public class VectorTestMock {
             String msg, msge;
             double[] r = {};
 
-            String msgErrorExist = _("n'existe pas");
+            String msgErrorExist = _("n''existe pas");
             msge = MessageFormat.format(msgException, msgErrorExist);
             try {
                 r = Etudiant.loadVector(FILENAME);

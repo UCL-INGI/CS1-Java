@@ -1,4 +1,4 @@
-package student;
+package src;
 
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -14,6 +14,9 @@ import java.net.URL;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
+import StudentCode.*;
+import static student.Translations.Translator._;
+import java.text.MessageFormat;
 
 /**
  * @author ogoletti
@@ -84,15 +87,14 @@ public class MatrixTest extends TestCase {
 
         String filePath = filenameWithPath(filename);
         String fileToString = fileToString(filePath);
-        msge = "Lors de l'exécution de votre méthode loadMatrix avec comme argument un fichier contenant \n" + fileToString + ", votre méthode a lancé une exception ";
+        msge = MessageFormat.format(_("Lors de l''exécution de votre méthode loadMatrix avec comme argument un fichier contenant \n{0}, votre méthode a lancé une exception "), fileToString);
         try {
-            r = MatrixStu.loadMatrix(filePath);
+            r = Etudiant.loadMatrix(filePath);
             // r = Vector.loadVector("./student/" + file);
         } catch (Exception e) {
             fail(msge + e.getMessage());
         }
-        msg = "Lors de l'exécution de votre méthode loadMatrix avec comme argument un fichier contenant \n" + fileToString + ", votre méthode a retourné le tableau \n"
-                + matrixToString(r) + " alors que le résultat attendu est " + matrixToString(expectedMatrix);
+        msg = MessageFormat.format(_("Lors de l''exécution de votre méthode loadMatrix avec comme argument un fichier contenant \n{0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), fileToString, matrixToString(r), matrixToString(expectedMatrix));
         assertEquals(msg, matrixToString(expectedMatrix), matrixToString(r));
     }
 
