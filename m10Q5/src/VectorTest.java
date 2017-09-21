@@ -43,7 +43,7 @@ public class VectorTest extends TestCase {
         String msg, msge;
         double[] r = null;
 
-        msge = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector avec comme argument un fichier contenant \n{0}, votre méthode a lancé une exception "), vectorToString(expectedVector));
+        msge = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a lancé une exception "), vectorToString(expectedVector));
         try {
                     //System.err.println("??!!!??");
 
@@ -52,7 +52,7 @@ public class VectorTest extends TestCase {
             fail(msge + e.getMessage());
         }
 
-        msg = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector avec comme argument un fichier contenant \n{0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), vectorToString(expectedVector), Arrays.toString(r), Arrays.toString(expectedVector));
+        msg = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), vectorToString(expectedVector), Arrays.toString(r), Arrays.toString(expectedVector));
         assertTrue(msg, Arrays.equals(expectedVector, r));
     }
 
