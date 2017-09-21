@@ -30,8 +30,8 @@ public class VectorTestMock {
 
     public static final String FILENAME = "file.txt";
     String msgError = _("génère une IOException");
-    String msgException = _("Lors de l''exécution de votre méthode loadVector avec un fichier qui {0}, votre méthode a lancé une exception ");
-    String msgNull =  _("Lors de l''exécution de votre méthode loadVector avec un fichier qui {0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est null. ");
+    String msgException = _("Lors de l''exécution de votre méthode loadVector() avec un fichier qui {0}, votre méthode a lancé une exception ");
+    String msgNull =  _("Lors de l''exécution de votre méthode loadVector() avec un fichier qui {0}, votre méthode a retourné le tableau {1} alors que le résultat attendu est null. ");
     @Test
     public void testLoadVectorIOExceptionInReadLine() {
 
@@ -62,7 +62,7 @@ public class VectorTestMock {
             try {
                 verify(mockedBR, times(1)).close();
             } catch (MockitoAssertionError e) {
-                throw new AssertionError(_("Lors de l'exécution de votre méthode loadVector avec une IOException lancée par le readLine() du BufferedReader, le fichier n'a pas été fermé correctement."), e);
+                throw new AssertionError(_("Lors de l'exécution de votre méthode loadVector() avec une IOException lancée par le readLine() du BufferedReader, le fichier n'a pas été fermé correctement."), e);
             }
         } catch (Exception e) {
         }
