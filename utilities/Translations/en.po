@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-15 15:04+0200\n"
-"PO-Revision-Date: 2017-09-15 13:01+0000\n"
+"PO-Revision-Date: 2017-09-25 08:25+0000\n"
 "Last-Translator: Olivier MARTIN <olivier.martin@student.uclouvain.be>\n"
-"Language-Team: English <http://weblate.info.ucl.ac.be/projects/inginious/"
-"lfsab1401/en/>\n"
+"Language-Team: English "
+"<http://weblate.info.ucl.ac.be/projects/inginious/lfsab1401/en/>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,11 +28,12 @@ msgid "La limite de temps d'exécution de votre programme est dépassée"
 msgstr "The time limit for your program is exceeded"
 
 #: utilities/run.py:172 utilities/run.py:190
-#, fuzzy
 msgid ""
 "Il semble que vous ayiez fait des erreurs dans votre code…\n"
 "\n"
-msgstr "It seems that you made mistakes in your code …\n"
+msgstr ""
+"It seems that you made mistakes in your code …\n"
+"\n"
 
 #: utilities/run.py:186
 msgid "Vous avez bien répondu à cette question"
