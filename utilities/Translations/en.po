@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-15 15:04+0200\n"
+"POT-Creation-Date: 2017-09-26 17:53+0200\n"
 "PO-Revision-Date: 2017-09-25 08:25+0000\n"
 "Last-Translator: Olivier MARTIN <olivier.martin@student.uclouvain.be>\n"
-"Language-Team: English "
-"<http://weblate.info.ucl.ac.be/projects/inginious/lfsab1401/en/>\n"
+"Language-Team: English <http://weblate.info.ucl.ac.be/projects/inginious/"
+"lfsab1401/en/>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.16\n"
 
-#: utilities/run.py:164
+#: utilities/run.py:165
 msgid "La limite de mémoire de votre programme est dépassée"
 msgstr "The memory limit of your program is exceeded"
 
-#: utilities/run.py:167
+#: utilities/run.py:168
 msgid "La limite de temps d'exécution de votre programme est dépassée"
 msgstr "The time limit for your program is exceeded"
 
-#: utilities/run.py:172 utilities/run.py:190
+#: utilities/run.py:173 utilities/run.py:191
 msgid ""
 "Il semble que vous ayiez fait des erreurs dans votre code…\n"
 "\n"
@@ -35,15 +35,15 @@ msgstr ""
 "It seems that you made mistakes in your code …\n"
 "\n"
 
-#: utilities/run.py:186
+#: utilities/run.py:187
 msgid "Vous avez bien répondu à cette question"
 msgstr "You answered this question well"
 
-#: utilities/run.py:195
+#: utilities/run.py:196
 msgid "Le programme ne compile pas : \n"
 msgstr "The program does not compile : \n"
 
-#: utilities/run.py:203
+#: utilities/run.py:204
 msgid "Impossible de décoder le config.json"
 msgstr "Unable to decode config.json"
 
@@ -90,15 +90,15 @@ msgstr "{0} < {1} < {2} is {3} but your code indicates {4}.\n"
 #: m06Q7/src/TestCode.java:87 m06Q8/src/TestCode.java:89
 #: m06Q8/src/TestParam.java:74 m06Q9/src/TestCode.java:107
 #: m06_bf/src/TestInspect.java:57 m06_bf/src/TestCode.java:58
-#: m06dem1/src/TestCode.java:136 m06dem2/src/TestCode.java:232
+#: m06dem1/src/TestCode.java:136 m06dem2/src/TestCode.java:268
 #: m06dem3/src/TestCode.java:105 m06dem4/src/TestCode.java:116
 #: m07Q1/src/TestParam.java:66 m07Q10/src/TestCode.java:49
 #: m07Q11/src/TestParam.java:75 m07Q2/src/TestCode.java:101
 #: m07Q3/src/TestParam.java:76 m07Q4/src/TestCode.java:48
 #: m07Q5/src/TestCode.java:49 m07Q6/src/TestParam.java:69
 #: m07Q7/src/TestCode.java:49 m07Q8/src/TestCode.java:50
-#: m07Q9/src/TestCode.java:48 m07_bf/src/TestInspectCD.java:57
-#: m07_bf/src/TestItem.java:62 m07_bf/src/TestCD.java:119
+#: m07Q9/src/TestCode.java:48 m07_bf/src/TestItem.java:62
+#: m07_bf/src/TestCD.java:119 m07_bf/src/TestInspectCD.java:57
 #: m07dem1/src/TestCode.java:172 m07dem2/src/TestCode.java:86
 #: m08Q1/src/TestCode.java:50 m08Q2/src/TestCode.java:51
 #: m08Q3/src/TestParam.java:67 m08Q4/src/TestAnd.java:75
@@ -111,15 +111,17 @@ msgstr "{0} < {1} < {2} is {3} but your code indicates {4}.\n"
 #: m08Q6/src/TestMin.java:65 m08Q6/src/TestMoyenne.java:63
 #: m08Q7/src/TestMax.java:64 m08Q7/src/TestMin.java:64
 #: m08Q7/src/TestMoyenne.java:64 m08dem1/src/TestParam1.java:65
-#: m08dem1/src/TestParam2.java:76 m09Q1/src/TestParam.java:82
-#: m09Q2/src/TestParam.java:80 m09Q3/src/TestCode.java:65
-#: m09Q4/src/TestParam.java:67 m09Q4/src/TestCode.java:65
-#: m09Q5/src/TestCode.java:56 m09Q6/src/TestCode.java:59
-#: m09Q7/src/TestCode.java:61 m09dem1/src/TestParam.java:80
+#: m08dem1/src/TestParam2.java:76 m08dem2/src/TestCode.java:61
+#: m09Q1/src/TestParam.java:82 m09Q2/src/TestParam.java:80
+#: m09Q3/src/TestCode.java:65 m09Q4/src/TestParam.java:67
+#: m09Q4/src/TestCode.java:65 m09Q5/src/TestCode.java:56
+#: m09Q6/src/TestCode.java:59 m09Q7/src/TestCode.java:61
+#: m09_bf/src/TestErr.java:90 m09_bf/src/Tests.java:78
+#: m09_bf/src/TestsException.java:88 m09dem1/src/TestParam.java:80
 #: m09dem2/src/TestCode.java:62 m09dem2/src/TestRes.java:62
 #: m10Q1/src/Tests.java:78 m10Q2/src/Tests.java:118 m10Q3/src/Tests.java:163
-#: m10Q4/src/TestListAdd.java:107 m10Q4/src/TestListContains.java:85
-#: m10Q4/src/TestListGet.java:89 m10Q4/src/TestListSet.java:99
+#: m10Q4/src/TestListAdd.java:107 m10Q4/src/TestListContains.java:106
+#: m10Q4/src/TestListGet.java:106 m10Q4/src/TestListSet.java:94
 #: m10dem1/src/Tests.java:162 m10dem1/src/TestOut.java:85
 #: m10dem2/src/TestContenuFichier.java:135
 #: m10dem2/src/TestValeurRetour.java:108 m11Q1/src/Tests.java:170
@@ -166,15 +168,15 @@ msgstr "Be careful, it is forbidden to divide by zero."
 #: m06Q7/src/TestCode.java:89 m06Q8/src/TestCode.java:91
 #: m06Q8/src/TestParam.java:76 m06Q9/src/TestCode.java:109
 #: m06_bf/src/TestInspect.java:59 m06_bf/src/TestCode.java:60
-#: m06dem1/src/TestCode.java:138 m06dem2/src/TestCode.java:234
+#: m06dem1/src/TestCode.java:138 m06dem2/src/TestCode.java:270
 #: m06dem3/src/TestCode.java:107 m06dem4/src/TestCode.java:118
 #: m07Q1/src/TestParam.java:68 m07Q10/src/TestCode.java:51
 #: m07Q11/src/TestParam.java:77 m07Q2/src/TestCode.java:103
 #: m07Q3/src/TestParam.java:78 m07Q4/src/TestCode.java:50
 #: m07Q5/src/TestCode.java:51 m07Q6/src/TestParam.java:71
 #: m07Q7/src/TestCode.java:51 m07Q8/src/TestCode.java:52
-#: m07Q9/src/TestCode.java:50 m07_bf/src/TestInspectCD.java:59
-#: m07_bf/src/TestItem.java:64 m07_bf/src/TestCD.java:121
+#: m07Q9/src/TestCode.java:50 m07_bf/src/TestItem.java:64
+#: m07_bf/src/TestCD.java:121 m07_bf/src/TestInspectCD.java:59
 #: m07dem1/src/TestCode.java:174 m07dem2/src/TestCode.java:88
 #: m08Q1/src/TestCode.java:52 m08Q2/src/TestCode.java:53
 #: m08Q3/src/TestParam.java:69 m08Q4/src/TestAnd.java:77
@@ -187,15 +189,17 @@ msgstr "Be careful, it is forbidden to divide by zero."
 #: m08Q6/src/TestMin.java:67 m08Q6/src/TestMoyenne.java:65
 #: m08Q7/src/TestMax.java:66 m08Q7/src/TestMin.java:66
 #: m08Q7/src/TestMoyenne.java:66 m08dem1/src/TestParam1.java:67
-#: m08dem1/src/TestParam2.java:78 m09Q1/src/TestParam.java:84
-#: m09Q2/src/TestParam.java:82 m09Q3/src/TestCode.java:67
-#: m09Q4/src/TestParam.java:69 m09Q4/src/TestCode.java:67
-#: m09Q5/src/TestCode.java:58 m09Q6/src/TestCode.java:61
-#: m09Q7/src/TestCode.java:63 m09dem1/src/TestParam.java:82
+#: m08dem1/src/TestParam2.java:78 m08dem2/src/TestCode.java:64
+#: m09Q1/src/TestParam.java:84 m09Q2/src/TestParam.java:82
+#: m09Q3/src/TestCode.java:67 m09Q4/src/TestParam.java:69
+#: m09Q4/src/TestCode.java:67 m09Q5/src/TestCode.java:58
+#: m09Q6/src/TestCode.java:61 m09Q7/src/TestCode.java:63
+#: m09_bf/src/TestErr.java:92 m09_bf/src/Tests.java:80
+#: m09_bf/src/TestsException.java:90 m09dem1/src/TestParam.java:82
 #: m09dem2/src/TestCode.java:65 m09dem2/src/TestRes.java:65
 #: m10Q1/src/Tests.java:80 m10Q2/src/Tests.java:120 m10Q3/src/Tests.java:165
-#: m10Q4/src/TestListAdd.java:109 m10Q4/src/TestListContains.java:87
-#: m10Q4/src/TestListGet.java:91 m10Q4/src/TestListSet.java:101
+#: m10Q4/src/TestListAdd.java:109 m10Q4/src/TestListContains.java:108
+#: m10Q4/src/TestListGet.java:108 m10Q4/src/TestListSet.java:96
 #: m10dem1/src/Tests.java:164 m10dem1/src/TestOut.java:87
 #: m10dem2/src/TestContenuFichier.java:137
 #: m10dem2/src/TestValeurRetour.java:110 m11Q1/src/Tests.java:172
@@ -242,15 +246,15 @@ msgstr "Be careful, some variables have been wrongly casted!"
 #: m06Q7/src/TestCode.java:91 m06Q8/src/TestCode.java:93
 #: m06Q8/src/TestParam.java:78 m06Q9/src/TestCode.java:111
 #: m06_bf/src/TestInspect.java:61 m06_bf/src/TestCode.java:62
-#: m06dem1/src/TestCode.java:140 m06dem2/src/TestCode.java:236
+#: m06dem1/src/TestCode.java:140 m06dem2/src/TestCode.java:272
 #: m06dem3/src/TestCode.java:109 m06dem4/src/TestCode.java:120
 #: m07Q1/src/TestParam.java:70 m07Q10/src/TestCode.java:53
 #: m07Q11/src/TestParam.java:79 m07Q2/src/TestCode.java:105
 #: m07Q3/src/TestParam.java:80 m07Q4/src/TestCode.java:52
 #: m07Q5/src/TestCode.java:53 m07Q6/src/TestParam.java:73
 #: m07Q7/src/TestCode.java:53 m07Q8/src/TestCode.java:54
-#: m07Q9/src/TestCode.java:52 m07_bf/src/TestInspectCD.java:61
-#: m07_bf/src/TestItem.java:66 m07_bf/src/TestCD.java:123
+#: m07Q9/src/TestCode.java:52 m07_bf/src/TestItem.java:66
+#: m07_bf/src/TestCD.java:123 m07_bf/src/TestInspectCD.java:61
 #: m07dem1/src/TestCode.java:176 m07dem2/src/TestCode.java:90
 #: m08Q1/src/TestCode.java:54 m08Q2/src/TestCode.java:55
 #: m08Q3/src/TestParam.java:71 m08Q4/src/TestAnd.java:79
@@ -263,15 +267,17 @@ msgstr "Be careful, some variables have been wrongly casted!"
 #: m08Q6/src/TestMin.java:69 m08Q6/src/TestMoyenne.java:67
 #: m08Q7/src/TestMax.java:68 m08Q7/src/TestMin.java:68
 #: m08Q7/src/TestMoyenne.java:68 m08dem1/src/TestParam1.java:69
-#: m08dem1/src/TestParam2.java:80 m09Q1/src/TestParam.java:86
-#: m09Q2/src/TestParam.java:84 m09Q3/src/TestCode.java:69
-#: m09Q4/src/TestParam.java:71 m09Q4/src/TestCode.java:69
-#: m09Q5/src/TestCode.java:60 m09Q6/src/TestCode.java:63
-#: m09Q7/src/TestCode.java:65 m09dem1/src/TestParam.java:84
+#: m08dem1/src/TestParam2.java:80 m08dem2/src/TestCode.java:68
+#: m09Q1/src/TestParam.java:86 m09Q2/src/TestParam.java:84
+#: m09Q3/src/TestCode.java:69 m09Q4/src/TestParam.java:71
+#: m09Q4/src/TestCode.java:69 m09Q5/src/TestCode.java:60
+#: m09Q6/src/TestCode.java:63 m09Q7/src/TestCode.java:65
+#: m09_bf/src/TestErr.java:94 m09_bf/src/Tests.java:82
+#: m09_bf/src/TestsException.java:92 m09dem1/src/TestParam.java:84
 #: m09dem2/src/TestCode.java:68 m09dem2/src/TestRes.java:68
 #: m10Q1/src/Tests.java:82 m10Q2/src/Tests.java:122 m10Q3/src/Tests.java:167
-#: m10Q4/src/TestListAdd.java:111 m10Q4/src/TestListContains.java:89
-#: m10Q4/src/TestListGet.java:93 m10Q4/src/TestListSet.java:103
+#: m10Q4/src/TestListAdd.java:111 m10Q4/src/TestListContains.java:110
+#: m10Q4/src/TestListGet.java:110 m10Q4/src/TestListSet.java:98
 #: m10dem1/src/Tests.java:166 m10dem1/src/TestOut.java:89
 #: m10dem2/src/TestContenuFichier.java:139
 #: m10dem2/src/TestValeurRetour.java:112 m11Q1/src/Tests.java:174
@@ -322,15 +328,15 @@ msgstr ""
 #: m06Q7/src/TestCode.java:93 m06Q8/src/TestCode.java:95
 #: m06Q8/src/TestParam.java:80 m06Q9/src/TestCode.java:113
 #: m06_bf/src/TestInspect.java:63 m06_bf/src/TestCode.java:64
-#: m06dem1/src/TestCode.java:142 m06dem2/src/TestCode.java:238
+#: m06dem1/src/TestCode.java:142 m06dem2/src/TestCode.java:274
 #: m06dem3/src/TestCode.java:111 m06dem4/src/TestCode.java:122
 #: m07Q1/src/TestParam.java:72 m07Q10/src/TestCode.java:55
 #: m07Q11/src/TestParam.java:81 m07Q2/src/TestCode.java:107
 #: m07Q3/src/TestParam.java:82 m07Q4/src/TestCode.java:54
 #: m07Q5/src/TestCode.java:55 m07Q6/src/TestParam.java:75
 #: m07Q7/src/TestCode.java:55 m07Q8/src/TestCode.java:56
-#: m07Q9/src/TestCode.java:54 m07_bf/src/TestInspectCD.java:63
-#: m07_bf/src/TestItem.java:68 m07_bf/src/TestCD.java:125
+#: m07Q9/src/TestCode.java:54 m07_bf/src/TestItem.java:68
+#: m07_bf/src/TestCD.java:125 m07_bf/src/TestInspectCD.java:63
 #: m07dem1/src/TestCode.java:178 m07dem2/src/TestCode.java:92
 #: m08Q1/src/TestCode.java:56 m08Q2/src/TestCode.java:57
 #: m08Q3/src/TestParam.java:73 m08Q4/src/TestAnd.java:81
@@ -343,15 +349,17 @@ msgstr ""
 #: m08Q6/src/TestMin.java:71 m08Q6/src/TestMoyenne.java:69
 #: m08Q7/src/TestMax.java:70 m08Q7/src/TestMin.java:70
 #: m08Q7/src/TestMoyenne.java:70 m08dem1/src/TestParam1.java:71
-#: m08dem1/src/TestParam2.java:82 m09Q1/src/TestParam.java:88
-#: m09Q2/src/TestParam.java:86 m09Q3/src/TestCode.java:71
-#: m09Q4/src/TestParam.java:73 m09Q4/src/TestCode.java:71
-#: m09Q5/src/TestCode.java:62 m09Q6/src/TestCode.java:65
-#: m09Q7/src/TestCode.java:67 m09dem1/src/TestParam.java:86
+#: m08dem1/src/TestParam2.java:82 m08dem2/src/TestCode.java:72
+#: m09Q1/src/TestParam.java:88 m09Q2/src/TestParam.java:86
+#: m09Q3/src/TestCode.java:71 m09Q4/src/TestParam.java:73
+#: m09Q4/src/TestCode.java:71 m09Q5/src/TestCode.java:62
+#: m09Q6/src/TestCode.java:65 m09Q7/src/TestCode.java:67
+#: m09_bf/src/TestErr.java:96 m09_bf/src/Tests.java:84
+#: m09_bf/src/TestsException.java:94 m09dem1/src/TestParam.java:86
 #: m09dem2/src/TestCode.java:71 m09dem2/src/TestRes.java:71
 #: m10Q1/src/Tests.java:84 m10Q2/src/Tests.java:124 m10Q3/src/Tests.java:169
-#: m10Q4/src/TestListAdd.java:113 m10Q4/src/TestListContains.java:91
-#: m10Q4/src/TestListGet.java:95 m10Q4/src/TestListSet.java:105
+#: m10Q4/src/TestListAdd.java:113 m10Q4/src/TestListContains.java:112
+#: m10Q4/src/TestListGet.java:112 m10Q4/src/TestListSet.java:100
 #: m10dem1/src/Tests.java:168 m10dem1/src/TestOut.java:91
 #: m10dem2/src/TestContenuFichier.java:141
 #: m10dem2/src/TestValeurRetour.java:114 m11Q1/src/Tests.java:176
@@ -402,15 +410,15 @@ msgstr ""
 #: m06Q7/src/TestCode.java:95 m06Q8/src/TestCode.java:97
 #: m06Q8/src/TestParam.java:82 m06Q9/src/TestCode.java:115
 #: m06_bf/src/TestInspect.java:66 m06_bf/src/TestCode.java:67
-#: m06dem1/src/TestCode.java:144 m06dem2/src/TestCode.java:240
+#: m06dem1/src/TestCode.java:144 m06dem2/src/TestCode.java:276
 #: m06dem3/src/TestCode.java:113 m06dem4/src/TestCode.java:124
 #: m07Q1/src/TestParam.java:74 m07Q10/src/TestCode.java:57
 #: m07Q11/src/TestParam.java:83 m07Q2/src/TestCode.java:109
 #: m07Q3/src/TestParam.java:84 m07Q4/src/TestCode.java:56
 #: m07Q5/src/TestCode.java:57 m07Q6/src/TestParam.java:77
 #: m07Q7/src/TestCode.java:57 m07Q8/src/TestCode.java:58
-#: m07Q9/src/TestCode.java:56 m07_bf/src/TestInspectCD.java:66
-#: m07_bf/src/TestItem.java:70 m07_bf/src/TestCD.java:127
+#: m07Q9/src/TestCode.java:56 m07_bf/src/TestItem.java:70
+#: m07_bf/src/TestCD.java:127 m07_bf/src/TestInspectCD.java:66
 #: m07dem1/src/TestCode.java:180 m07dem2/src/TestCode.java:94
 #: m08Q1/src/TestCode.java:58 m08Q2/src/TestCode.java:59
 #: m08Q3/src/TestParam.java:75 m08Q4/src/TestAnd.java:83
@@ -423,15 +431,17 @@ msgstr ""
 #: m08Q6/src/TestMin.java:73 m08Q6/src/TestMoyenne.java:71
 #: m08Q7/src/TestMax.java:72 m08Q7/src/TestMin.java:72
 #: m08Q7/src/TestMoyenne.java:72 m08dem1/src/TestParam1.java:73
-#: m08dem1/src/TestParam2.java:84 m09Q1/src/TestParam.java:90
-#: m09Q2/src/TestParam.java:88 m09Q3/src/TestCode.java:74
-#: m09Q4/src/TestParam.java:75 m09Q4/src/TestCode.java:73
-#: m09Q5/src/TestCode.java:65 m09Q6/src/TestCode.java:68
-#: m09Q7/src/TestCode.java:69 m09dem1/src/TestParam.java:88
+#: m08dem1/src/TestParam2.java:84 m08dem2/src/TestCode.java:75
+#: m09Q1/src/TestParam.java:90 m09Q2/src/TestParam.java:88
+#: m09Q3/src/TestCode.java:74 m09Q4/src/TestParam.java:75
+#: m09Q4/src/TestCode.java:73 m09Q5/src/TestCode.java:65
+#: m09Q6/src/TestCode.java:68 m09Q7/src/TestCode.java:69
+#: m09_bf/src/TestErr.java:98 m09_bf/src/Tests.java:86
+#: m09_bf/src/TestsException.java:96 m09dem1/src/TestParam.java:88
 #: m09dem2/src/TestCode.java:74 m09dem2/src/TestRes.java:74
 #: m10Q1/src/Tests.java:86 m10Q2/src/Tests.java:126 m10Q3/src/Tests.java:171
-#: m10Q4/src/TestListAdd.java:115 m10Q4/src/TestListContains.java:93
-#: m10Q4/src/TestListGet.java:97 m10Q4/src/TestListSet.java:107
+#: m10Q4/src/TestListAdd.java:115 m10Q4/src/TestListContains.java:114
+#: m10Q4/src/TestListGet.java:114 m10Q4/src/TestListSet.java:102
 #: m10dem1/src/Tests.java:170 m10dem1/src/TestOut.java:93
 #: m10dem2/src/TestContenuFichier.java:143
 #: m10dem2/src/TestValeurRetour.java:116 m11Q1/src/Tests.java:178
@@ -495,15 +505,15 @@ msgstr ""
 #: m06Q7/src/TestCode.java:101 m06Q8/src/TestCode.java:103
 #: m06Q8/src/TestParam.java:88 m06Q9/src/TestCode.java:121
 #: m06_bf/src/TestInspect.java:72 m06_bf/src/TestCode.java:73
-#: m06dem1/src/TestCode.java:150 m06dem2/src/TestCode.java:246
+#: m06dem1/src/TestCode.java:150 m06dem2/src/TestCode.java:282
 #: m06dem3/src/TestCode.java:119 m06dem4/src/TestCode.java:130
 #: m07Q1/src/TestParam.java:80 m07Q10/src/TestCode.java:63
 #: m07Q11/src/TestParam.java:89 m07Q2/src/TestCode.java:115
 #: m07Q3/src/TestParam.java:90 m07Q4/src/TestCode.java:62
 #: m07Q5/src/TestCode.java:63 m07Q6/src/TestParam.java:83
 #: m07Q7/src/TestCode.java:63 m07Q8/src/TestCode.java:64
-#: m07Q9/src/TestCode.java:62 m07_bf/src/TestInspectCD.java:72
-#: m07_bf/src/TestItem.java:76 m07_bf/src/TestCD.java:133
+#: m07Q9/src/TestCode.java:62 m07_bf/src/TestItem.java:76
+#: m07_bf/src/TestCD.java:133 m07_bf/src/TestInspectCD.java:72
 #: m07dem1/src/TestCode.java:182 m07dem1/src/TestCode.java:185
 #: m07dem2/src/TestCode.java:100 m08Q1/src/TestCode.java:64
 #: m08Q2/src/TestCode.java:65 m08Q3/src/TestParam.java:81
@@ -524,19 +534,21 @@ msgstr ""
 #: m09Q6/src/TestCode.java:132 m09Q6/src/TestCode.java:146
 #: m09Q6/src/TestCode.java:148 m09Q6/src/TestCode.java:165
 #: m09Q6/src/TestCode.java:173 m09Q6/src/TestCode.java:200
-#: m09Q7/src/TestCode.java:75 m09Q7/src/TestCode.java:139
-#: m09Q7/src/TestCode.java:152 m09Q7/src/TestCode.java:154
-#: m09Q7/src/TestCode.java:173 m09Q7/src/TestCode.java:181
-#: m09Q7/src/TestCode.java:199 m09Q7/src/TestCode.java:201
-#: m09Q7/src/TestCode.java:228 m09Q7/src/TestCode.java:234
-#: m09Q7/src/TestCode.java:236 m09Q7/src/TestCode.java:244
-#: m09dem1/src/TestParam.java:94 m09dem2/src/TestCode.java:83
-#: m09dem2/src/TestRes.java:83 m10Q1/src/Tests.java:92 m10Q1/src/Tests.java:95
-#: m10Q3/src/Tests.java:177 m10Q4/src/TestListAdd.java:122
-#: m10Q4/src/TestListContains.java:99 m10Q4/src/TestListGet.java:103
-#: m10Q4/src/TestListSet.java:113 m10dem1/src/Tests.java:176
-#: m10dem1/src/Tests.java:179 m10dem1/src/TestOut.java:99
-#: m10dem1/src/TestOut.java:102 m10dem2/src/TestContenuFichier.java:149
+#: m09Q7/src/TestCode.java:75 m09Q7/src/TestCode.java:140
+#: m09Q7/src/TestCode.java:153 m09Q7/src/TestCode.java:155
+#: m09Q7/src/TestCode.java:174 m09Q7/src/TestCode.java:182
+#: m09Q7/src/TestCode.java:200 m09Q7/src/TestCode.java:202
+#: m09Q7/src/TestCode.java:229 m09Q7/src/TestCode.java:235
+#: m09Q7/src/TestCode.java:237 m09Q7/src/TestCode.java:245
+#: m09_bf/src/TestErr.java:104 m09_bf/src/Tests.java:92
+#: m09_bf/src/TestsException.java:102 m09dem1/src/TestParam.java:94
+#: m09dem2/src/TestCode.java:83 m09dem2/src/TestRes.java:83
+#: m10Q1/src/Tests.java:92 m10Q1/src/Tests.java:95 m10Q3/src/Tests.java:177
+#: m10Q4/src/TestListAdd.java:122 m10Q4/src/TestListContains.java:121
+#: m10Q4/src/TestListGet.java:121 m10Q4/src/TestListSet.java:109
+#: m10dem1/src/Tests.java:176 m10dem1/src/Tests.java:179
+#: m10dem1/src/TestOut.java:99 m10dem1/src/TestOut.java:102
+#: m10dem2/src/TestContenuFichier.java:149
 #: m10dem2/src/TestValeurRetour.java:122 m11Q1/src/Tests.java:184
 #: m11Q2/src/Tests.java:173 m11Q3/src/Tests.java:124 m11Q4/src/Tests.java:180
 #: m11Q5/src/Tests.java:184 m11Q6/src/Tests.java:152 mX1Q19/src/Tests.java:120
@@ -643,7 +655,7 @@ msgstr ""
 #: m06Q6/src/TestCode.java:45 m06Q7/src/TestCode.java:45
 #: m06Q8/src/TestCode.java:50 m06Q9/src/TestCode.java:50
 #: m06_bf/src/TestInspect.java:44 m06_bf/src/TestCode.java:45
-#: m06dem1/src/TestCode.java:37 m06dem2/src/TestCode.java:37
+#: m06dem1/src/TestCode.java:37 m06dem2/src/TestCode.java:38
 #: m06dem3/src/TestCode.java:36 m06dem4/src/TestCode.java:42
 #: m07Q10/src/TestCode.java:36 m07Q2/src/TestCode.java:37
 #: m07Q4/src/TestCode.java:35 m07Q5/src/TestCode.java:36
@@ -651,13 +663,14 @@ msgstr ""
 #: m07Q9/src/TestCode.java:35 m07_bf/src/TestInspectCD.java:44
 #: m07dem1/src/TestCode.java:53 m07dem2/src/TestCode.java:49
 #: m08Q1/src/TestCode.java:37 m08Q2/src/TestCode.java:38
-#: m08Q4/src/TestConstruct.java:36 m09Q3/src/TestCode.java:52
-#: m09Q4/src/TestCode.java:52 m09Q5/src/TestCode.java:43
-#: m09Q6/src/TestCode.java:46 m09Q7/src/TestCode.java:48
-#: m09dem2/src/TestCode.java:48 m09dem2/src/TestRes.java:48
-#: m10Q2/src/Tests.java:77 m10Q2/src/Tests.java:105 m10Q3/src/Tests.java:113
-#: m10Q3/src/Tests.java:151 m10dem1/src/Tests.java:151
-#: m10dem1/src/TestOut.java:74 m10dem2/src/TestContenuFichier.java:105
+#: m08Q4/src/TestConstruct.java:36 m08dem2/src/TestCode.java:48
+#: m09Q3/src/TestCode.java:52 m09Q4/src/TestCode.java:52
+#: m09Q5/src/TestCode.java:43 m09Q6/src/TestCode.java:46
+#: m09Q7/src/TestCode.java:48 m09dem2/src/TestCode.java:48
+#: m09dem2/src/TestRes.java:48 m10Q2/src/Tests.java:77
+#: m10Q2/src/Tests.java:105 m10Q3/src/Tests.java:113 m10Q3/src/Tests.java:151
+#: m10dem1/src/Tests.java:151 m10dem1/src/TestOut.java:74
+#: m10dem2/src/TestContenuFichier.java:105
 #: m10dem2/src/TestValeurRetour.java:99
 #, java-format
 msgid "{0} : réussi"
@@ -782,15 +795,15 @@ msgstr ""
 #: m06Q7/src/TestCode.java:97 m06Q8/src/TestCode.java:99
 #: m06Q8/src/TestParam.java:84 m06Q9/src/TestCode.java:117
 #: m06_bf/src/TestInspect.java:68 m06_bf/src/TestCode.java:69
-#: m06dem1/src/TestCode.java:146 m06dem2/src/TestCode.java:242
+#: m06dem1/src/TestCode.java:146 m06dem2/src/TestCode.java:278
 #: m06dem3/src/TestCode.java:115 m06dem4/src/TestCode.java:126
 #: m07Q1/src/TestParam.java:76 m07Q10/src/TestCode.java:59
 #: m07Q11/src/TestParam.java:85 m07Q2/src/TestCode.java:111
 #: m07Q3/src/TestParam.java:86 m07Q4/src/TestCode.java:58
 #: m07Q5/src/TestCode.java:59 m07Q6/src/TestParam.java:79
 #: m07Q7/src/TestCode.java:59 m07Q8/src/TestCode.java:60
-#: m07Q9/src/TestCode.java:58 m07_bf/src/TestInspectCD.java:68
-#: m07_bf/src/TestItem.java:72 m07_bf/src/TestCD.java:129
+#: m07Q9/src/TestCode.java:58 m07_bf/src/TestItem.java:72
+#: m07_bf/src/TestCD.java:129 m07_bf/src/TestInspectCD.java:68
 #: m07dem2/src/TestCode.java:96 m08Q1/src/TestCode.java:60
 #: m08Q2/src/TestCode.java:61 m08Q3/src/TestParam.java:77
 #: m08Q4/src/TestAnd.java:85 m08Q4/src/TestGet.java:89
@@ -807,11 +820,12 @@ msgstr ""
 #: m09Q3/src/TestCode.java:76 m09Q4/src/TestParam.java:77
 #: m09Q4/src/TestCode.java:75 m09Q5/src/TestCode.java:67
 #: m09Q6/src/TestCode.java:70 m09Q7/src/TestCode.java:71
-#: m09dem1/src/TestParam.java:90 m09dem2/src/TestCode.java:77
-#: m09dem2/src/TestRes.java:77 m10Q1/src/Tests.java:88
-#: m10Q2/src/Tests.java:128 m10Q3/src/Tests.java:173
-#: m10Q4/src/TestListAdd.java:117 m10Q4/src/TestListContains.java:95
-#: m10Q4/src/TestListGet.java:99 m10Q4/src/TestListSet.java:109
+#: m09_bf/src/TestErr.java:100 m09_bf/src/Tests.java:88
+#: m09_bf/src/TestsException.java:98 m09dem1/src/TestParam.java:90
+#: m09dem2/src/TestCode.java:77 m09dem2/src/TestRes.java:77
+#: m10Q1/src/Tests.java:88 m10Q2/src/Tests.java:128 m10Q3/src/Tests.java:173
+#: m10Q4/src/TestListAdd.java:117 m10Q4/src/TestListContains.java:116
+#: m10Q4/src/TestListGet.java:116 m10Q4/src/TestListSet.java:104
 #: m10dem1/src/Tests.java:172 m10dem1/src/TestOut.java:95
 #: m10dem2/src/TestContenuFichier.java:145
 #: m10dem2/src/TestValeurRetour.java:118 m11Q1/src/Tests.java:180
@@ -847,15 +861,15 @@ msgstr "You initialize an array with a negative size."
 #: m06Q7/src/TestCode.java:99 m06Q8/src/TestCode.java:101
 #: m06Q8/src/TestParam.java:86 m06Q9/src/TestCode.java:119
 #: m06_bf/src/TestInspect.java:70 m06_bf/src/TestCode.java:71
-#: m06dem1/src/TestCode.java:148 m06dem2/src/TestCode.java:244
+#: m06dem1/src/TestCode.java:148 m06dem2/src/TestCode.java:280
 #: m06dem3/src/TestCode.java:117 m06dem4/src/TestCode.java:128
 #: m07Q1/src/TestParam.java:78 m07Q10/src/TestCode.java:61
 #: m07Q11/src/TestParam.java:87 m07Q2/src/TestCode.java:113
 #: m07Q3/src/TestParam.java:88 m07Q4/src/TestCode.java:60
 #: m07Q5/src/TestCode.java:61 m07Q6/src/TestParam.java:81
 #: m07Q7/src/TestCode.java:61 m07Q8/src/TestCode.java:62
-#: m07Q9/src/TestCode.java:60 m07_bf/src/TestInspectCD.java:70
-#: m07_bf/src/TestItem.java:74 m07_bf/src/TestCD.java:131
+#: m07Q9/src/TestCode.java:60 m07_bf/src/TestItem.java:74
+#: m07_bf/src/TestCD.java:131 m07_bf/src/TestInspectCD.java:70
 #: m07dem2/src/TestCode.java:98 m08Q1/src/TestCode.java:62
 #: m08Q2/src/TestCode.java:63 m08Q3/src/TestParam.java:79
 #: m08Q4/src/TestAnd.java:87 m08Q4/src/TestGet.java:91
@@ -868,15 +882,17 @@ msgstr "You initialize an array with a negative size."
 #: m08Q6/src/TestMoyenne.java:75 m08Q7/src/TestMax.java:76
 #: m08Q7/src/TestMin.java:76 m08Q7/src/TestMoyenne.java:76
 #: m08dem1/src/TestParam1.java:77 m08dem1/src/TestParam2.java:88
-#: m09Q1/src/TestParam.java:94 m09Q2/src/TestParam.java:92
-#: m09Q3/src/TestCode.java:78 m09Q4/src/TestParam.java:79
-#: m09Q4/src/TestCode.java:77 m09Q5/src/TestCode.java:69
-#: m09Q6/src/TestCode.java:72 m09Q7/src/TestCode.java:73
+#: m08dem2/src/TestCode.java:78 m09Q1/src/TestParam.java:94
+#: m09Q2/src/TestParam.java:92 m09Q3/src/TestCode.java:78
+#: m09Q4/src/TestParam.java:79 m09Q4/src/TestCode.java:77
+#: m09Q5/src/TestCode.java:69 m09Q6/src/TestCode.java:72
+#: m09Q7/src/TestCode.java:73 m09_bf/src/TestErr.java:102
+#: m09_bf/src/Tests.java:90 m09_bf/src/TestsException.java:100
 #: m09dem1/src/TestParam.java:92 m09dem2/src/TestCode.java:80
 #: m09dem2/src/TestRes.java:80 m10Q1/src/Tests.java:90
 #: m10Q2/src/Tests.java:130 m10Q3/src/Tests.java:175
-#: m10Q4/src/TestListAdd.java:119 m10Q4/src/TestListContains.java:97
-#: m10Q4/src/TestListGet.java:101 m10Q4/src/TestListSet.java:111
+#: m10Q4/src/TestListAdd.java:119 m10Q4/src/TestListContains.java:118
+#: m10Q4/src/TestListGet.java:118 m10Q4/src/TestListSet.java:106
 #: m10dem1/src/Tests.java:174 m10dem1/src/TestOut.java:97
 #: m10dem2/src/TestContenuFichier.java:147
 #: m10dem2/src/TestValeurRetour.java:120 m11Q1/src/Tests.java:182
@@ -1104,6 +1120,7 @@ msgstr ""
 #: m05Q8/src/librairies/FunctionHelper.java:47
 #: m05Q9/src/librairies/FunctionHelper.java:47 m07dem1/src/TestCode.java:70
 #: m09Q5/src/librairies/FunctionHelper.java:47
+#: m09_bf/src/librairies/FunctionHelper.java:47
 #: m10Q1/src/librairies/FunctionHelperCustom.java:46
 #: m10Q3/src/librairies/FunctionHelper.java:47
 #: m10dem1/src/librairies/FunctionHelper.java:47
@@ -1149,6 +1166,7 @@ msgstr "The return type of your function must be of type {0}!\n"
 #: m05Q8/src/librairies/FunctionHelper.java:50
 #: m05Q9/src/librairies/FunctionHelper.java:50 m07dem1/src/TestCode.java:73
 #: m09Q5/src/librairies/FunctionHelper.java:50
+#: m09_bf/src/librairies/FunctionHelper.java:50
 #: m10Q1/src/librairies/FunctionHelperCustom.java:49
 #: m10Q3/src/librairies/FunctionHelper.java:50
 #: m10dem1/src/librairies/FunctionHelper.java:50
@@ -1194,6 +1212,7 @@ msgstr "Your function must take {0} argument(s)!\n"
 #: m05Q8/src/librairies/FunctionHelper.java:54
 #: m05Q9/src/librairies/FunctionHelper.java:54 m07dem1/src/TestCode.java:77
 #: m09Q5/src/librairies/FunctionHelper.java:54
+#: m09_bf/src/librairies/FunctionHelper.java:54
 #: m10Q3/src/librairies/FunctionHelper.java:54
 #: m10dem1/src/librairies/FunctionHelper.java:54
 #: m10dem2/src/librairies/FunctionHelper.java:54
@@ -1238,6 +1257,7 @@ msgstr "The argument n°{0} is not of type ''{1}'' as requested!\n"
 #: m05Q8/src/librairies/FunctionHelper.java:60
 #: m05Q9/src/librairies/FunctionHelper.java:60 m07dem1/src/TestCode.java:83
 #: m09Q5/src/librairies/FunctionHelper.java:60
+#: m09_bf/src/librairies/FunctionHelper.java:60
 #: m10Q1/src/librairies/FunctionHelperCustom.java:63
 #: m10Q3/src/librairies/FunctionHelper.java:60
 #: m10dem1/src/librairies/FunctionHelper.java:60
@@ -1286,6 +1306,7 @@ msgstr ""
 #: m05Q8/src/librairies/FunctionHelper.java:60
 #: m05Q9/src/librairies/FunctionHelper.java:60
 #: m09Q5/src/librairies/FunctionHelper.java:60
+#: m09_bf/src/librairies/FunctionHelper.java:60
 #: m10Q1/src/librairies/FunctionHelperCustom.java:63
 #: m10Q3/src/librairies/FunctionHelper.java:60
 #: m10dem1/src/librairies/FunctionHelper.java:60
@@ -1906,7 +1927,7 @@ msgstr ""
 "{0}: When calling your method on rectangle {1}, it returns {2} instead of {3}"
 
 #: m06_bf/src/librairies/Inspector.java:216
-#: m07_bf/src/librairies/Inspector.java:168 utilities/Inspector.java:168
+#: m07_bf/src/librairies/Inspector.java:214 utilities/Inspector.java:168
 #, java-format
 msgid ""
 "Le constructeur avec comme modificateur [{0}], comme types d''arguments {1} "
@@ -1914,7 +1935,7 @@ msgid ""
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:220
-#: m07_bf/src/librairies/Inspector.java:172 utilities/Inspector.java:172
+#: m07_bf/src/librairies/Inspector.java:218 utilities/Inspector.java:172
 #, java-format
 msgid ""
 "Le constructeur avec comme modificateur [{0}], comme types d''arguments {1} "
@@ -1922,7 +1943,7 @@ msgid ""
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:223
-#: m07_bf/src/librairies/Inspector.java:175 utilities/Inspector.java:175
+#: m07_bf/src/librairies/Inspector.java:221 utilities/Inspector.java:175
 #, java-format
 msgid ""
 "Le constructeur avec comme types d''arguments {0} et comme exceptions "
@@ -1930,14 +1951,14 @@ msgid ""
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:226
-#: m07_bf/src/librairies/Inspector.java:178 utilities/Inspector.java:178
+#: m07_bf/src/librairies/Inspector.java:224 utilities/Inspector.java:178
 #, java-format
 msgid ""
 "Le constructeur avec comme types d''arguments {0} n''as pas été trouvé !"
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:291
-#: m07_bf/src/librairies/Inspector.java:243 utilities/Inspector.java:243
+#: m07_bf/src/librairies/Inspector.java:289 utilities/Inspector.java:243
 #, java-format
 msgid ""
 "La méthode avec comme modificateur [{0}], comme type de retour {1}, comme "
@@ -1946,7 +1967,7 @@ msgid ""
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:295
-#: m07_bf/src/librairies/Inspector.java:247 utilities/Inspector.java:247
+#: m07_bf/src/librairies/Inspector.java:293 utilities/Inspector.java:247
 #, java-format
 msgid ""
 "La méthode avec comme modificateur [{0}], comme type de retour {1}, comme "
@@ -1954,7 +1975,7 @@ msgid ""
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:298
-#: m07_bf/src/librairies/Inspector.java:250 utilities/Inspector.java:250
+#: m07_bf/src/librairies/Inspector.java:296 utilities/Inspector.java:250
 #, java-format
 msgid ""
 "La méthode avec comme type de retour {0}, comme nom {1}, comme type "
@@ -1963,7 +1984,7 @@ msgid ""
 msgstr ""
 
 #: m06_bf/src/librairies/Inspector.java:301
-#: m07_bf/src/librairies/Inspector.java:253 utilities/Inspector.java:253
+#: m07_bf/src/librairies/Inspector.java:299 utilities/Inspector.java:253
 #, java-format
 msgid ""
 "La méthode avec comme type de retour {0}, comme nom {1}, comme type "
@@ -1983,8 +2004,8 @@ msgstr ""
 #, java-format
 msgid ""
 "{0} : lorsque l''on construit un nouvel objet Employe avec comme paramètre "
-"{1} et {2,number,#}, il n''y a pas de variable d''instance avec la valeur "
-"{3} !"
+"{1} et {2,number,#}, il n''y a pas de variable d''instance de type {3} avec "
+"la valeur {4}"
 msgstr ""
 
 #: m06_bf/src/TestCode.java:130
@@ -2061,14 +2082,14 @@ msgstr ""
 "{0}: Your method seems to change the instance variables of the calling "
 "instance. The calling pair was ({1}, {2}) and is now ({3}, {4})."
 
-#: m06dem2/src/TestCode.java:61
-#, java-format
+#: m06dem2/src/TestCode.java:55 m06dem2/src/TestCode.java:68
+#: m06dem2/src/TestCode.java:85 m06dem2/src/TestCode.java:98
+#, fuzzy, java-format
 msgid ""
-"{0} : vous devez utilisez setOrdered() pour changer la valeur de "
-"''ordered'' !"
+"{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"
 msgstr "{0}: You must use setOrdered() to change the value of ''ordered''!"
 
-#: m06dem2/src/TestCode.java:77
+#: m06dem2/src/TestCode.java:113
 #, java-format
 msgid ""
 "{0} : après l''appel à setA({1}), nous avons la paire ({2},{3}) et "
@@ -2077,7 +2098,7 @@ msgstr ""
 "{0}: after calling setA({1}), we have the pair ({2}, {3}) and ''ordered'' "
 "should be {4} because {5} <= {6} but this is not the case"
 
-#: m06dem2/src/TestCode.java:113
+#: m06dem2/src/TestCode.java:149
 #, java-format
 msgid ""
 "{0} : après l''appel à setB({1}), nous avons la paire ({2},{3}) et "
@@ -2086,23 +2107,23 @@ msgstr ""
 "{0}: after a call to setB({1}), we have pair ({2}, {3}) and ''ordered'' "
 "should be {4} because {5} <= {6}, but this is not the case"
 
-#: m06dem2/src/TestCode.java:144
+#: m06dem2/src/TestCode.java:180
 #, java-format
 msgid "{0} : après l''appel à setA({1}), ''a'' vaut {2} au lieu de {3}"
 msgstr "{0}: after calling setA({1}), ''a'' is {2} instead of {3}"
 
-#: m06dem2/src/TestCode.java:145
+#: m06dem2/src/TestCode.java:181
 #, java-format
 msgid ""
 "{0}: après l''appel à setA({1}), {2} ''a'' changé et est passé de {3} à {4}"
 msgstr "{0}: after calling setA({1}), {2} ''a'' changed from {3} to {4}"
 
-#: m06dem2/src/TestCode.java:189
+#: m06dem2/src/TestCode.java:225
 #, java-format
 msgid "{0} : après l''appel setB({1}), ''b'' vaut {2} au lieu de {3}"
 msgstr "{0}: after calling setB({1}), ''b'' is {2} instead of {3}"
 
-#: m06dem2/src/TestCode.java:190
+#: m06dem2/src/TestCode.java:226
 #, java-format
 msgid ""
 "{0} : après l''appel setB({0}) {2} ''a'' changé et est passé de {3} à {4}"
@@ -2381,7 +2402,7 @@ msgid ""
 "{0} : lorsque l''on exécute votre méthode toString() sur le CD ayant pour "
 "auteur {1}, titre {2}, et durée {3,number,#}, votre méthode retourne\n"
 "{4}\n"
-" au lieu de\n"
+"au lieu de\n"
 "{5}"
 msgstr ""
 "Test min: When executing your min() method on the matrix {0}, your code "
@@ -2683,6 +2704,33 @@ msgstr ""
 "Test 2: When we execute your set(''{0}'') method on a flag with state {1}, "
 "the flag state becomes {2}\n"
 
+#: m08dem2/src/TestCode.java:95
+#, fuzzy, java-format
+msgid "{0} : attention, lorsque s vaut null, vous renvoyez {1} au lieu de null"
+msgstr "Test 2: Be careful, for the date {0} you return {1} instead of {2}"
+
+#: m08dem2/src/TestCode.java:109
+#, fuzzy, java-format
+msgid "{0} : attention, lorsque n vaut 0, vous renvoyez {1} au lieu de null"
+msgstr "Test 2: Be careful, for the date {0} you return {1} instead of {2}"
+
+#: m08dem2/src/TestCode.java:129
+#, fuzzy, java-format
+msgid ""
+"{0} : votre code ne semble pas répéter assez de fois la chaîne de carctère, "
+"vérifiez votre condition!"
+msgstr ""
+"{0}: Your code does not seem to call the lance() method from the parent class"
+
+#: m08dem2/src/TestCode.java:131
+#, fuzzy, java-format
+msgid ""
+"{0} : votre code ne semble pas renvoyez un string contenant la chaîne de "
+"caractère passé en paramètre!"
+msgstr ""
+"{0}: Your code does not seem to return a String containing the employee's "
+"name!"
+
 #: m09Q1/src/TestParam.java:67
 #, java-format
 msgid ""
@@ -2702,7 +2750,7 @@ msgstr ""
 "method returns {2}. Review specifications!"
 
 #: m09Q3/src/TestCode.java:93 m09Q4/src/TestCode.java:92
-#: m09Q7/src/TestCode.java:88
+#: m09Q7/src/TestCode.java:92
 #, java-format
 msgid "{0} : vous devez utiliser un BufferedReader !"
 msgstr "{0}: You must use a BufferedReader!"
@@ -2726,7 +2774,7 @@ msgstr "{0}: You do not return -1 when an error occurs!"
 
 #: m09Q3/src/TestCode.java:159 m09Q3/src/TestCode.java:183
 #: m09Q4/src/TestCode.java:119 m09Q4/src/TestCode.java:194
-#: m09Q7/src/TestCode.java:116
+#: m09Q7/src/TestCode.java:117
 #, java-format
 msgid "{0} : vous ne gérez pas bien les IOExceptions !"
 msgstr "{0}: you do not manage IOExceptions correctly!"
@@ -2805,29 +2853,29 @@ msgstr ""
 "instead of\n"
 "{3}"
 
-#: m09Q7/src/TestCode.java:111
+#: m09Q7/src/TestCode.java:112
 #, java-format
 msgid "{0} : vous ne renvoyez pas null lorsqu''une IOException se produit !"
 msgstr "{0}: You do not return null when an IOException occurs!"
 
-#: m09Q7/src/TestCode.java:120
+#: m09Q7/src/TestCode.java:121
 #, java-format
 msgid "{0} : lorsqu''une IOException surgit, vous ne fermez pas le flux"
 msgstr "{0}: When an IOException occurs, you do not close the stream"
 
-#: m09Q7/src/TestCode.java:144
+#: m09Q7/src/TestCode.java:145
 #, java-format
 msgid ""
 "{0} : vous ne renvoyez pas null lorsque le fichier a un mauvais format !"
 msgstr "{0}: You do not return null when the file has a bad format!"
 
-#: m09Q7/src/TestCode.java:148
+#: m09Q7/src/TestCode.java:149
 #, java-format
 msgid ""
 "{0} : vous ne gérez pas le cas ou le fichier a un mauvais format de chiffre !"
 msgstr "{0}: You do not manage the case where the file has a bad digit format!"
 
-#: m09Q7/src/TestCode.java:150
+#: m09Q7/src/TestCode.java:151
 #, java-format
 msgid ""
 "{0} : vous ne fermez pas le flux lorsque le fichier a un mauvais format de "
@@ -2835,7 +2883,7 @@ msgid ""
 msgstr ""
 "{0}: You do not close the stream when the file has a wrong digits format!"
 
-#: m09Q7/src/TestCode.java:207
+#: m09Q7/src/TestCode.java:208
 #, java-format
 msgid ""
 "{0} : lorsque l''on lit le fichier suivant\n"
@@ -2844,12 +2892,64 @@ msgstr ""
 "{0}: when reading the following file\n"
 "{1} with your method, return {2} instead of {3}!"
 
-#: m09Q7/src/TestCode.java:242
+#: m09Q7/src/TestCode.java:243
 #, java-format
 msgid ""
 "{0} : lorsque tout se déroule sans exception, vous ne fermez pas le flux !"
 msgstr ""
 "{0}: When everything happens without exception, you do not close the stream!"
+
+#: m09_bf/src/TestErr.java:52
+#, fuzzy
+msgid ""
+"votre méthode n''affiche pas \"ERREUR\" sur la sortie d''erreur standard.\n"
+msgstr "check the output of the error output (stdErr).\n"
+
+#: m09_bf/src/TestErr.java:63 m09_bf/src/Tests.java:61
+#: m09_bf/src/TestsException.java:63
+#, fuzzy, java-format
+msgid "{0} : raté : "
+msgstr "{0}: success"
+
+#: m09_bf/src/TestErr.java:72 m09_bf/src/Tests.java:69
+#: m09_bf/src/TestsException.java:72
+#, fuzzy, java-format
+msgid "{0} : réussi\n"
+msgstr "{0}: success"
+
+#: m09_bf/src/TestErr.java:80 m09_bf/src/TestsException.java:78
+#, java-format
+msgid "{0} : raté : votre programme génère une exception non gérée : "
+msgstr ""
+
+#: m09_bf/src/Tests.java:37
+msgid ""
+"votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier "
+"complètement erroné.\n"
+msgstr ""
+
+#: m09_bf/src/Tests.java:41
+msgid ""
+"votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier avec "
+"une ligne malformée contenant un maximum.\n"
+msgstr ""
+
+#: m09_bf/src/Tests.java:45
+msgid ""
+"votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier avec "
+"une ligne malformée.\n"
+msgstr ""
+
+#: m09_bf/src/Tests.java:50
+msgid ""
+"votre méthode ne renvoie pas la bonne valeur du maximum avec un fichier au "
+"bon format.\n"
+msgstr ""
+
+#: m09_bf/src/TestsException.java:52
+#, fuzzy
+msgid "votre méthode ne gère pas les IOExceptions.\n"
+msgstr "{0}: you do not manage IOExceptions correctly!"
 
 #: m09dem1/src/TestParam.java:66
 #, java-format
@@ -3006,15 +3106,10 @@ msgid ""
 "Student.\n"
 msgstr "do you correctly initialize Student class instance variables?\n"
 
-#: m10Q4/src/TestListAdd.java:83 m10Q4/src/TestListGet.java:71
-#: m10Q4/src/TestListSet.java:75
-#, fuzzy, java-format
-msgid "{0} : raté : "
-msgstr "{0}: success"
-
-#: m10Q4/src/TestListAdd.java:84
+#: m10Q4/src/TestListAdd.java:85
 #, fuzzy, java-format
 msgid ""
+"@{0} :\n"
 "la fonction add avec l''AList\n"
 "{1}\n"
 "l''objet {2} et l''index {3} doit modifier la liste en\n"
@@ -3023,55 +3118,76 @@ msgid ""
 "{5}\n"
 msgstr "The factorial of {0} gives {1}, but your code returns {2}.\n"
 
-#: m10Q4/src/TestListAdd.java:93 m10Q4/src/TestListContains.java:77
-#: m10Q4/src/TestListGet.java:77 m10Q4/src/TestListSet.java:85
-#, fuzzy, java-format
-msgid "{0} : réussi\n"
-msgstr "{0}: success"
-
-#: m10Q4/src/TestListAdd.java:95
+#: m10Q4/src/TestListAdd.java:96
 msgid ""
-"votre méthode add() tente d'accéder à un index hors de l'AList! Gérez le cas "
-"avec index > length() !\n"
+"votre méthode add() tente d'accéder à un index hors de l'AList sans "
+"l'agrandir !\n"
 msgstr ""
 
-#: m10Q4/src/TestListAdd.java:98 m10Q4/src/TestListSet.java:90
-msgid ""
-"votre méthode add() lance une exception ! Vérifiez que vous gérez tous les "
-"cas possibles.\n"
+#: m10Q4/src/TestListAdd.java:98
+msgid "votre méthode add() lance une exception ("
 msgstr ""
 
-#: m10Q4/src/TestListContains.java:72
-#, fuzzy, java-format
-msgid "{0} : raté"
-msgstr "{0}: success"
-
-#: m10Q4/src/TestListContains.java:73
+#: m10Q4/src/TestListContains.java:83
 #, fuzzy, java-format
 msgid ""
-" :\n"
-" La fonction contains avec la liste\n"
+"@{0} :\n"
+"la fonction contains avec l''AList\n"
 "{1}\n"
-"et l''objet {2} doit renvoyer {3}, pourtant, votre code renvoie {4}.\n"
+"et l''objet {2} doit renvoyer\n"
+"{3}\n"
+"pourtant, votre code donne\n"
+"{4}\n"
 msgstr "The factorial of {0} gives {1}, but your code returns {2}.\n"
 
-#: m10Q4/src/TestListGet.java:72
-#, fuzzy, java-format
+#: m10Q4/src/TestListContains.java:84
+#, java-format
 msgid ""
-"la fonction get avec la liste\n"
-"{1}\n"
-"et l''index {2} doit renvoyer {3}, pourtant, votre code renvoie {4}.\n"
-msgstr "The factorial of {0} gives {1}, but your code returns {2}.\n"
-
-#: m10Q4/src/TestListGet.java:79
-msgid ""
-"votre méthode get() lance une exception ! Vérifiez que vous gérez tous les "
-"cas possibles.\n"
+"@{0} :\n"
+"votre méthode contains ne doit pas modifier le tableau !\n"
 msgstr ""
 
-#: m10Q4/src/TestListSet.java:76
+#: m10Q4/src/TestListContains.java:95
+msgid "votre méthode contains() tente d'accéder à un index hors de l'AList !\n"
+msgstr ""
+
+#: m10Q4/src/TestListContains.java:97
+msgid "votre méthode contains() lance une exception ("
+msgstr ""
+
+#: m10Q4/src/TestListGet.java:83
 #, fuzzy, java-format
 msgid ""
+"@{0} :\n"
+"la fonction get avec l''AList\n"
+"{1}\n"
+"et l''indice {2} doit renvoyer\n"
+"{3}\n"
+"pourtant, votre code donne\n"
+"{4}\n"
+msgstr "The factorial of {0} gives {1}, but your code returns {2}.\n"
+
+#: m10Q4/src/TestListGet.java:84
+#, fuzzy, java-format
+msgid ""
+"@{0} :\n"
+"votre méthode get ne doit pas modifier le tableau !\n"
+msgstr "{0}: Your code does not build a StringTab of size 1"
+
+#: m10Q4/src/TestListGet.java:95
+msgid ""
+"votre méthode get() tente d'accéder à un index hors de l'AList ! Pensez à "
+"regarder les pré-conditions.\n"
+msgstr ""
+
+#: m10Q4/src/TestListGet.java:97
+msgid "votre méthode get() lance une exception ("
+msgstr ""
+
+#: m10Q4/src/TestListSet.java:72
+#, fuzzy, java-format
+msgid ""
+"@{0} :\n"
 "la fonction set avec l''AList\n"
 "{1}\n"
 "l''objet {2} et l''index {3} doit modifier la liste en\n"
@@ -3080,53 +3196,124 @@ msgid ""
 "{5}\n"
 msgstr "The factorial of {0} gives {1}, but your code returns {2}.\n"
 
-#: m10Q4/src/TestListSet.java:87
-msgid "votre méthode add() tente d'accéder à un index hors de l'AList !\n"
+#: m10Q4/src/TestListSet.java:83
+msgid ""
+"votre méthode set() tente d'accéder à un index hors de l'AList sans "
+"l'agrandir !\n"
+msgstr ""
+
+#: m10Q4/src/TestListSet.java:85
+msgid "votre méthode set() lance une exception ("
 msgstr ""
 
 #: m10Q5/src/VectorTest.java:46
+#, fuzzy, java-format
+msgid ""
+"Lors de l''exécution de votre méthode loadVector() avec comme argument un "
+"fichier contenant \n"
+"{0}\n"
+"votre méthode a lancé une exception "
+msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
+
+#: m10Q5/src/VectorTest.java:55
+#, fuzzy, java-format
+msgid ""
+"Lors de l''exécution de votre méthode loadVector() avec comme argument un "
+"fichier contenant \n"
+"{0}\n"
+"votre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"
+msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
+
+#: m10Q5/src/VectorTestMock.java:32 m10Q6/src/MatrixTestMock.java:31
+msgid "génère une IOException"
+msgstr ""
+
+#: m10Q5/src/VectorTestMock.java:33
+#, fuzzy, java-format
+msgid ""
+"Lors de l''exécution de votre méthode loadVector() avec un fichier qui {0}, "
+"votre méthode a lancé une exception "
+msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
+
+#: m10Q5/src/VectorTestMock.java:34
+#, fuzzy, java-format
+msgid ""
+"Lors de l''exécution de votre méthode loadVector() avec un fichier qui {0}, "
+"votre méthode a retourné le tableau {1} alors que le résultat attendu est "
+"null. "
+msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
+
+#: m10Q5/src/VectorTestMock.java:65
 #, fuzzy
 msgid ""
-"Lors de l'exécution de votre méthode loadVector avec comme argument un "
+"Lors de l'exécution de votre méthode loadVector() avec une IOException "
+"lancée par le readLine() du BufferedReader, le fichier n'a pas été fermé "
+"correctement."
+msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
+
+#: m10Q5/src/VectorTestMock.java:129
+#, fuzzy
+msgid "n''existe pas"
+msgstr "is not"
+
+#: m10Q6/src/MatrixTest.java:90
+#, fuzzy, java-format
+msgid ""
+"Lors de l''exécution de votre méthode loadMatrix avec comme argument un "
 "fichier contenant \n"
 "{0}, votre méthode a lancé une exception "
 msgstr ""
 "When you call your method on the Integer {0} with argument {1}, your method "
 "says that they are equal!"
 
-#: m10Q5/src/VectorTest.java:52
+#: m10Q6/src/MatrixTest.java:97
+#, fuzzy, java-format
 msgid ""
-"Lors de l'exécution de votre méthode loadVector avec comme argument un "
+"Lors de l''exécution de votre méthode loadMatrix avec comme argument un "
 "fichier contenant \n"
 "{0}, votre méthode a retourné le tableau {1} alors que le résultat attendu "
 "est {2}"
 msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
 
-#: m10Q5/src/VectorTestMock.java:32
-msgid "génère une IOException"
-msgstr ""
-
-#: m10Q5/src/VectorTestMock.java:33
+#: m10Q6/src/MatrixTestMock.java:32
+#, fuzzy, java-format
 msgid ""
-"Lors de l'exécution de votre méthode loadVector avec un fichier qui {0}, "
-"votre méthode a lancé une exception "
+"Lors de l''exécution de votre méthode loadMatrix avec un fichier qui {0}, "
+"votre méthode a lancé une exception."
 msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
 
-#: m10Q5/src/VectorTestMock.java:34
+#: m10Q6/src/MatrixTestMock.java:33
+#, fuzzy, java-format
 msgid ""
-"Lors de l'exécution de votre méthode loadVector avec un fichier qui {0}, "
+"Lors de l''exécution de votre méthode loadMatrix avec un fichier qui {0}, "
 "votre méthode a retourné le tableau {1} alors que le résultat attendu est "
-"null"
+"null. "
 msgstr ""
+"When you call your method on the Integer {0} with argument {1}, your method "
+"says that they are equal!"
 
-#: m10Q5/src/VectorTestMock.java:65
+#: m10Q6/src/MatrixTestMock.java:63
 msgid ""
 "Lors de l'exécution de votre méthode loadVector avec une IOException lancée "
 "par le readLine() du BufferedReader, le fichier n'a pas été fermé "
 "correctement."
 msgstr ""
 
-#: m10Q5/src/VectorTestMock.java:129
+#: m10Q6/src/MatrixTestMock.java:125
 #, fuzzy
 msgid "n'existe pas"
 msgstr "is not"
@@ -3750,10 +3937,14 @@ msgid ""
 "commentaires."
 msgstr "It is forbidden to use the Math.min() method, even in comments"
 
-#: utilities/exmaples/custom_translatable.py:31
+#: utilities/examples/custom_translatable.py:31
 #, fuzzy
 msgid "Il est interdit d'utiliser ?????, même en commentaires."
 msgstr "It is forbidden to use the Math.min() method, even in comments"
+
+#, fuzzy
+#~ msgid "{0} : raté"
+#~ msgstr "{0}: success"
 
 #~ msgid "Bravo, votre code est correct !"
 #~ msgstr "Congratulations, your code is correct!"
