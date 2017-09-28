@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 from os import listdir, system
 import zipfile 
@@ -44,37 +44,36 @@ unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expected
 if (unzipOutput):
     output += unzipOutput
     output += "\n**Archive Content: 0/1**"
-    system('archive -a build.manifest')
     system('feedback --result failed --feedback "' + output + '"')
     exit(0)
 else:
     system('sh custom.sh')
     try:
-    	subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
-    	output += "Your archive has the correct content.\n"
-    	output += "\n**Archive content: 1/1**"
-    	system('feedback --result success --feedback "' + output + '"')
-    except subprocess.CalledProcessError, e:
+        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
+        output += "Your archive has the correct content.\n"
+        output += "\n**Archive content: 1/1**"
+        system('feedback --result success --feedback "' + output + '"')
+    except subprocess.CalledProcessError as e:
         output += "There are some compilation errors with your program :\n::\n\n"
         #system("echo \""+e.output+"\" > outjavac.log")
         sp = subprocess.Popen(["sed", "-e", "s/^/\\t/"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    	output += sp.communicate(e.output)[0]
-    	sp = subprocess.Popen(["feedback", "--result", "failed", "--feedback", output])
-    	exit(1)
+        output += sp.communicate(e.output)[0]
+        sp = subprocess.Popen(["feedback", "--result", "failed", "--feedback", output])
+        exit(1)
     # On lance le feedback complet
     system('sh run.sh')
     if (os.stat("feedback.out").st_size != 0):
-    	output += "\n\n.. hidden-until:: \"" + deadline + "\"\n\n"
-    	system('echo "' + output + '" > feed1')
-    	system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
-    	output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
-    	system("feedback -i q1 --result success --feedback \"" + output2 + "\"")
-    	system("feedback --result success --feedback \" \" ")
+        output += "\n\n.. hidden-until:: \"" + deadline + "\"\n\n"
+        system('echo "' + output + '" > feed1')
+        system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
+        output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
+        system("feedback -i q1 --result success --feedback \"" + output2 + "\"")
+        system("feedback --result success --feedback \" \" ")
     else:
         output += "\n\n.. hidden-until:: \"" + deadline + "\"\n\n"
-    	system('echo "' + output + '" > feed1')
+        system('echo "' + output + '" > feed1')
         system('echo "Bravo, les tests se sont bien passés !" > feedback.out')
-    	system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
-    	output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
+        system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
+        output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
         system("feedback -i q1 --result success --feedback \"" + output2 + "\"")
-    	system("feedback --result success --feedback \" \" ")
+        system("feedback --result success --feedback \" \" ")
