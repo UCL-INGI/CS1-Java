@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-26 17:53+0200\n"
-"PO-Revision-Date: 2017-09-25 08:25+0000\n"
+"PO-Revision-Date: 2017-09-30 09:16+0000\n"
 "Last-Translator: Olivier MARTIN <olivier.martin@student.uclouvain.be>\n"
-"Language-Team: English <http://weblate.info.ucl.ac.be/projects/inginious/"
-"lfsab1401/en/>\n"
+"Language-Team: English "
+"<http://weblate.info.ucl.ac.be/projects/inginious/lfsab1401/en/>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2028,7 +2028,7 @@ msgstr ""
 #: m06_bf/src/TestCode.java:203 m06_bf/src/TestCode.java:230
 #, java-format
 msgid "{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"
-msgstr ""
+msgstr "{0}: the {1} method was not found in your answer!"
 
 #: m06_bf/src/TestCode.java:177
 #, java-format
