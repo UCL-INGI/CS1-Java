@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 # A modifier : 
 # La liste expectedFiles, mettre les fichiers attendus dans l'archive zip.
@@ -29,23 +29,20 @@ unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expected
 if (unzipOutput):
     output += unzipOutput
     output += "\n**Archive Content: 0/1**"
-    system('archive -a build.manifest')
     system('feedback --result failed --feedback "' + output + '"')
     exit(0)
 else:
     system('sh custom.sh')
     outjavac = ""
     try:
-    	subprocess.check_output("javac student/*.java", stderr = subprocess.STDOUT, shell = True)
-    	output += "Your archive has the correct content.\n"
-    	output += "\n**Archive content: 1/1**"
-    	system('feedback --result success --feedback "' + output + '"')
-    except subprocess.CalledProcessError, e:
+        subprocess.check_output("javac student/*.java", stderr = subprocess.STDOUT, shell = True)
+        output += "Your archive has the correct content.\n"
+        output += "\n**Archive content: 1/1**"
+        system('feedback --result success --feedback "' + output + '"')
+    except subprocess.CalledProcessError as e:
         output += "There are some compilation errors with your program :\n::\n\n"
         system("echo \""+e.output+"\" > outjavac.log")
-    	output += subprocess.check_output("sed -e \'s/^/\\t/\' < outjavac.log", shell = True)
-    	system('feedback --result failed --feedback "' + output + '"')
-     
+        output += subprocess.check_output("sed -e \'s/^/\\t/\' < outjavac.log", shell = True)
+        system('feedback --result failed --feedback "' + output + '"')
     
     exit(0)
-
