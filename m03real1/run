@@ -57,7 +57,7 @@ else:
         output += "There are some compilation errors with your program :\n::\n\n"
         #system("echo \""+e.output+"\" > outjavac.log")
         sp = subprocess.Popen(["sed", "-e", "s/^/\\t/"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output += sp.communicate(e.output)[0]
+        output += sp.communicate(e.output)[0].decode("utf-8")
         sp = subprocess.Popen(["feedback", "--result", "failed", "--feedback", output])
         exit(1)
     # On lance le feedback complet
