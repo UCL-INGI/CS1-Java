@@ -1,23 +1,43 @@
+accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Brandon NAITALI
-context: |+
+context: |
     En utilisant le caractère ``*``, dessinez une lettre ``X`` dont on vous donne la hauteur (supposée impaire). N'affichez pas d'espaces inutiles à droite de votre lettre.
+
+    Exemple avec une hauteur de 5, avec "-" symbolisant un espace :
+
+    .. code-block:: console
+
+        *---*
+        -*-*
+        --*
+        -*-*
+        *---*
 
     .. code-block:: java
 
         int hauteur; // la hauteur du X
 
+    NB: Même un retour à la ligne est un caractère de trop!
 environment: java7mockito
+evaluate: best
+groups: false
 limits:
-    memory: '200'
-    output: '1'
     time: '30'
+    output: '1'
+    memory: '200'
 name: 'Mission 2 : Question supplémentaire : Dessin de X'
 network_grading: false
 order: 33
 problems:
     q1:
-        name: Lettre X
         header: Écrivez ici le bout de programme permettant de dessiner la lettre
             X
         language: Java
+        name: Lettre X
         type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: ''
+weight: 1.0

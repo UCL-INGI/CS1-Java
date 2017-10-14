@@ -27,10 +27,9 @@ import StudentCode.*;
 public class Tests{
     
     public void testLetterS(int hauteur){
-        Random r = new Random();
         String result = Correction.lettreS(hauteur);
         String resultEtudiant = Etudiant.lettreS(hauteur);
-        String form = _("Le dessin de la lettre S de hauteur {0} donne \n\n{1}\n et votre programme donne\n\n{2}\n");
+        String form = _("Le dessin de la lettre S de hauteur {0} donne \n\n{1}\net votre programme donne\n\n{2}\n");
         String message = MessageFormat.format(form, hauteur, result, resultEtudiant);
         if(message.length() > 144) fail(_("Vous affichez trop de caractères!")); // 144 est le feedback avec 10 de hauteur et 11 dans le 1er for
         if(!result.equals(resultEtudiant)) fail(message);
@@ -39,6 +38,7 @@ public class Tests{
     @Test
     public void testLauncher(){
         try{
+            
             testLetterS(5);
             testLetterS(7);
             testLetterS(9);

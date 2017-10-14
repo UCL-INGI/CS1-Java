@@ -26,12 +26,11 @@ import StudentCode.*;
 
 public class Tests{
     
-    public void testLetterX(){
-        Random r = new Random();
-        int hauteur = 10;//((r.nextInt(4) + 1) * 2) + 1; // génerer un nombre impair pour la hauteur
+    public void testLetterX(int hauteur){
+        
         String result = Correction.lettreX(hauteur);
         String resultEtudiant = Etudiant.lettreX(hauteur);
-        String form = _("Le dessin de la lettre X de hauteur {0} donne \n\n{1}\n et votre programme donne\n\n{2}\n");
+        String form = _("Le dessin de la lettre X de hauteur {0} donne \n\n{1}\net votre programme donne\n\n{2}\n");
         String message = MessageFormat.format(form, hauteur, result, resultEtudiant);
         if(message.length() >= 318) fail(_("Vous affichez trop de caractères!"));// l'étudiant n'a pas besoin de mettre plus de 11 et 11 dans ses boucles for
         if(!result.equals(resultEtudiant)) fail(message);
@@ -40,11 +39,11 @@ public class Tests{
     
     @Test
     public void testLauncher(){
-        int nombreTests = 10;
         try{
-            for(int i = 0; i < nombreTests; i++){
-                testLetterX();
-            }
+                testLetterX(3);
+				testLetterX(5);
+                testLetterX(7);
+                testLetterX(9);
         }catch (ArithmeticException e){
             fail(_("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
