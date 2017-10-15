@@ -141,8 +141,7 @@ public class TestCode{
 		/**
 		 * @pre		-
 		 * @post	Vérifie que  le code de l'étudiant renvoie 
-		 *			bien -1 en cas d'erreur et que le flux est
-		 *			bien fermé.
+		 *			bien -1.
 		 */
 		public Void call() throws Exception,IOException{
 			BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
