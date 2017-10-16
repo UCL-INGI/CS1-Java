@@ -30,14 +30,21 @@ public class Correction {
         System.setOut(ps);
 	// Solution //
         int compteurDiagonale = 0;
+        int compteurDiagonaleInv = hauteur;
+
 	for(int j = 0; j < hauteur; j++){
 		for(int i = 0; i < hauteur; i++){
         		if(i == compteurDiagonale || i == hauteur-compteurDiagonale-1) 			
             		System.out.print("*");
-       			else System.out.print(" ");
+       			else {
+                    if((i<=hauteur-compteurDiagonale-1 && j<=hauteur/2) || (i<=hauteur-compteurDiagonaleInv-1 && j>hauteur/2))
+                		System.out.print(" ");
+                }
    		}
-    		System.out.println();
+        	if(j != hauteur-1)
+				System.out.println();
     		compteurDiagonale++;
+        	compteurDiagonaleInv--;
 	}	
 	///////////////
         System.setOut(old);

@@ -34,7 +34,8 @@ public class Correction {
             if (i == 0 || i == hauteur - 1 || i == hauteur/2) r = "***";
             else if (i < hauteur/2) r = "*";
             else r = "  *";
-            System.out.println(r);
+            if(i == hauteur-1) System.out.print(r);
+			else System.out.println(r);
         }
 	///////////////
         System.setOut(old);
