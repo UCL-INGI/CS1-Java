@@ -11,6 +11,7 @@ import inginiousUtils
 import time
 import os
 import subprocess
+from inginious import feedback
 
 os.environ['TZ'] = 'Europe/Brussels'
 
@@ -41,7 +42,8 @@ unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expected
 if (unzipOutput):
     output += unzipOutput
     output += "\n**Archive Content: 0/1**"
-    system('feedback --result failed --feedback "' + output + '"')
+    feedback.set_global_result("failed")
+    feedback.set_global_feedback(output)
     exit(0)
 else:
     system('sh custom.sh')
@@ -49,12 +51,14 @@ else:
         subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
         output += "Your archive has the correct content.\n"
         output += "\n**Archive content: 1/1**"
-        system('feedback --result success --feedback "' + output + '"')
+        feedback.set_global_result("success")
+        feedback.set_global_feedback(output)
     except subprocess.CalledProcessError as e:
         output += "There are some compilation errors with your program :\n::\n\n"
         sp = subprocess.Popen(["sed", "-e", "s/^/\\t/"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output += sp.communicate(e.output)[0].decode("utf-8")
-        sp = subprocess.Popen(["feedback", "--result", "failed", "--feedback", output])
+        feedback.set_global_result("failed")
+        feedback.set_global_feedback(output)
         exit(1)
     # On lance le feedback complet
     system('sh run.sh')
@@ -78,15 +82,17 @@ else:
         print(output2)
         feed1.close()
         feedback2out.close()
-        proc = subprocess.Popen(["feedback", "-i", "q1", "--result", "success", "--feedback", output2])
-        proc.wait()
-        proc = subprocess.Popen(["feedback", "--result", "success", "--feedback", "L'archive contient les bons fichiers."])
-        proc.wait()
+        feedback.set_problem_result("success","q1")
+        feedback.set_problem_feedback(output2,"q1")
+        feedback.set_global_result("success")
+        feedback.set_global_feedback("L'archive contient les bons fichiers.")
     else:
         output += "\n\n.. hidden-until:: \"" + deadline + "\"\n\n"
         system('echo "' + output + '" > feed1')
         system('echo "Bravo, les tests se sont bien passés ! Faites cependant attention, les tests ne sont pas tout à fait complets étant donné que l\'on vous donne une certaine liberté sur l\'implémentation de la classe. Un feedback vert sur INGInious ne veut donc pas dire que tout est parfaitement correct." > feedback.out')
         system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
         output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
-        system("feedback -i q1 --result success --feedback \"" + output2 + "\"")
-        system("feedback --result success --feedback \" \" ")
+        feedback.set_problem_result("success","q1")
+        feedback.set_problem_feedback(output2,"q1")
+        feedback.set_global_result("success")
+        feedback.set_global_feedback("")
