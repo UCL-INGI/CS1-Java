@@ -8,6 +8,7 @@ import zipfile
 import inginiousUtils
 import os
 import subprocess
+from inginious import feedback
 
 os.environ['TZ'] = 'Europe/Brussels'
 
@@ -29,7 +30,8 @@ unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expected
 if (unzipOutput):
     output += unzipOutput
     output += "\n**Archive Content: 0/1**"
-    system('feedback --result failed --feedback "' + output + '"')
+    feedback.set_global_result("failed")
+    feedback.set_global_feedback(output)
     exit(0)
 else:
     system('sh custom.sh')
@@ -38,11 +40,13 @@ else:
         subprocess.check_output("javac student/*.java", stderr = subprocess.STDOUT, shell = True)
         output += "Your archive has the correct content.\n"
         output += "\n**Archive content: 1/1**"
-        system('feedback --result success --feedback "' + output + '"')
+        feedback.set_global_result("success")
+        feedback.set_global_feedback(output)
     except subprocess.CalledProcessError as e:
         output += "There are some compilation errors with your program :\n::\n\n"
         system("echo \""+e.output+"\" > outjavac.log")
         output += subprocess.check_output("sed -e \'s/^/\\t/\' < outjavac.log", shell = True)
-        system('feedback --result failed --feedback "' + output + '"')
+        feedback.set_global_result("failed")
+        feedback.set_global_feedback(output)
     
     exit(0)
