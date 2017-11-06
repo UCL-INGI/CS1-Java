@@ -128,7 +128,7 @@ public class Mission6Test
 	@Test
 	public void temps_delta() throws Throwable
 	{
-		checkMethod(temps, long.class, "delta", temps);
+		checkMethod(temps, int.class, "delta", temps);
 		checkConstructor(temps, int.class, int.class, int.class);
 		String str = "La méthode delta comporte des erreurs : ";
 
@@ -136,15 +136,15 @@ public class Mission6Test
 			object1 = constructor.newInstance(0,0,0);
 			object2 = constructor.newInstance(0,0,0);
 			collector.checkThat(str + "avec un Temps initialisé à 0h, 0m, 0s et t initialisé à 0h, 0m, 0s, delta devrait retourner 0. ", 
-					((int) (long) method.invoke(object1, object2)), equalTo(0));
+					((int) method.invoke(object1, object2)), equalTo(0));
 
 			object1 = constructor.newInstance(1,1,1);
 			collector.checkThat(str + "avec un Temps initialisé à 1h, 1m, 1s et t initialisé à 0h, 0m, 0s, delta devrait retourner 3661. ", 
-					((int) (long) method.invoke(object1, object2)), equalTo(3661));
+					((int) method.invoke(object1, object2)), equalTo(3661));
 
 			object2 = constructor.newInstance(2,2,2);
 			collector.checkThat(str + "avec un Temps initialisé à 1h, 1m, 1s et t initialisé à 0h, 0m, 0s, delta devrait retourner -3661. ", 
-					((int) (long) method.invoke(object1, object2)), equalTo(-3661));
+					((int) method.invoke(object1, object2)), equalTo(-3661));
 		}catch(InvocationTargetException e){
 			Throwable t = e.getCause();
             t.printStackTrace();

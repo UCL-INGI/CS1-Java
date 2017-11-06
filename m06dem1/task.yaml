@@ -60,16 +60,6 @@ context: |+
              }
 
             /**
-             *     Surcharge la méthode equals() de la classe Object
-             */
-             public boolean equals(Object o){
-                 if(o instanceof Pair){
-                     return (((Pair) o).getA() == a) && (((Pair) o).getB() == b);
-                 }
-                 return false;
-             }
-
-            /**
              * @pre        -
              * @post    retourne une nouvelle instance de Pair dont les deux
              *             éléments sont les opposés de ceux de cette paire-ci.
