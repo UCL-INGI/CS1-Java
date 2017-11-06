@@ -21,7 +21,7 @@ problems:
         language: java
         type: code-single-line
         name: ''
-        header: Déclarer un matrice  *m*  rectangulaire de  *k*  colonnes et  *l*  lignes
+        header: Déclarer un matrice  *m*  rectangulaire, de  *k*  tableaux contenant  *l*  éléments chacun,
             pouvant contenir des réels (*l* et *k* sont déjà déclarées).
     q3:
         header: Considérant la matrice de la question 2 récupérez le nombre de colonnes  *k*.

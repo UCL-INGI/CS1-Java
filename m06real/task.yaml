@@ -14,6 +14,8 @@ context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pou
 
   - Chanson.java
 
+  - Temps.java
+
   - Programme.java
 
   - README.txt'
