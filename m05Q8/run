@@ -193,7 +193,7 @@ def run(customscript,execcustom,nexercices,tests=[],runner='Runner'):
                         i += 1
     else: # La compilation a raté
         Log = add_indentation_level(Log)
-        feed = _("Le programme ne compile pas : \n") + code_litteral + Log + "\n"
+        feed = _("Le programme ne compile pas : \n\n") + code_litteral + Log + "\n"
         feedback.set_global_result('failed')
         feedback.set_global_feedback(feed)
 
