@@ -29,6 +29,7 @@ from inginious import input
 
 def initTranslations():
     """ Initialise la fonction _() qui permettra de traduire les chaines de caractère. 
+
         Crée un fichier contenant le code de langue afin que le code Java puisse le récupérer plus tard
     """
     import gettext
@@ -111,7 +112,7 @@ def get_test_files(runner):
     """
     files = []
     for file in os.listdir('./src'):
-        if getfilename(file) != runner and getfilename(file) != 'Correction' and not os.path.isdir("./src/"+file) and file.endswith('.java'):
+        if getfilename(file) != runner and not file.startswith('Correction') and not os.path.isdir("./src/"+file) and file.endswith('.java'):
             files.append(getfilename(file))
     return files
 
@@ -128,7 +129,7 @@ def run(customscript,execcustom,nexercices,tests=[],runner='Runner'):
     #Récupération des fichiers de tests si jamais il ne sont pas fournis à l'appel de la méthode
     if not tests:
         tests = get_test_files(runner)
-        code_litteral = ".. code-block::\n\n" 
+    code_litteral = ".. code-block::\n\n"
     parsetemplate() # Parse les réponses de l'étudiant
     if execcustom != 0: # On doit exécuter le script personnalsé
         # If this is a python script we call the main() method with the _() function to transmit the translation mechanism

@@ -129,7 +129,7 @@ def run(customscript,execcustom,nexercices,tests=[],runner='Runner'):
     #Récupération des fichiers de tests si jamais il ne sont pas fournis à l'appel de la méthode
     if not tests:
         tests = get_test_files(runner)
-        code_litteral = ".. code-block::\n\n" 
+    code_litteral = ".. code-block::\n\n"
     parsetemplate() # Parse les réponses de l'étudiant
     if execcustom != 0: # On doit exécuter le script personnalsé
         # If this is a python script we call the main() method with the _() function to transmit the translation mechanism
