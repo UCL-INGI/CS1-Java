@@ -8,6 +8,8 @@ context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pou
 
   - Square.java
 
+  - Rectangle.java
+
   - DrawPanel.java
 
   - Equilateral.java
