@@ -35,7 +35,7 @@ system('getinput "q1" > basicSubmission.zip')
 title1 = "Testing content of archive"
 output = inginiousUtils.get_rst_title(title1) + "\n\n"
 
-expectedFiles = ['Square.java', 'DrawPanel.java', 'Equilateral.java', 'MyShape.java', 'Segment.java', 'Shape.java', 'Triangle.java', 'README.TXT']
+expectedFiles = ['Square.java', 'DrawPanel.java', 'Equilateral.java', 'MyShape.java', 'Segment.java', 'Shape.java', 'Triangle.java', 'Rectangle.java', 'README.TXT']
 
 unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expectedFiles)
 
