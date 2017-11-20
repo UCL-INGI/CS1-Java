@@ -37,6 +37,7 @@ public class TestParam {
 	Employe e1;
 	Object e2;
 	boolean res;
+	static String s = "";
 
 	public TestParam(Employe e1,Object e2,boolean res) {
 		this.e1 = e1;
@@ -48,10 +49,10 @@ public class TestParam {
 	public static Collection<Object []> data() {
 		return Arrays.asList(new Object [][] {
 			{new Employe("Louis",2000),null,false},
-			{new Employe("Jean",1000),new Employe("Jean",1000),true},
-			{new Employe("Jacques",972.4),new Employe("Jacques",1989),false},
-			{new Employe("Pierre",10000),new Employe("Laura",10000),false},
-			{new Employe("Sarah",1888),new Employe("Arthur",1000),false},
+			{new Employe("Jean",1000),new Employe("Jean"+s,1000),true},
+			{new Employe("Jacques",972.4),new Employe("Jacques"+s,1989),false},
+			{new Employe("Pierre",10000),new Employe("Laura"+s,10000),false},
+			{new Employe("Sarah",1888),new Employe("Arthur"+s,1000),false},
 			{new Employe("Luc",1234),1,false}
 		});
 	}

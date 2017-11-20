@@ -36,6 +36,7 @@ public class TestParam {
 	Directeur d1;
 	Object d2;
 	boolean res;
+	static String s = "";
 
 	public TestParam(Directeur d1,Object d2,boolean res) {
 		this.d1 = d1;
@@ -48,14 +49,14 @@ public class TestParam {
 		return Arrays.asList(new Object [][] {
 			{new Directeur("Jean",2000,0.1),null,false},
 			{new Directeur("Jacques",1599,0.2),true,false},
-			{new Directeur("George",2500,0.6),new Directeur("Luc",2000,0.9),false},
-			{new Directeur("Basil",2000,0.3),new Directeur("Basil",2222,0.11),false},
-			{new Directeur("Hervé",1200,0.1),new Directeur("Jo",1200,0.2),false},
-			{new Directeur("Hadoc",1100,0.5),new Directeur("Edgard",1111,0.5),false},
-			{new Directeur("Phillipe",1567,0.12),new Directeur("Phillipe",1567,0.11),false},
-			{new Directeur("Kalid",1400,0.1),new Directeur("Kalid",1200,0.1),false},
-			{new Directeur("Gontrand",1200,0.6),new Directeur("Sylvain",1200,0.6),false},
-			{new Directeur("Albert",1543,0.98),new Directeur("Albert",1543,0.98),true}
+			{new Directeur("George",2500,0.6),new Directeur("Luc"+s,2000,0.9),false},
+			{new Directeur("Basil",2000,0.3),new Directeur("Basil"+s,2222,0.11),false},
+			{new Directeur("Hervé",1200,0.1),new Directeur("Jo"+s,1200,0.2),false},
+			{new Directeur("Hadoc",1100,0.5),new Directeur("Edgard"+s,1111,0.5),false},
+			{new Directeur("Phillipe",1567,0.12),new Directeur("Phillipe"+s,1567,0.11),false},
+			{new Directeur("Kalid",1400,0.1),new Directeur("Kalid"+s,1200,0.1),false},
+			{new Directeur("Gontrand",1200,0.6),new Directeur("Sylvain"+s,1200,0.6),false},
+			{new Directeur("Albert",1543,0.98),new Directeur("Albert"+s,1543,0.98),true}
 		});
 	}
 
