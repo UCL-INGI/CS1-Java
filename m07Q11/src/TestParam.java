@@ -38,6 +38,7 @@ public class TestParam {
 	DeStats d;
 	Object o;
 	boolean res;
+	static String s = "";
 
 	public TestParam(DeStats d,Object o,boolean res) {
 		this.d = d;
@@ -49,18 +50,18 @@ public class TestParam {
 	public static Collection<Object []> data() {
 		DeStats same = new DeStats("d6",12,new int[] {2,3,1,2,0,4});
 		DeStats sameButArray = new DeStats("d12",30,new int [] {15,5,0,0,5,5});
-		DeStats sameButArray2 = new DeStats("d12",30,new int [] {5,5,5,5,5,5});
+		DeStats sameButArray2 = new DeStats("d12"+s,30,new int [] {5,5,5,5,5,5});
 		sameButArray2.setRandom(sameButArray.getRandom());
 		int [] tab1 = new int [] {1,0,0,0,0,1};
 		return Arrays.asList(new Object [][] {
 			{new DeStats("d1"),null,false},
 			{new DeStats("d1"),new ArrayList<Integer>(),false},
-			{new DeStats("d2",100,new int[]{10,10,20,20,20,20}),new DeStats("d4",10,new int [] { 2,3,1,1,0,3}),false},
-			{new DeStats("d6",2,tab1),new DeStats("d3",2,tab1),false},
-			{new DeStats("d8",25,new int [] {25,0,0,0,0,0}),new DeStats("d8",25,new int [] {12,12,1,0,0,0}),false},
-			{new DeStats("d65",42,new int [] {1,2,3,30,0,6}),new DeStats("d65",1,new int [] {1,0,0,0,0,0}),false},
+			{new DeStats("d2",100,new int[]{10,10,20,20,20,20}),new DeStats("d4"+s,10,new int [] { 2,3,1,1,0,3}),false},
+			{new DeStats("d6",2,tab1),new DeStats("d3"+s,2,tab1),false},
+			{new DeStats("d8",25,new int [] {25,0,0,0,0,0}),new DeStats("d8"+s,25,new int [] {12,12,1,0,0,0}),false},
+			{new DeStats("d65",42,new int [] {1,2,3,30,0,6}),new DeStats("d65"+s,1,new int [] {1,0,0,0,0,0}),false},
 			{sameButArray,sameButArray2,false},
-			{new DeStats("42"),new DeStats("42"),false},
+			{new DeStats("42"),new DeStats("42"+s),false},
 			{same,same,true}
 		});
 	}

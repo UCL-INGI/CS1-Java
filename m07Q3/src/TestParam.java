@@ -37,6 +37,7 @@ public class TestParam {
 	De d1;
 	Object d2;
 	boolean res;
+	static String s = "";
 
 	public TestParam(De d1,Object d2,boolean res) {
 		this.d1 = d1;
@@ -47,12 +48,12 @@ public class TestParam {
 	@Parameters
 	public static Collection<Object []> data() {
 		De de1 = new De("dé1");
-		De de1bis = new De("dé1");
+		De de1bis = new De("dé1"+s);
 		De de2 = new De("dé2");
 		De de3 = new De("dé3");
 		De de4 = new De("dé4");
 		de4.setRandom(de1.getRandom());
-		De de1id = new De("dé1");
+		De de1id = new De("dé1"+s);
 		de1id.setRandom(de1.getRandom());
 		
 		return Arrays.asList(new Object [][] {
