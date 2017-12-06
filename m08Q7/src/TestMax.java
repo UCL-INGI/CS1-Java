@@ -55,27 +55,28 @@ public class TestMax {
 
 	@Test
 	public void test() {
+    String method_tested = "max() : ";
 		try {
 			MatriceCarree m = new MatriceCarree(this.m);
 			String msg = _("Test max : lorsque l''on exécute votre méthode max() sur la matrice\n{0}\nvotre code renvoie {1} au lieu de {2}");
 			String feed = MessageFormat.format(msg,m,m.max(),res);
 			assertThat(feed, m.max(),is(res));
 		}catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(method_tested + _("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(method_tested + _("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(method_tested + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(method_tested + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(method_tested + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(method_tested + _("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(method_tested + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(method_tested + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}
 }
