@@ -5,6 +5,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -23,7 +27,7 @@ public class VectorTest extends TestCase {
     private double[] expectedVector;
 
     public VectorTest(String filename, double[] expectedVector) {
-        this.filename = filename;
+        this.filename = filenameWithPath(filename);
         this.expectedVector = expectedVector;
     }
 
@@ -43,27 +47,17 @@ public class VectorTest extends TestCase {
         String msg, msge;
         double[] r = null;
 
-        msge = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a lancé une exception "), vectorToString(expectedVector));
+        msge = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a lancé une exception "), fileToString(filename));
         try {
                     //System.err.println("??!!!??");
 
-            r = Etudiant.loadVector(filenameWithPath(filename));
+            r = Etudiant.loadVector(filename);
         } catch (Exception e) {
             fail(msge + e.getMessage());
         }
 
-        msg = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), vectorToString(expectedVector), Arrays.toString(r), Arrays.toString(expectedVector));
+        msg = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), fileToString(filename), Arrays.toString(r), Arrays.toString(expectedVector));
         assertTrue(msg, Arrays.equals(expectedVector, r));
-    }
-
-
-    private String vectorToString(double[] v) {
-        if (v == null) return null;
-        String ret = "";
-        for (double elem : v) {
-            ret += elem + "\n";
-        }
-        return ret;
     }
 
     private String filenameWithPath(String filename) {
@@ -75,6 +69,35 @@ public class VectorTest extends TestCase {
         } catch (URISyntaxException e) {
         }
         return path;
+    }
+    /**
+     * @pre fileName !=null
+     * @post retourne le contenu du fichier sous la forme d'un String
+     **/
+    private static String fileToString(String fileName) {
+        StringBuffer ret = new StringBuffer();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(fileName));
+            String r;
+            while ((r = br.readLine()) != null) {
+                ret.append(r + "\n");
+            }
+        } catch (FileNotFoundException e) {
+            return null;
+        } catch (IOException e) {
+            return null;
+        } finally {
+            if (br != null)
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    return null;
+                }
+        }
+
+        return ret.toString();
+
     }
 
 }
