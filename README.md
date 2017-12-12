@@ -7,3 +7,11 @@ Les tâches viennent initialement des cours LSINF1101 et LFSAB1401 donné à l'U
 ## Documentation et contribuer
 
 Pour savoir comment contribuer et comment les tâches ont été faîtes, voir le [wiki](https://github.com/UCL-INGI/CS1-Java/wiki).
+
+## Authors
+- Alexandre Dubray
+- Brandon Naitali
+- Olivier Martin
+- Tanguy De Bels
+- Anthony Gégo
+- Olivier Goletti
