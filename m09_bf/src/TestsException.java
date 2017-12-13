@@ -26,6 +26,10 @@ import org.junit.Test;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import java.security.Permission;
+
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
@@ -35,6 +39,25 @@ import StudentCode.*;
 import src.librairies.*;
 
 public class TestsException{
+    private static SecurityManager oldSM = System.getSecurityManager();
+
+    @BeforeClass
+    public static void forbidSystemExitCall() {
+        final SecurityManager securityManager = new SecurityManager() {
+            public void checkPermission(Permission permission) {
+                if (permission.getName().startsWith("exitVM")) {
+                    throw new SecurityException("System.exit() not allowed");
+                }
+            }
+        };
+        System.setSecurityManager(securityManager);
+    }
+
+    @AfterClass
+    public static void enableSystemExitCall() {
+        System.setSecurityManager(oldSM);
+    }
+    
     @Rule public TestName name = new TestName();
 
     @Test
@@ -47,7 +70,7 @@ public class TestsException{
 		// Changement de permission
 		f1.setReadable(false);
 	}catch(IOException e){
-		fail("Erreur de lecture de fichier dans le test de l'IOException\n");
+	    fail(_("Erreur de lecture de fichier dans le test de l'IOException\n"));
 	}
 	catcher(new TestEx(file1, _("votre méthode ne gère pas les IOExceptions.\n")), 1); 
     }
