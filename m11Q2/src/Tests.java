@@ -90,6 +90,7 @@ public class Tests {
         public Void call() {
             //Test 1
             Pile pile = new Pile();
+            currentPile = pile;
             assertTrue(currentPre + _("Votre méthode pop() doit retourner null si la pile est vide.\n"), null == pile.pop());
             
             pile = new Pile();
