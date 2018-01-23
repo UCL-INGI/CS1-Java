@@ -79,6 +79,10 @@ for i in utilities/Translations/*.po; do
     git add $properties_file
     git add $run_mo_file
 
+    mkdir -p \$i18n/
+    cp $run_mo_file \$i18n/$code_LANG.mo
+    git add \$i18n/$code_LANG.mo
+
     # We copy all translations in all tasks
     for j in "${arr[@]}"; do
         #for Java
@@ -89,6 +93,11 @@ for i in utilities/Translations/*.po; do
         #for run script
         cp -r utilities/Translations/translations_run $j/$TASK_TRANSLATION/;
         git add $j/$TASK_RUN_TRANSLATION_FOLDER
+
+	#for tasks
+	mkdir -p $j/\$i18n/
+	cp $run_mo_file $j/\$i18n/$code_LANG.mo
+	git add $j/\$i18n/$code_LANG.mo
     done
 done
 

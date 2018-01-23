@@ -23,15 +23,24 @@
 MAIN_POT="utilities/Translations/main.pot";
 MAIN_RUN="utilities/run.py";
 
-echo '[1] Generating .pot file from JAVA sources and run script';
+JAVA_POT="utilities/Translations/java.pot";
+TASKS_POT="utilities/Translations/tasks.pot"
+
+echo '[1] Generating .pot file from JAVA sources, run script, and INGInious tasks files';
 
 # We list all .java files
 JAVA_LIST=$(find . -name "*.java" -exec echo -n '{} ' \; | tr '\n' ' ');
 # We list the custom scripts compatible with translations
 CUSTOM_TRANSLATABLE=$(find . -name "custom_translatable.py" -exec echo -n '{} ' \; | tr '\n' ' ');
 
-#Generate the .pot file
-xgettext -k_ --from-code UTF-8 -o $MAIN_POT $MAIN_RUN $JAVA_LIST $CUSTOM_TRANSLATABLE;
+#Generate the main .pot file
+xgettext -k_ --from-code UTF-8 -o $JAVA_POT $MAIN_RUN $JAVA_LIST $CUSTOM_TRANSLATABLE;
+
+#Generate the tasks .pot file
+pybabel extract -F babel.cfg -o $TASKS_POT .;
+
+#Merge both .pot files into one
+msgcat $JAVA_POT $TASKS_POT > $MAIN_POT;
 
 git add $MAIN_POT;
 
