@@ -10,4 +10,4 @@ problems:
     allowed_exts: [.zip]
     header: Soumettez ici l'archive zip
     name: Archive zip
-    type: code-file
+    type: file

@@ -89,7 +89,7 @@ problems:
       '
     limit: 3
     name: Appel de méthodes de la classe Math
-    type: multiple-choice
+    type: multiple_choice
   q10:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static boolean amical(int a, int\
@@ -132,7 +132,7 @@ problems:
       \ les deux nombres passés en argument sont amicaux et ``false``  sinon ?\n"
     limit: 3
     name: Les nombres amicaux
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static boolean f( double d, int\
@@ -163,7 +163,7 @@ problems:
       \ ce fragment de programme soit valide ?\n"
     limit: 3
     name: Utilisation de méthodes
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static void affiche(int n) {\n \
@@ -216,7 +216,7 @@ problems:
       \ cette méthode ``affiche`` ?\n"
     limit: 3
     name: Méthodes permettant d'afficher
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static void afficheSomme(int a,\
@@ -259,7 +259,7 @@ problems:
       \ la somme des deux entiers passés en arguments\n  */\n"
     limit: 3
     name: Méthodes void
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: "\n.. code-block:: java\n\n   int a=f(2);\n   int b=g(false);\n   int\
@@ -313,7 +313,7 @@ problems:
       \ laquelle ?\n"
     limit: 3
     name: Déclarations de méthodes
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {feedback: '
@@ -364,7 +364,7 @@ problems:
       \ entre les deux arguments\n  */\n"
     limit: 3
     name: Méthodes retournant un nombre
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static boolean pair(int n) {\n \
@@ -420,7 +420,7 @@ problems:
       \  */\n"
     limit: 3
     name: Méthodes retournant un booléen
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static double max(double a, double\
@@ -473,7 +473,7 @@ problems:
       \ passés en arguments\n  */\n"
     limit: 3
     name: Calcul du maximum
-    type: multiple-choice
+    type: multiple_choice
   q9:
     choices:
     - {text: "\n.. code-block:: java\n\n   public static double abs(double c) {\n\
@@ -518,4 +518,4 @@ problems:
       \ j=d+abs(2*d);\n"
     limit: 3
     name: Calcul de la valeur absolue
-    type: multiple-choice
+    type: multiple_choice

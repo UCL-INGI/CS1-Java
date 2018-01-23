@@ -15,11 +15,11 @@ problems:
         language: java
         header: Déclarez un tableau  *v*  pouvant contenir *n* entiers (la variable
             *n* est déjà déclarée).
-        type: code-single-line
+        type: code_single_line
         name: ''
     q2:
         language: java
-        type: code-single-line
+        type: code_single_line
         name: ''
         header: Déclarer un matrice  *m*  rectangulaire, de  *k*  tableaux contenant  *l*  éléments chacun,
             pouvant contenir des réels (*l* et *k* sont déjà déclarées).
@@ -27,10 +27,10 @@ problems:
         header: Considérant la matrice de la question 2 récupérez le nombre de colonnes  *k*.
         language: java
         name: ''
-        type: code-single-line
+        type: code_single_line
     q4:
         name: ''
         language: java
         header: Considérant la matrice de la question 2 récupérez le nombre de lignes
             *l*.
-        type: code-single-line
+        type: code_single_line

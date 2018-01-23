@@ -76,7 +76,7 @@ problems:
       \ ces données ?\n"
     limit: 3
     name: Types de données primitifs
-    type: multiple-choice
+    type: multiple_choice
   q10:
     choices:
     - {text: "\n.. code-block:: java\n\n   int i=0;\n   while(i<n) {\n    // faire\
@@ -111,7 +111,7 @@ problems:
       \ ?\n"
     limit: 3
     name: Boucles for et while
-    type: multiple-choice
+    type: multiple_choice
   q11:
     choices:
     - {text: "\n.. code-block:: java\n\n   char s='X';\n   for(int i=1;i<=(l*c);i++)\
@@ -142,7 +142,7 @@ problems:
       \ que les variables ``l`` et ``c`` ont été correctement initialisées.\n"
     limit: 3
     name: Boucles imbriquées
-    type: multiple-choice
+    type: multiple_choice
   q12:
     choices:
     - {text: "\n.. code-block:: java\n\n   int sum=n+1;\n   for(int i=2;i<n;i=i+1)\
@@ -196,7 +196,7 @@ problems:
       '
     limit: 3
     name: Calcul de la somme des diviseurs premiers d'un nombre
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: "``j`` est une variable de type ``int`` (entière)\n La ligne ``1`` contient\
@@ -233,7 +233,7 @@ problems:
       \ correcte ?\n"
     limit: 3
     name: Vocabulaire
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: "\n.. code-block:: java\n\n   if( (x>=min) && (x<max) ) {   }\n", valid: true}
@@ -296,7 +296,7 @@ problems:
       '
     limit: 3
     name: Instructions conditionnelles
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: "\n.. code-block:: java\n\n   if (x>=2.0) {\n     if (x<=5.0) {\n   \
@@ -336,7 +336,7 @@ problems:
       '
     limit: 3
     name: Instructions conditionnelles imbriquées
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: "\n.. code-block:: java\n\n  for(int i=0; i<5; i=i+1) {\n      System.out.print(\"\
@@ -390,7 +390,7 @@ problems:
       '
     limit: 3
     name: Boucles for
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: "\n.. code-block:: java\n\n  for(int i=1; i<=n; i=i+1) {\n     int reste=n%i;\n\
@@ -439,7 +439,7 @@ problems:
       '
     limit: 3
     name: Boucles for
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: "\n.. code-block:: java\n\n   for(int i=1;i<=n;i++) {\n      System.out.println(i*i);\n\
@@ -481,7 +481,7 @@ problems:
       '
     limit: 3
     name: Boucles for
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: "\n.. code-block:: java\n\n   for(int i=0;i<16;i++) {\n      System.out.print(\"\
@@ -522,7 +522,7 @@ problems:
       \n.. code-block:: java\n\n  XXXX\n  XXXX\n  XXXX\n  XXXX\n"
     limit: 3
     name: Boucles for imbriquées
-    type: multiple-choice
+    type: multiple_choice
   q9:
     choices:
     - {text: "\n.. code-block:: java\n\n   for(int i=1;i<=5;i++) {\n      for(int\
@@ -561,4 +561,4 @@ problems:
       \ le texte suivant\n\n.. code-block:: java\n\n  X\n  XX\n  XXX\n  XXXX\n  XXXXX\n"
     limit: 3
     name: Boucles for imbriquées
-    type: multiple-choice
+    type: multiple_choice

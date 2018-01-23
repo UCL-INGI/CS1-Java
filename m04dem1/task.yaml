@@ -19,7 +19,7 @@ network_grading: false
 order: 65
 problems:
     q1:
-        type: code-single-line
+        type: code_single_line
         header: |
             En utilisant l'API Java de la classe Character, assignez à la variable booléenne b la valeur true si la variable c contient un caractère représentant un chiffre, et la valeur false sinon. Répondez à cette question en une seule ligne.
         name: ''
@@ -30,4 +30,4 @@ problems:
             dans la variable d. Répondez à cette question en une seule ligne.
         name: ''
         language: Java
-        type: code-single-line
+        type: code_single_line

@@ -116,42 +116,42 @@ network_grading: false
 order: 176
 problems:
     q1:
-        type: code-single-line
+        type: code_single_line
         header: ''
         name: ''
         language: java
     q2:
         header: ''
         name: ''
-        type: code-single-line
+        type: code_single_line
         language: java
     q3:
         language: java
         name: ''
         header: ''
-        type: code-single-line
+        type: code_single_line
     q4:
         header: ''
         language: java
-        type: code-single-line
+        type: code_single_line
         name: ''
     q5:
         header: ''
         language: java
-        type: code-single-line
+        type: code_single_line
         name: ''
     q6:
         name: ''
         language: java
-        type: code-single-line
+        type: code_single_line
         header: ''
     q7:
         language: java
         header: ''
         name: ''
-        type: code-single-line
+        type: code_single_line
     q8:
-        type: code-single-line
+        type: code_single_line
         language: java
         header: ''
         name: ''

@@ -15,4 +15,4 @@ problems:
     allowed_exts: [.zip]
     header: Veuillez uploader votre phase de réalisation soit ici, soit via BlueJ
     name: Soumission de l'archive zip
-    type: code-file
+    type: file

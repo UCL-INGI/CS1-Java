@@ -40,4 +40,4 @@ problems:
         header: Écrivez ici le corps de la méthode compareTo(Object o). Vous n'avez
             pas besoin d'utiliser plus d'une ligne, pensez à utiliser les méthodes
             déjà à votre disposition.
-        type: code-single-line
+        type: code_single_line

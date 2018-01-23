@@ -27,7 +27,7 @@ network_grading: false
 order: 109
 problems:
     q1:
-        type: code-single-line
+        type: code_single_line
         header: Écrivez ici la ligne 1 permettant d'effectuer des opérations sur le
             fichier "cotes.txt".
         name: La ligne /*1*/
@@ -39,4 +39,4 @@ problems:
             programme.
         name: La condition /*2*/
         language: java
-        type: code-single-line
+        type: code_single_line

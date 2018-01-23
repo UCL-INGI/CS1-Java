@@ -183,4 +183,4 @@ name: 'Examen Juin 2011 online : Enoncé'
 network_grading: false
 order: 195
 problems:
-  q1: {header: '**Ne rien soumettre ici !**', language: java, name: '', type: code-single-line}
+  q1: {header: '**Ne rien soumettre ici !**', language: java, name: '', type: code_single_line}

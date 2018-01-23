@@ -23,4 +23,4 @@ problems:
     allowed_exts: [.zip]
     header: Soumettez ici l'archive zip ou faites-le directement via BlueJ.
     name: Phase de réalisation de la Mission 9
-    type: code-file
+    type: file

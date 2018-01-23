@@ -1,4 +1,3 @@
-accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Brandon NAITALI
 context: |
     En utilisant le caractère ``*``, dessinez une lettre ``X`` dont on vous donne la hauteur (supposée impaire). N'affichez pas d'espaces inutiles à droite de votre lettre.
@@ -19,8 +18,6 @@ context: |
 
     NB: Même un retour à la ligne est un caractère de trop!
 environment: java7mockito
-evaluate: best
-groups: false
 limits:
     time: '30'
     output: '1'
@@ -35,9 +32,3 @@ problems:
         language: Java
         name: Lettre X
         type: code
-stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
-tags: ''
-weight: 1.0

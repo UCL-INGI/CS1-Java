@@ -53,16 +53,16 @@ name: 'Mission 11: Question de Démarrage 2 : JUnit (partie 2)'
 network_grading: false
 order: 177
 problems:
-  q01: {header: '', language: java, name: '', type: code-single-line}
-  q02: {header: '', language: java, name: '', type: code-single-line}
-  q03: {header: '', language: java, name: '', type: code-single-line}
-  q04: {header: '', language: java, name: '', type: code-single-line}
-  q05: {header: '', language: java, name: '', type: code-single-line}
-  q06: {header: '', language: java, name: '', type: code-single-line}
-  q07: {header: '', language: java, name: '', type: code-single-line}
-  q08: {header: '', language: java, name: '', type: code-single-line}
-  q09: {header: '', language: java, name: '', type: code-single-line}
-  q10: {header: '', language: java, name: '', type: code-single-line}
-  q11: {header: '', language: java, name: '', type: code-single-line}
-  q12: {header: '', language: java, name: '', type: code-single-line}
-  q13: {header: '', language: java, name: '', type: code-single-line}
+  q01: {header: '', language: java, name: '', type: code_single_line}
+  q02: {header: '', language: java, name: '', type: code_single_line}
+  q03: {header: '', language: java, name: '', type: code_single_line}
+  q04: {header: '', language: java, name: '', type: code_single_line}
+  q05: {header: '', language: java, name: '', type: code_single_line}
+  q06: {header: '', language: java, name: '', type: code_single_line}
+  q07: {header: '', language: java, name: '', type: code_single_line}
+  q08: {header: '', language: java, name: '', type: code_single_line}
+  q09: {header: '', language: java, name: '', type: code_single_line}
+  q10: {header: '', language: java, name: '', type: code_single_line}
+  q11: {header: '', language: java, name: '', type: code_single_line}
+  q12: {header: '', language: java, name: '', type: code_single_line}
+  q13: {header: '', language: java, name: '', type: code_single_line}
