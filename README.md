@@ -15,3 +15,6 @@ Pour savoir comment contribuer et comment les tâches ont été faîtes, voir le
 - Tanguy De Bels
 - Anthony Gégo
 - Olivier Goletti
+- François Michel
+- Clémentine Munyabarenzi
+- Olivier Bonaventure
