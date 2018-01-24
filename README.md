@@ -17,4 +17,5 @@ Pour savoir comment contribuer et comment les tâches ont été faîtes, voir le
 - Olivier Goletti
 - François Michel
 - Clémentine Munyabarenzi
+- Ludovic Taffin 
 - Olivier Bonaventure
