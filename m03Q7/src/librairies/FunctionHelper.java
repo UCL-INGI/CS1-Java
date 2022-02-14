@@ -20,7 +20,7 @@ import java.text.MessageFormat;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.Etudiant;
 
 public class FunctionHelper {
@@ -44,20 +44,22 @@ public class FunctionHelper {
             if(method.getName().equals(fun_name)){
                 methodFound = true;
                 if(! method.getReturnType().equals(expected_type)){
-                    fail(MessageFormat.format(codeQuestion + _("Le type de retour de votre fonction doit être du type {0} !\n"), expected_type.toString()));
+                    fail(MessageFormat.format(codeQuestion + Translator.translate("Le type de retour de votre fonction doit être du type {0} !\n"), expected_type.toString()));
                 }
                 if(method.getGenericParameterTypes().length != expected_parameters.length){
-                    fail(MessageFormat.format(codeQuestion + _("Votre fonction doit prendre {0} argument(s) !\n"), expected_parameters.length));
+                    fail(MessageFormat.format(codeQuestion + Translator.translate("Votre fonction doit prendre {0} argument(s) !\n"), expected_parameters.length));
                 }
                 for(int i = 0; i < expected_parameters.length; i++){
                     if(! method.getGenericParameterTypes()[i].equals(expected_parameters[i])){
-                        fail(MessageFormat.format(codeQuestion + _("L''argument n°{0} n''est pas de type ''{1}'' comme demandé !\n"), i+1, expected_parameters[i].toString()));
+                        fail(MessageFormat.format(codeQuestion + Translator.translate
+("L''argument n°{0} n''est pas de type ''{1}'' comme demandé !\n"), i+1, expected_parameters[i].toString()));
                     }
                 }
             }
         }
         if(!methodFound)
-            fail(codeQuestion + _("Votre fonction n'a pas été définie correctement. Assurez vous que son nom est correctement défini !\n") + MessageFormat.format(_("Le nom attendu est : ''{0}''.\n"), fun_name));
+            fail(codeQuestion +
+                 Translator.translate("Votre fonction n'a pas été définie correctement. Assurez vous que son nom est correctement défini !\n") + 									MessageFormat.format(Translator.translate("Le nom attendu est : ''{0}''.\n"), fun_name));
     }
     
     /*

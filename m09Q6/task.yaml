@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |
     La classe ``Fichiers`` est une classe permettant de réaliser quelques tâches sur un fichier. On vous demande ici d'écrire la méthodes ``saveVector`` dont les spécifications et la signature sont :
 
@@ -12,17 +15,30 @@ context: |
        *     lignes suivantes : un élément par ligne en commençant par v[0] ...
        */
        public void saveVector(int [] v, String fileName)
-environment: java7mockito
-limits:
-    output: '1'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 9: Q* Fichiers:saveVector'
 network_grading: false
 order: 160
 problems:
     q1:
         type: code
+        name: saveVector
         header: 'Ecrivez la méthode saveVector, signature et corps de la méthode compris:'
         language: Java
-        name: saveVector
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

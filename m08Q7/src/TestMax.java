@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import StudentCode.MatriceCarree;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 @RunWith(Parameterized.class)
 public class TestMax {
@@ -58,25 +58,25 @@ public class TestMax {
     String method_tested = "max() : ";
 		try {
 			MatriceCarree m = new MatriceCarree(this.m);
-			String msg = _("Test max : lorsque l''on exécute votre méthode max() sur la matrice\n{0}\nvotre code renvoie {1} au lieu de {2}");
+			String msg = Translator.translate("Test max : lorsque l''on exécute votre méthode max() sur la matrice\n{0}\nvotre code renvoie {1} au lieu de {2}");
 			String feed = MessageFormat.format(msg,m,m.max(),res);
 			assertThat(feed, m.max(),is(res));
 		}catch (ArithmeticException e){
-            fail(method_tested + _("Attention, il est interdit de diviser par zéro."));
+            fail(method_tested + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(method_tested + _("Attention, certaines variables ont été mal castées !"));
+            fail(method_tested + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(method_tested + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(method_tested + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(method_tested + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(method_tested + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(method_tested + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(method_tested + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(method_tested + _("Vous initialisez un tableau avec une taille négative."));
+            fail(method_tested + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(method_tested + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(method_tested + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(method_tested + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(method_tested + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}
 }

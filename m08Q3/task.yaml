@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     On vous donne l'interface ``MyString`` suivante:
 
@@ -56,17 +59,30 @@ context: |-
             // A compléter
         }
       }
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 8 : Q* MyString - Contains'
 network_grading: false
 order: 146
 problems:
     q1:
         type: code
-        header: Ecrivez ici le contenu de la méthode ``contains`` de la classe ``StringTab``
         name: Méthode Contains
+        header: Ecrivez ici le contenu de la méthode ``contains`` de la classe ``StringTab``
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

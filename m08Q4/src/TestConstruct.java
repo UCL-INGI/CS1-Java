@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.ByteString;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
@@ -33,7 +33,7 @@ public class TestConstruct{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -46,21 +46,21 @@ public class TestConstruct{
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, il est interdit de diviser par zéro."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, certaines variables ont été mal castées !"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Vous initialisez un tableau avec une taille négative."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }	
 	private String generateByte() {
@@ -79,8 +79,8 @@ public class TestConstruct{
 		 *			le byte 00000000
 		 */
 		public Void call() {
-			String msg = "@1 :\n"+ _("{0} : votre code construit le byte {1} (représentation naturelle) au lieu du byte 00000000 (représentation naturelle)");
-			String ngLength = "@1 :\n"+_("{0} : votre code ne construit pas un String de taille 8");
+			String msg = "@1 :\n" + Translator.translate("{0} : votre code construit le byte {1} (représentation naturelle) au lieu du byte 00000000 (représentation naturelle)");
+			String ngLength = "@1 :\n"+ Translator.translate("{0} : votre code ne construit pas un String de taille 8");
 			String ngFeed = MessageFormat.format(ngLength,test_name());
 			ByteString bs = new ByteString();
 			String feed = MessageFormat.format("@1 :\n" + msg,test_name(),bs.toString());
@@ -101,11 +101,11 @@ public class TestConstruct{
 		 *			le String
 		 */
 		public Void call() {
-			String msg = _("{0} : lorsque l''on passe comme argument {1} à votre constructeur, il crée le byte {2} (représentation naturelle)");
+			String msg = Translator.translate("{0} : lorsque l''on passe comme argument {1} à votre constructeur, il crée le byte {2} (représentation naturelle)");
 			String rb = generateByte();
 			ByteString bs = new ByteString(rb);
 			if(bs.toString().length() != 8) {
-				fail(MessageFormat.format("@2 :\n"+_("{0} : votre code ne construit pas un byte de taille 8"),test_name()));
+				fail(MessageFormat.format("@2 :\n" + Translator.translate("{0} : votre code ne construit pas un byte de taille 8"),test_name()));
 				return null;
 			}
 			String feed = MessageFormat.format("@2 :\n" + msg,test_name(),rb,bs.toString());

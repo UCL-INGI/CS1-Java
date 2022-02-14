@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -6,16 +9,25 @@ context: |+
           Complétez les champs ci-dessous conformément à l'énoncé de la phase de réalisation de la mission 3.
         </p>
 
-environment: pythia0compat
-limits:
-    output: '5210'
-    memory: '32'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '32'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'NON Mission 3 : Phase de réalisation'
 network_grading: false
 order: 61
 problems:
     average:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -25,9 +37,10 @@ problems:
                 </p>public static double average(double a, double b, double c)
 
         language: java
-        name: ''
-        type: code
+        default: ''
     minimum:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -36,10 +49,11 @@ problems:
                   Ecrivez ici le code de la méthode minimum
                 </p>public static double minimum(double a, double b, double c)
 
-        name: ''
         language: java
-        type: code
+        default: ''
     maximum:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -49,9 +63,9 @@ problems:
                 </p>public static double maximum(double a, double b, double c)
 
         language: java
-        name: ''
-        type: code
+        default: ''
     median:
+        type: code
         name: ''
         header: |+
             .. raw:: html
@@ -61,11 +75,11 @@ problems:
                   Ecrivez ici le code de la méthode median
                 </p>public static double median(double a, double b, double c)
 
-        type: code
         language: java
+        default: ''
     sublime:
+        type: code
         name: ''
-        language: java
         header: |+
             .. raw:: html
 
@@ -74,8 +88,11 @@ problems:
                   Ecrivez ici le code de la méthode sublime
                 </p>public static boolean sublime(int n)
 
-        type: code
+        language: java
+        default: ''
     sub_help:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -84,7 +101,10 @@ problems:
                   Si vous souhaitez ajouter des méthodes résolvant des sous-problèmes, écrivez-les ici
                 </p>
 
-        name: ''
-        type: code
         language: java
-responseIsHTML: true
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

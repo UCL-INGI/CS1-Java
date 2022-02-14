@@ -20,7 +20,7 @@ import org.junit.Test;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 import java.util.Random;
@@ -80,8 +80,8 @@ public class TestListGet {
 			this.index = index;
 		}
 		public Void call() { 
-			String feedback  =_("@{0} :\nla fonction get avec l''AList\n{1}\net l''indice {2} doit renvoyer\n{3}\npourtant, votre code donne\n{4}\n");
-			String feedbackInequality = _("@{0} :\nvotre méthode get ne doit pas modifier le tableau !\n");
+			String feedback = Translator.translate("@{0} :\nla fonction get avec l''AList\n{1}\net l''indice {2} doit renvoyer\n{3}\npourtant, votre code donne\n{4}\n");
+			String feedbackInequality = Translator.translate("@{0} :\nvotre méthode get ne doit pas modifier le tableau !\n");
 			try{
 				// On crée deux instances identiques à l, une utilisée avec la correction, l'autre avec la méthode de l'étudiant
 				Etudiant tabCorr = AListHelper.newInstance(l);
@@ -92,9 +92,9 @@ public class TestListGet {
 				if(!AListHelper.objectArrayEquality(tabCorr.l, tabStu.l)) fail(MessageFormat.format(feedbackInequality, 2));
 				if(result != (resultStu)) fail(MessageFormat.format(feedback, 2, l, index, result, resultStu));
 			}catch(IndexOutOfBoundsException e){
-			    fail("@2 :\n" +_("votre méthode get() tente d'accéder à un index hors de l'AList ! Pensez à regarder les pré-conditions.\n"));
+			    fail("@2 :\n" + Translator.translate("votre méthode get() tente d'accéder à un index hors de l'AList ! Pensez à regarder les pré-conditions.\n"));
 			}catch(Exception e){
-			    fail("@2 :\n" +_("votre méthode get() lance une exception ("+ e +") ! Vérifiez que vous gérez tous les cas possibles.\n"));
+			    fail("@2 :\n" + Translator.translate("votre méthode get() lance une exception ("+ e +") ! Vérifiez que vous gérez tous les cas possibles.\n"));
 			}
 			return null;
 		}
@@ -103,22 +103,22 @@ public class TestListGet {
 	try{
 	    test.call();
 	}catch (ArithmeticException e){
-	    fail(currentPre + _("Attention, il est interdit de diviser par zéro.") );
+	    fail(currentPre + Translator.translate("Attention, il est interdit de diviser par zéro.") );
 	}catch(ClassCastException e){
-	    fail(currentPre + _("Attention, certaines variables ont été mal castées !") );
+	    fail(currentPre + Translator.translate("Attention, certaines variables ont été mal castées !") );
 	}catch(StringIndexOutOfBoundsException e){
-	    fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") );
+	    fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") );
 	}catch(ArrayIndexOutOfBoundsException e){
-	    fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+	    fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
 	}catch(NullPointerException e){
-	    fail(currentPre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") );
+	    fail(currentPre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") );
 	}catch(NegativeArraySizeException e){
-	    fail(currentPre + _("Vous initialisez un tableau avec une taille négative.") );
+	    fail(currentPre + Translator.translate("Vous initialisez un tableau avec une taille négative.") );
 	}catch(StackOverflowError e){
-	    fail(currentPre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") );
+	    fail(currentPre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") );
 	}catch(Exception e){
 
-	    fail(currentPre + _("Une erreur inattendue est survenue dans votre tâche : ") );
+	    fail(currentPre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") );
 	}
 	}
 	private String test_name(){

@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |+
     Dessiner la lettre H en utilisant de l'ASCII-art avec le caractère ``*``. Votre programme reçoit comme entrée la hauteur de la lettre à dessiner (supposée impaire) et sa largeur. N'affichez pas d'espaces inutiles à droite de votre lettre.
 
@@ -18,18 +21,31 @@ context: |+
         int hauteur; // la hauteur du H
         int largeur; // la largeur du H
 
-environment: java7mockito
-limits:
-    memory: '200'
-    output: '1'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 2 : Question supplémentaire : Dessin de H'
 network_grading: false
 order: 32
 problems:
     q1:
+        type: code
         name: Lettre H
         header: Écrivez ici le bout de programme permettant de dessiner la lettre
             H
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

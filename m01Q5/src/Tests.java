@@ -21,19 +21,19 @@ import org.junit.runner.Result;
 import org.junit.Test;
 import java.text.MessageFormat;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
-    private String feedbackBuilder = _("{0} XOR {1} ne retourne pas le bon résultat.\n");
+    private String feedbackBuilder = Translator.translate("{0} XOR {1} ne retourne pas le bon résultat.\n");
 
     public void test(boolean a, boolean b){
         boolean reponse_etudiant = Etudiant.xor(a, b);
         boolean expected = Correction.xor(a, b);
         String feedback = MessageFormat.format(feedbackBuilder, a, b, expected, reponse_etudiant);
-        assertEquals(feedback, expected, reponse_etudiant);
+        assertTrue(feedback, expected == reponse_etudiant);
     }
 	
     /**
@@ -47,17 +47,17 @@ public class Tests {
             test(false, true);
             test(false, false);
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

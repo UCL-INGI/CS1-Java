@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     La classe ``Fichiers`` est une classe permettant de réaliser quelques tâches sur un fichier. On vous demande ici d'écrire la méthodes ``countLines`` dont les spécifications et la signature sont :
 
@@ -13,17 +16,30 @@ context: |-
         public int countLines(String fileName);
 
     Pour lire le fichier, nous vous demandons d'utilisez un ``BufferedReader``.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 9 : Q* Fichiers'
 network_grading: false
 order: 157
 problems:
     q1:
         type: code
-        header: Ecrivez le corps de la méthode ``countLines``
         name: CountLines
+        header: Ecrivez le corps de la méthode ``countLines``
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -10,7 +10,7 @@ public class Translator {
     private static ResourceBundle myResources;
     private static boolean ok = true;
     
-    public static String _(String s) {
+    public static String translate(String s) {
         
         // Try to load once the bundle. If no bundle found, we use the String id instead of the translation.
         if(ok == true){

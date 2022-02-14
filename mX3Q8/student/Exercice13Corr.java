@@ -21,19 +21,17 @@ public class Exercice13Corr {
     * @post : Donne la valeur absolue
     *
     */
-    public static void eqsecdeg1(int a, int b, int c) {
+    public static String eqsecdeg1(int a, int b, int c) {
 	    int delta = ((b*b) - (4*a*c));
-        if (delta==0) System.out.println("1");
-        if (delta < 0 ) System.out.println("0");
-        if (delta > 0 ) System.out.println("2");
+        if (delta==0) return "1";
+        if (delta < 0 ) return "0";
+        return "2";
     }
-    public static int eqsecdeg2(int a, int b, int c) {
+    public static String eqsecdeg2(int a, int b, int c) {
         int delta = ((b*b) - (4*a*c));
-        if (delta==0) return 1;
-        if (delta < 0 ) return 0;
-        if (delta > 0 ) return 2;
-
-        return -1;
+        if (delta==0) return "1";
+        if (delta < 0 ) return "0";
+        return "2";
     }
     
 }

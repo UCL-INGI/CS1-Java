@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL
+categories: []
+contact_url: ''
 context: |
     Les interfaces sont très pratiques en termes de conception orientée objet et permettent d'avoir une vision globale cohérente du fonctionnement d'un programme, de ses différents acteurs et de la manière dont ils interagissent. Il est donc important de savoir implémenter des interfaces en respectant leurs spécifications. Voici l'interface ``DrapeauIF``:
 
@@ -80,24 +83,38 @@ context: |
         }
 
     Implémentez les deux alternatives de la méthode ``set()`` de la classe ``Drapeau`` en vous référant aux spécifications énoncées dans l'interface ``DrapeauIF``.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 8 : Question de démarrage 1 : Implémenter une interface'
 network_grading: false
 order: 142
 problems:
     q1:
         type: code
+        name: La méthode set(boolean)
         header: Implémentez ici le corps de la méthode ``set``, qui prend comme argument
             un booléen
-        name: La méthode set(boolean)
         language: Java
+        default: ''
     q2:
+        type: code
+        name: La méthode set(char)
         header: Implémentez ici le corps de la méthode ``set``, qui prend comme argument
             un char
-        name: La méthode set(char)
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

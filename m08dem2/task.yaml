@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL
+categories: []
+contact_url: ''
 context: |-
     En Java, concaténer des ``String`` avec l'opérateur ``+`` implique la création et la desctruction successive d'un grand nombre de ``String``. On utilise en général un ``StringBuffer`` (http://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html) pour éviter ce problème. En utilisant l'API de la classe ``StringBuffer``, implémentez le corps de la méthode ``repeat()`` qui permet de répéter un ``String`` un certain nombre de fois. Voici la signature de cette méthode :
 
@@ -12,18 +15,31 @@ context: |-
         public static String repeat(String s, int n){
             // À implémenter
         }
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 8 : Question de démarrage 2 : StringBuffer'
 network_grading: false
 order: 143
 problems:
     q1:
+        type: code
+        name: La méthode repeat
         header: Implémentez ici le corps de la méthode ``repeat``. Veillez à bien
             respecter les spécifications.
-        name: La méthode repeat
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

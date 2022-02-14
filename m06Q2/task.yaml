@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Considérons à nouveau la classe ``Date`` qui permet de représenter une date. Le squelette du code de cette classe est le suivant :
 
@@ -51,18 +54,31 @@ context: |-
         public int getAnnee(){
            // a compléter
         }
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Q* getters Date'
 network_grading: false
 order: 111
 problems:
     q1:
         type: code
+        name: getters de Date
         header: Écrivez les trois méthodes ``getJour``, ``getMois`` et ``getAnnee``
             (avec les signatures)
-        name: getters de Date
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

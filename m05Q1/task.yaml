@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Olivier MARTIN
+categories: []
+contact_url: ''
 context: |-
     Ecrivez la méthode ``boolean allSame(double [] v)`` qui retourne vrai si tous les éléments du tableau ont la même valeur, false sinon.
     la spécification est :
@@ -9,17 +12,30 @@ context: |-
          * @pre v != null, v contient au moins 2 éléments
          * @post retourne vrai si tous les éléments du tableau ont la même valeur, false sinon
          */
-environment: java7mockito
-limits:
-    memory: '200'
-    output: '1'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 5 : Q* : Tous la même valeur'
 network_grading: false
 order: 95
 problems:
     q1:
-        header: Écrivez ici la méthode
-        language: Java
         type: code
         name: Tous égaux
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

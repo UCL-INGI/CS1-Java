@@ -1,8 +1,8 @@
 #! /bin/bash
 EXERCICE="M1EC13"
 CODELITTERAL="::\n\n"
-JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
-JAVA="run_student --time 20 java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
+JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
+JAVA="run_student --time 20 java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
 
 # On met la machine en UTF-8
 export LC_ALL=en_US.UTF-8
@@ -48,14 +48,14 @@ fi
 
 
  #javac student/M1EC13Corr.java student/M1EC13Stu.java student/M1EC13.java
- OUTPUT1=$(java student/M1EC13 correction 3 2> err1.out)
- OUTPUT2=$(java student/M1EC13 etudiant 3 2> err2.out)
+ OUTPUT1=$(java student/M1EC13 correction 2> err1.out)
+ OUTPUT2=$(java student/M1EC13 etudiant 2> err2.out)
  
  ERR1=$(cat err1.out)
  ERR2=$(cat err2.out)
  
 if [ "$ERR1" != "" ];	then
- 	feedback -r failed -f "Il y a une erreur de compilation interne. Vous êtes invité à la signaler aux tuteurs afin qu'ils la corrigent."
+ 	feedback -r failed -f "ERR1 : $ERR1"
  	exit 1
 fi
  
@@ -76,8 +76,9 @@ if [ "$OUTPUT1" = "$OUTPUT2" ]; then
 	OUTPUT1=$(printf "Votre résultat: \n$OUTPUT2" | sed -e 's/^/\t/')
   	OUTPUT2=$(printf "\nLe résultat attendu: \n$OUTPUT1" | sed -e 's/^/\t/')
 	FEED=$(printf "Votre réponse correspond bien à la réponse correcte. \n ${CODELITTERAL}$OUTPUT1$OUTPUT2")
-	feedback -r success -f "$FEED"
+    feedback -r success -f "$FEED"
     exit 1
+	
 
 else
 	# feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans 		un fichier puis en le lisant.
@@ -88,4 +89,3 @@ else
 	feedback -r failed -f "$FEED"
 	exit 1
 fi
-exit 1

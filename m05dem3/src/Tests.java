@@ -23,22 +23,22 @@ import static org.hamcrest.CoreMatchers.is;
 import java.text.MessageFormat;
 import java.util.Random;
 import java.util.Arrays;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
-    private String feedbackBuilder = _("Avec une taille de {0}, votre code génère :\n\n{1}\n\nOr, vous devriez avoir : \n\n{2}");
-    private String feedbackBuilderSize = _("Votre matrice n'a pas la bonne taille.\n");
+    private String feedbackBuilder = Translator.translate("Avec une taille de {0}, votre code génère :\n\n{1}\n\nOr, vous devriez avoir : \n\n{2}");
+    private String feedbackBuilderSize = Translator.translate("Votre matrice n'a pas la bonne taille.\n");
     
     public void test(int a){
         int[][] reponse_etudiant = Etudiant.unite(a);
         int[][] expected = Correction.unite(a);
         
-        assertTrue(_("Votre code retourne null."), reponse_etudiant != null);
-        assertEquals(feedbackBuilderSize, expected.length, reponse_etudiant.length);
-        assertEquals(feedbackBuilderSize, expected[0].length, reponse_etudiant[0].length);
+        assertTrue(Translator.translate("Votre code retourne null."), reponse_etudiant != null);
+        assertTrue(feedbackBuilderSize, expected.length == reponse_etudiant.length);
+        assertTrue(feedbackBuilderSize, expected[0].length == reponse_etudiant[0].length);
 
         if(! Arrays.deepEquals(reponse_etudiant, expected))
             fail(MessageFormat.format(feedbackBuilder, a, Arrays.deepToString(reponse_etudiant).replace("],", "],\n"), Arrays.deepToString(expected).replace("],", "],\n")));
@@ -53,21 +53,21 @@ public class Tests {
             for(int i = 5; i > 0; i--)
                 test(i);
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

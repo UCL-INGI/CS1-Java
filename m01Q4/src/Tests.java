@@ -22,19 +22,19 @@ import org.junit.Test;
 import java.util.Random;
 import java.text.MessageFormat;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
-    private String feedbackBuilder = _("Lorsque la voiture entre en section {0} et sort en section {1}, la voiture a pacouru {2} section(s) et le prix attendu est {3}€ alors que votre code calcule {4}€.\n");
+    private String feedbackBuilder = Translator.translate("Lorsque la voiture entre en section {0} et sort en section {1}, la voiture a pacouru {2} section(s) et le prix attendu est {3}€ alors que votre code calcule {4}€.\n");
 
     public void test(int s_in, int s_out){
         double reponse_etudiant = Etudiant.prix(s_in, s_out);
         double expected = Correction.prix(s_in, s_out);
         String feedback = MessageFormat.format(feedbackBuilder, s_in, s_out, (s_out-s_in+1), expected, reponse_etudiant);
-        assertEquals(feedback, expected, reponse_etudiant, 0.001);
+        assertTrue(feedback, expected == reponse_etudiant);
     }
 	
     /**
@@ -51,17 +51,17 @@ public class Tests {
             test(2, 2);
             test(9, 9);
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

@@ -16,7 +16,7 @@ package StudentCode;
 
 import java.util.ArrayList;
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 public class Liste {
     
@@ -126,7 +126,7 @@ public class Liste {
      */
     public String toString(){
         if(tete == null)
-            return _("Liste vide\n");
+            return Translator.translate("Liste vide\n");
         StringBuilder r = new StringBuilder(400);
         ArrayList<Noeud> l = new ArrayList<Noeud>();
         Noeud n = tete;
@@ -134,16 +134,16 @@ public class Liste {
             l.add(n);
             n = n.suivant;
             if(l.size() > 50)
-                return _("Attention : votre liste est mal formée. Parcourir votre liste provoque une boucle infinie…\n");
+                return Translator.translate("Attention : votre liste est mal formée. Parcourir votre liste provoque une boucle infinie…\n");
         }
-        r.append(MessageFormat.format(_("Tête : Noeud[{0}]\n"), l.indexOf(tete)));
+        r.append(MessageFormat.format(Translator.translate("Tête : Noeud[{0}]\n"), l.indexOf(tete)));
         for(int i = 0; i < l.size(); i++) {
             Noeud nn = l.get(i);
             if(nn.suivant != null) {
-                r.append(MessageFormat.format(_("Noeud[{0}] : contenu : {1}, noeud suivant : Noeud[{2}]\n"), i, nn.element, l.indexOf(nn.suivant)));
+                r.append(MessageFormat.format(Translator.translate("Noeud[{0}] : contenu : {1}, noeud suivant : Noeud[{2}]\n"), i, nn.element, l.indexOf(nn.suivant)));
             }
             else {
-                r.append(MessageFormat.format(_("Noeud[{0}] : contenu : {1}, noeud suivant : null\n"), i, nn.element));
+                r.append(MessageFormat.format(Translator.translate("Noeud[{0}] : contenu : {1}, noeud suivant : null\n"), i, nn.element));
             }
         }
         return r.toString();

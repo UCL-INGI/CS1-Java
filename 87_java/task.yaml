@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schreick
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -37,11 +40,18 @@ context: |+
           Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
         </p>
 
-environment: pythia0compat
-limits:
-    memory: '32'
-    output: '5210'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '32'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 4 : Recherche du plus long palindrome'
 network_grading: false
 order: 81
@@ -49,7 +59,6 @@ problems:
     q1:
         type: code
         name: ''
-        language: java
         header: |+
             .. raw:: html
 
@@ -58,6 +67,8 @@ problems:
                   Complétez ici le corps de la méthode <code>count</code> dont la spécification est donnée dans l'énoncé.
                 </p>public static int longueurPlusLongPalindrome (String s)
 
+        language: java
+        default: ''
     subproblems:
         type: code
         name: ''
@@ -70,4 +81,9 @@ problems:
                 </p>
 
         language: java
-responseIsHTML: true
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

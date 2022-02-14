@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Considérons la classe ``Point`` qui permet de représenter une point. Le squelette du code de cette classe est le suivant :
 
@@ -42,17 +45,25 @@ context: |-
             */
             //A compléter
         }
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Q* distance'
 network_grading: false
 order: 117
 problems:
     q1:
         type: code
+        name: distance
         header: |-
             Écrivez ici la méthode ``distance`` dont les spécifications sont :
 
@@ -65,5 +76,10 @@ problems:
                  * Voir https://fr.wikipedia.org/wiki/Coordonnées_cartésiennes
                  * pour le rappel de la distance entre deux points
                  */
-        name: distance
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

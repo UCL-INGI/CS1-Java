@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |
     Les nombres premiers sont un concept important en mathématiques. Un nombre premier est un nombre entier qui n'a pour diviseurs que 1 et lui-même. Notez que 0 et 1 ne sont pas des nombres premiers. En utilisant une boucle for, écrivez un petit bout de code permettant de vérifier si le nombre n est premier ou non. Vous devez stocker votre réponse dans la variable booléenne ``prime`` une fois la boucle terminée, déjà initialisée à ``true`` pour vous. Une fois votre programme terminé, prime vaudra ``true`` si n est premier, et ``false`` si n n'est pas premier.
 
@@ -6,17 +9,30 @@ context: |
 
         int n = // n est plus grand ou égal à zéro
         boolean prime = true;
-environment: java7mockito
-limits:
-    memory: '200'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 2 : Question de démarrage 5 : Nombres premiers'
 network_grading: false
 order: 28
 problems:
     q1:
+        type: code
         name: Nombres premiers
         header: 'Écrivez ici le bout de programme :'
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -279,6 +279,7 @@ public class Cluster
     
     public static void main(String[] args)
     {
+        System.exit(127);
     	ComputerIF c1,c2,c3, c4;
     	c1=new FullComputer("joe",1,10);
     	c2=new FullComputer("jack",2,0);

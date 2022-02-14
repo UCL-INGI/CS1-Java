@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL & Ludovic TAFFIN & Olivier MARTIN
+categories: []
+contact_url: ''
 context: |-
     Une autoroute à péage est divisée en sections. Chaque section est identifiée par un entier. La première section a le numéro 1, le suivante le 2, ... Les véhicules doivent **entrer en début de section** et **sortir et fin de section**.
 
@@ -17,18 +20,31 @@ context: |-
     - Si ``sectionEntree`` vaut 3 et ``sectionSortie`` vaut 5, la voiture a parcouru 3 sections (les section 3, 4 et 5), donc le prix est 2.0€ (1€ + 0.5€ + 0.5€).
 
     - Si ``sectionEntree`` vaut 2 et ``sectionSortie`` vaut 2, la voiture a parcouru 1 section (la section 2), donc le prix est 1€.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Calcul de prix'
 network_grading: false
 order: 13
 problems:
     q1:
         type: code
+        name: Autoroute à péage
         header: 'Écrivez ici le bout de programme permettant de calculer le prix à
             payer :'
-        name: Autoroute à péage
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

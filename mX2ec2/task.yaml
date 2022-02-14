@@ -1,4 +1,7 @@
+accessible: true
 author: 'Clémentine Munyabarenzi (ressource : syllabus d''exercices LSINF1101)'
+categories: []
+contact_url: ''
 context: |
     Ecrivez un programme qui permet de donner, lorsqu'elles sont réelles, les solutions de l'`équation du second degré <https://fr.wikipedia.org/wiki/Équation_du_second_degré>`_
 
@@ -22,16 +25,25 @@ context: |
 
             System.out.print("Entrez la valeur du coefficient c :");
             double c=TextIO.getlnDouble();
-environment: java7
-limits:
-    memory: '100'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'NON Mission 2 : Exercice complémentaire 2 : Equations du second degré'
 network_grading: false
 order: 41
 problems:
     q1:
+        type: code
+        name: ''
         header: |-
             Une réponse affichée *doit* ressembler à ceci:
 
@@ -39,6 +51,10 @@ problems:
 
                 0.606048584047038
                 5.283827730287069
-        type: code
-        name: ''
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

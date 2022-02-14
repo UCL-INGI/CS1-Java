@@ -15,7 +15,6 @@
  */
 package student;
 import static org.junit.Assert.*;
-import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.Test;
 import java.util.Random;
@@ -156,22 +155,22 @@ public class Exercice13 {
 			int b=2;
 			int c=3;
 
-			int r =Exercice13Corr.eqsecdegsol2(a,b,c);
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdegsol2(a,b,c)+" Vous devriez avoir ceci:"+r, r, Exercice13Stu.eqsecdegsol2(a,b,c));
+			double r =Exercice13Corr.eqsecdegsol2(a,b,c);
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdegsol2(a,b,c)+" Vous devriez avoir ceci:"+r, r == Exercice13Stu.eqsecdegsol2(a,b,c));
 			
             a=1;
 			b=18;
 			c=3;
 
 			r =Exercice13Corr.eqsecdegsol2(a,b,c);
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdegsol2(a,b,c)+" Vous devriez avoir ceci:"+r, r, Exercice13Stu.eqsecdegsol2(a,b,c));
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdegsol2(a,b,c)+" Vous devriez avoir ceci:"+r, r == Exercice13Stu.eqsecdegsol2(a,b,c));
 			
             a=1;
 			b=2;
 			c=1;
 
 			r =Exercice13Corr.eqsecdegsol2(a,b,c);
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdegsol2(a,b,c)+" Vous devriez avoir ceci:"+r, r, Exercice13Stu.eqsecdegsol2(a,b,c));
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdegsol2(a,b,c)+" Vous devriez avoir ceci:"+r, r == Exercice13Stu.eqsecdegsol2(a,b,c));
         }catch (ArithmeticException e){
 			fail(str + "Le code est incorrect : il est interdit de diviser par zéro.");
 			e.printStackTrace();
@@ -199,13 +198,6 @@ public class Exercice13 {
 	
 	// Code verificateur
 	public static void main(String[] args) {
-		Result result = JUnitCore.runClasses(Exercice13.class);
-		for (Failure failure: result.getFailures()) {
-			System.err.println(failure.toString());
-		}
-		if (result.wasSuccessful()) {
-			System.out.println("Tous les tests se sont passés sans encombre");
-			System.exit(127);
-		}
+		System.exit(127);
 	}
 }

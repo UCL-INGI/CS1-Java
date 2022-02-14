@@ -16,7 +16,7 @@ package StudentCode;
 
 import java.util.ArrayList;
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 public class Queue{
     
@@ -106,9 +106,9 @@ public class Queue{
      */
     public String toString(){
         if(entree == null && sortie == null)
-            return _("Queue vide\n");
+            return Translator.translate("Queue vide\n");
         if(entree == null && sortie != null)
-            return MessageFormat.format(_("Attention ''{0}'' pointe vers null mais pas ''{1}'' !\n"), "entree", "sortie");
+            return MessageFormat.format(Translator.translate("Attention ''{0}'' pointe vers null mais pas ''{1}'' !\n"), "entree", "sortie");
         StringBuilder r = new StringBuilder(400);
         ArrayList<Noeud> l = new ArrayList<Noeud>();
         Noeud n = entree;
@@ -116,21 +116,21 @@ public class Queue{
             l.add(n);
             n = n.suivant;
             if(l.size() > 50)
-                return _("Attention : votre queue est mal formée. Parcourir votre queue provoque une boucle infinie…\n");
+                return Translator.translate("Attention : votre queue est mal formée. Parcourir votre queue provoque une boucle infinie…\n");
         }
-        r.append(MessageFormat.format(_("Entrée : Noeud[{0}]\n"), l.indexOf(entree)));
+        r.append(MessageFormat.format(Translator.translate("Entrée : Noeud[{0}]\n"), l.indexOf(entree)));
         if(sortie != null)
             if(l.indexOf(sortie) == -1)
-                r.append(MessageFormat.format(_("Attention : ''{0}'' pointe vers un noeud non présent dans la queue !\n"), "sortie"));
+                r.append(MessageFormat.format(Translator.translate("Attention : ''{0}'' pointe vers un noeud non présent dans la queue !\n"), "sortie"));
             else
-                r.append(MessageFormat.format(_("Sortie : Noeud[{0}]\n"), l.indexOf(sortie)));
+                r.append(MessageFormat.format(Translator.translate("Sortie : Noeud[{0}]\n"), l.indexOf(sortie)));
         else
-            r.append(MessageFormat.format(_("Attention ''{0}'' pointe vers null !\n"), "sortie"));
+            r.append(MessageFormat.format(Translator.translate("Attention ''{0}'' pointe vers null !\n"), "sortie"));
         for(int i = 0; i < l.size(); i++) {
             Noeud nn = l.get(i);
-            String suivS = (nn.suivant == null) ? "null" : MessageFormat.format(_("Noeud[{0}]"), +l.indexOf(nn.suivant));
-            String percS = (nn.precedent == null) ? "null" : MessageFormat.format(_("Noeud[{0}]"), +l.indexOf(nn.precedent));
-            r.append(MessageFormat.format(_("Noeud[{0}] : contenu : {1}, noeud précérent : {2}, noeud suivant : {3}\n"), i, nn.element, percS, suivS));
+            String suivS = (nn.suivant == null) ? "null" : MessageFormat.format(Translator.translate("Noeud[{0}]"), +l.indexOf(nn.suivant));
+            String percS = (nn.precedent == null) ? "null" : MessageFormat.format(Translator.translate("Noeud[{0}]"), +l.indexOf(nn.precedent));
+            r.append(MessageFormat.format(Translator.translate("Noeud[{0}] : contenu : {1}, noeud précérent : {2}, noeud suivant : {3}\n"), i, nn.element, percS, suivS));
         }
         return r.toString();
     }

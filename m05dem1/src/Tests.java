@@ -23,18 +23,18 @@ import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 import java.util.Random;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
     //Do not use \n since there are multiple questions.
-    private String feedbackBuilder1 = "@{0} :\n" + _("Le tableau doit avoir une taille de {1}. Cependant, votre code crée un tableau de taille {2}.\n");
-    private String feedbackBuilder2 = "@{0} :\n" + _("La matrice devrait avoir {1} lignes et {2} colonnes. Cependant, votre code crée une matrice de {3} lignes et {4} colonnes.");
+    private String feedbackBuilder1 = "@{0} :\n" + Translator.translate("Le tableau doit avoir une taille de {1}. Cependant, votre code crée un tableau de taille {2}.\n");
+    private String feedbackBuilder2 = "@{0} :\n" + Translator.translate("La matrice devrait avoir {1} lignes et {2} colonnes. Cependant, votre code crée une matrice de {3} lignes et {4} colonnes.");
     
-    private String feedbackBuilder3 = "@{0} :\n" + _("Vous n'effectuez pas la bonne opération pour obtenir le nombre de lignes.\n");
-    private String feedbackBuilder4 = "@{0} :\n" + _("Vous n'effectuez pas la bonne opération pour obtenir le nombre de colonnes.\n");
+    private String feedbackBuilder3 = "@{0} :\n" + Translator.translate("Vous n'effectuez pas la bonne opération pour obtenir le nombre de lignes.\n");
+    private String feedbackBuilder4 = "@{0} :\n" + Translator.translate("Vous n'effectuez pas la bonne opération pour obtenir le nombre de colonnes.\n");
 
     @Test
     public void test_1(){ catcher(new t1(), 1); }
@@ -92,21 +92,21 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, il est interdit de diviser par zéro."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, certaines variables ont été mal castées !"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Vous initialisez un tableau avec une taille négative."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

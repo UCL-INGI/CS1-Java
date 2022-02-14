@@ -1,30 +1,69 @@
+accessible: true
 author: François MICHEL
-context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. _juin2011:\
-  \  https://inginious.info.ucl.ac.be/course/LSINF1101/examj2011q1/jun11.pdf\n\n__\
-  \ juin2011_\n\nQuestion 5 : Implémentez la méthode ``addProcess()`` de la classe\
-  \ ``Cluster``, selon la spécification donnée.  Aidez-vous de l'exemple présenté\
-  \ dans l'énoncé.  Indice: vous pouvez utiliser la valeur de ``count``.\n\n.. code-block::\
-  \ java\n\n    /**\n     * @pre p != null, p ne se trouve pas déjà sur un ordinateur\
-  \ du\n     *        cluster.\n     * @post Le processus p a été ajouté au premier\
-  \ ordinateur, à partir\n     *         de la tête de la liste, disposant des ressources\
-  \ nécessaires.\n     *         La nouvelle tête de liste est le noeud qui suit celui\
-  \ de\n     *         l'ordinateur où p a été ajouté. Si aucun ordinateur ne\n  \
-  \   *         dispose de ressources suffisantes, la tête de liste est\n     *  \
-  \       inchangée et une UnavailableException est lancée.\n     */\n    public void\
-  \ addProcess(Process p) throws UnavailableException {\n        /*** VOTRE REPONSE\
-  \ ***/\n    }"
-environment: java7
-limits: {memory: '100', output: '2', time: '30'}
+categories: []
+contact_url: ''
+context: |-
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  https://inginious.info.ucl.ac.be/course/LSINF1101/examj2011q1/jun11.pdf
+
+    __ juin2011_
+
+    Question 5 : Implémentez la méthode ``addProcess()`` de la classe ``Cluster``, selon la spécification donnée.  Aidez-vous de l'exemple présenté dans l'énoncé.  Indice: vous pouvez utiliser la valeur de ``count``.
+
+    .. code-block:: java
+
+        /**
+         * @pre p != null, p ne se trouve pas déjà sur un ordinateur du
+         *        cluster.
+         * @post Le processus p a été ajouté au premier ordinateur, à partir
+         *         de la tête de la liste, disposant des ressources nécessaires.
+         *         La nouvelle tête de liste est le noeud qui suit celui de
+         *         l'ordinateur où p a été ajouté. Si aucun ordinateur ne
+         *         dispose de ressources suffisantes, la tête de liste est
+         *         inchangée et une UnavailableException est lancée.
+         */
+        public void addProcess(Process p) throws UnavailableException {
+            /*** VOTRE REPONSE ***/
+        }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Examen Juin 2011 online : Question 5'
 network_grading: false
 order: 200
 problems:
-  q1: {header: 'Veillez à n''écrire que le corps, ne recopiez pas sa signature. ',
-    language: Java, name: Le corps de la méthode addProcess, type: code}
-  zmontest: {header: "Insérez votre code de test optionnel ci-dessous. Vous pouvez\
-      \ utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.\
-      \  Votre code sera exécuté dans une méthode ``montest``:\n\n.. code-block::\
-      \ java\n\n    public static void montest() { /* VOTRE CODE */ }\n\nAttention,\
-      \ toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.\
-      \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n",
-    language: java, name: Fonction de test optionnelle, optional: true, type: code}
+    q1:
+        type: code
+        name: Le corps de la méthode addProcess
+        header: 'Veillez à n''écrire que le corps, ne recopiez pas sa signature. '
+        language: Java
+        default: ''
+    zmontest:
+        type: code
+        name: Fonction de test optionnelle
+        header: |
+            Insérez votre code de test optionnel ci-dessous. Vous pouvez utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.  Votre code sera exécuté dans une méthode ``montest``:
+
+            .. code-block:: java
+
+                public static void montest() { /* VOTRE CODE */ }
+
+            Attention, toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.  Vous *devez* effacer ce code de test pour finaliser votre soumission.
+        language: java
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

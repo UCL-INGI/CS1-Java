@@ -24,7 +24,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -37,8 +37,8 @@ public class Tests {
     private String currentPre = preQ1;
     private PileInt currentPile;
 
-    private String str_bad_pop = _("Vous ne retournez pas le bon sommet de la pile. Quand le sommet est {0}, votre méthode pop() retourne {1}");
-    private String sb_init = _("Voici l'évolution de votre pile durant les tests afin que vous puissiez corriger votre code :\n\n");
+    private String str_bad_pop = Translator.translate("Vous ne retournez pas le bon sommet de la pile. Quand le sommet est {0}, votre méthode pop() retourne {1}");
+    private String sb_init = Translator.translate("Voici l'évolution de votre pile durant les tests afin que vous puissiez corriger votre code :\n\n");
 
     // Test avec une pile vide
     @Test
@@ -52,7 +52,7 @@ public class Tests {
                 PileInt pile = new PileInt();
                 currentPile = pile;
                 pile.pop();
-                fail(currentPre + _("Lorsque l'on exécute votre méthode pop() sur une pile vide, elle ne lance pas l'exception IllegalStateException.\n"));
+                fail(currentPre + Translator.translate("Lorsque l'on exécute votre méthode pop() sur une pile vide, elle ne lance pas l'exception IllegalStateException.\n"));
             }
             catch (IllegalStateException e) {
                 // Correct
@@ -76,17 +76,17 @@ public class Tests {
             PileInt pile = new PileInt();
             currentPile = pile;
             pile.push(4);
-            assertTrue(currentPre + _("Le sommet de votre pile vaut null après un push().\n"), pile.sommet != null);
-            assertTrue(currentPre + _("L'élément au sommet de votre pile ne vaut pas 4 après un push(4).\n"), pile.sommet.element == 4);
-            assertTrue(currentPre + _("La méthode depth() ne retourne pas 1 après un push().\n"), pile.depth() == 1);
+            assertTrue(currentPre + Translator.translate("Le sommet de votre pile vaut null après un push().\n"), pile.sommet != null);
+            assertTrue(currentPre + Translator.translate("L'élément au sommet de votre pile ne vaut pas 4 après un push(4).\n"), pile.sommet.element == 4);
+            assertTrue(currentPre + Translator.translate("La méthode depth() ne retourne pas 1 après un push().\n"), pile.depth() == 1);
             
             pile.push(6);
             currentPile = pile;
-            assertTrue(currentPre + _("Le sommet de votre pile vaut null après un push().\n"), pile.sommet != null);
-            assertTrue(currentPre + _("L'élément au sommet de votre pile ne vaut pas 6 après un push(6).\n"), pile.sommet.element == 6);
-            assertTrue(currentPre + _("La méthode depth() ne retourne pas 2 après avoir effectué 2 fois la méthode push().\n"), pile.depth() == 2);
-            assertTrue(currentPre + _("Le noeud suivant du sommet vaut null après avoir effectué 2 fois la méthode push().\n"), pile.sommet.suivant != null);
-            assertTrue(currentPre + _("L'élément suivant du sommet (l'élément tout en dessous de la pile) ne vaut pas 4 après avoir effectué push(4) suivi d'un push(6).\n"), pile.sommet.suivant.element == 4);
+            assertTrue(currentPre + Translator.translate("Le sommet de votre pile vaut null après un push().\n"), pile.sommet != null);
+            assertTrue(currentPre + Translator.translate("L'élément au sommet de votre pile ne vaut pas 6 après un push(6).\n"), pile.sommet.element == 6);
+            assertTrue(currentPre + Translator.translate("La méthode depth() ne retourne pas 2 après avoir effectué 2 fois la méthode push().\n"), pile.depth() == 2);
+            assertTrue(currentPre + Translator.translate("Le noeud suivant du sommet vaut null après avoir effectué 2 fois la méthode push().\n"), pile.sommet.suivant != null);
+            assertTrue(currentPre + Translator.translate("L'élément suivant du sommet (l'élément tout en dessous de la pile) ne vaut pas 4 après avoir effectué push(4) suivi d'un push(6).\n"), pile.sommet.suivant.element == 4);
 
             return null;
         }
@@ -139,7 +139,7 @@ public class Tests {
         currentPile = pile;
         int n_sommet_correct = 0;
         int n_sommet_student = 0;
-        sb.append(_("Pile après l'opération : "));
+        sb.append(Translator.translate("Pile après l'opération : "));
         if(op.equals("push")){
             sb.append("push(").append(n).append(")");
             currentPre = preQ1; //Since ce call push(), if an exception occur, it has to appear in the Q1
@@ -163,25 +163,25 @@ public class Tests {
     }
 
     public void catcher(Callable<Void> test) {
-        String msgPile = "\n" + _("Cette erreur est survenue quand la pile est :\n");
+        String msgPile = "\n" + Translator.translate("Cette erreur est survenue quand la pile est :\n");
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(currentPre + _("Attention, il est interdit de diviser par zéro.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, il est interdit de diviser par zéro.") + msgPile + currentPile.toString());
         }catch(ClassCastException e){
-            fail(currentPre + _("Attention, certaines variables ont été mal castées !") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, certaines variables ont été mal castées !") + msgPile + currentPile.toString());
         }catch(StringIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msgPile + currentPile.toString());
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msgPile + currentPile.toString());
         }catch(NullPointerException e){
-            fail(currentPre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msgPile + currentPile.toString());
         }catch(NegativeArraySizeException e){
-            fail(currentPre + _("Vous initialisez un tableau avec une taille négative.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Vous initialisez un tableau avec une taille négative.") + msgPile + currentPile.toString());
         }catch(StackOverflowError e){
-            fail(currentPre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msgPile + currentPile.toString());
         }catch(Exception e){
-            fail(currentPre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msgPile + currentPile.toString());
         }
     }
 }

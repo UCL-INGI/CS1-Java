@@ -29,7 +29,7 @@ msgstr "Se ha superado el límite de tiempo de su programa"
 #: utilities/run.py:173 utilities/run.py:191
 #, fuzzy
 msgid ""
-"Il semble que vous ayiez fait des erreurs dans votre code…\n"
+"Il semble que vous ayez fait des erreurs dans votre code…\n"
 "\n"
 msgstr "Parece que has cometido errores en tu código ...\n"
 

@@ -9,7 +9,7 @@ package student;
  * @author O. Bonaventure, Ch. Pecheur
  * @version Dec. 2007
  */
-public class Process //implements ProcessIF
+public class ProcessVide //implements ProcessIF
 {
 @	@q1@@
 }   

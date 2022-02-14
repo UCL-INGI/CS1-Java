@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     On vous donne la classe Employe dont voici le corps:
 
@@ -50,17 +53,30 @@ context: |-
             // Non fourni
         }
       }
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 7 : Q* Employe - Méthode toString'
 network_grading: false
 order: 128
 problems:
     q1:
         type: code
-        header: Ecrivez le *contenu* de la méthode toString.
         name: Méthode toString
+        header: Ecrivez le *contenu* de la méthode toString.
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

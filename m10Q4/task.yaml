@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |-
     La classe AList contient une implémentation simple d'un ArrayList sur base d'un tableau dont la taille augmente au fur et à mesure que l'on modifie la liste. Ecrivez le code des principales méthodes de cette classe:
 
@@ -82,11 +85,18 @@ context: |-
         }
 
     Vous pouvez tester vos méthodes individuellement.
-environment: java7mockito
-limits:
-    memory: '200'
-    time: '30'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 10 : Q* AList'
 network_grading: false
 order: 171
@@ -94,20 +104,29 @@ problems:
     q1:
         type: code
         name: Contains
-        language: Java
         header: Ecrivez le corps de la méthode contains
+        language: Java
+        default: ''
     q2:
+        type: code
         name: Get
-        language: Java
-        type: code
         header: Ecrivez le corps de la méthode get
+        language: Java
+        default: ''
     q3:
-        header: Ecrivez le corps de la méthode add
-        name: Add
-        language: Java
         type: code
-    q4:
+        name: Add
+        header: Ecrivez le corps de la méthode add
         language: Java
+        default: ''
+    q4:
         type: code
         name: Set
         header: Ecrivez le corps de la méthode set
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

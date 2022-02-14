@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |-
     En Java, les exceptions sont un concept clé qui vous permet de gérer le comportement de votre programme dans des cas extraordinaires. Voici la classe ``RevisedRatio`` :
 
@@ -74,18 +77,31 @@ context: |-
     .. code-block:: console
 
         La chaîne de caractères passée à parseInt() ne contient pas que des chiffres.
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 10 : Question de démarrage 1 : Traitement des exceptions'
 network_grading: false
 order: 166
 problems:
     q1:
-        language: Java
         type: code
+        name: L'intérieur de la boucle for
         header: Réécrivez entièrement l'intérieur de la boucle for (/\*1\*/). Veillez
             à n'écrire que l'intérieur de la boucle.
-        name: L'intérieur de la boucle for
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

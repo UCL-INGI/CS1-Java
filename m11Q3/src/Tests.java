@@ -22,7 +22,7 @@ import org.junit.Test;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -37,7 +37,7 @@ public class Tests {
         public Void call() {
             FIFOQueue q = new FIFOQueue();
             currentQueue = q;
-            assertTrue(_("Quand la queue est vide, vous devez retourner null.\n"), q.retire() == null);
+            assertTrue(Translator.translate("Quand la queue est vide, vous devez retourner null.\n"), q.retire() == null);
             return null;
         }
     }
@@ -53,10 +53,10 @@ public class Tests {
             Object o = new Integer(555513);
             q.ajoute(o);
             Object retire_student = q.retire();
-            assertTrue(_("Quand la queue ne contient qu'un élément, vous retournez null !\n"), retire_student != null);
-            assertTrue(_("Quand la queue ne contient qu'un élément, vous vous ne le retournez pas correctment.\n"), o.equals(retire_student));
-            assertTrue(MessageFormat.format(_("Vous n''avez pas mis la variable ''{0}'' à null quand la queue contient un seul élément et qu''on le retire.\n"), "entree"), q.entree == null);
-            assertTrue(MessageFormat.format(_("Vous n''avez pas mis la variable ''{0}'' à null quand la queue contient un seul élément et qu''on le retire.\n"), "sortie"), q.sortie == null);
+            assertTrue(Translator.translate("Quand la queue ne contient qu'un élément, vous retournez null !\n"), retire_student != null);
+            assertTrue(Translator.translate("Quand la queue ne contient qu'un élément, vous vous ne le retournez pas correctment.\n"), o.equals(retire_student));
+            assertTrue(MessageFormat.format(Translator.translate("Vous n''avez pas mis la variable ''{0}'' à null quand la queue contient un seul élément et qu''on le retire.\n"), "entree"), q.entree == null);
+            assertTrue(MessageFormat.format(Translator.translate("Vous n''avez pas mis la variable ''{0}'' à null quand la queue contient un seul élément et qu''on le retire.\n"), "sortie"), q.sortie == null);
             return null;
         }
     }
@@ -94,8 +94,8 @@ public class Tests {
                     String beforeRetire = qCorrecte.toString();
                     Object stu = q.retire();
                     Object exp = qCorrecte.retireCorrect();
-                    assertTrue(MessageFormat.format(_("Vous n''avez pas bien mis à jour la queue en retirant un noeud de la structure. La queue avant l''opération retire() est :\n{0}\nLa queue attendue est :\n{1}\nVotre queue est :\n{2}"), beforeRetire, qCorrecte.toString(), q.toString()), qCorrecte.toString().equals(q.toString()));
-                    assertTrue(MessageFormat.format(_("Vous avez retourné {0} alors que la réponse attendue est {1}. Le queue est :\n{2}"), stu, exp, q.toString()), exp.equals(stu));
+                    assertTrue(MessageFormat.format(Translator.translate("Vous n''avez pas bien mis à jour la queue en retirant un noeud de la structure. La queue avant l''opération retire() est :\n{0}\nLa queue attendue est :\n{1}\nVotre queue est :\n{2}"), beforeRetire, qCorrecte.toString(), q.toString()), qCorrecte.toString().equals(q.toString()));
+                    assertTrue(MessageFormat.format(Translator.translate("Vous avez retourné {0} alors que la réponse attendue est {1}. Le queue est :\n{2}"), stu, exp, q.toString()), exp.equals(stu));
                 }
             }
             return null;
@@ -103,25 +103,25 @@ public class Tests {
     }
 
     public void catcher(Callable<Void> test) {
-        String msg = "\n" + _("Cette erreur est survenue quand la queue est :\n");
+        String msg = "\n" + Translator.translate("Cette erreur est survenue quand la queue est :\n");
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro.") + msg + currentQueue.toString());
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro.") + msg + currentQueue.toString());
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !") + msg + currentQueue.toString());
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !") + msg + currentQueue.toString());
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msg + currentQueue.toString());
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msg + currentQueue.toString());
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msg + currentQueue.toString());
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msg + currentQueue.toString());
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msg + currentQueue.toString());
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msg + currentQueue.toString());
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative.") + msg + currentQueue.toString());
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative.") + msg + currentQueue.toString());
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msg + currentQueue.toString());
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msg + currentQueue.toString());
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msg + currentQueue.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msg + currentQueue.toString());
         }
     }
 }

@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL
+categories: []
+contact_url: ''
 context: |-
     Considérez maintenant la classe ``OrderedPair``, qui prend comme variable d'instance un objet de type ``Pair`` dont la classe se trouve dans la queston précédente. Voici la classe ``OrderedPair`` :
 
@@ -68,24 +71,38 @@ context: |-
         }
 
     Le but de l'exercice est d'implémenter les méthodes ``setA()`` et ``setB()`` sans oublier de mettre à jour ``ordered`` en fonction des nouvelles valeurs des nombres dans la paire.
-environment: java7mockito
-limits:
-    memory: '200'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Question de démarrage 2 : OrderedPair'
 network_grading: false
 order: 107
 problems:
     q1:
+        type: code
+        name: setA()
         header: Implémentez le corps de ``setA()``. N'oubliez pas de mettre à jour
             ``ordered``.
         language: Java
-        type: code
-        name: setA()
+        default: ''
     q2:
+        type: code
+        name: setB()
         header: Implémentez le corps de ``setB()``. N'oubliez pas de mettre à jour
             ``ordered``.
-        name: setB()
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

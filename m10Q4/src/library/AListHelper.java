@@ -15,11 +15,6 @@
 
 package src.library;
 
-import static student.Translations.Translator._;
-import java.text.MessageFormat;
-import java.util.concurrent.Callable;
-import java.util.Random;
-
 import src.library.*;
 import src.Correction;
 import StudentCode.*;

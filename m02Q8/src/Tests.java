@@ -24,7 +24,7 @@ import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 import java.util.Random;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 public class Tests {
@@ -32,12 +32,12 @@ public class Tests {
     
     @Test
     public void test_1(){
-        String feedback = MessageFormat.format(_("Vérifiez que vous gérez la factorielle de {0}.\n"), 1);
+        String feedback = MessageFormat.format(Translator.translate("Vérifiez que vous gérez la factorielle de {0}.\n"), 1);
         catcher(new TestFactorielle(1, feedback), 1);
     }
     @Test
     public void test_2(){
-        String feedback = MessageFormat.format(_("Vérifiez que vous gérez la factorielle de {0}.\n"), 0);
+        String feedback = MessageFormat.format(Translator.translate("Vérifiez que vous gérez la factorielle de {0}.\n"), 0);
         catcher(new TestFactorielle(0, feedback), 1);
     }
     
@@ -59,10 +59,10 @@ public class Tests {
         public Void call() {
             int resultat = Correction.fact(x); // résultat attendu
             int etudiantResult = Etudiant.fact(x); // résultat de l'étudiant
-            String feedbackBase  =_("La factorielle de {0} donne {1,number,#}, pourtant, votre code renvoie {2,number,#}.\n");
+            String feedbackBase  = Translator.translate("La factorielle de {0} donne {1,number,#}, pourtant, votre code renvoie {2,number,#}.\n");
             String erreur = MessageFormat.format(feedbackBase, x, resultat, etudiantResult);
             if(resultat != etudiantResult) fail(test_name() + " : " + erreur + " " + feedbackAdd);
-            System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+            System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
             return null;
         }
         
@@ -71,17 +71,17 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     private String test_name(){

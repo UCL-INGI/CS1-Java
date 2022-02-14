@@ -59,7 +59,7 @@ public class Exercice13 {
 			// Show what happened
 			String stu =baos.toString();
             stu = stu.replace("\n", "").replace("\r", "");
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+stu+" Vous devriez avoir ceci:"+solv, solv, stu);
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+stu+" Vous devriez avoir ceci:"+solv, solv.equals(stu));
 			
             a=1;
 			b=18;
@@ -90,7 +90,7 @@ public class Exercice13 {
 			// Show what happened
 			stu =baos.toString();
             stu = stu.replace("\n", "").replace("\r", "");
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+stu+" Vous devriez avoir ceci:"+solv, solv, stu);
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+stu+" Vous devriez avoir ceci:"+solv, solv.equals(stu));
 
 
 
@@ -123,7 +123,7 @@ public class Exercice13 {
 			// Show what happened
 			stu =baos.toString();
             stu = stu.replace("\n", "").replace("\r", "");
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+stu+" Vous devriez avoir ceci:"+solv, solv, stu);
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+stu+" Vous devriez avoir ceci:"+solv, solv.equals(stu));
 
 		}catch (ArithmeticException e){
 			fail(str + "Le code est incorrect : il est interdit de diviser par zéro.");
@@ -156,22 +156,22 @@ public class Exercice13 {
 			int b=2;
 			int c=3;
 
-			int r =Exercice13Corr.eqsecdeg2(a,b,c);
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdeg2(a,b,c)+" Vous devriez avoir ceci:"+r, r, Exercice13Stu.eqsecdeg2(a,b,c));
+			String r =Exercice13Corr.eqsecdeg2(a,b,c);
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdeg2(a,b,c)+" Vous devriez avoir ceci:"+r, String.valueOf(r).equals(Exercice13Stu.eqsecdeg2(a,b,c)));
 			
             a=1;
 			b=18;
 			c=3;
 
 			r =Exercice13Corr.eqsecdeg2(a,b,c);
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdeg2(a,b,c)+" Vous devriez avoir ceci:"+r, r, Exercice13Stu.eqsecdeg2(a,b,c));
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdeg2(a,b,c)+" Vous devriez avoir ceci:"+r, String.valueOf(r).equals(Exercice13Stu.eqsecdeg2(a,b,c)));
 			
             a=1;
 			b=2;
 			c=1;
 
 			r =Exercice13Corr.eqsecdeg2(a,b,c);
-            assertEquals(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdeg2(a,b,c)+" Vous devriez avoir ceci:"+r, r, Exercice13Stu.eqsecdeg2(a,b,c));
+            assertTrue(str+"Avec a="+a+" b="+b+" c="+c+" vous obtenez ceci:"+Exercice13Stu.eqsecdeg2(a,b,c)+" Vous devriez avoir ceci:"+r, String.valueOf(r).equals(Exercice13Stu.eqsecdeg2(a,b,c)));
         }catch (ArithmeticException e){
 			fail(str + "Le code est incorrect : il est interdit de diviser par zéro.");
 			e.printStackTrace();

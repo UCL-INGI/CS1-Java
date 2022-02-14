@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
 context: |-
     Écrivez une classe complète ``Employe`` dont les instances représentent un employé d’entreprise. Un employé est caractérisé par son nom (un string) et son salaire (un entier positif). Il doit être possible de créer un nouvel employé avec un nom et un salaire et d’effectuer les opérations suivantes sur un objet Employe :
 
@@ -42,19 +45,25 @@ context: |-
          *       (ex : un pourcentage de 100% double le salaire)
          */
         public void augmente(float pourcentage);
-environment: java7mockito
-limits:
-    time: '30'
-    output: '200'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Question de Bilan Final'
 network_grading: false
 order: 123
 problems:
     q1:
-        name: ''
-        language: java
         type: code
+        name: ''
         header: |+
             Complétez ici le code de la classe ``Employe``, conformément aux spécifications. Attention, la signature de la classe, ainsi que les crochets, sont déjà écrits. Il vous suffit donc de compléter cette classe, pas de l'écrire entièrement.
 
@@ -64,3 +73,10 @@ problems:
                     // Votre code ici
                 }
 
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

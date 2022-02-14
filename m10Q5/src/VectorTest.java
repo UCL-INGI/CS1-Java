@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
 import StudentCode.*;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import java.text.MessageFormat;
 /**
  * @author ogoletti
@@ -47,7 +47,7 @@ public class VectorTest extends TestCase {
         String msg, msge;
         double[] r = null;
 
-        msge = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a lancé une exception "), fileToString(filename));
+        msge = MessageFormat.format(Translator.translate("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a lancé une exception "), fileToString(filename));
         try {
                     //System.err.println("??!!!??");
 
@@ -56,7 +56,7 @@ public class VectorTest extends TestCase {
             fail(msge + e.getMessage());
         }
 
-        msg = MessageFormat.format(_("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), fileToString(filename), Arrays.toString(r), Arrays.toString(expectedVector));
+        msg = MessageFormat.format(Translator.translate("Lors de l''exécution de votre méthode loadVector() avec comme argument un fichier contenant \n{0}\nvotre méthode a retourné le tableau {1} alors que le résultat attendu est {2}"), fileToString(filename), Arrays.toString(r), Arrays.toString(expectedVector));
         assertTrue(msg, Arrays.equals(expectedVector, r));
     }
 

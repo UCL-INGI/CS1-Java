@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -56,7 +56,7 @@ public class Tests {
             String rep_expected = baos2.toString();
             
             if (! rep_student.contains(rep_expected))
-                fail("@1 :\n" + _("Vous n'affichez pas correctement les Strings présents dans args. N'oubliez pas de faire un retour à la ligne après chaque élément de args."));
+                fail("@1 :\n" + Translator.translate("Vous n'affichez pas correctement les Strings présents dans args. N'oubliez pas de faire un retour à la ligne après chaque élément de args."));
 
             return null;
         }
@@ -88,7 +88,7 @@ public class Tests {
             String rep_expected = baos2.toString();
             
             if (! rep_student.contains(rep_expected))
-                fail(MessageFormat.format("@2 :\n" + _("Avec args = {0} vous affichez ''{1}'' alors qu''il faut afficher ''{2}''.\n"), Arrays.toString(args), rep_student.replace("\n", ""), rep_expected.replace("\n", "")));
+                fail(MessageFormat.format("@2 :\n" + Translator.translate("Avec args = {0} vous affichez ''{1}'' alors qu''il faut afficher ''{2}''.\n"), Arrays.toString(args), rep_student.replace("\n", ""), rep_expected.replace("\n", "")));
             
             return null;
         }
@@ -98,21 +98,21 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, il est interdit de diviser par zéro."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, certaines variables ont été mal castées !"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Vous initialisez un tableau avec une taille négative."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     

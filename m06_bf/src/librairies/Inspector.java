@@ -14,7 +14,7 @@
  */
 package src.librairies;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 
@@ -213,17 +213,17 @@ public class Inspector {
 		String error_msg;
 		String feed;
 		if(expected_modifier != -1 && expected_exception != null){
-			error_msg = _("Le constructeur avec comme modificateur [{0}], comme types d''arguments {1} et comme exceptions déclarée via throws {2} n''as pas été trouvé !");
+			error_msg = Translator.translate("Le constructeur avec comme modificateur [{0}], comme types d''arguments {1} et comme exceptions déclarée via throws {2} n''as pas été trouvé !");
 			feed = MessageFormat.format(error_msg,Modifier.toString(expected_modifier),Arrays.toString(expected_param),Arrays.toString(expected_exception));
 		}
 		else if(expected_modifier != -1 && expected_exception == null) {
-			error_msg = _("Le constructeur avec comme modificateur [{0}], comme types d''arguments {1} n''as pas été trouvé !");
+			error_msg = Translator.translate("Le constructeur avec comme modificateur [{0}], comme types d''arguments {1} n''as pas été trouvé !");
 			feed = MessageFormat.format(error_msg,Modifier.toString(expected_modifier),Arrays.toString(expected_param));
 		} else if (expected_modifier == -1 && expected_exception != null) {
-			error_msg = _("Le constructeur avec comme types d''arguments {0} et comme exceptions déclarée via throws {1} n''as pas été trouvé !");
+			error_msg = Translator.translate("Le constructeur avec comme types d''arguments {0} et comme exceptions déclarée via throws {1} n''as pas été trouvé !");
 			feed = MessageFormat.format(error_msg,Arrays.toString(expected_param),Arrays.toString(expected_exception));
 		} else {
-			error_msg = _("Le constructeur avec comme types d''arguments {0} n''as pas été trouvé !");
+			error_msg = Translator.translate("Le constructeur avec comme types d''arguments {0} n''as pas été trouvé !");
 			feed = MessageFormat.format(error_msg,Arrays.toString(expected_param));
 		} 
 		return feed;
@@ -288,17 +288,17 @@ public class Inspector {
 		String error_msg;
 		String feed;
 		if(modifier != -1 && expected_exception != null){
-			 error_msg = _("La méthode avec comme modificateur [{0}], comme type de retour {1}, comme nom {2}, comme type d''arguments {3} et comme exceptions déclarée via throws {4} n''as pas été trouvée !");
+			 error_msg = Translator.translate("La méthode avec comme modificateur [{0}], comme type de retour {1}, comme nom {2}, comme type d''arguments {3} et comme exceptions déclarée via throws {4} n''as pas été trouvée !");
 			 feed = MessageFormat.format(error_msg,Modifier.toString(modifier),return_type.toString(),name,Arrays.toString(expected_param),Arrays.toString(expected_exception));
 		}
 		else if(modifier != -1 && expected_exception == null) {
-			error_msg = _("La méthode avec comme modificateur [{0}], comme type de retour {1}, comme nom {2}, comme type d''arguments {3} n''as pas été trouvée !");
+			error_msg = Translator.translate("La méthode avec comme modificateur [{0}], comme type de retour {1}, comme nom {2}, comme type d''arguments {3} n''as pas été trouvée !");
 			feed = MessageFormat.format(error_msg,Modifier.toString(modifier),return_type.toString(),name,Arrays.toString(expected_param));
 		} else if (modifier == -1 && expected_exception != null) {
-			 error_msg = _("La méthode avec comme type de retour {0}, comme nom {1}, comme type d''arguments {2} et comme exceptions déclarée via throws {3} n''as pas été trouvée !");
+			 error_msg = Translator.translate("La méthode avec comme type de retour {0}, comme nom {1}, comme type d''arguments {2} et comme exceptions déclarée via throws {3} n''as pas été trouvée !");
 			 feed = MessageFormat.format(error_msg,return_type.toString(),name,Arrays.toString(expected_param),Arrays.toString(expected_exception));
 		} else {
-			 error_msg = _("La méthode avec comme type de retour {0}, comme nom {1}, comme type d''arguments {2} n''as pas été trouvée !");
+			 error_msg = Translator.translate("La méthode avec comme type de retour {0}, comme nom {1}, comme type d''arguments {2} n''as pas été trouvée !");
 			 feed = MessageFormat.format(error_msg,return_type.toString(),name,Arrays.toString(expected_param));
 		} 
 		return feed;

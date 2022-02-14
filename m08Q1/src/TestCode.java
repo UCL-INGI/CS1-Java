@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.StringTab;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
@@ -34,7 +34,7 @@ public class TestCode{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -47,21 +47,21 @@ public class TestCode{
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(pre + _("Attention, il est interdit de diviser par zéro."));
+            fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(pre + _("Attention, certaines variables ont été mal castées !"));
+            fail(pre + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(pre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(pre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(pre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(pre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(pre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(pre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(pre + _("Vous initialisez un tableau avec une taille négative."));
+            fail(pre + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(pre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(pre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(pre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(pre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 
@@ -100,10 +100,10 @@ public class TestCode{
 			char c = randomChar();
 			StringTab s = new StringTab(c);
 			if(s.getS() == null) {
-				String feedNull = MessageFormat.format("@1 :\n" + _("{0} : votre code construit une instance où s est null !"),test_name());
+				String feedNull = MessageFormat.format("@1 :\n" + Translator.translate("{0} : votre code construit une instance où s est null !"),test_name());
 				fail(feedNull);
 			}
-			String message = "@1 :\n" + _("{0} : votre code ne construit pas un StringTab de taille 1 !");
+			String message = "@1 :\n" + Translator.translate("{0} : votre code ne construit pas un StringTab de taille 1 !");
 			String feed = MessageFormat.format(message,test_name());
 			assertThat(feed,s.realLength(),is(1));
 			return null;
@@ -121,10 +121,10 @@ public class TestCode{
 			char c = randomChar();
 			StringTab s = new StringTab(c);
 			if(s.getS() == null) {
-				String feedNull = MessageFormat.format("@1 :\n" + _("{0} : votre code construit une instance où s est null !"),test_name());
+				String feedNull = MessageFormat.format("@1 :\n" + Translator.translate("{0} : votre code construit une instance où s est null !"),test_name());
 				fail(feedNull);
 			}
-			String msg = "@1 :\n" + _("{0} : lorsque l''on exécute votre constructeur avec comme paramètre {1}, la première lettre de votre StringTab est {2}");
+			String msg = "@1 :\n" + Translator.translate("{0} : lorsque l''on exécute votre constructeur avec comme paramètre {1}, la première lettre de votre StringTab est {2}");
 			String feed = MessageFormat.format(msg,test_name(),c,s.realCharAt(0));
 			assertThat(feed,s.realCharAt(0),is(c));
 			return null;
@@ -141,10 +141,10 @@ public class TestCode{
 			char [] c = randomCharArray();
 			StringTab s = new StringTab(c);
 			if(s.getS() == null) {
-				String feedNull = MessageFormat.format("@2 :\n" + _("{0} : votre code construit une instance où s est null !"),test_name());
+				String feedNull = MessageFormat.format("@2 :\n" + Translator.translate("{0} : votre code construit une instance où s est null !"),test_name());
 				fail(feedNull);
 			}
-			String msg = "@2 :\n" + _("{0} : lorsque l''on passe comme paramètre {1} à votre constructeur, vous construisez un String de taille {2}");
+			String msg = "@2 :\n" + Translator.translate("{0} : lorsque l''on passe comme paramètre {1} à votre constructeur, vous construisez un String de taille {2}");
 			String feed = MessageFormat.format(msg,test_name(),Arrays.toString(c),s.realLength());
 			assertThat(feed,s.realLength(),is(c.length));
 			return null;
@@ -161,7 +161,7 @@ public class TestCode{
 			new t3().call();
 			char [] c = randomCharArray();
 			StringTab s = new StringTab(c);
-			String msg = "@2 :\n" + _("{0} : lorsque l''on passe comme paramètre {1} à votre constructeur, votre tableau est {2}");
+			String msg = "@2 :\n" + Translator.translate("{0} : lorsque l''on passe comme paramètre {1} à votre constructeur, votre tableau est {2}");
 			String feed = MessageFormat.format(msg,test_name(),Arrays.toString(c),Arrays.toString(s.getS()));
 			assertThat(feed,Arrays.equals(s.getS(),c),is(true));
 			return null;
@@ -178,7 +178,7 @@ public class TestCode{
 			char c [] = randomCharArray();
 			StringTab s = new StringTab(c);
 			s.setArray(c); // On assure que le tableau sera c
-			String msg =  "@3 :\n" + _("{0} lorsque l''on utilise votre méthode length() sur le StringTab {1}, votre méthode renvoie {2}");
+			String msg =  "@3 :\n" + Translator.translate("{0} lorsque l''on utilise votre méthode length() sur le StringTab {1}, votre méthode renvoie {2}");
 			String feed = MessageFormat.format(msg,test_name(),Arrays.toString(c),s.length());
 			assertThat(feed,s.length(),is(c.length));
 			return null;
@@ -196,7 +196,7 @@ public class TestCode{
 			StringTab s = new StringTab(c);
 			s.setArray(c); // On assure que le tableau sera c
 			int indice = new Random().nextInt(c.length +1);
-			String feed = MessageFormat.format("@3 :\n" + _("{0} lorsque l''on a le tableau {1} et que l''on fait charAt({2}), votre méthode renvoie {3}"),test_name(),Arrays.toString(c),indice,s.charAt(indice));
+			String feed = MessageFormat.format("@3 :\n" + Translator.translate("{0} lorsque l''on a le tableau {1} et que l''on fait charAt({2}), votre méthode renvoie {3}"),test_name(),Arrays.toString(c),indice,s.charAt(indice));
 			assertThat(feed,s.charAt(indice),is(c[indice]));
 			return null;
 		}

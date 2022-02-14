@@ -1,4 +1,7 @@
+accessible: true
 author: Sébastien Combéfis
+categories: []
+contact_url: ''
 context: |-
     Dans le contexte de gestion d'une bibliothèque de média, chacun des objets de cette bibliothèque est une instance de la classe Java ``Item`` ci-dessous :
 
@@ -69,25 +72,39 @@ context: |-
         [100001] Radiohead, The Bends (2917 s)
 
     Remarquez que chaque ``Item`` possède un serial qui est un numéro de série unique propre à l’objet (pour pouvoir différencier plusieurs exemplaires du même livre par exemple). Il doit être généré automatiquement et être supérieur à 100000 pour un CD.
-environment: java7mockito
-limits:
-    memory: '200'
-    output: '200'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 7 : Question de Bilan Final'
 network_grading: false
 order: 140
 problems:
     q1:
-        language: java
         type: code
         name: ''
         header: Complétez ici le corps de la méthode ``toString`` de la classe ``Item``
             dont la spécification est donnée dans l'énoncé.
+        language: java
+        default: ''
     q2:
+        type: code
         name: ''
         header: |+
             Complétez ici le corps de la classe ``CD``.
 
         language: java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

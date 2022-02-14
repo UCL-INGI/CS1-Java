@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -38,11 +41,25 @@ context: |+
           </li>
         </ul>
 
-responseIsHTML: true
-order: 121
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '32'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Phase de réalisation'
+network_grading: false
+order: 121
 problems:
     temps:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -51,10 +68,11 @@ problems:
                   Ecrivez ici le code de la classe Temps
                 </p>public class Temps
 
-        type: code
-        multiple: true
         language: java
+        default: ''
     chanson:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -63,13 +81,10 @@ problems:
                   Ecrivez ici le code de la classe Chanson
                 </p>public class Chanson
 
-        type: code
-        multiple: true
         language: java
-limits:
-    language: java
-    time: 30
-    memory: 32
-    disk: 50
-    output: 5210
-environment: pythia0compat
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

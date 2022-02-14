@@ -33,7 +33,7 @@ import java.security.Permission;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 import src.librairies.*;
@@ -70,9 +70,9 @@ public class TestsException{
 		// Changement de permission
 		f1.setReadable(false);
 	}catch(IOException e){
-	    fail(_("Erreur de lecture de fichier dans le test de l'IOException\n"));
+	    fail(Translator.translate("Erreur de lecture de fichier dans le test de l'IOException\n"));
 	}
-	catcher(new TestEx(file1, _("votre méthode ne gère pas les IOExceptions.\n")), 1); 
+	catcher(new TestEx(file1, Translator.translate("votre méthode ne gère pas les IOExceptions.\n")), 1); 
     }
 
     private class TestEx implements Callable<Void> {
@@ -83,7 +83,7 @@ public class TestsException{
 		this.feedbackAdd = feedbackAdd; 
 	}
         public Void call(){ 
-	    	String feedback = MessageFormat.format(_("{0} : raté : "), test_name()) + feedbackAdd;
+	    	String feedback = MessageFormat.format(Translator.translate("{0} : raté : "), test_name()) + feedbackAdd;
 		// On redirige la sortie d'erreur de l'étudiant pour ne pas l'avoir dans le feedback
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
         	PrintStream ps = new PrintStream(baos);
@@ -92,13 +92,13 @@ public class TestsException{
 		try{
 			Etudiant.getMax(file);
 			System.setErr(old);
-			System.err.println(MessageFormat.format(_("{0} : réussi\n"), test_name()));
+			System.err.println(MessageFormat.format(Translator.translate("{0} : réussi\n"), test_name()));
 		}catch(IOException e){
 			System.setErr(old);
 			fail(feedback);
 		}catch(Exception e){
 			System.setErr(old);
-			fail(MessageFormat.format(_("{0} : raté : votre programme génère une exception non gérée : " + e.toString() + "\n"), test_name()));
+			fail(MessageFormat.format(Translator.translate("{0} : raté : votre programme génère une exception non gérée : " + e.toString() + "\n"), test_name()));
 		}
 		return null;
 	}
@@ -108,21 +108,21 @@ public class TestsException{
         	try{
 		    test.call();
 		}catch (ArithmeticException e){
-		    fail(_("Attention, il est interdit de diviser par zéro."));
+		    fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
 		}catch(ClassCastException e){
-		    fail(_("Attention, certaines variables ont été mal castées !"));
+		    fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
 		}catch(StringIndexOutOfBoundsException e){
-		    fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+		    fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
 		}catch(ArrayIndexOutOfBoundsException e){
-		    fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+		    fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
 		}catch(NullPointerException e){
-		    fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+		    fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
 		}catch(NegativeArraySizeException e){
-		    fail(_("Vous initialisez un tableau avec une taille négative."));
+		    fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
 		}catch(StackOverflowError e){
-		    fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+		    fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
 		}catch(Exception e){
-		    fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+		    fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 		}
     }
 

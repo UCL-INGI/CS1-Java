@@ -1,4 +1,7 @@
+accessible: true
 author: Lucas Ody & Tom Rousseaux
+categories: []
+contact_url: ''
 context: |-
     Utilisez une boucle pour réaliser une division euclidienne! le diviseur et dividende vous sont donnés, vous devez trouver le quotient et le reste.
 
@@ -9,17 +12,30 @@ context: |-
 
         int reste = 0;
         int quotient = 0;
-environment: java7
-limits:
-    memory: '100'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'NON Mission 2 : Question supplémentaire : Division euclidienne'
 network_grading: false
 order: 30
 problems:
     q1:
-        header: ''
         type: code
         name: ''
+        header: ''
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

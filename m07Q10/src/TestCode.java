@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.DeStats;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
@@ -33,7 +33,7 @@ public class TestCode{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -46,21 +46,21 @@ public class TestCode{
 		try {
 			f.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 
@@ -77,7 +77,7 @@ public class TestCode{
 			d.setRes(t);
 			String s = d.toString();
 			String res = "Dé 2210 "+Arrays.toString(d.getResultats());
-			String feed = MessageFormat.format(_("{0} : votre code ne semble pas renvoyez le bon String. Vous renvoyez\n''{1}'' à la place de\n''{2}''"),test_name(),s,res);
+			String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyez le bon String. Vous renvoyez\n''{1}'' à la place de\n''{2}''"),test_name(),s,res);
 			if(!s.equals(res))
 				fail(feed);
 			return null;
@@ -98,7 +98,7 @@ public class TestCode{
 				verify(spy,atLeast(1)).toRealString();
 				return null;
 			} catch(WantedButNotInvoked e) {
-				String feed = MessageFormat.format(_("{0} : votre code ne semble pas utiliser la méthode toString() de la classe mère"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas utiliser la méthode toString() de la classe mère"),test_name());
 				fail(feed);
 				return null;
 			}

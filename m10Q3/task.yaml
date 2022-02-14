@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Dans la classe ``Student``, implémentez le second ``constructeur`` qui prend comme argument un ``String``.
 
@@ -41,17 +44,30 @@ context: |-
                 // Question
             }
         }
-environment: java7mockito
-limits:
-    memory: '200'
-    time: '30'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 10 : Q* Student - Constructeur'
 network_grading: false
 order: 170
 problems:
     q1:
+        type: code
         name: Constructeur de Student
         header: Ecrivez le corps du constructeur
-        type: code
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

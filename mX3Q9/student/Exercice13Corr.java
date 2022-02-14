@@ -40,7 +40,7 @@ public class Exercice13Corr {
         } 
         
     }
-    public static int eqsecdegsol2(int a, int b, int c) {
+    public static double eqsecdegsol2(int a, int b, int c) {
         int delta = eqsecdeg2(a,b,c);
         double sol=0;
         if (delta==0){
@@ -51,9 +51,7 @@ public class Exercice13Corr {
         if (delta < 0 ) {
             return 0;
         }
-        if (delta > 0 ){
-            return -1;
-        } ;
+         return -1;
     }
 
     public static int eqsecdeg2(int a, int b, int c) {

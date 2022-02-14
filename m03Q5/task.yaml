@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |+
     Ecrivez la méthode ``volume`` qui calcule le volume d'une `sphère <https://fr.wikipedia.org/wiki/Sphère>`_.
     Elle prend en paramètre le rayon de la sphère (nombre réel).
@@ -7,17 +10,30 @@ context: |+
 
     En Java, la constante :math:`\pi` est définie dans la classe `Math <https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html>`_ comme la constante ``Math.PI``
 
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Q*  Calcul du volume d''une sphère'
 network_grading: false
 order: 52
 problems:
     q1:
         type: code
-        language: java
-        header: ''
         name: Ecrivez la signature et le corps de votre méthode.
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

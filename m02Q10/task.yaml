@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Brandon Naitali
+categories: []
+contact_url: ''
 context: |
     Calculer le *nombre* de diviseurs distincts d'un entier strictement positif.
 
@@ -7,18 +10,31 @@ context: |
 
         int a; // l'entier a
         int resultat = 0;
-environment: java7mockito
-limits:
-    memory: '100'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 2 : Question supplémentaire : Calcul du nombre diviseurs distincts'
 network_grading: false
 order: 31
 problems:
     q1:
+        type: code
         name: Donner le code permettant de calculer le nombre de diviseurs distincts
             pour a.
         header: ''
         language: java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

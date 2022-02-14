@@ -24,7 +24,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -37,8 +37,8 @@ public class Tests {
     private String currentPre = preQ1;
     private static Pile currentPile;
     
-    private String str_bad_pop = _("Vous ne retournez pas le bon sommet de la pile. Quand le sommet est {0}, votre méthode pop() retourne {1}");
-    private String sb_init = _("Voici l'évolution de votre pile durant les tests afin que vous puissiez corriger votre code :\n\n");
+    private String str_bad_pop = Translator.translate("Vous ne retournez pas le bon sommet de la pile. Quand le sommet est {0}, votre méthode pop() retourne {1}");
+    private String sb_init = Translator.translate("Voici l'évolution de votre pile durant les tests afin que vous puissiez corriger votre code :\n\n");
 
     //For testing depth()
     @Test
@@ -72,11 +72,11 @@ public class Tests {
      *  Si l'etudiant modifie la pile dans cette méthode, le test fail.
      */
     public void test_depth_student(Pile pile, int expected_depth){
-        String d = _("Votre méthode depth() retourne {0} alors que la véritable profondeur est {1}. Voici la pile :\n\n{2}");
+        String d = Translator.translate("Votre méthode depth() retourne {0} alors que la véritable profondeur est {1}. Voici la pile :\n\n{2}");
         String pileBeforeDepth = pile.toString();
         int student_depth = pile.depth();
         String pileAfterDepth = pile.toString();
-        assertTrue(currentPre + _("Votre méthode a modifié la pile. C'est inacceptable."), pileBeforeDepth.equals(pileAfterDepth));
+        assertTrue(currentPre + Translator.translate("Votre méthode a modifié la pile. C'est inacceptable."), pileBeforeDepth.equals(pileAfterDepth));
         assertTrue(currentPre + MessageFormat.format(d, student_depth, expected_depth, pile.toString()), student_depth == expected_depth);
     }
     
@@ -91,7 +91,7 @@ public class Tests {
             //Test 1
             Pile pile = new Pile();
             currentPile = pile;
-            assertTrue(currentPre + _("Votre méthode pop() doit retourner null si la pile est vide.\n"), null == pile.pop());
+            assertTrue(currentPre + Translator.translate("Votre méthode pop() doit retourner null si la pile est vide.\n"), null == pile.pop());
             
             pile = new Pile();
             Pile pileCorr = new Pile();
@@ -132,7 +132,7 @@ public class Tests {
         currentPile = pile;
         Object n_sommet_correct = 0;
         Object n_sommet_student = 0;
-        sb.append(_("Pile après l'opération : "));
+        sb.append(Translator.translate("Pile après l'opération : "));
         if(op.equals("push")){
             sb.append("push(").append(n).append(")");
             pile.push(new Integer(n));
@@ -153,25 +153,25 @@ public class Tests {
     }
 
     public void catcher(Callable<Void> test) {
-        String msgPile = "\n" + _("Cette erreur est survenue quand la pile est :\n");
+        String msgPile = "\n" + Translator.translate("Cette erreur est survenue quand la pile est :\n");
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(currentPre + _("Attention, il est interdit de diviser par zéro.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, il est interdit de diviser par zéro.") + msgPile + currentPile.toString());
         }catch(ClassCastException e){
-            fail(currentPre + _("Attention, certaines variables ont été mal castées !") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, certaines variables ont été mal castées !") + msgPile + currentPile.toString());
         }catch(StringIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msgPile + currentPile.toString());
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msgPile + currentPile.toString());
         }catch(NullPointerException e){
-            fail(currentPre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msgPile + currentPile.toString());
         }catch(NegativeArraySizeException e){
-            fail(currentPre + _("Vous initialisez un tableau avec une taille négative.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Vous initialisez un tableau avec une taille négative.") + msgPile + currentPile.toString());
         }catch(StackOverflowError e){
-            fail(currentPre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msgPile + currentPile.toString());
         }catch(Exception e){
-            fail(currentPre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msgPile + currentPile.toString());
+            fail(currentPre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msgPile + currentPile.toString());
         }
     }
 }

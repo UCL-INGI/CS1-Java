@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Un étudiant a écrit la classe suivante, mais il lui manque une méthode pour qu'elle puisse être compilée. Pourriez-vous implémenter cette méthode ?
 
@@ -85,17 +88,30 @@ context: |-
       }
 
     Pour rappel, la documentation de l'interface Comparable est disponible via https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 9 : Q* Employe'
 network_grading: false
 order: 156
 problems:
     q1:
         type: code
-        header: Ecrivez la/les méthode(s) manquante(s)
         name: Employe
+        header: Ecrivez la/les méthode(s) manquante(s)
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

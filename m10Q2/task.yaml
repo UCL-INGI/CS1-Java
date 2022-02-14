@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |-
     Revenons à la classe Fraction. Pour faciliter la création de fractions sur base de données lues depuis le clavier ou dans un fichier, on vous demande d'ajouter à cette classe un constructeur qui prend comme argument un String. Si ce String a comme format x/y avec x et y qui sont des entiers, il crée l'instance de la classe Fraction ayant x comme numérateur et y comme dénominateur. Pour les cas de String null / qui ne respectent pas le format demandé/ qui génère une division par zéro, lancez une NumberFormatException.
 
@@ -44,17 +47,30 @@ context: |-
             return this.num;
         }
       }
-environment: java7mockito
-limits:
-    time: '30'
-    output: '1'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 10 : Q* Fraction - Constructeur'
 network_grading: false
 order: 169
 problems:
     q1:
-        header: Ecrivez le corps du constructeur
-        name: Constructeur de Fraction
         type: code
+        name: Constructeur de Fraction
+        header: Ecrivez le corps du constructeur
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

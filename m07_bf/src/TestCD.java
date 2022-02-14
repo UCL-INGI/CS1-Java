@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import StudentCode.CD;;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import src.librairies.Inspector;
 
 @RunWith(Parameterized.class)
@@ -99,38 +99,38 @@ public class TestCD {
 			try {
 				CD cd = (CD) Inspector.run_construct_specified(CD.class,this.author,this.title,this.length);
 				if(cd == null) {
-					String failfeed =MessageFormat.format("@2 :\n" +_("{0} : aucun constructeur avec comme premier paramètre un String, comme deuxième un String et comme troisème un int n''a été trouvé dans votre réponse !"),"Test 5");
+					String failfeed =MessageFormat.format("@2 :\n" + Translator.translate("{0} : aucun constructeur avec comme premier paramètre un String, comme deuxième un String et comme troisème un int n''a été trouvé dans votre réponse !"),"Test 5");
 					fail(failfeed);
 				}
 				if(!check_construct(cd,this.author,this.title,this.length)) {
-					String feed = "@2 :\n" + _("{0} : après avoir appelé votre constructeur avec les paramètre {1} (auteur), {2} (titre} et {3} (durée), il manque certaines variables d''instance avec ces valeurs !");
+					String feed = "@2 :\n" + Translator.translate("{0} : après avoir appelé votre constructeur avec les paramètre {1} (auteur), {2} (titre} et {3} (durée), il manque certaines variables d''instance avec ces valeurs !");
 					fail(MessageFormat.format(feed,"Test 5",this.author,this.title,this.length));
 				}
 				resStu = (String) Inspector.run_method(cd,"toString",new Object []{});
 			} catch(NoSuchMethodException e) {
-				String feed = "@2 :\n"+_("La méthode toString() n''as pas été trouvée dans votre réponse !");
+				String feed = "@2 :\n"+ Translator.translate("La méthode toString() n''as pas été trouvée dans votre réponse !");
 				fail(feed);
 			}
-			String msg = "@2 :\n" + _("{0} : lorsque l''on exécute votre méthode toString() sur le CD ayant pour auteur {1}, titre {2}, et durée {3,number,#}, votre méthode retourne\n{4}\nau lieu de\n{5}");
+			String msg = "@2 :\n" + Translator.translate("{0} : lorsque l''on exécute votre méthode toString() sur le CD ayant pour auteur {1}, titre {2}, et durée {3,number,#}, votre méthode retourne\n{4}\nau lieu de\n{5}");
 			String feed = MessageFormat.format(msg,"Test 5",this.author,this.title,this.length,resStu,this.res);
 			if(!resStu.equals(this.res))
 				fail(feed);
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}
 }

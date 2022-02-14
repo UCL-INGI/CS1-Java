@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin
+categories: []
+contact_url: ''
 context: |-
     Mettre la variable ``in`` à la valeur ``true`` si ``x`` se trouve dans l’intervalle fermé :math:`[a,b]` et ``false`` sinon.
 
@@ -8,17 +11,30 @@ context: |-
         int x; // la valeur à vérifier
         int a; // borne inférieure de l'intervalle
         int b; // borne supérieure de l'intervalle
-environment: java7mockito
-limits:
-    output: '2'
-    memory: '100'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : IN/OUT'
 network_grading: false
 order: 19
 problems:
     q1:
-        header: ''
-        name: Définir si x est dans ou en dehors de l'intervalle.
-        language: java
         type: code
+        name: Définir si x est dans ou en dehors de l'intervalle.
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

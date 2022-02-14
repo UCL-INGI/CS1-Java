@@ -26,7 +26,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 
@@ -46,24 +46,24 @@ public class Tests{
     }
     @Test
     public void test_4(){ 
-	String feedback  = MessageFormat.format(_("{0} : le test avec une fraction avec 0 au dénominateur ne fonctionne pas : "), test_name());
+	String feedback  = MessageFormat.format(Translator.translate("{0} : le test avec une fraction avec 0 au dénominateur ne fonctionne pas : "), test_name());
 	catcher(new TestException(generateRandomFraction(true), feedback), 1); 
     }
     @Test
     public void test_3(){ 
-	String feedback  = MessageFormat.format(_("{0} : le test avec un string null ne fonctionne pas : "), test_name());
+	String feedback  = MessageFormat.format(Translator.translate("{0} : le test avec un string null ne fonctionne pas : "), test_name());
 	catcher(new TestException(null, feedback), 1); 
     }
     @Test
     public void test_2(){ 
-	String feedback  = MessageFormat.format(_("{0} : le test avec un string non-conforme au format \"a/b\" ne fonctionne pas : "), test_name());
+	String feedback  = MessageFormat.format(Translator.translate("{0} : le test avec un string non-conforme au format \"a/b\" ne fonctionne pas : "), test_name());
 	catcher(new TestException(generateFakeRandomFraction(), feedback), 1); 
     }
     private class TestException implements Callable<Void> {
 	String a;
 	String feedbackAdd; 
-	String feedbackBad = _("lancez-vous la bonne exception ? \n");
-	String feedbackBad2 = _("vérifiez que vous gérez bien ce cas. \n");
+	String feedbackBad = Translator.translate("lancez-vous la bonne exception ? \n");
+	String feedbackBad2 = Translator.translate("vérifiez que vous gérez bien ce cas. \n");
 	public TestException(String a, String feedback){
 		this.a = a;
 		this.feedbackAdd = feedback;
@@ -74,7 +74,7 @@ public class Tests{
 			Etudiant.Fraction f= s.new Fraction(a);
 			fail(feedbackAdd + feedbackBad2);
 		}catch(NumberFormatException e){
-			System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+			System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
 		}catch(Exception e){
 			fail(feedbackAdd + feedbackBad);
 		}
@@ -83,14 +83,14 @@ public class Tests{
     }
     @Test
     public void test_1(){ 
-	String feedback  =  MessageFormat.format(_("{0} : le test avec un string correct ne fonctionne pas : "), test_name());
+	String feedback  =  MessageFormat.format(Translator.translate("{0} : le test avec un string correct ne fonctionne pas : "), test_name());
 	catcher(new TestParsing(generateRandomFraction(false), feedback), 1); 
     }
     private class TestParsing implements Callable<Void> {
 	String a;
 	String feedbackAdd; 
-	String feedbackBad = _("respectez vous le format \"a/b\" ?\n");
-	String feedbackBad2 = _("modifiez-vous les variables d'instances de la classe Fraction ?\n");
+	String feedbackBad = Translator.translate("respectez vous le format \"a/b\" ?\n");
+	String feedbackBad2 = Translator.translate("modifiez-vous les variables d'instances de la classe Fraction ?\n");
 	public TestParsing(String a, String feedback){
 		this.a = a;
 		this.feedbackAdd = feedback;
@@ -102,7 +102,7 @@ public class Tests{
 			Correction.Fraction c = co.new Fraction(a);
 			Etudiant.Fraction e = s.new Fraction(a);
 			if(c.getDen() != e.getDen() || c.getNum() != e.getNum()) fail(feedbackAdd + feedbackBad2);
-			System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+			System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
 		}catch(Exception e){
 			fail(feedbackAdd + feedbackBad);
 		}
@@ -115,21 +115,21 @@ public class Tests{
 	try{
             test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            //fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            //fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     private String test_name(){

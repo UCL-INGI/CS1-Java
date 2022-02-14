@@ -27,7 +27,7 @@ import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 public class TestCode {
 
@@ -35,7 +35,7 @@ public class TestCode {
 	public TestName name = new TestName();
 
 	private void printSucceed(String q) {
-		System.err.println(MessageFormat.format(_(q + "{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate(q + "{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -52,7 +52,7 @@ public class TestCode {
 		public Void call(){
 			OrderedPair spy = Mockito.spy(OrderedPair.class);
 			spy.setA(2);
-				String feed = MessageFormat.format("@1 :\n" + _("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
+				String feed = MessageFormat.format("@1 :\n" + Translator.translate("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
 			if(!spy.getOrdered()) {
 				try {
 					verify(spy,atLeast(1)).setOrdered(false);
@@ -65,7 +65,7 @@ public class TestCode {
 				try {
 					verify(spy,atLeast(1)).setOrdered(true);
 				} catch(WantedButNotInvoked e) {
-					String feed2 = MessageFormat.format("@1 :\n" + _("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
+					String feed2 = MessageFormat.format("@1 :\n" + Translator.translate("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
 					fail(feed2);
 				}
 			}
@@ -82,7 +82,7 @@ public class TestCode {
 		public Void call(){
 			OrderedPair spy = Mockito.spy(OrderedPair.class);
 			spy.setB(-1);
-			String feed = MessageFormat.format("@1 :\n" + _("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
+			String feed = MessageFormat.format("@1 :\n" + Translator.translate("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
 			if(!spy.getOrdered()) {
 				try {
 					verify(spy,atLeast(1)).setOrdered(false);
@@ -95,7 +95,7 @@ public class TestCode {
 				try {
 					verify(spy,atLeast(1)).setOrdered(true);
 				} catch(WantedButNotInvoked e) {
-					String feed2 = MessageFormat.format("@1 :\n" + _("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
+					String feed2 = MessageFormat.format("@1 :\n" + Translator.translate("{0} : vous devez utilisez setOrdered pour changer la valeur de ordered !"),test_name());
 					fail(feed2);
 				}
 			}
@@ -110,7 +110,7 @@ public class TestCode {
 		 * 			Lance une AssertionError lorsqu'une réponse est incorrecte.
 		 */
 		public Void call(){
-			String msg = "@1 :\n" + _("{0} : après l''appel à setA({1}), nous avons la paire ({2},{3}) et ''ordered'' devrait valoir {4} car {5} <= {6} mais ce n''est pas le cas");
+			String msg = "@1 :\n" + Translator.translate("{0} : après l''appel à setA({1}), nous avons la paire ({2},{3}) et ''ordered'' devrait valoir {4} car {5} <= {6} mais ce n''est pas le cas");
 			Random r = new Random();
 			OrderedPair p = new OrderedPair();
 			int b = r.nextInt(1000);
@@ -146,7 +146,7 @@ public class TestCode {
 		 * 			Lance une AssertionError lorsqu'une réponse est incorrecte.
 		 */
 		public Void call(){
-			String msg = "@2 :\n" + _("{0} : après l''appel à setB({1}), nous avons la paire ({2},{3}) et ''ordered'' devrait valoir {4} car {5} <= {6}, mais ce n''est pas le cas");
+			String msg = "@2 :\n" + Translator.translate("{0} : après l''appel à setB({1}), nous avons la paire ({2},{3}) et ''ordered'' devrait valoir {4} car {5} <= {6}, mais ce n''est pas le cas");
 			Random r = new Random();
 			OrderedPair p = new OrderedPair();
 			int b = r.nextInt(1000);
@@ -177,8 +177,8 @@ public class TestCode {
 		 * 			Lance une AssertionError lorsqu'une réponse est incorrecte.
 		 */
 		public Void call(){
-			String msg = "@1 :\n" + _("{0} : après l''appel à setA({1}), ''a'' vaut {2} au lieu de {3}");
-			String msg2 = "@1 :\n" + _("{0}: après l''appel à setA({1}), {2} ''a'' changé et est passé de {3} à {4}");
+			String msg = "@1 :\n" + Translator.translate("{0} : après l''appel à setA({1}), ''a'' vaut {2} au lieu de {3}");
+			String msg2 = "@1 :\n" + Translator.translate("{0}: après l''appel à setA({1}), {2} ''a'' changé et est passé de {3} à {4}");
 			Random r = new Random();
 			OrderedPair p = new OrderedPair();
 			int b = r.nextInt(1000);
@@ -222,8 +222,8 @@ public class TestCode {
 		 * 			Lance une AssertionError lorsqu'une réponse est incorrecte.
 		 */
 		public Void call(){
-			String msg = "@2 :\n" + _("{0} : après l''appel setB({1}), ''b'' vaut {2} au lieu de {3}");
-			String msg2 = "@2 :\n" + _("{0} : après l''appel setB({0}) {2} ''a'' changé et est passé de {3} à {4}");
+			String msg = "@2 :\n" + Translator.translate("{0} : après l''appel setB({1}), ''b'' vaut {2} au lieu de {3}");
+			String msg2 = "@2 :\n" + Translator.translate("{0} : après l''appel setB({0}) {2} ''a'' changé et est passé de {3} à {4}");
 			Random r = new Random();
 			OrderedPair p = new OrderedPair();
 			int b = r.nextInt(1000);
@@ -265,21 +265,21 @@ public class TestCode {
 		try {
 			test.call();
         }catch (ArithmeticException e){
-            fail(pre + _("Attention, il est interdit de diviser par zéro."));
+            fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(pre + _("Attention, certaines variables ont été mal castées !"));
+            fail(pre + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(pre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(pre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(pre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(pre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(pre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(pre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(pre + _("Vous initialisez un tableau avec une taille négative."));
+            fail(pre + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(pre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(pre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(pre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(pre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}
 

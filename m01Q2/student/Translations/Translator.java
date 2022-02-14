@@ -38,7 +38,7 @@ public class Translator {
      * @post Retourne la traduction du String {s} en fonction de la langue définie dans le fichier "./lang".
      *       Retourne la chaine non traduite si le fichier de traduction pour la langue définie n'existe pas ou si une erreur est survenue.
      */
-    public static String _(String s) {
+    public static String translate(String s) {
         
         // Try to load once the bundle. If no bundle found, we use the String id instead of the translation.
         if(ok == true){

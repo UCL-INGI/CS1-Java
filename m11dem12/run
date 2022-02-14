@@ -181,7 +181,7 @@ def run(exercice, customscript, corr, execcustom, nexercices, javac_args, java_a
             if nexercices == 1:
                 outerr = add_indentation_level(outerr).replace('%', '%%')
                 feedback.set_global_result('failed')
-                feedback.set_problem_feedback("Il semble que vous ayiez fait des erreurs dans votre code...\n " +
+                feedback.set_problem_feedback("Il semble que vous ayez fait des erreurs dans votre code...\n " +
                                               code_litteral + outerr + "\n", "q1")
                 error = 1
             else:
@@ -197,7 +197,7 @@ def run(exercice, customscript, corr, execcustom, nexercices, javac_args, java_a
                         # On joint les matchs de la regex dans un seul string
                         outerr_question = ''.join(regex_question)
                         outerr_question = add_indentation_level(outerr_question)
-                        feed = "Il semble que vous ayiez fait des erreurs dans votre code...\n " + code_litteral + outerr_question + "\n"
+                        feed = "Il semble que vous ayez fait des erreurs dans votre code...\n " + code_litteral + outerr_question + "\n"
                         feedback.set_global_result('failed')
                         feedback.set_problem_feedback(feed, "q" + str(i))
                     i += 1

@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Les ordinateurs manipulent les nombres en utilisant le `système binaire <https://fr.wikipedia.org/wiki/Système_binaire>`_.
 
@@ -15,17 +18,30 @@ context: |-
          * @post retourne la représentation entière du nombre binaire
          *      correspondant à cette chaîne
          */
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 4 : Q* notation binaire'
 network_grading: false
 order: 78
 problems:
     q1:
         type: code
-        header: Écrivez ici la méthode
         name: b2i
+        header: Écrivez ici la méthode
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

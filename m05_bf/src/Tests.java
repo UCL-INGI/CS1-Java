@@ -23,7 +23,7 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -32,8 +32,8 @@ public class Tests {
     private String preQ1 = "@1 :\n";
     private String preQ2 = "@2 :\n";
     private String currentPre = preQ1;
-    String feedback1 = _("Votre méthode {0} ne modifie pas correctement le tableau.\nLe tableau original est :\n{1}\nLa réponse attendue est :\n{2}\nVotre tableau est :\n{3}");
-    String feedback2 = _("Votre méthode {0} ne modifie pas correctement le tableau avec n = {1}.\nLe tableau original est :\n{2}\nLa réponse attendue est :\n{3}\nVotre tableau est :\n{4}");
+    String feedback1 = Translator.translate("Votre méthode {0} ne modifie pas correctement le tableau.\nLe tableau original est :\n{1}\nLa réponse attendue est :\n{2}\nVotre tableau est :\n{3}");
+    String feedback2 = Translator.translate("Votre méthode {0} ne modifie pas correctement le tableau avec n = {1}.\nLe tableau original est :\n{2}\nLa réponse attendue est :\n{3}\nVotre tableau est :\n{4}");
     
     private int[] genArray(int size){
         Random r = new Random();
@@ -89,21 +89,21 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(currentPre + _("Attention, il est interdit de diviser par zéro."));
+            fail(currentPre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(currentPre + _("Attention, certaines variables ont été mal castées !"));
+            fail(currentPre + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(currentPre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(currentPre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(currentPre + _("Vous initialisez un tableau avec une taille négative."));
+            fail(currentPre + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(currentPre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(currentPre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(currentPre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(currentPre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

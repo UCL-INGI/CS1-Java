@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import StudentCode.ByteString;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 @RunWith(Parameterized.class)
 public class TestAnd {
@@ -68,25 +68,25 @@ public class TestAnd {
 			bs2.setSb(new StringBuilder(s2));
 			ByteString r =(ByteString) bs1.and(bs2);
 			String out = r.getRep();
-			String msg = "@3 :\n" + _("Test 8 : lorsque l''on fait un ET logique entre les ByteString {0} et {1} (représentation en String), votre méthode retourne le Byte {2} au lieu de {3} (représentation String)");
+			String msg = "@3 :\n" + Translator.translate("Test 8 : lorsque l''on fait un ET logique entre les ByteString {0} et {1} (représentation en String), votre méthode retourne le Byte {2} au lieu de {3} (représentation String)");
 			String feed = MessageFormat.format(msg,s1,s2,out,res);
 			assertThat(feed,out,is(res));
 	}catch (ArithmeticException e){
-            fail(pre+_("Attention, il est interdit de diviser par zéro."));
+            fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(pre+_("Attention, certaines variables ont été mal castées !"));
+            fail(pre + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(pre+_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(pre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(pre+_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(pre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(pre+_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(pre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(pre+_("Vous initialisez un tableau avec une taille négative."));
+            fail(pre + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(pre+_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(pre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(pre+_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(pre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}
 }

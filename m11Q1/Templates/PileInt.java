@@ -17,7 +17,7 @@ package StudentCode;
 
 import java.util.ArrayList; // ne pas montrer aux étudiants, utilisé pour les tests
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 public class PileInt{
     
@@ -96,7 +96,7 @@ public class PileInt{
      */
     public String toString(){
         if(sommet == null)
-            return _("Pile vide\n");
+            return Translator.translate("Pile vide\n");
         StringBuilder r = new StringBuilder(400);
         ArrayList<Noeud> l = new ArrayList<Noeud>();
         Noeud n = sommet;
@@ -104,20 +104,20 @@ public class PileInt{
             l.add(n);
             n = n.suivant;
             if(l.size() > 50)
-                return _("Attention : votre pile est mal formée. Parcourir votre pile provoque une boucle infinie…");
+                return Translator.translate("Attention : votre pile est mal formée. Parcourir votre pile provoque une boucle infinie…");
         }
-        r.append(MessageFormat.format(_("Sommet : Noeud[{0}]\nProfondeur : {1}\n"), l.indexOf(sommet), profondeur));
+        r.append(MessageFormat.format(Translator.translate("Sommet : Noeud[{0}]\nProfondeur : {1}\n"), l.indexOf(sommet), profondeur));
         for(int i = 0; i < l.size(); i++) {
             Noeud nn =l.get(i);
             if(nn.suivant != null) {
-                r.append(MessageFormat.format(_("Noeud[{0}] : contenu : {1}, noeud suivant : Noeud[{2}]\n"), i, nn.element, l.indexOf(nn.suivant)));
+                r.append(MessageFormat.format(Translator.translate("Noeud[{0}] : contenu : {1}, noeud suivant : Noeud[{2}]\n"), i, nn.element, l.indexOf(nn.suivant)));
             }
             else {
-                r.append(MessageFormat.format(_("Noeud[{0}] : contenu : {1}, noeud suivant : null\n"), i, nn.element));
+                r.append(MessageFormat.format(Translator.translate("Noeud[{0}] : contenu : {1}, noeud suivant : null\n"), i, nn.element));
             }
         }
         if(l.size() != profondeur) {
-            r.append(MessageFormat.format(_("Attention : la variable d''instance ''{0}'' ({1}) ne correspond pas au nombre d''entiers sur la pile.\n"), "profondeur", profondeur));
+            r.append(MessageFormat.format(Translator.translate("Attention : la variable d''instance ''{0}'' ({1}) ne correspond pas au nombre d''entiers sur la pile.\n"), "profondeur", profondeur));
         }
         return r.toString();
     }

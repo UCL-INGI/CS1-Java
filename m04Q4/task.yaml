@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |
     De nombreux sites web imposent des contraintes sur les mots de passe que les utilisateurs peuvent utiliser. L'objectif est généralement de forcer les utilisateurs à choisir des mots de passe difficiles à trouver par des attaquants éventuels.
 
@@ -16,17 +19,30 @@ context: |
 
 
     Vous trouverez dans la classe `Character <https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html>`_ des méthodes utiles pour cette tâche.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 4 : Q** Vérification de mot de passe'
 network_grading: false
 order: 79
 problems:
     q1:
         type: code
-        header: Écrivez ici la signature et le corps de cette méthode.
         name: Mot de passe
+        header: Écrivez ici la signature et le corps de cette méthode.
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

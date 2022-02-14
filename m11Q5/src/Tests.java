@@ -24,7 +24,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -50,10 +50,10 @@ public class Tests {
             OrderedList q = new OrderedList();
             currentListe = q;
             q.ajoute(88);
-            assertTrue(currentPre + MessageFormat.format(_("Quand la liste est vide, et qu''on ajoute un noeud à votre liste, ''{0}'' vaut null alors qu''il devrait référer un nouveau noeud.\n"), "min"), q.min != null);
-            assertTrue(currentPre + MessageFormat.format(_("Quand la liste est vide, et qu''on ajoute un noeud à votre liste, ''{0}'' vaut null alors qu''il devrait référer un nouveau noeud.\n"), "max"), q.max != null);
-            assertTrue(currentPre + MessageFormat.format(_("Quand la liste est vide, et qu''on ajoute un noeud à votre liste, ''{0}'' et la ''{1}'' ne réfèrent pas le même noeud.\n"), "min", "max"), q.min == q.max);
-            assertEquals(currentPre + _("Quand la liste est vide, et qu'on ajoute un noeud à votre liste, ce noeud ne contient pas le bon élément.\n"), 88, q.max.d, 0.001);
+            assertTrue(currentPre + MessageFormat.format(Translator.translate("Quand la liste est vide, et qu''on ajoute un noeud à votre liste, ''{0}'' vaut null alors qu''il devrait référer un nouveau noeud.\n"), "min"), q.min != null);
+            assertTrue(currentPre + MessageFormat.format(Translator.translate("Quand la liste est vide, et qu''on ajoute un noeud à votre liste, ''{0}'' vaut null alors qu''il devrait référer un nouveau noeud.\n"), "max"), q.max != null);
+            assertTrue(currentPre + MessageFormat.format(Translator.translate("Quand la liste est vide, et qu''on ajoute un noeud à votre liste, ''{0}'' et la ''{1}'' ne réfèrent pas le même noeud.\n"), "min", "max"), q.min == q.max);
+            assertEquals(currentPre + Translator.translate("Quand la liste est vide, et qu'on ajoute un noeud à votre liste, ce noeud ne contient pas le bon élément.\n"), 88, q.max.d, 0.001);
             return null;
         }
     }
@@ -73,7 +73,7 @@ public class Tests {
                 String before = qCorrecte.toString();
                 q.ajoute(to_add[i]);
                 qCorrecte.ajouteCorrect(to_add[i]);
-                assertTrue(MessageFormat.format(currentPre + _("Vous n''avez pas bien mis à jour la liste en ajoutant un noeud dans la structure. La liste avant l''opération ajoute() est :\n{0}\nLa liste attendue est :\n{1}\nVotre liste est :\n{2}"), before, qCorrecte.toString(), q.toString()), qCorrecte.toString().equals(q.toString()));
+                assertTrue(MessageFormat.format(currentPre + Translator.translate("Vous n''avez pas bien mis à jour la liste en ajoutant un noeud dans la structure. La liste avant l''opération ajoute() est :\n{0}\nLa liste attendue est :\n{1}\nVotre liste est :\n{2}"), before, qCorrecte.toString(), q.toString()), qCorrecte.toString().equals(q.toString()));
                 }
             return null;
         }
@@ -99,7 +99,7 @@ public class Tests {
                 //correct
                 return null;
             }
-            fail(currentPre + _("Vous ne lancez pas une IllegalStateException quand on essaye de retirer un élément alors que la liste est vide.\n"));
+            fail(currentPre + Translator.translate("Vous ne lancez pas une IllegalStateException quand on essaye de retirer un élément alors que la liste est vide.\n"));
             return null;
         }
     }
@@ -116,8 +116,8 @@ public class Tests {
             q.ajouteCorrect(555513);
             double retire_student = q.retireMax();
             assertTrue(currentPre + "Quand la liste ne contient qu'un élément, vous vous ne le retournez pas correctment.\n", 555513 == retire_student);
-            assertTrue(MessageFormat.format(currentPre + _("Vous n''avez pas mis la variable ''{0}'' à null quand la liste contient un seul élément et qu''on le retire.\n"), "min"), q.min == null);
-            assertTrue(MessageFormat.format(currentPre + _("Vous n''avez pas mis la variable ''{0}'' à null quand la liste contient un seul élément et qu''on le retire.\n"), "max"), q.max == null);
+            assertTrue(MessageFormat.format(currentPre + Translator.translate("Vous n''avez pas mis la variable ''{0}'' à null quand la liste contient un seul élément et qu''on le retire.\n"), "min"), q.min == null);
+            assertTrue(MessageFormat.format(currentPre + Translator.translate("Vous n''avez pas mis la variable ''{0}'' à null quand la liste contient un seul élément et qu''on le retire.\n"), "max"), q.max == null);
             return null;
         }
     }
@@ -154,8 +154,8 @@ public class Tests {
                     String beforeRetire = qCorrecte.toString();
                     double stu = q.retireMax();
                     double exp = qCorrecte.retireMaxCorrect();
-                    assertTrue(MessageFormat.format(currentPre + _("Vous n''avez pas bien mis à jour la liste en retirant un noeud de la structure. La liste avant l''opération retire() est :\n{0}\nLa liste attendue est :\n{1}\nVotre liste est :\n{2}"), beforeRetire, qCorrecte.toString(), q.toString()), qCorrecte.toString().equals(q.toString()));
-                    assertTrue(MessageFormat.format(currentPre + _("Vous avez retourné {0} alors que la réponse attendue est {1}. Le queue est :\n{2}"), stu, exp, q.toString()), stu == exp);
+                    assertTrue(MessageFormat.format(currentPre + Translator.translate("Vous n''avez pas bien mis à jour la liste en retirant un noeud de la structure. La liste avant l''opération retire() est :\n{0}\nLa liste attendue est :\n{1}\nVotre liste est :\n{2}"), beforeRetire, qCorrecte.toString(), q.toString()), qCorrecte.toString().equals(q.toString()));
+                    assertTrue(MessageFormat.format(currentPre + Translator.translate("Vous avez retourné {0} alors que la réponse attendue est {1}. Le queue est :\n{2}"), stu, exp, q.toString()), stu == exp);
                 }
             }
             return null;
@@ -163,25 +163,25 @@ public class Tests {
     }
 
     public void catcher(Callable<Void> test) {
-        String msg = "\n" + _("Cette erreur est survenue quand la liste est :\n");
+        String msg = "\n" + Translator.translate("Cette erreur est survenue quand la liste est :\n");
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(currentPre + _("Attention, il est interdit de diviser par zéro.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, il est interdit de diviser par zéro.") + msg + currentListe.toString());
         }catch(ClassCastException e){
-            fail(currentPre + _("Attention, certaines variables ont été mal castées !") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, certaines variables ont été mal castées !") + msg + currentListe.toString());
         }catch(StringIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msg + currentListe.toString());
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msg + currentListe.toString());
         }catch(NullPointerException e){
-            fail(currentPre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msg + currentListe.toString());
         }catch(NegativeArraySizeException e){
-            fail(currentPre + _("Vous initialisez un tableau avec une taille négative.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Vous initialisez un tableau avec une taille négative.") + msg + currentListe.toString());
         }catch(StackOverflowError e){
-            fail(currentPre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msg + currentListe.toString());
         }catch(Exception e){
-            fail(currentPre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msg + currentListe.toString());
         }
     }
 }

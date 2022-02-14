@@ -25,16 +25,12 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Employe;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import src.librairies.Inspector;
 
 import java.text.MessageFormat;
 import java.util.Random;
 import java.util.concurrent.Callable;
-
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
 public class TestCode{
 
@@ -42,7 +38,7 @@ public class TestCode{
 	public TestName name = new TestName();
 	
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -55,22 +51,22 @@ public class TestCode{
 		try {
 			f.call();
 		}catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
 			e.printStackTrace();
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 
@@ -123,11 +119,11 @@ public class TestCode{
 			float salaire = genSalaire();
 			Employe e =(Employe) Inspector.run_construct_specified(Employe.class,name,salaire);
 			if(e == null)
-				fail(MessageFormat.format(_("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
-			String msg_name = _("{0} : lorsque l''on construit un nouvel objet Employe avec comme paramètre {1} et {2,number,#}, il n''y a pas de variable d''instance de type {3} avec la valeur {4}");
+				fail(MessageFormat.format(Translator.translate("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
+			String msg_name = Translator.translate("{0} : lorsque l''on construit un nouvel objet Employe avec comme paramètre {1} et {2,number,#}, il n''y a pas de variable d''instance de type {3} avec la valeur {4}");
 			Object [] v = Inspector.getAllInstanceValue(Employe.class,e);
 			if(v == null)
-				fail(_("Une erreur inattendu est survenue dans votre tâche, veuillez contactez une administrateur"));
+				fail(Translator.translate("Une erreur inattendu est survenue dans votre tâche, veuillez contactez une administrateur"));
 			if(!check_name(v,name))
 				fail(MessageFormat.format(msg_name,test_name(),name,salaire,"String",name));
 			if(!check_salaire(v,new Float(salaire)))
@@ -147,14 +143,14 @@ public class TestCode{
 			float salaire = genSalaire();
 			Employe e =(Employe) Inspector.run_construct_specified(Employe.class,name,salaire);
 			if(e == null)
-				fail(MessageFormat.format(_("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
-			String error_msg = _("{0} : lorsque l''on a un employé avec le nom {1}, votre méthode getNom() retourne {2}");
+				fail(MessageFormat.format(Translator.translate("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
+			String error_msg = Translator.translate("{0} : lorsque l''on a un employé avec le nom {1}, votre méthode getNom() retourne {2}");
 			try {
 				String ret  = (String) Inspector.run_method(e,"getNom",new Object []{});
 				String feed = MessageFormat.format(error_msg,test_name(),name,ret);
 				assertThat(feed,ret,is(name));
 			} catch (NoSuchMethodException err) {
-				fail(MessageFormat.format(_("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"getNom"));
+				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"getNom"));
 			}
 			return null;
 		}
@@ -171,13 +167,13 @@ public class TestCode{
 			float salaire = genSalaire();
 			Employe e =(Employe) Inspector.run_construct_specified(Employe.class,name,salaire);
 			if(e == null)
-				fail(MessageFormat.format(_("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
+				fail(MessageFormat.format(Translator.translate("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
 			try {
 				float ret = (Float) Inspector.run_method(e,"getSalaire",new Object [] {});
-				String feed = MessageFormat.format(_("{0} : lorsque l''on a un employé avec un salaire de {1}, votre méthode getSalaire() retourne {2}"),test_name(),salaire,ret);
+				String feed = MessageFormat.format(Translator.translate("{0} : lorsque l''on a un employé avec un salaire de {1}, votre méthode getSalaire() retourne {2}"),test_name(),salaire,ret);
 				assertThat(feed,ret,is(salaire));
 			} catch (NoSuchMethodException err) {
-				fail(MessageFormat.format(_("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"getSalaire"));
+				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"getSalaire"));
 			}
 			return null;
 		}
@@ -194,13 +190,13 @@ public class TestCode{
 			float salaire = genSalaire();
 			Employe e =(Employe) Inspector.run_construct_specified(Employe.class,name,salaire);
 			if(e == null)
-				fail(MessageFormat.format(_("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
+				fail(MessageFormat.format(Translator.translate("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
 			try {
 				String ret = (String) Inspector.run_method(e,"toString",new Object [] {});
-				String feed = MessageFormat.format(_("{0} : lorsque l''on a un l''Employe {1} avec le salaire {2}, votre méthode toString retourn {3}"),test_name(),name,salaire,ret); 
+				String feed = MessageFormat.format(Translator.translate("{0} : lorsque l''on a un l''Employe {1} avec le salaire {2}, votre méthode toString retourn {3}"),test_name(),name,salaire,ret); 
 				assertThat(feed,ret,is(name + " : "+ salaire));
 			} catch (NoSuchMethodException err) {
-				fail(MessageFormat.format(_("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"toString"));
+				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"toString"));
 			}
 			return null;
 		}
@@ -218,16 +214,16 @@ public class TestCode{
 			float salaire = genSalaire();
 			Employe e = (Employe) Inspector.run_construct_specified(Employe.class,name,salaire);
 			if(e == null)
-				fail(MessageFormat.format(_("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
+				fail(MessageFormat.format(Translator.translate("{0} : aucun constructeur public prenant comme premier paramètre un String et comme deuxième un float n''as été trouvé dans votre réponse !"),test_name()));
 			try {
 				float pourcentage = (float) new Random().nextInt(101);
 				Inspector.run_method_specified(e,"augmente",pourcentage);
 				Float new_salaire =(Float) Inspector.run_method(e,"getSalaire",new Object [] {});
-				String feed = MessageFormat.format(_("{0} : lorsque l''on a un Employe avec un salaire de {1} et que l''on augmente de {2}, votre méthode fixe son salaire à {3}"),test_name(),salaire,pourcentage,new_salaire);
+				String feed = MessageFormat.format(Translator.translate("{0} : lorsque l''on a un Employe avec un salaire de {1} et que l''on augmente de {2}, votre méthode fixe son salaire à {3}"),test_name(),salaire,pourcentage,new_salaire);
 				assertEquals(feed,salaire*(1+(pourcentage/100)),new_salaire,0.01);
 				//assertThat(feed,new_salaire,is(salaire*(1+(pourcentage/100))));
 			} catch (NoSuchMethodException err) {
-				fail(MessageFormat.format(_("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"augmente"));
+				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"augmente"));
 			}
 			return null;
 		}
