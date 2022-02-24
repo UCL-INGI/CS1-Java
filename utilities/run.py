@@ -70,8 +70,7 @@ def parsetemplate():
 def librairies():
     """Définit l'ensemble des pathfile qui seront utilisé via l'option -cp de javac et java """
     lib = '.'
-    lib += ':/usr/share/java/junit.jar'
-    lib += ':/usr/share/java/hamcrest/core.jar'
+    lib += ':/usr/share/java/powermock-mockito2-junit-1.7.1/*'
     lib += ':./student'
     lib += ':./src'
     lib += ':./StudentCode'
@@ -171,7 +170,7 @@ def run(customscript,execcustom,nexercices,tests=[],runner='Runner'):
                 if nexercices == 1:
                     outerr = add_indentation_level(outerr) # On ajoute de l'indentation pour que ça s'affiche dans un cadre gris pour les étudiants
                     feedback.set_global_result('failed')
-                    feedback.set_global_feedback(_("Il semble que vous ayez fait des erreurs dans votre code…\n\n") + code_litteral + outerr + "\n")
+                    feedback.set_global_feedback(_("Il semble que vous ayiez fait des erreurs dans votre code…\n\n") + code_litteral + outerr + "\n")
                 else:
                     i = 1
                     while i <= nexercices:
@@ -189,7 +188,7 @@ def run(customscript,execcustom,nexercices,tests=[],runner='Runner'):
                         else:
                             outerr_question = ''.join(regex_question) # On remet tout les feedback trouvé en un seul
                             outerr_question = add_indentation_level(outerr_question) # on l'indente
-                            feed = _("Il semble que vous ayez fait des erreurs dans votre code…\n\n") + code_litteral + outerr_question + "\n"
+                            feed = _("Il semble que vous ayiez fait des erreurs dans votre code…\n\n") + code_litteral + outerr_question + "\n"
                             feedback.set_problem_feedback(feed,"q"+str(i))
                         i += 1
     else: # La compilation a raté

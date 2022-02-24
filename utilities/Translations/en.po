@@ -29,7 +29,7 @@ msgstr "The time limit for your program is exceeded"
 
 #: utilities/run.py:173 utilities/run.py:191
 msgid ""
-"Il semble que vous ayez fait des erreurs dans votre code…\n"
+"Il semble que vous ayiez fait des erreurs dans votre code…\n"
 "\n"
 msgstr ""
 "It seems that you made mistakes in your code …\n"

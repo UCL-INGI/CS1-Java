@@ -1,9 +1,0 @@
-#!/bin/sh
-if [ "javac Q1.java" ];
-then
-   echo "Compilation successful!"
-   `run_student --time 60 Q1.java`
-   feedback-result success
-else
-   echo "Compilation failed. Cannot run your answer"
-fi
