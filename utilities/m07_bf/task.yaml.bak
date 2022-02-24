@@ -1,0 +1,92 @@
+author: Sébastien Combéfis
+context: |+
+    .. raw:: html
+
+        <p>
+          Dans le contexte de gestion d'une bibliothèque de média, chacun des objets de cette bibliothèque est une instance de la classe Java <code>Item</code> ci-dessous :
+        </p>
+        <pre class="code">
+        public class Item
+        {
+           private final String author, title;
+           private final int serial;
+
+           /**
+            * Constructeur
+            * @pre author != null , title != null , serial &gt; 0
+            * @post Une instance de la classe est créée, et représente un objet ayant comme
+            *       auteur author, comme titre title et comme numéro de série serial
+            */
+           public Item (String author, String title, int serial)
+           {
+              this.author = author;
+              this.title = title;
+              this.serial = serial;
+           }
+
+           /**
+            * @pre -
+            * @post La valeur renvoyée contient une représentation de cet objet
+            *       sous la forme : [num série] Auteur, Titre
+            */
+           public String toString()
+           {
+              // À compléter
+           }
+        }
+        </pre>
+        <p>
+          Vous devez tout d'abord compléter la méthode <code>toString</code> de la classe <code>Item</code>.
+        </p>
+        <p>
+          On vous demande ensuite d'écrire une classe <code>CD</code> permettant de représenter des CD. Un CD est lui même un item de la bibliothèque avec une information supplémentaire : la durée de l'album en secondes (un entier <code>int</code> suffira). On doit pouvoir créer un nouvel objet CD par exemple avec l'instruction :
+        </p>
+        <pre class="code">
+        CD r = new CD ("Radiohead", "The Bends", 2917);  // auteur, titre et durée en secondes
+        </pre>
+        <p>
+          et obtenir une représentation textuelle de ce CD grâce à sa méthode <code>toString</code>, qui renvoie par exemple :
+        </p>
+        <pre class="code">
+        [100001] Radiohead, The Bends (2917 s)
+        </pre>
+        <p>
+          Remarquez que chaque <code>Item</code> possède un serial qui est un numéro de série unique propre à l’objet (pour pouvoir différencier plusieurs exemplaires du même livre par exemple). Il doit être généré automatiquement et être supérieur à 100000 pour un CD.
+        </p>
+
+responseIsHTML: true
+order: 81
+accessible: true
+name: 'Mission 7: Question de Bilan Final'
+problems:
+    q1:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le corps de la méthode <code>toString</code> de la classe <code>Item</code> dont la spécification est donnée dans l'énoncé.
+                </p>public String toString()
+
+        type: code
+        multiple: true
+        language: java
+    q2:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le corps de la classe <code>CD</code>.
+                </p>public class CD extends Item
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

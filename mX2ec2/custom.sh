@@ -12,8 +12,8 @@ export LANGUAGE=en_US.UTF-8
 parsetemplate -o student/M1EC13Stu.java student/M1EC13Vide.java
 
 # On compile la tâche et on récupère le résultat dans un fichier
-${JAVAC} student/${EXERCICE}.java 2> logOther.out
-${JAVAC} student/${EXERCICE}Stu.java 2> log.out
+${JAVAC} src/${EXERCICE}.java 2> logOther.out
+${JAVAC} src/Correction.java 2> log.out
 
 
 
@@ -46,46 +46,45 @@ if [ $ERREURENSEIGNANT -ne 0 ];	then
 	exit 1
 fi
 
+for i in {0..10}
+do
+    A=$((1 + $RANDOM % 10))
+    B=$((1 + $RANDOM % 10))
+    C=$((1 + $RANDOM % 10))
 
- #javac student/M1EC13Corr.java student/M1EC13Stu.java student/M1EC13.java
- OUTPUT1=$(java student/M1EC13 correction 2> err1.out)
- OUTPUT2=$(java student/M1EC13 etudiant 2> err2.out)
- 
- ERR1=$(cat err1.out)
- ERR2=$(cat err2.out)
- 
-if [ "$ERR1" != "" ];	then
- 	feedback -r failed -f "ERR1 : $ERR1"
- 	exit 1
-fi
- 
-if [ "$ERR2" != "" ];	then
-	# feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans un fichier puis en le lisant.
-	# sed permet d'indenter chaque ligne de son input avec une tabulation
-	ERR2=$(printf "$ERR2" | sed -e 's/^/\t/')
-	FEED=$(printf "Il y a des erreurs dans votre code: \n ${CODELITTERAL}$ERR2\n")
-	feedback -r failed -f "$FEED"
- 	exit 1
-fi
+    #javac student/M1EC13Corr.java student/M1EC13Stu.java student/M1EC13.java
+    OUTPUT1=$(java student/M1EC13 correction $A $B $C 2> err1.out)
+    OUTPUT2=$(java student/M1EC13 etudiant $A $B $C 2> err2.out)
 
- 
-if [ "$OUTPUT1" = "$OUTPUT2" ]; then 
+    ERR1=$(cat err1.out)
+    ERR2=$(cat err2.out)
 
-	# feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans 		un fichier puis en le lisant.
-	# sed permet d'indenter chaque ligne de son input avec une tabulation
-	OUTPUT1=$(printf "Votre résultat: \n$OUTPUT2" | sed -e 's/^/\t/')
-  	OUTPUT2=$(printf "\nLe résultat attendu: \n$OUTPUT1" | sed -e 's/^/\t/')
-	FEED=$(printf "Votre réponse correspond bien à la réponse correcte. \n ${CODELITTERAL}$OUTPUT1$OUTPUT2")
-    feedback -r success -f "$FEED"
-    exit 1
-	
+    if [ "$ERR1" != "" ];	then
+        feedback -r failed -f "ERR1 : $ERR1"
+        exit 1
+    fi
 
-else
-	# feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans 		un fichier puis en le lisant.
-	# sed permet d'indenter chaque ligne de son input avec une tabulation
-	OUTPUT1bis=$(printf "Votre résultat: \n$OUTPUT2" | sed -e 's/^/\t/')
-  	OUTPUT2bis=$(printf "\nLe résultat attendu: \n$OUTPUT1" | sed -e 's/^/\t/')
-	FEED=$(printf "Votre réponse ne correspond pas à la réponse correcte. \n ${CODELITTERAL}$OUTPUT1bis$OUTPUT2bis")
-	feedback -r failed -f "$FEED"
-	exit 1
-fi
+    if [ "$ERR2" != "" ];	then
+        # feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans un fichier puis en le lisant.
+        # sed permet d'indenter chaque ligne de son input avec une tabulation
+        ERR2=$(printf "$ERR2" | sed -e 's/^/\t/')
+        FEED=$(printf "Il y a des erreurs dans votre code: \n ${CODELITTERAL}$ERR2\n")
+        feedback -r failed -f "$FEED"
+        exit 1
+    fi
+
+    if [ "$OUTPUT1" != "$OUTPUT2" ]; then
+        # feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans 		un fichier puis en le lisant.
+        # sed permet d'indenter chaque ligne de son input avec une tabulation
+        OUTPUT1bis=$(printf "Votre résultat: \n$OUTPUT2" | sed -e 's/^/\t/')
+        OUTPUT2bis=$(printf "\nLe résultat attendu: \n$OUTPUT1" | sed -e 's/^/\t/')
+        FEED=$(printf "Votre réponse ne correspond pas à la réponse correcte. \n ${CODELITTERAL}$OUTPUT1bis$OUTPUT2bis")
+        feedback -r failed -f "$FEED"
+        exit 1
+    fi
+    ERR1=""
+    ERR2=""
+done
+FEED=$(printf "Votre réponse correspond bien à la réponse correcte.")
+feedback -r success -f "$FEED"
+exit 1

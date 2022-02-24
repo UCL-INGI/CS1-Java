@@ -1,0 +1,45 @@
+accessible: true
+author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``char plusFrequent(String s)`` qui permet de déterminer le caractère le plus présent dans la chaine de caractères ``s``.
+
+    A titre d'exemple, le caractère le plus fréquent de la chaîne ``abbDDaa`` est ``a``. Si la chaîne contient des caractères avec le même nombre d'occurences maximal, renvoyez le premier trouvé de gauche à droite.
+
+    La spécification est:
+
+    .. code-block:: java
+
+        /*
+         * @pre s!=null
+         * @post retourne le caractère qui se trouve le plus grand
+         *      nombre de fois dans la chaîne s
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 4 : Q***  Caractère le plus fréquent'
+network_grading: false
+order: 75
+problems:
+    q1:
+        type: code
+        name: le plus fréquent
+        header: Écrivez ici la signature et le corps de cette méthode.
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

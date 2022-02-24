@@ -1,0 +1,43 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier MARTIN
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``void decaleDroite(char[] v)`` qui modifie le tableau ``v`` en décalant tous les caractères d'une position vers la droite et ``v[0]`` a été mis à la valeur ``*`` (étoile).
+    Par exemple, si ``v = ['a', 'b', 'c']``, le résultat attendu est ``['*', 'a', 'b']``. La spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre v != null
+         * @post Modifie le tableau v en décalant tous les caractères
+         *       d'une position vers la droite
+         *       et v[0] est mis à la valeur '*' (étoile)
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5 : Q** : Decale'
+network_grading: false
+order: 100
+problems:
+    q1:
+        type: code
+        name: decale
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

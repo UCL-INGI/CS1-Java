@@ -1,0 +1,67 @@
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          Écrivez une classe complète Employe dont les instances représentent un employé d’entreprise. Un employé est caractérisé par son nom (un string) et son salaire (un entier positif). Il doit être possible de créer un nouvel employé avec un nom et un salaire et d’effectuer les opérations suivantes sur un objet Employe :
+        </p>
+        <ul>
+          <li>obtenir le nom de l’employé
+          </li>
+          <li>obtenir le salaire de l'employé
+          </li>
+          <li>obtenir un texte descriptif représentant l’employé sous la forme <code>nom : salaire</code>
+          </li>
+          <li>augmenter le salaire de l'employé d'un certain pourcentage
+          </li>
+        </ul>
+        <p>
+          Vous devez donc définir la classe <code>Employe</code> qui contiendra les méthodes suivantes :
+        </p>
+        <pre class="code">
+                                @pre -
+                                @post Un employé est créé avec le nom et le salaire indiqués en paramètres
+                                public Employe(String n, float s);
+
+                                @pre -
+                                @post Renvoie le nom de l'employé
+                                public String getNom();
+
+                                @pre -
+                                @post Renvoie le salaire de l'employé
+                                public float getSalaire();
+
+                                @pre -
+                                @post Renvoie une représentation textuelle de l'employé au format nom : salaire
+                                public String toString();
+
+                                @pre s est un entier représentant le pourcentage d'augmentation
+                                @post Le salaire de l'employé est augmenté du pourcentage spécifié (ex : un pourcentage de 100% double le salaire)
+                                public void augmente(float pourcentage);
+
+        </pre>
+
+responseIsHTML: true
+order: 79
+accessible: true
+name: 'Mission 6: Question de Bilan Final'
+problems:
+    employe:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le code de la classe Employe, conformément aux spécifications
+                </p>public class Employe
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

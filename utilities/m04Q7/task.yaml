@@ -1,0 +1,44 @@
+accessible: true
+author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``boolean palindrome(String s)`` qui vérifie si une chaine de caractères ``s`` est un palindrome. Pour rappel, vous trouverez plus d'informations sur les palindromes sur `Wikipedia <https://en.wikipedia.org/wiki/Palindrome>`_.
+
+    Pour simplifier les choses, votre programme prend en compte les signes diacritiques (accents, trémas, cédilles) et les espaces. Par exemple "camilleellimaç" ou encore "la mariée ira mal" ne doivent pas être considérés comme des palindromes.
+
+    La spécification de cette méthode est :
+
+    .. code-block:: java
+
+        /*
+         * @pre s != null
+         * @post retourne true si s est un palindrome, false sinon
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 4 : Question supplémentaire : le palindrome'
+network_grading: false
+order: 74
+problems:
+    q1:
+        type: code
+        name: Palindrome
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

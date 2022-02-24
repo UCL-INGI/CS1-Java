@@ -1,0 +1,44 @@
+accessible: true
+author: Clémentine Munyabarenzi, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez *la signature* et *le corps* d’une methode baptisée
+    ``afficheMax`` qui prend deux nombres entiers comme arguments et
+    **affiche** le plus grand de ces nombres. La spécification de cette
+    méthode est :
+
+
+    .. code-block :: java
+
+       /**
+        ∗ @pre -
+        ∗ @post affiche le maximum entre les nombres entiers a et b
+        ∗ /
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 3 : Question de Démarrage 2 : Le Nombre Maximum'
+network_grading: false
+order: 46
+problems:
+    q1:
+        type: code
+        name: ''
+        header: Ecrivez ci-dessous la *signature* et le *corps* de la méthode ``afficheMax``.
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

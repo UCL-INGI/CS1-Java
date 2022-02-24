@@ -1,0 +1,108 @@
+accessible: true
+author: François MICHEL
+categories: []
+contact_url: ''
+context: |-
+    Considérez maintenant la classe ``OrderedPair``, qui prend comme variable d'instance un objet de type ``Pair`` dont la classe se trouve dans la queston précédente. Voici la classe ``OrderedPair`` :
+
+    .. code-block:: java
+
+        public class OrderedPair {
+
+            private boolean ordered;  /* vrai si p est ordonnée */
+                                    /* p.getA() <= p.getB() */
+            private Pair p;
+
+            /**
+             * @pre -
+             * @post crée un paire ordonnée (0,0)
+             */
+            public OrderedPair() {
+              p = new Pair(0, 0);
+              ordered = true;
+            }
+
+            /**
+             * @pre -
+             * @post donne au premier élément de la paire la valeur nA
+             */
+            public void setA(int nA) {
+              // À implémenter
+            }
+            /**
+             * @pre -
+             * @post donne au second élément de la paire la valeur nB
+             */
+            public void setB(int nB) {
+              // À implémenter
+            }
+
+            /**
+             * @pre    -
+             * @post donne à la variable ordered la valeur nOrdered
+             */
+             public void setOrdered(boolean nOrdered){
+                 /* Pas donné */
+             }
+
+            /**
+             * @pre -
+             * @post retourne vrai si la paire est ordonnée, faux sinon
+             */
+            public boolean getOrdered() {
+              return ordered;
+            }
+
+            /**
+             * @pre -
+             * @post retourne le premier élément de la paire
+             */
+            public int getA() {
+              return p.getA();
+            }
+
+            /**
+             * @pre -
+             * @post retourne le second élément de la paire
+             */
+            public int getB() {
+              return p.getB();
+            }
+        }
+
+    Le but de l'exercice est d'implémenter les méthodes ``setA()`` et ``setB()`` sans oublier de mettre à jour ``ordered`` en fonction des nouvelles valeurs des nombres dans la paire.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 6 : Question de démarrage 2 : OrderedPair'
+network_grading: false
+order: 107
+problems:
+    q1:
+        type: code
+        name: setA()
+        header: Implémentez le corps de ``setA()``. N'oubliez pas de mettre à jour
+            ``ordered``.
+        language: Java
+        default: ''
+    q2:
+        type: code
+        name: setB()
+        header: Implémentez le corps de ``setB()``. N'oubliez pas de mettre à jour
+            ``ordered``.
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

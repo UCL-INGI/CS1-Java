@@ -1,0 +1,117 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |-
+    Un étudiant a écrit la classe suivante, mais il lui manque une méthode pour qu'elle puisse être compilée. Pourriez-vous implémenter cette méthode ?
+
+    .. code-block:: java
+
+      public class Employe implements Comparable {
+         private String nom;
+         private String prenom;
+         private double salaire;
+
+         /*
+          * Constructeur
+          * @pre nom != null, prenom != null, salaire > 0
+          * @post a construit une instance de la classe Employe avec nom et salaire
+          */
+         public Employe (String nom, String prenom, double salaire){
+            this.nom = nom;
+            this.prenom=prenom;
+            this.salaire = salaire;
+         }
+
+         /*
+          * @pre -
+          * @post retourne le nom de l'employé this
+          */
+         public String getNom(){
+             return nom ;
+         }
+
+         /*
+          * @pre -
+          * @post retourne le prénom de l'employé this
+          */
+         public String getPrenom() {
+             return prenom;
+         }
+
+         /*
+          * @pre -
+          * @post retourne le salaire de l'employé this
+          */
+         public double getSalaire() {
+             return salaire;
+         }
+
+         /*
+          * @pre -
+          * @post retourne un String décrivant l'employé this
+          */
+         public String toString() {
+             return getPrenom()+" "+getNom()+" ("+getSalaire()+")";
+         }
+
+         /*
+          * @pre -
+          * @post retourne true si this et other correspondent au
+          *       même employé (même nom, même prénom, même salaire)
+          */
+         public boolean equals(Object other) {
+             if (other instanceof Employe) {
+                  Employe e = (Employe) other;
+                  return (this.getNom().equals(e.getNom())
+                          && (this.getPrenom().equals(e.getPrenom()))
+                          && (this.getSalaire()==e.getSalaire()));
+              } else {
+                  return false;
+              }
+         }
+
+         /*
+          * @pre -
+          * @post retourne un entier négatif si l'employé this
+          *        est inférieur dans l'ordre alphabétique à other.
+          *      0 si this et other correspondent au même employé
+          *        (même nom, même prénom, même salaire)
+          *      Un entier positif si l'employé this est supérieur
+          *        dans l'ordre alphabétique à other.
+          *      Pour tester l'ordre alphabétique, on regarde d'abord
+          *        le nom, ensuite le prénom et enfin le salaire
+          *        (le salaire inférieur étant considéré comme avant
+          *            un salaire supérieur)
+          */
+         //Insérez ici le code manquant
+      }
+
+    Pour rappel, la documentation de l'interface Comparable est disponible via https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 9 : Q* Employe'
+network_grading: false
+order: 156
+problems:
+    q1:
+        type: code
+        name: Employe
+        header: Ecrivez la/les méthode(s) manquante(s)
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

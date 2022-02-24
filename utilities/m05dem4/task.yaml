@@ -1,0 +1,44 @@
+accessible: true
+author: 'Clémentine Munyabarenzi (ressource : Syllabus d''exercices LSINF1101), Olivier
+    Martin'
+categories: []
+contact_url: ''
+context: |
+    Ecrivez en appliquant la *programmation défensive*, une version de la méthode dont la spécification est la suivante :
+
+    .. code-block :: java
+
+        /**
+         * @pre a != null, b != null, a et b de même dimensions
+         * @post retourne la matrice valant la somme des matrices a et b
+         */
+        public static int[][] add(int[][] a, int[][] b)
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5 : Question de démarrage 4 : Sommes de Matrices'
+network_grading: false
+order: 89
+problems:
+    q1:
+        type: code
+        name: ''
+        header: Ecrivez ici le *corps* de la fonction ``add`` (Vous ne devez pas écrire
+            la signature de la méthode) en utilisant la **programmation défensive**,
+            càd en utilisant **assert** dans le cas où la *@pre* n'est pas respectée.
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

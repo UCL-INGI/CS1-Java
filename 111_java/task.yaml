@@ -14,7 +14,7 @@ environment_parameters:
     limits:
         time: '30'
         hard_time: ''
-        memory: '32'
+        memory: '100'
     run_cmd: ''
 environment_type: docker
 evaluate: best
@@ -102,6 +102,7 @@ problems:
                 </p>
 
         language: java
+        optional: 'on'
         default: ''
 stored_submissions: 0
 submission_limit:

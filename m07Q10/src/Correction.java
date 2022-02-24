@@ -71,7 +71,7 @@ class DeStatsCorr extends De {
 	 *			dé suivi des statistique sous forme de tableau
 	 */
 	public String toString() {
-		return super.getNom() + " " + this.getLances() + " " + Arrays.toString(this.getResultats());
+		return super.toString() + " " + this.getLances() + " " + Arrays.toString(this.getResultats());
 	}
 
 	private String resToString() {

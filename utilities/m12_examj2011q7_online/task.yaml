@@ -1,0 +1,67 @@
+accessible: true
+author: François MICHEL
+categories: []
+contact_url: ''
+context: |-
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  https://inginious.info.ucl.ac.be/course/LSINF1101/examj2011q1/jun11.pdf
+
+    __ juin2011_
+
+    Question 7 : Ecrivez le corps de la méthode ``loadState`` de la classe ``Cluster`` selon la spécification donnée. Notez que la pré-condition garantit le format du contenu du fichier; pas besoin donc de traiter les erreurs de format du texte.
+
+    .. code-block:: java
+
+          /**
+         * @pre     filename le nom d'un fichier sauvegardé par saveState
+         * @post    Retire tous les processus présents dans le cluster, puis
+         *            ajoute au cluster les processus dont les noms et capacités
+         *            sont donnés dans le fichier, selon le format généré par
+         *            saveState.  Arrête le programme si une erreur d'I/O se
+         *            produit ou si la capacité du cluster est insuffisante.
+         */
+        public void loadState(String fileName){
+            /*** VOTRE REPONSE ***/
+        }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Examen Juin 2011 online : Question 7'
+network_grading: false
+order: 202
+problems:
+    q1:
+        type: code
+        name: Le corps de la méthode loadState
+        header: Veillez à n'implémenter que le corps, ne recopiez pas la signature.
+        language: Java
+        default: ''
+    zmontest:
+        type: code
+        name: Fonction de test optionnelle
+        header: |
+            Insérez votre code de test optionnel ci-dessous. Vous pouvez utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.  Votre code sera exécuté dans une méthode ``montest``:
+
+            .. code-block:: java
+
+                public static void montest() { /* VOTRE CODE */ }
+
+            Attention, toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.  Vous *devez* effacer ce code de test pour finaliser votre soumission.
+        language: java
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

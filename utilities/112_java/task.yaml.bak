@@ -1,0 +1,31 @@
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          Complétez la classe BioInfo conformément à l'énoncé de la phase de réalisation de la mission 4.
+        </p>
+
+responseIsHTML: true
+order: 74
+name: 'Mission 4 : Phase de réalisation'
+problems:
+    bioinfo:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe BioInfo
+                </p>Classe BioInfo.java :
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

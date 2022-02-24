@@ -1,0 +1,47 @@
+accessible: true
+author: François MICHEL, Brandon NAITALI
+categories: []
+contact_url: ''
+context: |+
+    Il est parfois utile de s'assurer qu'un String est en majuscule. La méthode ``Character.toUpperCase()`` de la classe ``Character`` de l'API Java permet de récupérer la majuscule d'un caractère qu'on lui passe en argument. En utilisant cette méthode, implémentez la méthode ``toUpper`` qui retourne un ``String`` identique à celui passé en argument, mais en majuscule. Attention à ne pas utiliser une autre méthode que ``Character.toUpperCase()``.
+
+    Voici la signature de la méthode ``toUpper`` à implémenter. Respectez bien les spécifications :
+
+    .. code-block:: java
+
+        /*
+         *    @pre  s non vide
+         *    @post retourne s en majuscules
+         */
+         public static String toUpper(String s) {
+             // À implémenter
+         }
+
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 4 : Question de démarrage 4 : toUpper'
+network_grading: false
+order: 68
+problems:
+    q1:
+        type: code
+        name: Méthode toUpper
+        header: Implémentez ici le corps de la méthode toUpper. Veillez bien à n'implémenter
+            que le corps, ne recopiez pas la signature.
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,47 @@
+accessible: true
+author: ''
+context: |+
+    Considérez la classe ``Pair`` suivante :
+
+    .. code-block :: java
+
+        /**
+         * Une paire d'entiers
+         */
+
+        public class Pair {
+            private int a; // le premier élément de la paire
+            private int b; // le second élément de la paire
+
+            /**
+             * @pre -
+             * @post crée un paire composée de x et y
+             */
+            public Pair(int x, int y) {
+              a=x;
+              b=y;
+            }
+
+            // RESTE NON FOURNI
+        }
+
+    Définissez une méthode ``equals`` pour cette classe, **qui re-définit celle de la classe** Object_ telle que deux paires sont égales si leur deux composantes sont égales.
+
+    .. _Object: http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
+
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 7: Question de Démarrage 1: Paire d''entiers'
+problems:
+    q1:
+        language: java
+        name: ''
+        type: code
+        header: |-
+            Ecrivez ici **la signature et le corps** de la méthode ``equals``.
+            N'utilisez pas de commentaires.
+weight: 1.0
+order: 18

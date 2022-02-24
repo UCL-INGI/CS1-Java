@@ -1,0 +1,41 @@
+accessible: true
+author: Ludovic Taffin
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode permettant de calculer le nombre de racine d'une équation du second degré
+    On passe a,b et c en paramètre de votre méthode.
+    La méthode s'appelle eqsecdeg1 pour la première partie et eqsecdeg2 pour la seconde.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'NON Mission 3 : Fonctions équation du second degré'
+network_grading: false
+order: 59
+problems:
+    q1:
+        type: code
+        name: Version 1, afficher le résultat
+        header: ''
+        language: java
+        default: ''
+    q2:
+        type: code
+        name: Version 2, retourné le résultat
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

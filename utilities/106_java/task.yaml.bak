@@ -1,0 +1,76 @@
+author: Virginie Van den Schrieck
+context: |+
+    .. raw:: html
+
+        <p>
+          On vous demande d'écrire deux classes, Temps et Chanson.
+        </p>
+        <p>
+          La classe Temps représente un temps décomposé en heures, minutes et secondes. Elle doit posséder les méthodes suivantes :
+        </p>
+        <ul>
+          <li>public Temps(int h, int m, int s), avec m et s compris entre 0 et 59)
+          </li>
+          <li>public int toSecondes(), qui renvoie le nombre total de secondes pour ce temps.
+          </li>
+          <li>public int delta(Temps t), qui retourne la différence entre ce temps-ci et t, en secondes (positif si ce temps-ci est plus grand).
+          </li>
+          <li>public boolean apres(Temps t) : renvoie true si ce temps-ci est plus grand que t.
+          </li>
+          <li>public void ajouter(Temps t) : ajoute t à ce temps-ci. Corrige de manière à ce que les minutes et les secondes soient dans l’intervalle [0 . . . 59], en reportant au besoin les valeurs hors limites sur les unités supérieures (60 secondes = 1 minute, 60 minutes = 1 heure).
+          </li>
+          <li>public String toString() : retourne ce temps sous la forme de texte “heures :minutes :secondes”. Astuce : la méthode String.format("%02d:%02d:%02d", heures, minutes, secondes) retourne le String désiré avec les nombres en deux chiffres en ajoutant les zéros nécessaires.
+          </li>
+        </ul>
+        <p>
+          La classe Chanson, quant à elle, représente une chanson caractérisée par un titre (String), un auteur (String), et une durée (Temps). Ses méthodes sont les suivantes :
+        </p>
+        <ul>
+          <li>public Chanson(String t, String a, Temps d);
+          </li>
+          <li>public String getTitre() : renvoie le titre de la chanson
+          </li>
+          <li>public String getAuteur() : retourne l'auteur de cette chanson
+          </li>
+          <li>public Temps getDuree() : retourne la durée de cette chanson
+          </li>
+          <li>public String toString() : retourne un String décriant cette chanson sous le format TITRE - AUTEUR - DUREE
+          </li>
+        </ul>
+
+responseIsHTML: true
+order: 78
+accessible: true
+name: 'Mission 6 : Phase de réalisation'
+problems:
+    temps:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe Temps
+                </p>public class Temps
+
+        type: code
+        multiple: true
+        language: java
+    chanson:
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Ecrivez ici le code de la classe Chanson
+                </p>public class Chanson
+
+        type: code
+        multiple: true
+        language: java
+limits:
+    language: java
+    time: 30
+    memory: 32
+    disk: 50
+    output: 5210
+environment: pythia0compat

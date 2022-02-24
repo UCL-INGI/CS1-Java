@@ -1,0 +1,67 @@
+package StudentCode;
+
+import src.Employe;
+
+/**
+ * Une classe représentant un directeur
+ *
+ * @author O. Bonaventure
+ * @version Novembre 2016
+ */
+
+public class Directeur extends Employe {
+
+	private double prime; // en pourcents du salaire
+
+	/**
+	 * Constructeur
+	 * @pre		nom != null, salaire > 0 , 0<= prime <= 1
+	 * @post	construit une instance de la classe Directeur avec comme
+	 */
+	public Directeur (String nom, double salaire, double prime) {
+		super(nom,salaire);
+		this.prime = prime;
+	}
+
+	
+	/**
+	 * @pre		-
+	 * @post	retourne le salaire du directeur, calculé comme (1+prime)*salaire
+	 */
+	public double getSalaire() {
+		@	@q1@@
+	}
+
+
+	/**
+	 * @pre		-
+	 * @post	retourne le salaire du directeur sans la prime
+	 */
+	public double getBaseSalaire() {
+		return super.getSalaire();
+	}
+
+	/**
+	 * @pre		-
+	 * @post	retourne true si this et other sont identique (i.e. même nom,
+	 *			même salaire et même prime).
+	 */
+	 @Override
+	public boolean equals(Object other) {
+		if(other instanceof Directeur)
+			return super.equals(other) && (((Directeur) other).getPrime() == this.getPrime());
+		return false;
+	}
+
+	/**
+	 * @pre		-
+	 * @post	retourne la prime de ce directeur
+	 */
+	public double getPrime() {
+		return this.prime;
+	}
+
+	public String toString() {
+		return "[ nom : "+ super.getNom() + " - salaire : "+super.getSalaire() + " - prime : "+this.getPrime() + "]";
+	}
+}

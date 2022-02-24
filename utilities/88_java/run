@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Test"
+javac -cp . /input/Q1.java
+feedback -r "success"

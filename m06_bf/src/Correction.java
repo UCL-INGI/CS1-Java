@@ -5,7 +5,7 @@ public class Correction {
 	String n;
 	float s;
 
-	public Correction(String n, Float s) {
+	public Correction(String n, float s) {
 	    this.n = n;
 	    this.s = s;
 	}
@@ -23,7 +23,7 @@ public class Correction {
 	    return this.getNom() + " : " + this.getSalaire();
 	}
 
-	public void augmente(Float pourcentage) {
+	public void augmente(float pourcentage) {
 	    this.s = this.s + (this.s*(pourcentage/100));
 	}
 }

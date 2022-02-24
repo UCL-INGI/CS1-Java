@@ -1,0 +1,6 @@
+pomme
+poire
+orange
+ananas
+chien
+chat

@@ -1,0 +1,21 @@
+accessible: false
+author: François MICHEL
+context: |-
+    Vous soumettrez votre soumission de la phase de réalisation de la Mission 10 soit ici, soit directement via BlueJ.
+
+    Veuillez soumettre une archive **zip** contenant uniquement les fichiers **.java** utilisés pour votre mission, ainsi qu'n fichier nommé "README.TXT".
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 10: Phase de réalisation: Soumission'
+problems:
+    q1:
+        allowed_exts:
+        - .zip
+        name: Soumission de l'archive zip
+        type: code-file
+        header: Veuillez uploader votre phase de réalisation soit ici, soit via BlueJ
+weight: 1.0
+order: 20

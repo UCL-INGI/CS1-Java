@@ -1,0 +1,48 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |
+    De nombreux sites web imposent des contraintes sur les mots de passe que les utilisateurs peuvent utiliser. L'objectif est généralement de forcer les utilisateurs à choisir des mots de passe difficiles à trouver par des attaquants éventuels.
+
+    Ecrivez la méthode ``boolean motDePasseValide(String s)`` permettant de vérifier la validité d'un mot de passe ``s``. La contrainte imposée à un tel mot de passe est qu'il doit au moins contenir 8 caractères, un chiffre. La spécification de cette méthode est :
+
+    .. code-block:: java
+
+        /*
+         * @pre s!=null
+         * @post retourne true uniquement si la chaine de caractères
+         *       s est un mot de passe valide, c-a-d qu'elle
+         *       contient au moins 8 caractères, au moins une lettre
+         *       minuscule, au moins un chiffre et au moins une lettre majuscule
+         */
+
+
+    Vous trouverez dans la classe `Character <https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html>`_ des méthodes utiles pour cette tâche.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 4 : Q** Vérification de mot de passe'
+network_grading: false
+order: 79
+problems:
+    q1:
+        type: code
+        name: Mot de passe
+        header: Écrivez ici la signature et le corps de cette méthode.
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

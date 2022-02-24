@@ -1,0 +1,49 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |
+    La classe ``Fichiers`` est une classe permettant de réaliser quelques tâches sur un fichier. On vous demande ici d'écrire la méthodes ``readVector`` dont les spécifications et la signature sont :
+
+    .. code-block:: java
+
+      /*
+       * @pre fileName!=null
+       * @post lit dans le fichier dont le nom est fileName le contenu du vecteur v
+       *       le format du fichier est :
+       *     première ligne : nombre d'éléments du vecteur
+       *     lignes suivantes : un élément par ligne en commençant par v[0] ...
+       *
+       *     En cas d'erreur (exception, fichier non lisible, nombre incorrect d'éléments
+       *     dans le fichier, format de nombre incorrect, ...), retourne null
+       */
+       public  int[] readVector(String fileName)
+
+    Pour lire le fichier, nous vous demandons d'utiliser un ``BufferedReader``.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 9: Q* Fichiers:readVector'
+network_grading: false
+order: 161
+problems:
+    q1:
+        type: code
+        name: readVector
+        header: 'Ecrivez le corps de la méthode ``readVector``:'
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

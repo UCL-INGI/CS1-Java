@@ -1,0 +1,70 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |-
+    Dans un programme Java, on écrit une classe permettant de représenter une date. Les variables d'instant de cette classe sont définies comme suite :
+
+    .. code-block:: java
+
+       /**
+        * Une classe pour encoder une date
+        *
+        * @author Olivier Bonaventure
+        * @version Oct. 2016
+        */
+       public class Date{
+         public int jour; // le jour du mois
+         public int mois; // le mois
+         public int annee; // l'année
+         //...
+       }
+
+    Le constructeur de cette classe a comme spécification :
+
+    .. code-block:: java
+
+        /*
+         * @pre 1 <= jour <= 31, 1 <= mois <= 12
+         * @post retourne une date, les mois commencent à 1 pour janvier
+         *       On ne gère pas les années bissextiles, février est supposé toujours
+         *       contenir 28 jours
+         */
+
+
+    Voici quelques exemples d'utilisation du constructeur :
+
+    .. code-block:: java
+
+       Date poisson = new Date(1,4,2017); // 1er avril 2017
+       Date noel = new Date(25,12,2016); // 25 décembre 2016
+
+
+    Ecrivez le constructeur de cette classe ``Date``.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 6 : Q* constructeur Date'
+network_grading: false
+order: 110
+problems:
+    q1:
+        type: code
+        name: constructeur de Date
+        header: Écrivez ici le constructeur
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,45 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |-
+    La classe ``Fichiers`` est une classe permettant de réaliser quelques tâches sur un fichier. On vous demande ici d'écrire la méthodes ``contains`` dont les spécifications et la signature sont :
+
+    .. code-block:: java
+
+      /*
+       * @pre fileName != null
+       * @post retourne true si le fichier de nom fileName contient
+       *       au moins une occurence de la chaîne s,
+       *       false sinon et en cas d'erreur également
+       */
+       public boolean contains(String s, String fileName)
+
+    On vous demande d'utiliser un ``BufferedReader`` pour lire le fichier
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 9 : Q* Fichiers : Contains'
+network_grading: false
+order: 158
+problems:
+    q1:
+        type: code
+        name: Contains
+        header: Ecrivez le corps de la méthode ``contains``
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

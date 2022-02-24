@@ -1,0 +1,41 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``int count(int v, int[][] m)`` qui compte le nombre d'occurences de la valeur ``v`` dans ``int[][] m``.
+    la spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre m != null
+         * @post compte le nombre d'occurences de la valeur v dans int[][] m
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5 : Q** : Count'
+network_grading: false
+order: 97
+problems:
+    q1:
+        type: code
+        name: Count
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

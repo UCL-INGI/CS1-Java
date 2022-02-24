@@ -93,6 +93,23 @@ public class TestCode{
 			}
 		}
 	}
+    
+    private class t4 implements Callable<Void> {
+		/**
+		 * @pre		-
+		 * @post	Vérifie que le l'étudiant utilise les getters pour
+		 *			récupérer les valeurs des variables d'instances.
+		 */
+		public Void call() {
+			Employe e = new Employe("Francis",2000);
+			String 	s = e.toString();
+            String correctionString = "Francis 2000";
+			String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyé un String correcte !\n"
+                                                                   ) + "Expected : {1}\nAu lieu de : {2}",test_name(), correctionString, s);
+			assertTrue(feed,s.equals(correctionString));
+			return null;
+		}
+	}
 				
 	public void catcher(Callable<Void> f) {
 		try {
@@ -131,6 +148,12 @@ public class TestCode{
 	@Test
 	public void test_3() {
 		catcher(new t3());
+		printSucceed();
+	}
+    
+    @Test
+	public void test_4() {
+		catcher(new t4());
 		printSucceed();
 	}
 }

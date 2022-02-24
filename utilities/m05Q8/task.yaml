@@ -1,0 +1,42 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``void replace(int v, int w, int[][] m)`` qui remplace toutes les d'occurences de la valeur ``v`` dans ``int[][] m`` par la valeur ``w``. la spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre m != null
+         * @post remplace toutes les d'occurences de la valeur v
+         *       dans le tableau int[][] m par la valeur w.
+         *       Modifie la matrice m.
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5: Q** : replace'
+network_grading: false
+order: 98
+problems:
+    q1:
+        type: code
+        name: replace
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

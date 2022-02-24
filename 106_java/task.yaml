@@ -14,6 +14,8 @@ context: |+
         <ul>
           <li>public Temps(int h, int m, int s), avec m et s compris entre 0 et 59)
           </li>
+          <li>Les différents getters et setters
+          </li>
           <li>public int toSecondes(), qui renvoie le nombre total de secondes pour ce temps.
           </li>
           <li>public int delta(Temps t), qui retourne la différence entre ce temps-ci et t, en secondes (positif si ce temps-ci est plus grand).
@@ -31,13 +33,15 @@ context: |+
         <ul>
           <li>public Chanson(String t, String a, Temps d);
           </li>
+          <li>Les différents getters et setters
+          </li>
           <li>public String getTitre() : renvoie le titre de la chanson
           </li>
           <li>public String getAuteur() : retourne l'auteur de cette chanson
           </li>
           <li>public Temps getDuree() : retourne la durée de cette chanson
           </li>
-          <li>public String toString() : retourne un String décriant cette chanson sous le format TITRE - AUTEUR - DUREE
+          <li>public String toString() : retourne un String décrivant cette chanson sous le format TITRE - AUTEUR - DUREE
           </li>
         </ul>
 
@@ -46,7 +50,7 @@ environment_parameters:
     limits:
         time: '30'
         hard_time: ''
-        memory: '32'
+        memory: '512'
     run_cmd: ''
 environment_type: docker
 evaluate: best

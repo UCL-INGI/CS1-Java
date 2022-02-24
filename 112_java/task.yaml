@@ -14,14 +14,14 @@ environment_parameters:
     limits:
         time: '30'
         hard_time: ''
-        memory: '32'
+        memory: '512'
     run_cmd: ''
 environment_type: docker
 evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: 'DELETE Mission 4 : Phase de réalisation'
+name: 'Mission 4 : Phase de réalisation'
 network_grading: false
 order: 82
 problems:

@@ -1,0 +1,702 @@
+accessible: true
+author: Olivier BONAVENTURE
+environment: default
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 11: QCM'
+context: |
+    =====================
+    Mission 10. ArrayList
+    =====================
+
+
+    Ces questions supposent que vous avez lu les sections suivantes du livre de référence |jn|_
+
+        - |jn8.3|_
+            - |jn8.3.3|_
+            - |jn8.3.4|_
+            - |jn8.3.5|_
+        - |jn10.1|_
+            - |jn10.1.3|_
+            - |jn10.1.4|_
+            - |jn10.1.5|_
+            - |jn10.1.6|_
+            - |jn10.1.7|_
+        - |jn10.2|_
+            - |jn10.2.1|_
+            - |jn10.2.2|_
+        - |jn11.4|_
+            - |jn11.4.1|_
+
+    .. _jn: http://math.hws.edu/javanotes/
+    .. |jn| replace:: JavaNotes
+
+    .. _jn8.3 : http://math.hws.edu/javanotes/c8/s3.html
+    .. |jn8.3| replace:: `8.3 : Exceptions and try..catch`
+
+    .. _jn8.3.3 : http://math.hws.edu/javanotes/c8/s3.html#robustness.3.3
+    .. |jn8.3.3| replace:: `8.3.3 : Throwing Exceptions`
+
+    .. _jn8.3.4 : http://math.hws.edu/javanotes/c8/s3.html#robustness.3.4
+    .. |jn8.3.4| replace:: `8.3.4 : Mandatory Exception Handling`
+
+    .. _jn8.3.5 : http://math.hws.edu/javanotes/c8/s3.html#robustness.3.5
+    .. |jn8.3.5| replace:: `8.3.5 : Programming with Exceptions`
+
+    .. _jn10.1 : http://math.hws.edu/javanotes/c10/s1.html
+    .. |jn10.1| replace:: `10.1 : Generic Programming`
+
+    .. _jn10.1.3 : http://math.hws.edu/javanotes/c10/s1.html#generics.1.3
+    .. |jn10.1.3| replace:: `10.1.3 : Generic Programming in Java`
+
+    .. _jn10.1.4 : http://math.hws.edu/javanotes/c10/s1.html#generics.1.4
+    .. |jn10.1.4| replace:: `10.1.4 : The Java Collection Framework`
+
+    .. _jn10.1.5 : http://math.hws.edu/javanotes/c10/s1.html#generics.1.5
+    .. |jn10.1.5| replace:: `10.1.5 : Iterators and for-each Loops`
+
+    .. _jn10.1.6 : http://math.hws.edu/javanotes/c10/s1.html#generics.1.6
+    .. |jn10.1.6| replace:: `10.1.6 : Equality and Comparison`
+
+    .. _jn10.1.7 : http://math.hws.edu/javanotes/c10/s1.html#generics.1.7
+    .. |jn10.1.7| replace:: `10.1.7 : Generics and Wrapper Classes`
+
+    .. _jn10.2 : http://math.hws.edu/javanotes/c10/s2.html
+    .. |jn10.2| replace:: `10.2 : Lists and Sets`
+
+    .. _jn10.2.1 : http://math.hws.edu/javanotes/c10/s2.html#generics.2.1
+    .. |jn10.2.1| replace:: `10.2.1 : ArrayList and LinkedList`
+
+    .. _jn10.2.2 : http://math.hws.edu/javanotes/c10/s2.html#generics.2.2
+    .. |jn10.2.2| replace:: `10.2.2 : Sorting`
+
+    .. _jn11.4 : http://math.hws.edu/javanotes/c11/s4.html
+    .. |jn11.4| replace:: `11.4 : Networking`
+
+    .. _jn11.4.1 : http://math.hws.edu/javanotes/c11/s4.html#IO.4.1
+    .. |jn11.4.1| replace:: `11.4.1 : URLs and URLConnections`
+problems:
+    q1:
+        limit: 3
+        name: Instruction throw
+        type: multiple-choice
+        header: |4
+
+            Quelle est la manière correcte de lancer une exception de type ``IllegalArgumentException`` signalant un nombre négatif ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   throw new IllegalArgumentException("nombre negatif");
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   Exception e = new IllegalArgumentException("nombre negatif");
+                   throw e;
+            feedback: |4
+
+                L'exception ne doit pas nécessairement être créée dans l'instruction ``throw``.
+        -   text: |
+                .. code-block:: java
+
+                   throw IllegalArgumentException("nombre negatif");
+            feedback: |4
+
+                ``IllegalArgumentException`` est un constructeur.
+        -   text: |
+                .. code-block:: java
+
+                   return new IllegalArgumentException("nombre negatif");
+            feedback: |4
+
+                Il ne s'agit pas de retourner un résultat mais de lancer une exception.
+        -   text: |
+                .. code-block:: java
+
+                   try {
+                       ...
+                   } catch (IllegalArgumentException e) {
+                       e.setMessage("nombre negatif");
+                   }
+            feedback: |4
+
+                Il s'agit de lancer une exception, pas de l'intercepter.
+        -   text: |
+                .. code-block:: java
+
+                   try {
+                       ...
+                   } catch (new IllegalArgumentException("nombre negatif")) {
+                       System.out.println(e.getMessage());
+                   }
+            feedback: |4
+
+                Il s'agit de lancer une exception, pas de l'intercepter.
+        -   text: |
+                .. code-block:: java
+
+                   throws new IllegalArgumentException("nombre negatif");
+            feedback: |4
+
+                ``throws`` intervient dans les signatures, ce n'est pas la bonne instruction.
+    q2:
+        limit: 3
+        name: Propagation d'exceptions
+        type: multiple-choice
+        header: |4+
+
+            Qu'imprime le programme suivant
+
+            .. code-block:: java
+
+                public static void main(String[] args) {
+                    System.out.println("Debut de main");
+                    task1();
+                    task2();
+                    System.out.println("Fin de main");
+                }
+
+                public static void task1() {
+                    System.out.println("Debut de task1");
+                    try {
+                        task3();
+                    } catch (Exception e) {
+                        System.out.println("task1 intercepte " + e.getMessage());
+                    }
+                    System.out.println("Fin de task1");
+                }
+
+                public static void task2() {
+                    System.out.println("Debut de task2");
+                    task3();
+                    System.out.println("Fin de task2");
+                }
+
+                public static void task3() {
+                    System.out.println("Debut de task3");
+                    task4();
+                    System.out.println("Fin de task3");
+                }
+
+                public static void task4() {
+                    System.out.println("Debut de task4");
+                    throw new RuntimeException("boum");
+                    System.out.println("Fin de task4");
+                }
+
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   Debut de main
+                   Debut de task1
+                   Debut de task3
+                   Debut de task4
+                   task1 intercepte boum
+                   Fin de task1
+                   Debut de task2
+                   Debut de task3
+                   Debut de task4
+                   java.lang.Exception: boum
+        -   text: |
+                .. code-block:: java
+
+                   Debut de main
+                   Debut de task1
+                   Debut de task3
+                   Debut de task4
+                   Fin de task4
+                   Fin de task3
+                   task1 intercepte boum
+                   Fin de task1
+                   Debut de task2
+                   Debut de task3
+                   Debut de task4
+                   Fin de task4
+                   Fin de task3
+                   Fin de task2
+                   Fin de main
+                   java.lang.Exception: boum
+            feedback: |4
+
+                L'exécution de ``main``, ``task2``, ``task3`` et ``task4`` ne parvient pas à la fin à cause de l'exception lancée dans ``task4``.
+        -   text: |
+                .. code-block:: java
+
+                   Debut de main
+                   Debut de task1
+                   Debut de task3
+                   Debut de task4
+                   Fin de task3
+                   task1 intercepte boum
+                   Fin de task1
+                   Debut de task2
+                   Debut de task3
+                   Debut de task4
+                   Fin de task3
+                   java.lang.Exception: boum
+            feedback: |4
+
+                L'exécution de ``task3`` ne parvient pas à la fin, ``task3`` propage l'exception de ``task4``.
+        -   text: |
+                .. code-block:: java
+
+                   Debut de main
+                   Debut de task1
+                   Debut de task3
+                   Debut de task4
+                   task1 intercepte boum
+                   Debut de task2
+                   Debut de task3
+                   Debut de task4
+                   java.lang.Exception: boum
+            feedback: |4
+
+                L'exécution de ``task1`` parvient à la fin, l'exception de ``task3`` est interceptée et traitée.
+        -   text: |
+                .. code-block:: java
+
+                   Debut de main
+                   Debut de task1
+                   Debut de task3
+                   Debut de task4
+                   java.lang.Exception: boum
+                   task1 intercepte boum
+                   Fin de task1
+                   Debut de task2
+                   Debut de task3
+                   Debut de task4
+                   java.lang.Exception: boum
+            feedback: |4
+
+                La première exception lancée dans ``task4`` est interceptée dans ``task1``, elle ne s'affiche pas.
+        -   text: |
+                .. code-block:: java
+
+                   Debut de main
+                   Debut de task1
+                   Debut de task3
+                   Debut de task4
+                   task1 intercepte boum
+                   Fin de task4
+                   Fin de task3
+                   Fin de task1
+                   Debut de task2
+                   Debut de task3
+                   Debut de task4
+                   java.lang.Exception: boum
+                   Fin de task4
+                   Fin de task3
+                   Fin de task2
+                   Fin de main
+            feedback: |4
+
+                L'exécution de ``main``, ``task2``, ``task3`` et ``task4`` ne parvient pas à la fin à cause de l'exception lancée dans ``task4``.
+    q3:
+        limit: 3
+        name: Déclaration throws
+        type: multiple-choice
+        header: |4
+
+            Quelle est la manière correcte de déclarer que la méthode ``readName`` peut causer une ``IOException`` ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public String readName(Reader r) throws IOException {
+                       ...
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public String readName(Reader r) throws new IOException() {
+                       ...
+                   }
+            feedback: |4
+
+                ``throws`` est suivi d'un nom de classe, pas d'une expression.
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public String readName(Reader r) {
+                       throws new IOException();
+                       ...
+                   }
+            feedback: |4
+
+                Il faut déclarer l'exception dans la signature et non la lancer dans le corps de la méthode.
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public String readName(Reader r) throw IOException {
+                       ...
+                   }
+            feedback: |4
+
+                ``throw`` est une instruction, ce n'est pas ce qu'il faut ici.
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   // throws IOException
+                   public String readName(Reader r) {
+                       ...
+                   }
+            feedback: |4
+
+                ``throws`` doit intervenir dans la signature, pas juste en commentaire.
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public IOException readName(Reader r) {
+                       ...
+                   }
+            feedback: |4
+
+                ``readName`` peut lancer une ``IOException`` et non la retourner comme résultat.
+    q4:
+        limit: 3
+        name: Exceptions sous contrôle
+        type: multiple-choice
+        header: |4
+
+            Considérons le programme suivant
+
+            .. code-block:: java
+
+                import java.io.*;
+                ...
+
+                public static void main(String[] args) {
+                    processFile(args[0]);
+                }
+
+                public static void processFile(String filename) {
+                    try {
+                        String[] lines = readFile(filename);
+                        ...
+                    } catch (IOException e) {
+                        System.out.println("cannot read: " + e.getMessage());
+                    }
+                }
+
+                public static String[] readFile(String filename) {
+                    BufferedReader r = new BufferedReader(new FileReader(filename));
+                    ...
+                    for (String s = r.readLine(); s != null; s = r.readLine()) {
+                        ...
+                    }
+                    r.close();
+                    return ...;
+                }
+
+            Comment doit-on compléter les signatures des trois méthodes pour avoir toutes les déclarations ``throws`` nécessaires, sans déclarations inutiles ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   public static void main(String[] args)
+                   public static void processFile(String filename)
+                   public static String[] readFile(String filename) throws IOException
+        -   text: |
+                .. code-block:: java
+
+                   public static void main(String[] args)
+                   public static void processFile(String filename) throws IOException
+                   public static String[] readFile(String filename) throws IOException
+            feedback: |4
+
+                ``processFile`` intercepte ``IOException``, il ne la propage pas.
+        -   text: |
+                .. code-block:: java
+
+                   public static void main(String[] args) throws IOException
+                   public static void processFile(String filename) throws IOException
+                   public static String[] readFile(String filename) throws IOException
+            feedback: |4
+
+                ``processFile`` intercepte ``IOException``, il ne la propage pas et ``main`` non plus.
+        -   text: |
+                .. code-block:: java
+
+                   public static void main(String[] args)
+                   public static void processFile(String filename) throws IOException
+                   public static String[] readFile(String filename)
+            feedback: |4
+
+                C'est ``readFile`` et non ``processFile`` qui peut causer une ``IOException``, à cause de l'utilisation du ``BufferedReader``.
+        -   text: |
+                .. code-block:: java
+
+                   public static void main(String[] args) throws IOException
+                   public static void processFile(String filename)
+                   public static String[] readFile(String filename) throws IOException
+            feedback: |4
+
+                Puisque ``processFile`` intercepte ``IOException``, il ne la propage pas à ``main``.
+    q5:
+        limit: 3
+        name: Définition d'exceptions
+        type: multiple-choice
+        header: |4
+
+            Parmi les définitions suivantes, laquelle définit correctement une exception hors contrôle (unchecked) ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   public class GraveException extends RuntimeException {
+                       public GraveException(String msg) {
+                           super(msg);
+                       }
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   public class GraveException extends RuntimeException {
+                       private String message;
+                       public GraveException(String msg) {
+                           this.message = msg;
+                       }
+                   }
+            feedback: |4
+
+                C'est syntaxiquement correct mais inadéquat; ``RuntimeException`` contient déjà un message.
+        -   text: |
+                .. code-block:: java
+
+                   public class GraveException extends Exception {
+                       public GraveException(String msg) {
+                           super(msg);
+                       }
+                   }
+            feedback: |4
+
+                Cette exception n'est pas hors contrôle.
+        -   text: |
+                .. code-block:: java
+
+                   public class GraveException {
+                       public GraveException(String msg) {
+                           super(msg);
+                       }
+                   }
+            feedback: |4
+
+                Pour que ce soit une exception il faut définir une sous-classe de ``Throwable``.
+        -   text: |
+                .. code-block:: java
+
+                   public class GraveException extends RuntimeException {
+                       public GraveException(String msg) {
+                           throw new GraveException(msg);
+                       }
+                   }
+            feedback: |4
+
+                L'utilisation de ``throw`` n'a pas de sens ici.
+    q6:
+        limit: 3
+        name: Les collections Java
+        type: multiple-choice
+        header: |4
+
+            Quel groupe d'affirmations est correct ?
+        choices:
+        -   valid: true
+            text: |
+                ``List<T>`` est une interface qui représente une séquence ordonnée d'éléments de type ``T``.  ``ArrayList<T>`` et ``LinkedList<T>`` sont des implémentations de ``List<T>``, basées respectivement sur des tableaux et sur des structures chaînées.
+        -   text: |
+                ``List<T>`` est une classe qui représente une séquence ordonnée d'éléments de type ``T``.  ``ArrayList<T>`` et ``LinkedList<T>`` sont des extensions de ``List<T>``, basées respectivement sur des tableaux et sur des structures chaînées.
+            feedback: |4
+
+                ``List<T>`` est une interface.
+        -   text: |
+                ``List<T>`` est une interface qui représente un ensemble d'éléments de type ``T``.  ``HashList<T>`` et ``LinkedList<T>`` sont des implémentations de ``List<T>``, basées respectivement sur des tables de hachage et sur des liens hypertexte.
+            feedback: |4
+
+                ``List<T>`` ne représente pas un ensemble mais une séquence ordonnée.
+        -   text: |
+                ``List<T>`` est une classe qui représente une séquence ordonnée d'``Object`` de taille ``T``.  ``ArrayList<T>`` et ``LinkedList<T>`` sont des extensions de ``List<T>``, basées respectivement sur des tableaux et sur des structures chaînées.
+            feedback: |4
+
+                ``T`` est le type des éléments et non la taille de la séquence.
+        -   text: |
+                ``List<T>`` est une interface qui représente un ensemble d'éléments de type ``T``.  ``HashList<T>`` et ``LinkedList<T>`` sont des implémentations de ``List<T>``, basées respectivement sur des tables de hachage et sur des structures chaînées.
+            feedback: |4
+
+                ``HashList<T>`` n'existe pas dans les collections Java.
+    q7:
+        limit: 3
+        name: ArrayList<T>
+        type: multiple-choice
+        header: |4
+
+            Parmi les fragments de progamme suivants, lequel utilise correctement la classe ``ArrayList<T>`` ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   import java.util.*;
+                   ...
+                   List<String> list = new ArrayList<String>();
+                   list.add("Hello");
+                   String s1 = "World";
+                   list.add(s1);
+                   int i = list.indexOf("Hello");
+                   String s2 = list.get(i);
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.*;
+                   ...
+                   List<String> list = new ArrayList<String>[10];
+                   list.add("Hello");
+                   Object s1 = "World";
+                   list.add(s1);
+                   int i = list.indexOf("Hello");
+                   String s2 = (String) list.get(i);
+            feedback: |4
+
+                ``list.add(s1)`` provoque une erreur de type et le type-cast à la dernière ligne est incorrect.
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.*;
+                   ...
+                   List<String> list = new ArrayList<String>[10];
+                   list[0] = "Hello";
+                   String s1 = "World";
+                   list[1] = s1;
+                   int i = list.indexOf("Hello");
+                   String s2 = list[i];
+            feedback: |4
+
+                ``ArrayLsit`` n'est pas un tableau ; ``list[i]`` est syntaxiquement incorrect.
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.*;
+                   ...
+                   List<T> list = new ArrayList();
+                   list.add("Hello");
+                   String s1 = "World";
+                   list.add(s1);
+                   int i = list.indexOf("Hello");
+                   String s2 = list.get(i);
+            feedback: |4
+
+                Le paramètre de type ``<T>`` doit être un type particulier existant, ici ``<String>``.
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.*;
+                   ...
+                   List<String> list = new ArrayList<String>[10];
+                   add(list, "Hello");
+                   String s1 = "World";
+                   add(list, s1);
+                   int i = list.indexOf("Hello");
+                   String s2 = list.get(i);
+            feedback: |4
+
+                ``add`` est une méthode de ``list``.
+    q8:
+        limit: 3
+        name: Itérateurs
+        type: multiple-choice
+        header: |4
+
+            Parmi les fragments suivants, lequel utilise correctement un itérateur ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   List<Integer> list = makeList();  // crée la liste
+                   Iterator<Integer> iter = list.iterator();
+                   while (iter.hasNext()) {
+                       Integer i = iter.next();
+                       System.out.println(i);
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   List<Integer> list = makeList();  // crée la liste
+                   while (list.hasNext()) {
+                       Integer i = list.next();
+                       System.out.println(i);
+                   }
+            feedback: |4
+
+                ``list`` n'est pas un itérateur.
+        -   text: |
+                .. code-block:: java
+
+                   List<Integer> list = makeList();  // crée la liste
+                   Iterator iter = list.iterator();
+                   while (iter.hasNext()) {
+                       Integer i = iter.next();
+                       System.out.println(i);
+                   }
+            feedback: |4
+
+                Erreur de typage, utiliser un type générique pour ``iter``.
+        -   text: |
+                .. code-block:: java
+
+                   List<Integer> list = makeList();  // crée la liste
+                   Iterator<Integer> iter = list.iterator();
+                   while (hasNext(iter)) {
+                       Integer i = next(iter);
+                       System.out.println(i);
+                   }
+            feedback: |4
+
+                ``hasNext`` et ``next`` sont des méthodes de ``iter``.
+        -   text: |
+                .. code-block:: java
+
+                   List<Integer> list = makeList();  // crée la liste
+                   Iterator<Integer> iter = list.iterator();
+                   while (iter.hasNext()) {
+                       Integer i = (Integer) iter.next();
+                       System.out.println(i);
+                   }
+            feedback: |4
+
+                Le type-cast est inutile, ``iter.next`` retourne un ``Integer``.
+        -   text: |
+                .. code-block:: java
+
+                   List<Integer> list = makeList();  // crée la liste
+                   Iterator<Integer> iter = list.iterator();
+                   while (iter.next() != null) {
+                       Integer i = iter.next();
+                       System.out.println(i);
+                   }
+            feedback: |4
+
+                Le test de boucle est incorrect.
+weight: 1.0
+order: 47

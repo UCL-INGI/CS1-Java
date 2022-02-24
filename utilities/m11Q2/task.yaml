@@ -1,0 +1,101 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Une pile est une structure de données qui permet d'empiler les éléments. Les objets sont ajoutés à la pile via son sommet. La pile garantit un fonctionnement Last-In First-Out (LIFO, dernier entré, premier sorti)
+    On vous donne la classe ``Pile`` incomplète suivante :
+
+    .. code-block:: java
+
+      /**
+       * Une pile représentée sous la forme d'une structure chaînée
+       *
+       * @author O. Bonaventure
+       * @version Novembre 2016
+       */
+        public class Pile {
+
+            // une classe interne représentant un noeud de la queue
+            private class Noeud {
+                Object element;
+                Noeud suivant;
+
+                public Noeud(Object o, Noeud n) {
+                    element = o;
+                    suivant = n;
+                }
+           }
+
+           private Noeud sommet; // le sommet de la pile
+
+           /*
+            * @pre -
+            * @post a initialisé une pile vide
+            */
+            public Pile() {
+                sommet = null;
+            }
+
+           /**
+            * @pre o != null
+            * @post ajoute l'objet o au sommet de la pile
+            */
+            public void push(Object o) {
+                // code non fourni
+            }
+
+           /**
+            * @pre -
+            * @post retourne l'élément au sommet de la pile et le supprime
+            *       null si la pile est vide
+            */
+            public Object pop() {
+                // Question 1
+            }
+
+           /**
+            * @pre -
+            * @post retourne la profondeur,
+            *      c'est-à-dire le nombre d'éléments dans la pile.
+            *      0 pour une pile vide.
+            */
+            public int depth() {
+                // Question 2
+            }
+        }
+
+    Complétez cette classe.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 11 : Q* Pile'
+network_grading: false
+order: 181
+problems:
+    q1:
+        type: code
+        name: Pop
+        header: Ecrivez le corps de la méthode pop
+        language: Java
+        default: ''
+    q2:
+        type: code
+        name: Depth
+        header: Ecrivez le corps de la méthode depth
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

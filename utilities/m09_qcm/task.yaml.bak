@@ -1,0 +1,849 @@
+accessible: false
+author: Olivier BONAVENTURE
+context: |
+    ===================
+    Mission 9. Fichiers
+    ===================
+
+
+    Ces questions supposent que vous avez lu les sections suivantes du livre de référence |jn|_
+
+        - |jn3.7|_
+            - |jn3.7.1|_
+            - |jn3.7.2|_
+        - |jn8.1|_
+            - |jn8.1.1|_
+            - |jn8.1.2|_
+            - |jn8.1.3|_
+        - |jn8.3|_
+            - |jn8.3.1|_
+            - |jn8.3.2|_
+        - |jn11.1|_
+            - |jn11.1.1|_
+            - |jn11.1.2|_
+            - |jn11.1.3|_
+            - |jn11.1.4|_
+            - |jn11.1.5|_
+        - |jn11.2|_
+            - |jn11.2.1|_
+
+    ainsi que l'API de la classe |Arrays|_.
+
+    .. _jn: http://math.hws.edu/javanotes/
+    .. |jn| replace:: JavaNotes
+
+    .. _jn3.7 : http://math.hws.edu/javanotes/c3/s7.html
+    .. |jn3.7| replace:: `3.7 : Introduction to Exceptions and try..catch`
+
+    .. _jn3.7.1 : http://math.hws.edu/javanotes/c3/s7.html#control.7.1
+    .. |jn3.7.1| replace:: `3.7.1 : Exceptions`
+
+    .. _jn3.7.2 : http://math.hws.edu/javanotes/c3/s7.html#control.7.2
+    .. |jn3.7.2| replace:: `3.7.2 : try..catch`
+
+    .. _jn8.1 : http://math.hws.edu/javanotes/c8/s1.html
+    .. |jn8.1| replace:: `8.1 : Introduction to Correctness and Robustness`
+
+    .. _jn8.1.1 : http://math.hws.edu/javanotes/c8/s1.html#robustness.1.1
+    .. |jn8.1.1| replace:: `8.1.1 : Horror Stories`
+
+    .. _jn8.1.2 : http://math.hws.edu/javanotes/c8/s1.html#robustness.1.2
+    .. |jn8.1.2| replace:: `8.1.2 : Java to the Rescue`
+
+    .. _jn8.1.3 : http://math.hws.edu/javanotes/c8/s1.html#robustness.1.3
+    .. |jn8.1.3| replace:: `8.1.3 : Problems Remain in Java`
+
+    .. _jn8.3 : http://math.hws.edu/javanotes/c8/s3.html
+    .. |jn8.3| replace:: `8.3 : Exceptions and try..catch`
+
+    .. _jn8.3.1 : http://math.hws.edu/javanotes/c8/s3.html#robustness.3.1
+    .. |jn8.3.1| replace:: `8.3.1 : Exceptions and Exception Classes`
+
+    .. _jn8.3.2 : http://math.hws.edu/javanotes/c8/s3.html#robustness.3.2
+    .. |jn8.3.2| replace:: `8.3.2 : The try Statement`
+
+    .. _jn11.1 : http://math.hws.edu/javanotes/c11/s1.html
+    .. |jn11.1| replace:: `11.1 : Streams, Readers, and Writers`
+
+    .. _jn11.1.1 : http://math.hws.edu/javanotes/c11/s1.html#IO.1.1
+    .. |jn11.1.1| replace:: `11.1.1 : Character and Byte Streams`
+
+    .. _jn11.1.2 : http://math.hws.edu/javanotes/c11/s1.html#IO.1.2
+    .. |jn11.1.2| replace:: `11.1.2 : PrintWriter`
+
+    .. _jn11.1.3 : http://math.hws.edu/javanotes/c11/s1.html#IO.1.3
+    .. |jn11.1.3| replace:: `11.1.3 : Data Streams`
+
+    .. _jn11.1.4 : http://math.hws.edu/javanotes/c11/s1.html#IO.1.4
+    .. |jn11.1.4| replace:: `11.1.4 : Reading Text`
+
+    .. _jn11.1.5 : http://math.hws.edu/javanotes/c11/s1.html#IO.1.5
+    .. |jn11.1.5| replace:: `11.1.5 : The Scanner Class`
+
+    .. _jn11.2 : http://math.hws.edu/javanotes/c11/s2.html
+    .. |jn11.2| replace:: `11.2 : Files`
+
+    .. _jn11.2.1 : http://math.hws.edu/javanotes/c11/s2.html#IO.2.1
+    .. |jn11.2.1| replace:: `11.2.1 : Reading and Writing Files`
+
+    .. _Arrays : http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Arrays.html
+    .. |Arrays| replace:: ``java.util.Arrays``
+environment: default
+groups: false
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 9: QCM'
+network_grading: false
+order: 0
+problems:
+    q1:
+        name: Erreurs arithmétiques
+        choices:
+        -   text: |
+                ``10 / 0`` produit une ``ArithmeticException``.
+            valid: true
+        -   text: |
+                ``Integer.MAX_VALUE + 1`` retourne un entier négatif.
+            feedback: |4
+
+                Le plus petit entier, accessible via ``Integer.MIN_VALUE``.
+            valid: true
+        -   valid: true
+            text: |
+                ``10.0 / 0.0`` retourne un nombre infini.
+            feedback: |4
+
+                C'est une valeur spéciale, accessible via ``Double.POSITIVE_INFINITY``.
+        -   text: |
+                ``0.0 / 0.0`` retourne un nombre indéfini.
+            feedback: |4
+
+                C'est une valeur spéciale, accessible via ``Double.NaN`` (*Not a Number*).
+            valid: true
+        -   valid: true
+            text: |
+                ``1.0E100 + 1000.0`` retourne ``1.0E100``.
+            feedback: |4
+
+                A cause de la précision arithmétique, ajouter ``1000`` ne change rien à ``1.0E100`` (= $10^{100}$).
+        -   text: |
+                ``10 / 0`` provoque toujours l'arrêt du programme.
+            feedback: |4
+
+                Ceci cause une ``ArithmeticException`` que l'on peut intercepter et traiter.
+        -   feedback: |4
+
+                Les entiers "rebouclent" vers les négatifs quand ils dépassent la valeur maximale.
+            text: |
+                ``Integer.MAX_VALUE + 1`` produit une ``ArithmeticException``.
+        -   text: |
+                ``10.0 / 0.0`` produit une ``ArithmeticException``.
+            feedback: |4
+
+                Les réels utilisent une valeur spéciale ``Double.POSITIVE_INFINITY`` pour représenter l'infini.
+        -   feedback: |4
+
+                Les réels utilisent une valeur spéciale ``Double.NaN`` (*Not a Number*) pour représenter un nombre indéfini.
+            text: |
+                ``0.0 / 0.0`` produit une ``ArithmeticException``.
+        -   text: |
+                ``1.0E100 + 1000.0`` retourne un nombre strictement supérieur à ``1.0E100``.
+            feedback: |4
+
+                A cause de la précision arithmétique, ajouter ``1000`` ne change rien à ``1.0E100`` (= :math:`10^{100}`).
+        type: multiple-choice
+        header: |4
+
+            Parmi les affirmations suivantes, laquelle est correcte ?
+        limit: 3
+    q2:
+        choices:
+        -   text: |+
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       try {
+                           return Integer.parseInt(s);
+                       } catch (NumberFormatException e) {
+                           return 0;
+                       }
+                   }
+
+            valid: true
+        -   feedback: |4+
+
+                Après l'interception de l'exception, l'exécution se poursuit après le try-catch.
+
+            valid: true
+            text: |+
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       int n = 0;
+                       try {
+                           n = Integer.parseInt(s);
+                       } catch (NumberFormatException e) {
+                       }
+                       return n;
+                   }
+
+        -   feedback: |4
+
+                Ceci ne traite pas l'exception.  Utiliser un try-catch.
+            text: |
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       int n = Integer.parseInt(s);
+                       if (n == NumberFormatException) {
+                           return 0;
+                       } else {
+                           return n;
+                       }
+                   }
+        -   text: |+
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       try {
+                           return Integer.parseInt(s);
+                       } catch (NumberFormatException e) {
+                           System.out.println("Erreur de format");
+                       }
+                   }
+
+            feedback: |4
+
+                Le traitement de l'exception ne correspond pas à ce qui est demandé.
+        -   feedback: |4
+
+                Erreur de syntaxe dans la partie ``catch``.
+            text: |+
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       try {
+                           return Integer.parseInt(s);
+                       } catch NumberFormatException {
+                           return 0;
+                       }
+                   }
+
+        -   text: |+
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       return Integer.parseInt(s);
+                       catch (NumberFormatException e) {
+                           return 0;
+                       }
+                   }
+
+            feedback: |4
+
+                Il manque le bloc ``try``.
+        -   feedback: |4
+
+                Erreur de syntaxe dans la partie ``catch``.
+            text: |+
+                .. code-block:: java
+
+                   public static int toInt(String s) {
+                       try {
+                           return Integer.parseInt(s);
+                       } catch {
+                           return 0;
+                       }
+                   }
+
+        name: Traitement des exceptions
+        type: multiple-choice
+        header: |4
+
+            Quelle définition de la méthode ``toInt`` ci-dessous retourne ``0`` lorsque l'on passe ``"ABC"`` comme paramètre ?
+        limit: 3
+    q3:
+        choices:
+        -   valid: true
+            text: |4
+
+
+                - ``m(10, 5)`` retourne ``2``
+                - ``m(10, 0)`` retourne ``10``
+                - ``m(-10, 0)`` retourne ``0``
+        -   text: |4
+
+
+                - ``m(8, 3)`` retourne ``2``
+                - ``m(8, 0)`` retourne ``8``
+                - ``m(0, 0)`` retourne ``0``
+            valid: true
+        -   feedback: |4
+
+                Pas d'exception à la première ligne.
+            text: |4
+
+
+                - ``m(10, 5)`` retourne ``10``
+                - ``m(8, 0)`` retourne ``8``
+                - ``m(-10, 0)`` retourne ``0``
+        -   feedback: |4
+
+                Pas d'exception à la première ligne.
+            text: |4
+
+
+                - ``m(8, 3)`` retourne ``3``
+                - ``m(10, 0)`` retourne ``10``
+                - ``m(0, 0)`` retourne ``0``
+        -   text: |4
+
+
+                - ``m(10, 5)`` retourne ``2``
+                - ``m(10, 0)`` retourne ``0``
+                - ``m(0, 0)`` retourne ``0``
+            feedback: |4
+
+                Retourne ``x`` à la deuxième ligne.
+        -   text: |4
+
+
+                - ``m(8, 3)`` retourne ``2``
+                - ``m(8, 0)`` retourne ``0``
+                - ``m(-10, 0)`` retourne ``0``
+            feedback: |4
+
+                Retourne ``x`` à la deuxième ligne.
+        -   feedback: |4
+
+                Retourne ``y`` à la troisième ligne.
+            text: |4
+
+
+                - ``m(8, 3)`` retourne ``2``
+                - ``m(10, 0)`` retourne ``10``
+                - ``m(-10, 0)`` retourne ``-10``
+        -   text: |4
+
+
+                - ``m(10, 5)`` retourne ``2``
+                - ``m(10, 0)`` retourne ``10``
+                - ``m(0, 0)`` retourne ``1``
+            feedback: |4
+
+                Retourne ``y`` à la troisième ligne.
+        name: Traitement des exceptions
+        limit: 3
+        header: |4
+
+            Soit la méthode ``m`` suivante
+
+            .. code-block:: java
+
+                public static int m(int x, int y) {
+                    try {
+                        int z = x / y;
+                        return z;
+                    } catch (ArithmeticException e) {
+                        if (x > 0) {
+                            return x;
+                        }
+                    }
+                    return y;
+                }
+
+            Parmi les ensembles d'affirmations suivantes, lequel est correct ?
+        type: multiple-choice
+    q4:
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   BufferedReader inbuf = new BufferedReader(new FileReader("input.txt"));
+                   PrintWriter outbuf = new PrintWriter(new FileWriter("output.txt"));
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   BufferedReader inbuf = new BufferedReader("input.txt");
+                   PrintWriter outbuf = new PrintWriter("output.txt");
+            feedback: |4
+
+                Il n'y a pas de constructeur ``BufferedReader(String filename)``.
+        -   feedback: |4
+
+                ``BufferedWriter`` a des possibilités très limitées, ``PrintWriter`` est plus judicieux.
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   BufferedReader inbuf = new BufferedReader(new FileReader("input.txt"));
+                   BufferedWriter outbuf = new BufferedWriter(new FileWriter("output.txt"));
+        -   feedback: |4
+
+                ``PrintReader``` n'existe pas, utilisez ``BufferedReader``.
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   PrintReader inbuf = new PrintReader(new FileReader("input.txt"));
+                   PrintWriter outbuf = new PrintWriter(new FileWriter("output.txt"));
+        -   feedback: |4
+
+                ``InputStream`` et ``OutputStream`` sont appropriés pour des données binaires plutôt que pour du texte.
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   InputStream inbuf = new InputStream("input.txt");
+                   OutputStream outbuf = new OutputStream("output.txt");
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   Reader inbuf = new Reader("input.txt");
+                   Writer outbuf = new Writer("output.txt");
+            feedback: |4
+
+                ``Reader`` et ``Writer`` sont des classes abstraites, utilisez leurs extensions.
+        limit: 3
+        name: Classes d'entrée-sortie
+        header: |4
+
+            Quelles classes sont les plus appropriées pour lire du texte à partir de ``input.txt`` et écrire du texte vers ``output.txt`` ?
+        type: multiple-choice
+    q5:
+        choices:
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       try {
+                           BufferedReader buf =
+                               new BufferedReader(new FileReader(filename));
+                           String line = buf.readLine();
+                           while (line != null) {
+                               System.out.println(line);
+                               line = buf.readLine();
+                           }
+                           buf.close();
+                       } catch (IOException e) {
+                           System.err.println("Erreur: " + e);
+                       }
+                   }
+            valid: true
+        -   feedback: |4
+
+                ``readLine`` et ``close`` sont des méthodes de ``buf``.
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       try {
+                           BufferedReader buf =
+                               new BufferedReader(new FileReader(filename));
+                           String line = readLine(buf);
+                           while (line != null) {
+                               System.out.println(line);
+                               line = readLine(buf);
+                           }
+                           close(buf);
+                       } catch (IOException e) {
+                           System.err.println("Erreur: " + e);
+                       }
+                   }
+        -   feedback: |4
+
+                Il faut fermer le flux à la fin.
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       try {
+                           BufferedReader buf =
+                               new BufferedReader(new FileReader(filename));
+                           String line = buf.readLine();
+                           while (line != null) {
+                               System.out.println(line);
+                               line = buf.readLine();
+                           }
+                       } catch (IOException e) {
+                           System.err.println("Erreur: " + e);
+                       }
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       try {
+                           BufferedReader buf =
+                               new BufferedReader(new FileReader(filename));
+                           String line = buf.readLine();
+                           while (line != "") {
+                               System.out.println(line);
+                               line = buf.readLine();
+                           }
+                           buf.close();
+                       } catch (IOException e) {
+                           System.err.println("Erreur: " + e);
+                       }
+                   }
+            feedback: |4
+
+                Le test de boucle est incorrect.
+        -   feedback: |4
+
+                Seule la première ligne du fichier est lue.
+            text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       try {
+                           BufferedReader buf =
+                               new BufferedReader(new FileReader(filename));
+                           String line = buf.readLine();
+                           while (line != null) {
+                               System.out.println(line);
+                           }
+                           buf.close();
+                       } catch (IOException e) {
+                           System.err.println("Erreur: " + e);
+                       }
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       BufferedReader buf =
+                           new BufferedReader(new FileReader(filename));
+                       String line = buf.readLine();
+                       while (line != null) {
+                           System.out.println(line);
+                           line = buf.readLine();
+                       }
+                       buf.close();
+                   }
+            feedback: |4
+
+                Il manque la gestion des exceptions.
+        -   text: |
+                .. code-block:: java
+
+                   import java.io.*;
+                   ...
+                   public void display(String filename) {
+                       try {
+                           BufferedReader buf =
+                               new BufferedReader(new FileReader(filename));
+                           String line;
+                           while (line != null) {
+                               line = buf.readLine();
+                               System.out.println(line);
+                           }
+                           buf.close();
+                       } catch (IOException e) {
+                           System.err.println("Erreur: " + e);
+                       }
+                   }
+            feedback: |4
+
+                La gestion de la variable ``line`` est incorrecte, la boucle ne sera jamais exécutée.
+        type: multiple-choice
+        limit: 3
+        name: Lecture de fichier
+        header: |4
+
+            Parmi les définitions de la méthode ``display`` suivantes, lequel affiche correctement le contenu d'un fichier sur ``System.out`` ?
+    q6:
+        type: multiple-choice
+        choices:
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.Scanner;
+                   ...
+                   try {
+                       Scanner scan =
+                           new Scanner(new java.io.FileReader("numbers.txt"));
+                       int sum = 0;
+                       while (scan.hasNextInt()) {
+                           sum = sum + scan.nextInt();
+                       }
+                       scan.close();
+                       System.out.println(sum);
+                   } catch (IOException e) {
+                       System.err.println("Erreur: " + e);
+                   }
+            valid: true
+        -   feedback: |4
+
+                ``Scanner`` est dans le package ``java.util``.
+            text: |
+                .. code-block:: java
+
+                   import java.io.Scanner;
+                   ...
+                   try {
+                       Scanner scan =
+                           new Scanner(new java.io.FileReader("numbers.txt"));
+                       int sum = 0;
+                       while (scan.hasNextInt()) {
+                           sum = sum + scan.nextInt();
+                       }
+                       scan.close();
+                       System.out.println(sum);
+                   } catch (IOException e) {
+                       System.err.println("Erreur: " + e);
+                   }
+        -   feedback: |4
+
+                Il n'y a pas de constructeur ``Scanner(String filename)``.  Utiliser un ``FileReader``.
+            text: |
+                .. code-block:: java
+
+                   import java.util.Scanner;
+                   ...
+                   try {
+                       Scanner scan =
+                           new Scanner("numbers.txt");
+                       int sum = 0;
+                       while (scan.hasNextInt()) {
+                           sum = sum + scan.nextInt();
+                       }
+                       scan.close();
+                       System.out.println(sum);
+                   } catch (IOException e) {
+                       System.err.println("Erreur: " + e);
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.Scanner;
+                   ...
+                   try {
+                       Scanner scan =
+                           new Scanner(new java.io.FileReader("numbers.txt"));
+                       int sum = 0;
+                       while (!scan.eof()) {
+                           sum = sum + scan.nextInt();
+                       }
+                       scan.close();
+                       System.out.println(sum);
+                   } catch (IOException e) {
+                       System.err.println("Erreur: " + e);
+                   }
+            feedback: |4
+
+                ``Scanner`` n'a pas de méthode ``eof``.  Utiliser ``hasNextInt``.
+        -   feedback: |4
+
+                ``hasNextInt`` et ``nextInt`` sont des méthodes de ``scan``.
+            text: |
+                .. code-block:: java
+
+                   import java.util.Scanner;
+                   ...
+                   try {
+                       Scanner scan =
+                           new Scanner(new java.io.FileReader("numbers.txt"));
+                       int sum = 0;
+                       while (hasNextInt(scan)) {
+                           sum = sum + nextInt(scan);
+                       }
+                       scan.close();
+                       System.out.println(sum);
+                   } catch (IOException e) {
+                       System.err.println("Erreur: " + e);
+                   }
+        limit: 3
+        name: La classe Scanner
+        header: |4
+
+            Considérons un fichier ``numbers.txt`` qui contient des nombres entiers séparés par des espaces, par exemple
+
+            .. code-block:: java
+
+                1 2 3 4
+                1 10 100
+                1348
+
+            Quel fragment de programme utilise correctement un ``Scanner`` (voir |Scanner|_) pour imprimer la somme de ces nombres ?
+
+
+            .. _Scanner : http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Scanner.html
+            .. |Scanner| replace:: ``java.util.Scanner``
+    q7:
+        choices:
+        -   text: |
+                .. code-block:: java
+
+                   public class Student implements Comparable {
+                       ...
+                       public boolean equals(Object o) { ... }
+                       public int compareTo(Object o) { ... }
+                   }
+            valid: true
+        -   feedback: |4
+
+                Il faut déclarer qu'on implémente l'interface ``Comparable``.
+            text: |
+                .. code-block:: java
+
+                   public class Student {
+                       ...
+                       public boolean equals(Object o) { ... }
+                       public int compareTo(Object o) { ... }
+                   }
+        -   feedback: |4
+
+                Les méthodes ``equals`` et ``compareTo`` doivent prendre un ``Object`` en paramètre.
+            text: |
+                .. code-block:: java
+
+                   public class Student implements Comparable {
+                       ...
+                       public boolean equals(Student stud) { ... }
+                       public int compareTo(Student stud) { ... }
+                   }
+        -   feedback: |4
+
+                Ce ne sont pas les bonnes méthodes pour ``Comparable``.
+            text: |
+                .. code-block:: java
+
+                   public class Student implements Comparable {
+                       ...
+                       public boolean equals(Object o) { ... }
+                       public boolean greater(Object o) { ... }
+                       public boolean less(Object o) { ... }
+                   }
+        -   feedback: |4
+
+                Il n'y a pas d'interface ``Equality``; ``equals`` est une méthode de ``Object``.
+            text: |
+                .. code-block:: java
+
+                   public class Student implements Equality, Comparable {
+                       ...
+                       public boolean equals(Object o) { ... }
+                       public int compareTo(Object o) { ... }
+                   }
+        limit: 3
+        header: |4
+
+            On désire trier et faire des recherches sur un tableau contenant des objets qui représentent des étudiants (``Student[]``) à l'aide des méthodes de la classe |Arrays|_.  Quelles interfaces et méthodes la classe ``Student`` doit-elle implémenter ?
+
+
+            .. _Arrays : http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Arrays.html
+            .. |Arrays| replace:: ``java.util.Arrays``
+        type: multiple-choice
+        name: Méthodes de comparaison
+    q8:
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   import java.util.Arrays;
+                   ...
+                   public static void contains(Student[] groupe, Student stud) {
+                       Arrays.sort(groupe);
+                       int index = Arrays.binarySearch(groupe, stud);
+                       return stud.equals(groupe[index]);
+                   }
+        -   feedback: |4
+
+                ``sort`` et ``binarySearch`` sont des méthodes de classe de ``Arrays``.
+            text: |
+                .. code-block:: java
+
+                   import java.util.Arrays;
+                   ...
+                   public static boolean contains(Student[] groupe, Student stud) {
+                       groupe.sort();
+                       int index = groupe.binarySearch(stud);
+                       return stud.equals(groupe[index]);
+                   }
+        -   feedback: |4
+
+                ``binarySearch`` ne retourne pas de résultat, elle modifie le tableau.
+            text: |
+                .. code-block:: java
+
+                   import java.util.Arrays;
+                   ...
+                   public static boolean contains(Student[] groupe, Student stud) {
+                       Student[] sorted = Arrays.sort(groupe);
+                       int index = Arrays.binarySearch(sorted, stud);
+                       return stud.equals(groupe[index]);
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.Arrays;
+                   ...
+                   public static boolean contains(Student[] groupe, Student stud) {
+                       Arrays.sort(groupe);
+                       return Arrays.binarySearch(groupe, stud);
+                   }
+            feedback: |4
+
+                ``binarySearch`` retourne un indice, pas un booléen.
+        -   feedback: |4
+
+                ``binarySearch`` ne fonctionne que sur un tableau trié.
+            text: |
+                .. code-block:: java
+
+                   import java.util.Arrays;
+                   ...
+                   public static boolean contains(Student[] groupe, Student stud) {
+                       int index = Arrays.binarySearch(groupe, stud);
+                       return stud.equals(groupe[index]);
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   import java.util.Arrays;
+                   ...
+                   public static boolean contains(Student[] groupe, Student stud) {
+                       Arrays.sort(groupe);
+                       int index = Arrays.binarySearch(groupe, stud);
+                       return stud == groupe[index];
+                   }
+            feedback: |4
+
+                La comparaison dans le ``return`` ne convient pas, on compare des références.
+        limit: 3
+        type: multiple-choice
+        header: |4
+
+            Etant donné un tableau non-trié d'étudiants ``Student[] groupe`` et un étudiant ``Student stud``, comment vérifier si ``stud`` appartient à ``groupe`` en utilisant les méthodes de la classe |Arrays|_, en supposant que ``Student`` implémente les interfaces et méthodes mentionnées à la question 7 ?
+
+
+            .. _Arrays : http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Arrays.html
+            .. |Arrays| replace:: ``java.util.Arrays``
+        name: La classe Arrays
+weight: 1.0

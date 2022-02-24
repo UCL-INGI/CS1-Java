@@ -1,0 +1,62 @@
+accessible: true
+author: François MICHEL
+context: |-
+    Un étudiant nommé Jean-Complexe vient vers vous et vous dit que lui et ses amis détestent leur prénom car leur prénom est composé, or, ils trouvent cela trop long à prononcer. Ils désireraient ne garder que la première partie de leur prénom.
+
+    Comme la fin d'année approche à grands pas cette histoire vous donne une idée pour vous entraîner pour l'examen de java et vous décidez d'implémenter une méthode qui prend un nom de fichier comme argument. Ce fichier contient sur chaque ligne un prénom composé (les deux parties du prénom sont séparées par le caractère ``'-'``).
+
+    Le but de votre méthode est de lire chaque ligne du fichier et, pour chaque ligne, afficher sur la sortie standard uniquement la première partie de ce nom composé, avec un résultat par ligne. En regardant l'API Java sur les ``String`` (http://docs.oracle.com/javase/7/docs/api/java/lang/String.html), vous vous êtes rendu compte que la méthode ``split`` vous sera d'une grande aide.
+
+    Bien entendu, vous savez que lire dans des fichier en Java peut provoquer des exceptions et votre méthode s'arrangera pour les contenir et retourner la valeur ``-1`` lorsque l'une d'entre elles apparaîtra.
+
+    Prenons un exemple. Si le contenu du fichier est ci-dessous :
+
+    ::
+
+        Saint-François
+        Jean-Pol
+        Johnny-Hallyday
+
+
+    Votre programme affichera ces lignes sur la sortie standard :
+
+    ::
+
+        Saint
+        Jean
+        Johnny
+
+
+    Après avoir mûrement réfléchi, vous avez décidé de la signature de votre méthode et il ne vous reste plus qu'à l'implémenter :
+
+    .. code-block:: java
+
+        /**
+         *     @pre     filename est le nom d'un fichier.
+         *              si le fichier désigné par filename est lisible,
+         *              chaque ligne du fichier contient un String en deux
+         *              parties, séparées par un "-".
+         *
+         *     @post    imprime sur la sortie standard la première partie de
+         *              chaque ligne du fichier désigné par filename, un
+         *              résultat par ligne.
+         */
+        public static int premierPrenom(String filename){
+            // À implémenter
+        }
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 9: Question de démarrage 2: la méthode premierPrenom()'
+problems:
+    q1:
+        language: Java
+        name: Le corps de la méthode premierPrenom
+        type: code
+        header: Écrivez ici le corps de la méthode premierPrenom(). Veillez bien à
+            n'écrire que le corps de la méthode, ne recopiez pas sa signature. Respectez
+            bien les spécifications.
+weight: 1.0
+order: 41

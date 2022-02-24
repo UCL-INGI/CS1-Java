@@ -39,7 +39,7 @@ public class Tests {
         assertTrue(noModif, java.util.Arrays.equals(v,origin));
         String feedbackBuilder = Translator.translate("Avec le tableau {0}, votre méthode devrait retourner {1,number,#} mais elle retourne {2,number,#}.\n");
         String feedback = MessageFormat.format(feedbackBuilder, Arrays.toString(v), expected, reponse_etudiant);
-        assertEquals(feedback, expected, reponse_etudiant, 0.01);
+        assertTrue(feedback, expected == reponse_etudiant);
     }
     
     /**

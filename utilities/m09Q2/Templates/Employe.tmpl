@@ -1,0 +1,74 @@
+package StudentCode;
+
+
+public class Employe implements Comparable {
+
+     private String nom;
+     private String prenom;
+     private double salaire;
+
+
+     /*
+      * Constructeur
+      * @pre nom!=null, prenom!=null, salaire>0
+      * @post a construit une instance de la classe Employe avec nom et salaire
+      */
+     public Employe (String nom, String prenom, double salaire){
+
+        this.nom = nom ;
+        this.prenom=prenom;
+        this.salaire = salaire;
+
+     }
+     /*
+      * @pre -
+      * @post retourne le nom de l'employé this
+      */
+     public String getNom(){
+         return nom ;
+     }
+
+     /*
+      * @pre -
+      * @post retourne le prénom de l'employé this
+      */
+     public String getPrenom() {
+       return prenom;
+     }
+
+     /*
+      * @pre -
+      * @post retourne le salaire de l'employé this
+      */
+     public double getSalaire() {
+
+         return salaire ;
+      }
+     /*
+      * @pre -
+      * @post retourne un String décrivant l'employé this
+      */
+     public String toString() {
+         return getPrenom()+" "+getNom()+" ("+getSalaire()+")";
+      }
+
+     /*
+      * @pre -
+      * @post retourne true si this et other correspondent au même employé (même nom, même prénom, même salaire)
+      */
+     public boolean equals(Object other)
+     {
+
+         if (other instanceof Employe) {
+              Employe e = (Employe) other;
+              return (this.getNom().equals(e.getNom()) && (this.getPrenom().equals(e.getPrenom())) &&
+                      (this.getSalaire()==e.getSalaire()) );
+          } else {
+              return false;
+          }
+
+      }
+
+     @  @q1@@
+
+}

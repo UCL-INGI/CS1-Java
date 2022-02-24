@@ -1,0 +1,73 @@
+package StudentCode;
+
+import src.librairies.Byte;
+
+/**
+ * @author O. Bonaventure
+ * @version Novembre 2016
+ */
+
+public class ByteString implements Byte {
+
+	private StringBuilder b;
+
+	/**
+	 * @pre		-
+	 * @post	Construit un byte dont les huit bits
+	 *			sont mis à zéro. Le bit de poids fort 
+	 *			est en position 7 dans le StringBuilder
+	 */
+	public ByteString() {
+		@	@q1@@
+	}
+
+	/**
+	 * @pre		s.length == 8 et s ne contient que des 0 et des 1
+	 * @post	Construit un byte dont la représenttion naturelle en String 
+	 *			est s. La représentation naturelle d'un byte sous la forme
+	 *			d'un String est avec le bit de poids fort à gauche. Dans le
+	 *			StringBuilder, on stock le byte de faço à avoir le bit de
+	 *			poids faible (resp. fort) en position 0 (resp. 7).
+	 *
+	 *			Exemple
+	 *
+	 *			5 en décimal correspond à 00000101 en binaire et sera
+	 *			stocké dans le StringBuilder 1010000
+	 */
+	public ByteString(String s) {
+		@	@q2@@
+	}
+
+	/**
+	 * @pre		-
+	 * @post	retourne la représentation naturelle du nombre binaire
+	 *			c'est-à-dire celle où le bit de poids fort est à gauche
+	 */
+	public String toString() {
+		String r = "";
+		for (int i = this.b.length()-1;i >= 0;i--)
+			r += this.b.charAt(i);
+		return r;
+		//return this.b.reverse().toString();
+	}
+
+	/* Méthode que les étudiants doivent implémenter */
+	@	@q3@@
+
+
+	/**
+	 * Méthode pour les tests. Utilisée pour qu'une mauvaise réponse
+	 * des étudiant à une question n'influence pas les autres tests
+	 */
+	 public void setSb(StringBuilder b) {
+		this.b = b;
+	}
+	public StringBuilder getSb() {
+		return this.b;
+	}
+
+	public String getRep() {
+		return this.b.toString();
+	}
+
+}

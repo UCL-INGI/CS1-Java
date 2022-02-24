@@ -1,0 +1,118 @@
+accessible: false
+author: François MICHEL
+context: |
+    Les interfaces sont très pratiques en termes de conception orientée objet et permettent d'avoir une vision globale cohérente du fonctionnement d'un programme, de ses différents acteurs et de la manière dont ils interagissent. Il est donc important de savoir implémenter des interfaces en respectant leurs spécifications. Voici l'interface ``DrapeauIF``:
+
+    .. code-block:: java
+
+        /**
+         * Une interface simple correspondant à un drapeau
+         */
+        public interface DrapeauIF
+        {
+           /**
+             * @pre : -
+             * @post : le drapeau prend la valeur passée en  argument
+             */
+            public void set(boolean drapeau)  ;
+
+            /**
+             * @pre : -
+             * @post : Si l'argument est 'V' ou 'v', le drapeau prend la
+             *         valeur vrai et faux sinon
+             */
+            public void set(char c);
+
+
+            /**
+             * @pre : -
+             * @post : retourne le drapeau sous forme d'un booléen
+             */
+            public boolean toBoolean();
+        }
+
+    Prenez connaissance de sont fonctionnement et de ses spécifications. Voici maintenant la classe ``Drapeau`` qui implémente l'interface ``DrapeauIF``:
+
+    .. code-block:: java
+
+        /**
+         * Une classe simple avec un objet contenant un booléen
+         */
+        public class Drapeau implements DrapeauIF
+        {
+            private boolean drapeau; // la valeur du drapeau
+
+            // Constructeurs
+            /**
+             * @pre : -
+             * @post : un objet de type Drapeau est créé et représente le
+             *         drapeau 'false'
+             */
+            public Drapeau()
+            {
+                  drapeau=false;
+            }
+
+            /**
+             * @pre : -
+             * @post : un objet de type Drapeau est créé et représente
+             *           le booleen passé en argument
+             */
+           public Drapeau(boolean drapeau)
+            {
+                this.drapeau=drapeau;
+            }
+
+                /**
+                 * @pre : -
+                * @post : un objet de type Drapeau est créé.
+                *    Si l'argument est 'V' ou 'v', il représente le drapeau
+                *     true. Sinon, il représente le drapeau false
+                */
+               public Drapeau(char c)
+                {
+                    drapeau = (c == 'V' || c == 'v');
+                }
+
+                public void set(boolean drapeau)
+                {
+                    // A COMPLETER
+                }
+
+                public void set(char c)
+                {
+                    // A COMPLETER
+                }
+
+                public boolean toBoolean()
+                {
+                   return drapeau;
+                }
+            }
+
+
+
+    Implémentez les deux alternatives de la méthode ``set()`` de la classe ``Drapeau`` en vous référant aux spécifications énoncées dans l'interface ``DrapeauIF``.
+environment: java7
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 8: Question de démarrage 1: Implémenter une interface'
+network_grading: false
+order: 2
+problems:
+    q1:
+        name: La méthode set(boolean)
+        header: Implémentez ici le corps de la méthode set, qui prend comme argument
+            un booléen
+        language: Java
+        type: code
+    q2:
+        name: La méthode set(char)
+        type: code
+        language: Java
+        header: Implémentez ici le corps de la méthode set, qui prend comme argument
+            un char
+weight: 1.0

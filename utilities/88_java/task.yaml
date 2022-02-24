@@ -1,0 +1,48 @@
+accessible: true
+author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
+context: |+
+    .. raw:: html
+
+        <p>
+          On souhaite compter le nombre d'entiers distincts parmi une série de cinq entiers
+        </p>
+        <p>
+          Vous devez définir la méthode <code>countDistinctInt</code> qui compte le nombre d'entiers uniques parmi les cinq paramètres a, b, c, d et e
+        </p>
+
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '32'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 3 : Exercice complémentaire 2'
+network_grading: false
+order: 60
+problems:
+    q1:
+        type: code
+        name: ''
+        header: |+
+            .. raw:: html
+
+                <p class='lead'></p>
+                <p>
+                  Complétez ici le corps de la méthode <code>countDistinctInt</code> dont la spécification est donnée dans l'énoncé.
+                </p>public static int countDistinctInt (int a, int b, int c, int d, int e)
+
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

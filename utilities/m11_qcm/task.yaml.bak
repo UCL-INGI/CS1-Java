@@ -1,0 +1,553 @@
+accessible: true
+author: Olivier BONAVENTURE
+environment: default
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 11: QCM'
+context: |
+    ================================
+    Mission 11. Structures chaînées
+    ================================
+
+
+    Ces questions supposent que vous avez lu les sections suivantes du livre de référence |jn|_
+
+        - |jn5.7|_
+            - |jn5.7.2|_
+        - |jn9.1|_
+        - |jn9.2|_
+            - |jn9.2.1|_
+            - |jn9.2.2|_
+            - |jn9.2.3|_
+            - |jn9.2.4|_
+            - |jn9.2.5|_
+        - |jn9.3|_
+            - |jn9.3.1|_
+            - |jn9.3.2|_
+
+    Plusieurs questions se basent sur la classe ``StackOfInt`` de la section 9.3.1, partiellement reproduite et traduite ici
+
+    .. code-block:: java
+
+        /**
+         * Une pile d'entiers sous forme de chaîne simplement liée.
+         * Le sommet de la pile est la tête de la chaîne.
+         */
+        public class StackOfInts {
+           /**
+            * Un noeud de la liste.
+            */
+           private static class Node {
+              int item;     // donnée
+              Node next;    // le noeud suivant
+           }
+
+           private Node top;   // le sommet de la pile
+
+           /**
+            * @pre  -
+            * @post Ajoute N au sommet de la pile.
+            */
+           public void push( int N ) {
+              ...
+           }
+
+
+           /**
+            * @pre  -
+            * @post Retire et retourne l'élément au sommet de la pile.
+            *       Lance une IllegalStateException si la pile est vide.
+            */
+           public int pop() {
+              ...
+           }
+
+           /**
+            * @pre  -
+            * @post retourne true si la pile est vide, false sinon.
+            */
+           public boolean isEmpty() {
+              return (top == null);
+           }
+
+        }
+
+    .. _jn: http://math.hws.edu/javanotes/
+    .. |jn| replace:: JavaNotes
+
+    .. _jn5.7 : http://math.hws.edu/javanotes/c5/s7.html
+    .. |jn5.7| replace:: `5.7 : Interfaces, Nested Classes, and Other Details`
+
+    .. _jn5.7.2 : http://math.hws.edu/javanotes/c5/s7.html#OOP.7.2
+    .. |jn5.7.2| replace:: `5.7.2 : Nested Classes`
+
+    .. _jn9.1 : http://math.hws.edu/javanotes/c9/s1.html
+    .. |jn9.1| replace:: `9.1 : Recursion`
+
+    .. _jn9.2 : http://math.hws.edu/javanotes/c9/s2.html
+    .. |jn9.2| replace:: `9.2 : Linked Data Structures`
+
+    .. _jn9.2.1 : http://math.hws.edu/javanotes/c9/s2.html#recursion.2.1
+    .. |jn9.2.1| replace:: `9.2.1 : Recursive Linking`
+
+    .. _jn9.2.2 : http://math.hws.edu/javanotes/c9/s2.html#recursion.2.2
+    .. |jn9.2.2| replace:: `9.2.2 : Linked Lists`
+
+    .. _jn9.2.3 : http://math.hws.edu/javanotes/c9/s2.html#recursion.2.3
+    .. |jn9.2.3| replace:: `9.2.3 : Basic Linked List Processing`
+
+    .. _jn9.2.4 : http://math.hws.edu/javanotes/c9/s2.html#recursion.2.4
+    .. |jn9.2.4| replace:: `9.2.4 : Inserting into a Linked List`
+
+    .. _jn9.2.5 : http://math.hws.edu/javanotes/c9/s2.html#recursion.2.5
+    .. |jn9.2.5| replace:: `9.2.5 : Deleting from a Linked List`
+
+    .. _jn9.3 : http://math.hws.edu/javanotes/c9/s3.html
+    .. |jn9.3| replace:: `9.3 : Stacks, Queues, and ADTs`
+
+    .. _jn9.3.1 : http://math.hws.edu/javanotes/c9/s3.html#recursion.3.1
+    .. |jn9.3.1| replace:: `9.3.1 : Stacks`
+
+    .. _jn9.3.2 : http://math.hws.edu/javanotes/c9/s3.html#recursion.3.2
+    .. |jn9.3.2| replace:: `9.3.2 : Queues`
+problems:
+    q1:
+        limit: 3
+        name: Classes internes
+        type: multiple-choice
+        header: |4
+
+            On considère la classe ``Node`` définie dans ``StackOfInts``.  Parmi les groupes d'affirmations suivants, lequel est correct?
+        choices:
+        -   valid: true
+            text: |4
+
+
+                - La classe ``Node`` est une *classe interne* de la classe ``StackOfInts``.
+                - Chaque instance de ``StackOfInts`` peut créer un nombre quelconque d'instances de ``Node``.
+                - Dans la méthode ``push``, on utilise ``new Node()`` pour créer une instance de ``Node``.
+                - Dans une autre classe, on ne peut pas créer d'instance de ``Node``.
+        -   text: |4
+
+
+                - La classe ``Node`` est une *classe interne* de la classe ``StackOfInts``.
+                - Chaque instance de ``StackOfInts`` peut créer un nombre quelconque d'instances de ``Node``.
+                - Dans la méthode ``push``, on utilise ``new StackOfInts.Node()`` pour créer une instance de ``Node``.
+                - Dans une autre classe, on utilise ``new StackOfInts.Node()`` pour créer une instance de ``Node``.
+            feedback: |4
+
+                Dans la classe ``StackOfInts``, il suffit d'écrire ``new Node()`` pour créer une instance de ``Node()``.
+                La classe ``Node`` est déclarée ``private``, elle n'est pas visilbe à l'extérieur de ``StackOfInts``.
+        -   text: |4
+
+
+                - La classe ``Node`` est une *sous-classe* de la classe ``StackOfInts``.
+                - Chaque instance de ``StackOfInts`` contient une instance de ``Node``.
+                - Dans la méthode ``push``, on utilise ``new Node()`` pour créer une instance de ``Node``.
+                - Dans une autre classe, on ne peut pas créer d'instance de ``Node``.
+            feedback: |4
+
+                ``Node`` n'est pas une sous-classe de ``StackOfInts``.
+                Une instance de ``StackOfInts`` ne contient pas d'instances de ``Node`` (mais peut éventuellement en créer).
+        -   text: |4
+
+
+                - La classe ``Node`` est une *classe interne* de la classe ``StackOfInts``.
+                - Chaque instance de ``StackOfInts`` contient une instance de ``Node``.
+                - Dans la méthode ``push``, on utilise ``new Node()`` pour créer une instance de ``Node``.
+                - Dans une autre classe, on utilise ``new StackOfInts.Node()`` pour créer une instance de ``Node``.
+            feedback: |4
+
+                Une instance de ``StackOfInts`` ne contient pas d'instances de ``Node`` (mais peut éventuellement en créer).
+                La classe ``Node`` est déclarée ``private``, elle n'est pas visilbe à l'extérieur de ``StackOfInts``.
+    q2:
+        limit: 3
+        name: Ajouter un noeud dans une chaîne
+        type: multiple-choice
+        header: |4
+
+            Dans la classe ``StackOfInts``, quelle serait une définition correcte de la méthode ``push`` ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node n = new Node();
+                     n.item = N;
+                     n.next = top;
+                     top = n;
+                  }
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node oldTop = top;
+                     top = new Node();
+                     top.item = N;
+                     top.next = oldTop;
+                  }
+        -   text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node oldTop = top;
+                     top.item = N;
+                     top.next = OldTop;
+                  }
+            feedback: |4
+
+                Ceci remplace la valeur au sommet par N plutôt que d'ajouter N.  Il faut créer un nouveau noeud.
+        -   text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node n = new Node();
+                     n.item = N;
+                     n.next = top;
+                  }
+            feedback: |4
+
+                Il faut modifier ``top``.
+        -   text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node n = new Node();
+                     n = N;
+                     n.next = top;
+                     top = n;
+                  }
+            feedback: |4
+
+                ``n = N;`` n'est pas correct.
+        -   text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node n = new Node();
+                     top = n;
+                     n.item = N;
+                     n.next = top;
+                  }
+            feedback: |4
+
+                L'ordre des opérations est incorrect, on perd le reste de la liste.
+        -   text: |
+                .. code-block:: java
+
+                  public void push( int N ) {
+                     Node n;
+                     n.item = N;
+                     n.next = top;
+                     top = n;
+                  }
+            feedback: |4
+
+                Il faut créer le nouveau noeud.
+    q3:
+        limit: 3
+        name: Elements d'une structure chaînée
+        type: multiple-choice
+        header: |4
+
+            Dans une méthode de la classe ``StackOfInts``, on exécute le code suivant
+
+            .. code-block:: java
+
+                StackOfInts stack = new StackOfInts();
+                stack.push(10);
+                stack.push(20);
+                stack.push(30);
+                /***/
+
+            Parmi les groupes d'affirmation suivantes, lequel est correct au point ``/***/`` ?
+        choices:
+        -   valid: true
+            text: |4
+
+
+                - ``stack.top.item`` vaut ``30``.
+                - ``stack.top.next.item`` vaut ``20``.
+                - ``stack.top.next.next`` est une instance de ``Node``.
+                - ``stack.top.next.next.next`` vaut ``null``.
+        -   text: |4
+
+
+                - ``stack.top`` vaut ``30``.
+                - ``stack.top.next`` vaut ``20``.
+                - ``stack.top.next.next`` est une instance de ``Node``.
+                - ``stack.top.next.next.next`` vaut ``null``.
+            feedback: |4
+
+                ``stack.top`` est un ``Node``, pas un ``int``.
+                ``stack.top.next`` est un ``Node``, pas un ``int``.
+        -   text: |4
+
+
+                - ``stack.top.item`` vaut ``30``.
+                - ``stack.top.next.item`` vaut ``20``.
+                - ``stack.top.next.next`` vaut ``10``.
+                - ``stack.top.next.next.next.item`` vaut ``null``.
+            feedback: |4
+
+                ``stack.top.next.next`` est un ``Node``, pas un ``int``.
+                ``stack.top.next.next.next.item`` provoque une ``NullPointerException``.
+        -   text: |4
+
+
+                - ``stack.top`` vaut ``30``.
+                - ``stack.top.next.item`` vaut ``20``.
+                - ``stack.top.next.next`` vaut ``10``.
+                - ``stack.top.next.next.next`` vaut ``null``.
+            feedback: |4
+
+                ``stack.top`` est un ``Node``, pas un ``int``.
+                ``stack.top.next.next`` est un ``Node``, pas un ``int``.
+    q4:
+        limit: 3
+        name: Parcours de structure chaînée
+        type: multiple-choice
+        header: |4
+
+            Dans la classe ``StackOfInts``, quelle serait une implémentation correcte d'une méthode ``sum`` qui calcule la somme des éléments sur la pile ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                   public int sum() {
+                       int sum = 0;
+                       Node n = top;
+                       while (n != null) {
+                           sum = sum + n.item;
+                           n = n.next;
+                       }
+                       return sum;
+                   }
+        -   text: |
+                .. code-block:: java
+
+                   public int sum() {
+                       int sum = 0;
+                       Node n = this;
+                       while (n.next != null) {
+                           sum = sum + n.item;
+                           n = n.next;
+                       }
+                       return sum;
+                   }
+            feedback: |4
+
+                ``this`` n'est pas un ``Node``.
+                Erreur de condition de boucle, on loupe le dernier élément.
+        -   text: |
+                .. code-block:: java
+
+                   public int sum() {
+                       int sum = 0;
+                       Node n = top;
+                       while (n.hasNext()) {
+                           sum = sum + n.item;
+                           n = n.next();
+                       }
+                       return sum;
+                   }
+            feedback: |4
+
+                ``next()`` et ``hasNext()`` ne sont pas définis ici.
+        -   text: |
+                .. code-block:: java
+
+                   public int sum() {
+                       int sum = 0;
+                       Node n = this;
+                       while (n != null) {
+                           sum = sum + n;
+                           n = n.next;
+                       }
+                       return sum;
+                   }
+            feedback: |4
+
+                ``this`` n'est pas un ``Node``.
+                ``sum + n`` n'est pas correct, ``n`` est un ``Node``.
+        -   text: |
+                .. code-block:: java
+
+                   public int sum() {
+                       int sum = 0;
+                       Node n = top;
+                       while (n.next != null) {
+                           sum = sum + n;
+                           n = n.next;
+                       }
+                       return sum;
+                   }
+            feedback: |4
+
+                Erreur de condition de boucle, on loupe le dernier élément.
+                ``sum + n`` n'est pas correct, ``n`` est un ``Node``.
+    q5:
+        limit: 3
+        name: Manipulation de structures chaînées
+        type: multiple-choice
+        header: |4
+
+            Dans la classe ``StackOfInts``, quel serait une définition correcte d'une méthode ``swap`` qui échange les deux noeuds au sommet de la pile ?
+        choices:
+        -   valid: true
+            text: |
+                .. code-block:: java
+
+                  public int swap() {
+                     assert (top != null && top.next != null);
+                     Node node1 = top;
+                     top = node1.next;
+                     node1.next = top.next;
+                     top.next = node1;
+                  }
+        -   text: |
+                .. code-block:: java
+
+                  public int swap() {
+                     assert (top != null && top.next != null);
+                     Node node1 = top;
+                     top = node1.next;
+                     top.next = node1;
+                     node1.next = top.next;
+                  }
+            feedback: |4
+
+                Ordre incorrect, la fin de la chaîne est perdue.
+        -   text: |
+                .. code-block:: java
+
+                  public int swap() {
+                     assert (top != null && top.next != null);
+                     Node node1 = top;
+                     node1.next = node1.next.next;
+                     top = node1.next;
+                     top.next = node1;
+                  }
+            feedback: |4
+
+                Ordre incorrect, le deuxième noeud est perdu.
+        -   text: |
+                .. code-block:: java
+
+                  public int swap() {
+                     assert (top != null && top.next != null);
+                     top.next = top.next.next;
+                     top.next.next = top.next;
+                     top = top.next;
+                  }
+            feedback: |4
+
+                Séquence incorrecte, perd des parties de la chaîne.
+    q6:
+        limit: 3
+        name: Structures de données à base de listes
+        type: multiple-choice
+        header: |4
+
+            Parmi les groupes d'affirmations suivants, lequel est correct ?
+        choices:
+        -   valid: true
+            text: |4
+
+
+                - Dans une *pile* (stack), on retire d'abord le dernier élément ajouté.
+                - Les caractères tapés par l'utilisateur sur un clavier d'ordinateur sont stockés dans une *file* (queue).
+        -   valid: true
+            text: |4
+
+
+                - Dans une *file* (queue), on retire d'abord le premier élément ajouté.
+                - Les variables locales de chaque méthode ou routine dans un programme informatique sont stockées sur une *pile* (stack).
+        -   text: |4
+
+
+                - Dans une *pile* (stack), on retire d'abord le dernier élément ajouté.
+                - Les variables locales de chaque méthode ou routine dans un programme informatique sont stockées sur une *file* (queue).
+            feedback: |4
+
+                Les variables locales de chaque méthode ou routine dans un programme informatique sont stockées sur une pile.
+        -   text: |4
+
+
+                - Dans une *pile* (stack), on retire d'abord le premier élément ajouté.
+                - Les caractères tapés par l'utilisateur sur un clavier d'ordinateur sont stockés dans une *file* (queue).
+            feedback: |4
+
+                Une pile suit le principe "dernier entré, premier sorti".
+        -   text: |4
+
+
+                - Dans une *file* (queue), on retire d'abord le dernier élément ajouté.
+                - Les variables locales de chaque méthode ou routine dans un programme informatique sont stockées sur une *pile* (stack).
+            feedback: |4
+
+                Une file suit le principe "premier entré, premier sorti".
+        -   text: |4
+
+
+                - Dans une *file* (queue), on retire d'abord le premier élément ajouté.
+                - Les caractères tapés par l'utilisateur sur un clavier d'ordinateur sont stockés dans une *pile* (stack).
+            feedback: |4
+
+                Les caractères tapés par l'utilisateur sur un clavier d'ordinateur sont stockés dans une file.
+    q7:
+        limit: 3
+        name: 'Pile : utilisation'
+        type: multiple-choice
+        header: |4
+
+            Que fait la méthode suivante
+
+            .. code-block:: java
+
+                public static void m(StackOfInt stack) {
+                    int a = stack.pop();
+                    int b = stack.pop();
+                    stack.push(a+b);
+                }
+        choices:
+        -   valid: true
+            text: |4
+
+
+                - Si la pile contient au moins deux éléments, remplace les deux éléments au sommet de la pile par leur somme.  Sinon, lance une ``IllegalStateException``.
+        -   text: |4
+
+
+                - Si la pile contient au moins deux éléments, ajoute leur somme au sommet de la pile.  Sinon, lance une ``IllegalStateException``.
+            feedback: |4
+
+                Les deux éléments sont d'abord retirés.
+        -   text: |4
+
+
+                - Retire les deux éléments au sommet de la pile et retourne leur somme.  Si la pile contient moins de deux éléments, lance une ``IllegalStateException``.
+            feedback: |4
+
+                La somme n'est pas retournée.
+        -   text: |4
+
+
+                - Si la pile contient exactement deux éléments, remplace les deux éléments au sommet de la pile par leur somme.  Sinon, lance une ``IllegalStateException``.
+            feedback: |4
+
+                La pile peut contenir plus de deux éléments sans qu'une exception se produise.
+        -   text: |4
+
+
+                - Si la pile contient au moins deux éléments, retire les deux éléments au sommet de la pile ajoute leur somme au fond de la pile.  Sinon, lance une ``IllegalStateException``.
+            feedback: |4
+
+                La somme n'est pas ajoutée au fond de la pile.
+weight: 1.0
+order: 15

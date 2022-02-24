@@ -1,0 +1,44 @@
+accessible: true
+author: François MICHEL
+context: |-
+    La classe ``Integer`` dispose d'une méthode ``compareTo()`` dont voici la signature :
+
+    .. code-block:: java
+
+           /**
+            * Compares two Integer objects numerically.
+            * @pre anotherInteger!=null
+            * @post returns the value 0 if this Integer is equal to
+            *        the    argument Integer; a value less than 0 if this
+            *        Integer is numerically less than the argument Integer;
+            *        and a value greater than 0 if this Integer is
+            *         numerically
+            *        greater than the argument Integer (signed comparison).
+            */
+            public int compareTo(Integer anotherInteger)
+
+    Comment feriez-vous pour implémenter une méthode similaire, mais de signature :
+
+    .. code-block:: java
+
+        public int compareTo(Object o)
+
+    ?
+
+    Écrivez le corps de cette nouvelle méthode qui prend un argument de type ``Object`` au lieu d'un argument de type ``Integer``. Écrivez la réponse en une seule ligne. Notez que l'argument ``o`` sera toujours du type ``Integer``. Pensez à utiliser des méthodes qui sont déjà à votre disposition.
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 9: Question de démarrage 1: Integer.compareTo'
+problems:
+    q1:
+        language: java
+        name: Le corps de compareTo(Object o)
+        type: code-single-line
+        header: Écrivez ici le corps de la méthode compareTo(Object o). Vous n'avez
+            pas besoin d'utiliser plus d'une ligne, pensez à utiliser les méthodes
+            déjà à votre disposition.
+weight: 1.0
+order: 44

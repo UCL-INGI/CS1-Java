@@ -1,0 +1,22 @@
+author: François MICHEL
+context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pour la
+  Mission 1.
+
+
+  Vous attendons une archive **.zip** contenant uniquement les fichiers :
+
+
+  - MiseEnRoute.java
+
+  - README.txt'
+environment: java7
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Mission 1: Phase de réalisation: Soumission'
+network_grading: false
+order: 20
+problems:
+  q1:
+    allowed_exts: [.zip]
+    header: Soumettez ici l'archive zip ou faites-le directement via BlueJ.
+    name: Phase de réalisation de la Mission 1
+    type: code-file

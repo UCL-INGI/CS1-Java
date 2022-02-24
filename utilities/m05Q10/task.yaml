@@ -1,0 +1,42 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``double[] somme(double[] a, double[] b)`` qui retourne un tableau dont chaque élément est la somme des éléments des tableaux a et b au même indice.
+    la spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre a != null, b != null, a.length == b.lenght
+         * @post retourne un tableau dont chaque élément est la somme des éléments
+         *       des tableaux a et b au même indice
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5 : Q** : Somme'
+network_grading: false
+order: 96
+problems:
+    q1:
+        type: code
+        name: Somme
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

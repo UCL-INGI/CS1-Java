@@ -1,0 +1,53 @@
+package StudentCode;
+/**
+ * @author O. Bonaventure
+ * @version Novembre 2016
+ */
+
+import src.librairies.Stat;
+import java.util.Arrays;
+
+public class Vecteur implements Stat {
+
+	private double [] v;
+
+	/**
+	 * @pre		n > 0
+	 * @post	Construit un vecteur contenant n réels;
+	 */
+	public Vecteur (int n) {
+		this.v = new double[n];
+	}
+
+	/**
+	 *	Constructeur utilisé pour les test. ne pas montrer aux étudiants
+	 *	
+	 *	@pre	v != null
+	 *	@post	crée un vecteur représenté par v
+	 */
+	 public Vecteur (double [] v){
+		this.v = v;
+	}
+
+	/**
+	 * @pre		0 <= i < n
+	 * @post	Stocke la valeur d en position i du vecteur
+	 */
+	public void seet(int i,double d) {
+		v[i] = d;
+	}
+
+	/**
+	 * @pre		0 <= i < n
+	 * @post	Retourne la valeur se trouvant en position i du vecteur
+	 */
+	public double get(int i) {
+		return v[i];
+	}
+
+	@	@q1@@
+
+	public String toString() {
+		return Arrays.toString(this.v);
+	}
+}

@@ -11,7 +11,7 @@ environment_parameters:
     limits:
         time: '30'
         hard_time: ''
-        memory: '100'
+        memory: '512'
     run_cmd: ''
 environment_type: docker
 evaluate: best

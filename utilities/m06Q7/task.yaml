@@ -1,0 +1,60 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |-
+    Considérons la classe ``Point`` qui permet de représenter une point. Le squelette du code de cette classe est le suivant :
+
+    .. code-block:: java
+
+        public class Point{
+           private double x;
+           private double y;
+
+           /*
+            * @pre -
+            * @post a construit le point de coordonnée x,y
+            */
+           Point(double x, double y) {
+            //code non fourni
+           }
+
+           /*
+            * @pre -
+            * @post retourne la coordonnée x du Point this
+            */
+           //à compléter
+
+           /*
+            * @pre -
+            * @post retourne la coordonnée y du Point this
+            */
+           //à compléter
+        }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 6 : Q* getters Point'
+network_grading: false
+order: 116
+problems:
+    q1:
+        type: code
+        name: getters Point
+        header: Écrivez ici les méthodes ``getX`` et ``getY``
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

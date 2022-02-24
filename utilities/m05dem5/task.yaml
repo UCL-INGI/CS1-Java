@@ -1,0 +1,77 @@
+accessible: true
+author: Munyabarenzi Clémentine Zaninka, Olivier Martin
+categories: []
+contact_url: ''
+context: |+
+    Dans une classe, on trouve une méthode dont la signature est :
+
+    .. code-block :: java
+
+        public static void main(String[] args)
+
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5 : Question de Démarrage 5 : Méthode Main'
+network_grading: false
+order: 91
+problems:
+    q1:
+        type: code
+        name: Afficher les arguments
+        header: |-
+            Comment feriez-vous pour que la méthode main ci-dessus affiche sur ``System.out`` tout le contenu du tableau ``String[] args`` passé en argument ?
+            Par exemple, avoir affiché à l'écran :
+
+            ::
+
+                Un
+                Deux
+                Trois
+                Soleil
+
+            Ecirvez-ci dessous le *corps* de la méthode main.
+        language: java
+        default: ''
+    q2:
+        type: code
+        name: Somme
+        header: |-
+            BlueJ permet de passer des arguments à la méthode ``main``. La
+            méthode ``main`` s'attend à recevoir un ``String[]``. Il
+            faut lui passer ce tableau comme si on définissait ce tableau dans du
+            code java. Par exemple, pour passer un tableau contenant les
+            ``String`` ``"1"`` et ``"2"``, il faut indiquer
+            ``"1","2"`` dans la fenêtre BlueJ (voir figure).
+
+            .. image:: m05dem5/Somme.png
+               :height: 300
+               :width: 450
+
+            Un étudiant souhaite écrire un petit programme simple qui prend deux nombres entiers comme arguments en ligne de commande et affiche la somme de ces deux nombres. Il écrit le code ci-dessous :
+
+            .. code-block :: java
+
+                public class Somme {
+                    public static void main(String[] args){
+                        System.out.println(args[0]+args[1]);
+                    }
+                }
+
+            Il compile ce programme et l'exécute avec BlueJ. En testant son programme avec ``"1","2"`` comme argument, il s'étonne de voir ``12`` affiché à l'écran. Pouvez-vous corriger son code afin d'afficher la somme des deux arguments et non la concaténation des deux Strings ? Ecrivez ci-dessous *le corps de la méthode main* (**sans sa signature**). Pensez à consulter l'API de la classe http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

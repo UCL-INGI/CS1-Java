@@ -1,0 +1,45 @@
+accessible: true
+author: Clémentine Zaninka, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    La section *3.4.2* du livre présente un programme qui permet de calculer et d’afficher le nombre de diviseurs entiers d’un nombre entier. Réutilisez ce code de façon à construire la méthode ``nDiv``
+    répondant à la spécification et la signature suivante :
+
+
+    .. code-block :: java
+
+        /**
+         * @pre n > 0
+         * @post retourne le nombre de diviseurs entiers du nombre entier n.
+         */
+         public static int nDiv(int n) {
+             // Votre code ici
+         }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 3 : Question de Démarage 5 : Diviseurs Entiers'
+network_grading: false
+order: 49
+problems:
+    q1:
+        type: code
+        name: ''
+        header: Ecrivez ici le **corps** de la méthode ``nDiv``.
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,85 @@
+accessible: true
+author: 'Munyabarenzi Clémentine Zaninka (ressource : syllabus d''exercices SINF1101)'
+context: |-
+    A la suite de l'écriture de la classe ``DListTest`` faite aux questions précédentes, vous avez réussi à découvrir à l'aide de JUnit l'erreur contenue dans la classe testée. Soumettez pour finir une version corrigée de cette classe ``DList``.
+
+    **Attention, vous devez soumettre la classe DList entière avec exactement les mêmes attributs et les mêmes méthodes. Seul le corps des méthodes et les valeurs des attributs peuvent être différents.**
+environment: java7
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mission 11 : Question de Démarrage 3 : JUnit (partie3) une DList correcte'
+problems:
+    q1:
+        language: java
+        name: ''
+        type: code
+        header: |
+            Rappel de la classe ``DList`` à corriger:
+
+            .. code-block :: java
+
+                class DList
+                {
+                    List<Double> l;
+
+                    /**
+                     * @pre
+                     * @post a construit une liste initialement vide
+                     */
+                    public DList()
+                    {
+                        l=new LinkedList<Double>();
+                    }
+
+                    /**
+                     * @pre d!=null
+                     * @post a ajout le Double d dans la liste
+                     */
+                    public void add(Double d)
+                    {
+                        assert d!=null;
+                        l.add(d);
+                    }
+                    /**
+                     * @pre d!=null
+                     * @post retourne true si d se trouvait dans la liste et false sinon
+                     *       a retire de la liste toutes les instances de Double egales
+                     *       a d
+                     */
+                    public boolean remove(Double d)
+                    {
+                        assert d!=null;
+                        int i=l.indexOf(d);
+                        if(i>=0)
+                        {
+                            Double d1=l.remove(i);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+
+                    /**
+                     * @pre d!=null
+                     * @post retourne true si d se trouve dans la liste et false sinon
+                     */
+                    public boolean contains(Double d)
+                    {
+                        return l.contains(d);
+                    }
+
+                    /**
+                     * @pre -
+                     * @post retourne le nombre de Double se trouvant dans la liste
+                     */
+                    public int size()
+                    {
+                        return l.size();
+                    }
+                }
+weight: 1.0
+order: 54

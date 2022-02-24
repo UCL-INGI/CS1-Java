@@ -1,0 +1,46 @@
+accessible: true
+author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
+context: |+
+    Ecrivez la méthode ``int d2i(String s)`` qui retourne la représentation entière d'un nombre entier fourni sous la forme d'un String. Par exemple, "012345" doit renvoyer 1235. N'utilisez pas de méthode de parsing comme ``parseInt`` ou ``parseDouble``.
+
+    La spécification est:
+
+    .. code-block:: java
+
+        /*
+         * @pre s != null et s est la représentation d'un nombre entier dans le
+         *      système décimal (il contient uniquement des chiffres)
+         * @post retourne la représentation du nombre sous forme d'un entier
+         */
+
+    La méthode ci-dessous pourrait vous aider à résoudre facilement cette question : `<http://docs.oracle.com/javase/6/docs/api/java/lang/Character.html#getNumericValue(char)>`_
+
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 4 : Q** représentation entière'
+network_grading: false
+order: 77
+problems:
+    q1:
+        type: code
+        name: d2i
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

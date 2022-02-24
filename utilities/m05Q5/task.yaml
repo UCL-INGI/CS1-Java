@@ -1,0 +1,41 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Ecrivez la méthode ``double[] initVector(int n, double i)`` qui retourne un vecteur de n éléments tous initialisés à la valeur i.
+    la spécification est :
+
+    .. code-block:: java
+
+        /*
+         * @pre n > 0
+         * @post retourne un vecteur de n éléments tous initialisés à la valeur i
+         */
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 5 : Q** : Vecteur'
+network_grading: false
+order: 99
+problems:
+    q1:
+        type: code
+        name: Vecteur
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

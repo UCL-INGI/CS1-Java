@@ -1,0 +1,34 @@
+author: François MICHEL, Bastien BODART
+context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pour la
+  Mission 7.
+
+
+  Vous attendons une archive **.zip** contenant uniquement les fichiers :
+
+
+  - Article.java
+
+  - ArticlePiece.java
+
+  - ArticleReparation.java
+
+  - Facture.java
+
+  - Piece.java
+
+  - TestFacture.java
+
+  - TestFactureInitial.java
+
+  - README.txt'
+environment: java7
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Mission 7: Phase de réalisation: Soumission'
+network_grading: false
+order: 139
+problems:
+  q1:
+    allowed_exts: [.zip]
+    header: Soumettez ici l'archive zip ou faites-le directement via BlueJ.
+    name: Phase de réalisation de la Mission 7
+    type: code-file

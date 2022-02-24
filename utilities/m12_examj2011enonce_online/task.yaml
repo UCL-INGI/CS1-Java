@@ -1,0 +1,186 @@
+author: Charles Pecheur
+context: "--------\nContexte\n--------\n\nUne *grappe d'ordinateurs* (computer cluster)\
+  \ est un ensemble d'ordinateurs connectés entre eux et organisés de manière à apparaître\
+  \ comme une large ressource de calcul sur laquelle peuvent s'exécuter simultanément\
+  \ de nombreuses tâches, la répartition des tâches entre les différents ordinateurs\
+  \ étant gérée par le système de manière transparente pour l'utilisateur.  On appelle\
+  \ *processus* (process) une tâche individuelle dont un utilisateur peut demander\
+  \ l'exécution sur la grappe.\n\n.. image:: m12_examj2011enonce_online/cluster.png\n\
+  \    :align: center\n    :scale: 50%\n\nLe programme que vous devez compléter permet\
+  \ de représenter la gestion des processus sur une grappe d'ordinateurs.  La grappe\
+  \ est décrite par la classe ``Cluster``. Une grappe contient la liste des ordinateurs\
+  \ de la grappe, organisée sous forme de **liste chaînée circulaire** : les noeuds\
+  \ de la liste sont connectés en boucle, de sorte que la liste n'a pas de début ni\
+  \ de fin.  Cette organisation est utilisée pour ajouter les nouveaux processus à\
+  \ chaque ordinateur à tour de rôle, dans la mesure des ressources disponibles.\n\
+  \n.. image:: m12_examj2011enonce_online/listeCirc.png\n    :align: center\n    :scale:\
+  \ 60%\n\nLe fonctionnement de la liste est documenté dans la classe ``Cluster``.\
+  \  La tête de liste se décale à chaque ajout de processus pour assurer une répartition\
+  \ plus équitable.  Par exemple, dans la situation illustrée ci-dessus, l'ordinateur\
+  \ 1 est en tête de liste.  Si on désire ajouter un processus, et que ni l'ordinateur\
+  \ 1 ni le 2 ne disposent des ressources suffisantes, le processus sera ajouté à\
+  \ l'ordinateur 3, et l'ordinateur 4 deviendra la nouvelle tête de liste.\n\nUne\
+  \ grappe peut contenir plusieurs types d'ordinateurs, dont les fonctionnalités communes\
+  \ sont décrites dans l'interface ``ComputerIF``.  Deux implémentations de cette\
+  \ interface sont fournies :\n\n-    ``BasicComputer`` qui supporte un seul processus\
+  \ à la fois, et\n-    ``FullComputer`` qui supporte un nombre maximum déterminé\
+  \ de processus, gérés dans un tableau.\n\nUn processus est décrit par la classe\
+  \ ``Process``, que vous devez écrire à la question 3.  Le programme utilise aussi\
+  \ sa propre classe d'exceptions, définie dans ``UnavailableException``.\n\nRappelons\
+  \ qu'il convient d'utiliser la méthode ``equals`` pour comparer des objets, même\
+  \ si cette méthode n'est pas explicitement re-définie dans les classes correspondantes.\n\
+  \n--------------\nRessources\n--------------\n\n-    `The Java API <http://docs.oracle.com/javase/8/docs/api/>`_\n\
+  -    `Introduction to Programming Using Java (JavaNotes) <http://math.hws.edu/javanotes/>`_\n\
+  \n--------\nAnnexes\n--------\n\nVous trouverez ci-après les sources (incomplètes)\
+  \ du programme auquel se rapportent les questions :\n\n-    ComputerIF.java_\n-\
+  \    BasicComputer.java_\n-    Process.java_\n-    UnavailableException.java_\n\
+  -    FullComputer.java_\n-    Cluster.java_\n\n------------------\n\nComputerIF.java\n\
+  ----------------------------\n\n.. code-block:: java\n\n    /**\n     * Un ordinateur,\
+  \ sur lequel on peut ajouter et retirer des processus.\n     * L'ordinateur dispose\
+  \ de ressources (nombre de processus, volume de stockage)\n     * éventuellement\
+  \ limitées, et donc peut refuser l'ajout de processus supplémentaires.\n     * Un\
+  \ ordinateur a un nom.\n     *\n     * @author O. Bonaventure, Ch. Pecheur\n   \
+  \  * @version Juin 2011\n     */\n\n    public interface ComputerIF\n    {\n   \
+  \     /**\n         * @pre  p != null, p ne se trouve pas déjà sur cet ordinateur\n\
+  \         * @post le processus p a été ajouté à cet ordinateur, si les ressources\n\
+  \         *       nécessaires sont disponibles.  Retourne true si le processus\n\
+  \         *       a été ajouté, false sinon.\n         */\n        public boolean\
+  \ addProcess(Process p);\n\n        /**\n         * @pre p != null\n         * @post\
+  \ le processus p a été retiré de cet ordinateur, si ce processus\n         *   \
+  \    se trouve sur cet ordinateur.  Retourne true si le processus\n         *  \
+  \     a été supprimé, false sinon.\n         */\n        public boolean removeProcess(Process\
+  \ p);\n\n        /**\n         * @pre -\n         * @post Tous les processus de\
+  \ cet ordinateur ont été retirés.\n         */\n        public void removeAllProcesses();\n\
+  \n        /**\n         * @pre -\n         * @post retourne le nom de l'ordinateur.\n\
+  \         */\n        public String getName();\n\n        /**\n         * @pre -\n\
+  \         * @post Retourne la liste des processus de cet ordinateur sous forme de\
+  \ texte,\n         *       avec une ligne par processus, chaque ligne comprenant\
+  \ le nom du processus\n         *       et sa taille de stockage, séparés par un\
+  \ espace, et se termine par\n         *       un passage à la ligne.  Par exemple:\n\
+  \         *\n         *       process1 0\n         *       bigprocess 200\n    \
+  \     *       smallprocess 20\n         */\n        public String getState();\n\
+  \     }\n\nBasicComputer.java\n----------------------------\n\n.. code-block:: java\n\
+  \n   /**\n     * Un ordinateur de base, supportant un seul processus et sans capacité\
+  \ de stockage.\n     *\n     * @author O. Bonaventure, Ch. Pecheur\n     * @version\
+  \ Juin 2011\n     */\n    public class BasicComputer implements ComputerIF\n   \
+  \ {\n        private String name; // Nom de l'ordinateur\n        private Process\
+  \ proc; // processus éventuel, null si absent\n\n        /**\n         * @pre name\
+  \ != null\n         * @post Construit un BasicComputer de nom name.\n         */\n\
+  \        public BasicComputer(String name)\n        {\n            this.name = name;\n\
+  \        }\n\n        /**\n         * @pre -\n         * @post retourne le nom de\
+  \ l'ordinateur.\n         */\n        public String getName()\n        {\n     \
+  \       return name;\n        }\n\n        /**\n         * @pre  p != null, p ne\
+  \ se trouve pas déjà sur cet ordinateur\n         * @post le processus p a été ajouté\
+  \ à cet ordinateur, si aucun processus\n         *       n'est présent et si p ne\
+  \ demande pas de stockage. Retourne true si\n         *       le processus a été\
+  \ ajouté, false sinon.\n         */\n        public boolean addProcess(Process p)\n\
+  \        {\n            if (proc == null && p.getRequiredStorage() == 0) {\n   \
+  \             proc = p;\n                return true;\n            } else {\n  \
+  \              return false;\n            }\n        }\n\n        /**\n        \
+  \ * @pre p != null\n         * @post le processus p a été retiré de cet ordinateur,\
+  \ s'il s'agit bien du\n         *       processus présent. Retourne true si le processus\
+  \ a été supprimé,\n         *       false sinon.\n         */\n        public boolean\
+  \ removeProcess(Process p)\n\n             QUESTION 1\n\n\n        /**\n       \
+  \  * @pre -\n         * @post Tous les processus de cet ordinateur ont été retirés.\
+  \ Retire proc\n         *       s'il est actif.\n         */\n        public void\
+  \ removeAllProcesses()\n        {\n            proc = null;\n        }\n\n     \
+  \   /**\n         * @pre -\n         * @post Retourne la liste des processus de\
+  \ cet ordinateur sous forme de texte,\n         *       avec une ligne par processus,\
+  \ chaque ligne comprenant le nom du processus\n         *       et sa taille de\
+  \ stockage, séparés par un espace, et se termine par\n         *       un passage\
+  \ à la ligne.  Par exemple:\n         *\n         *       process1 0\n         *\
+  \       bigprocess 200\n         *       smallprocess 20\n         */\n        public\
+  \ String getState() {\n            if (proc != null) {\n                return proc.getDescr()\
+  \ + \"\\n\";\n            } else {\n                return \"\";\n            }\n\
+  \        }\n    }\n\nProcess.java\n-----------------------------\n\n.. code-block::\
+  \ java\n\n             QUESTION 3\n\n\n\nUnavailableException.java\n---------------------------------------\n\
+  \n.. code-block:: java\n\n    /**\n     * Une exception utilisée lorsqu'une opération\
+  \ ne peut être effectuée\n     * par manque de ressources.\n     *\n     * @author\
+  \ O. Bonaventure, Ch. Pecheur\n     * @version Juin 2011\n     */\n    public class\
+  \ UnavailableException extends Exception\n    {\n        public UnavailableException()\n\
+  \        {\n            super();\n        }\n    }\n\nFullComputer.java\n-----------------------------------\n\
+  \n.. code-block:: java\n\n    /**\n     * Un ordinateur avec capacité de stockage\
+  \ limitée et nombre de processus limité.\n     *\n     * @author O. Bonaventure,\
+  \ Ch. Pecheur\n     * @version Juin 2011\n     */\n    public class FullComputer\
+  \ extends BasicComputer\n    {\n        /**\n         * Les processus présents sur\
+  \ cet ordinateur.  Les processus sont dans\n         * procs[0] .. procs[count-1],\
+  \ et procs[i] == null pour i >= count.\n         */\n        private Process[] procs;\n\
+  \        private int count;         // nombre de processus présents\n        private\
+  \ int storage;       // capacité de stockage totale\n        private int availStorage;\
+  \  // capacit?é de stockage restante\n\n        /**\n         * @pre n > 0, name\
+  \ != null, storage >= 0\n         * @post Construit un FullComputer de nom name,\
+  \ supportant n processus\n         *       et avec une capacité de stockage égale\
+  \ à storage\n         */\n\n             QUESTION 2\n\n        /**\n         * @pre\
+  \  p != null, p ne se trouve pas déjà sur cet ordinateur\n         * @post le processus\
+  \ p a été ajouté à cet ordinateur, si (1) le nombre de\n         *       processus\
+  \ maximal n'est pas atteint et (2) la capacité de stockage\n         *       nécessaire\
+  \ pour p est disponible. Retourne true si le processus a\n         *       été ajouté,\
+  \ false sinon.\n         */\n        public boolean addProcess(Process p)\n\n  \
+  \           QUESTION 4\n\n\n         RESTE DU CODE NON FOURNI\n\n    }\n\nCluster.java\n\
+  -----------------------------\n\n.. code-block:: java\n\n    /**\n     * Une grappe\
+  \ (cluster) d'ordinateurs formant une ressource commune pour\n     * l'exécution\
+  \ de processus.  Les ordinateurs du cluster sont gérés comme\n     * une liste circulaire,\
+  \ de telle manière que les processus soient distribués\n     * à tour de rôle à\
+  \ chaque ordinateur, dans la limite de leurs ressources disponibles.\n     * La\
+  \ tête de la liste correspond prochain ordinateur à recevoir un nouveau processus,\n\
+  \     * pour autant qu'il ait les ressources nécessaires.\n     *\n     * @author\
+  \ O. Bonaventure, Ch. Pecheur\n     * @version Juin 2011\n     */\n\n    import\
+  \ java.io.*;\n\n    public class Cluster\n    {\n        // classe interne: un noeud\
+  \ de la liste circulaire des ordinateurs du cluster\n        private class ListNode\
+  \ {\n            ListNode next;\n            ComputerIF elem;\n        }\n\n   \
+  \     /**\n         * La tête courante de la liste des ordinateurs. Les noeuds suivants\
+  \ sont\n         * chaînés de manière circulaire: la chaîne finit toujours par revenir\
+  \ à\n         * current.\n         */\n        private ListNode current;\n     \
+  \   private int count; // nombre d'ordinateurs dans le cluster\n\n        /**\n\
+  \         * Constructeur\n         */\n        public Cluster()\n        {\n   \
+  \         count = 0;\n            current = null;\n        }\n\n        /**\n  \
+  \       * @pre p != null, p ne se trouve pas déjà sur un ordinateur du cluster.\n\
+  \         * @post Le processus p a été ajouté au premier ordinateur, à partir de\
+  \ la\n         *       tête de la liste, disposant des ressources nécessaires. La\
+  \ nouvelle\n         *       tête de liste est le noeud qui suit celui de l'ordinateur\
+  \ où p a\n         *       été ajouté. Si aucun ordinateur ne dispose de ressources\n\
+  \         *       suffisantes, la tête de liste est inchangée et une\n         *\
+  \       UnavailableException est lancée.\n         */\n\n             QUESTION 5\n\
+  \n    \f    /**\n         * @pre p != null\n         * @post Le processus p a été\
+  \ retiré du premier ordinateur du cluster\n         *       sur lequel il se trouvait,\
+  \ à partir de la tête de la liste.\n         *       Si p n'est pas trouvé, lance\
+  \ UnavailableException.\n         */\n        public void removeProcess(Process\
+  \ p) throws UnavailableException\n\n             CODE NON FOURNI\n\n\n        /**\n\
+  \         * @pre -\n         * @post Tous les processus de tous les ordinateurs\
+  \ ont été retirés.\n         */\n        public void removeAllProcesses()\n\n  \
+  \           CODE NON FOURNI\n\n        /**\n         * @pre  comp != null, comp\
+  \ ne fait pas déjà partie du cluster.\n         * @post L'ordinateur comp est ajouté\
+  \ à la liste des ordinateurs.\n         */\n        public void addComputer(ComputerIF\
+  \ comp)\n        {\n            ListNode l = new ListNode();\n            l.elem\
+  \ = comp;\n           if(count == 0)\n            {\n               l.next = l;\n\
+  \               current = l;\n            }\n            else\n            {\n \
+  \               l.next = current.next;\n                current.next = l;\n    \
+  \        }\n            count++;\n        }\n\n        /**\n         * @pre comp\
+  \ != null\n         * @post L'ordinateur comp a été retiré du cluster, s'il s'y\
+  \ trouvait. Si\n         *       comp est en tête de liste, la tête de liste passe\
+  \ au noeud suivant,\n         *       sinon elle est inchangée. Retourne true si\
+  \ comp a été retiré, false\n         *       sinon.\n         */\n\n           \
+  \  QUESTION 6\n\n        /**\n         * @pre filename est un nom de fichier\n \
+  \        * @post Le fichier filename contient l'état du cluster sous forme de texte.\n\
+  \         *       Pour chaque processus de chaque ordinateur du cluster, le fichier\n\
+  \         *       contient une ligne composée du nom et de la capacité demandée,\n\
+  \         *       séparés par un espace. Par exemple :\n         *\n         * \
+  \      process1 0\n         *       bigprocess 200\n         *       smallprocess\
+  \ 20\n         *\n         *       Le nom des ordinateurs sur lesquels se trouvent\
+  \ les processus n'est\n         *       pas sauvegardé. Arrête le programme si une\
+  \ erreur d'I/O se produit.\n         */\n        public void saveState(String filename)\n\
+  \n             CODE NON FOURNI\n\n\n        /**\n         * @pre filename le nom\
+  \ d'un fichier sauvegardé par saveState\n         * @post Retire tous les processus\
+  \ présents dans le cluster, puis ajoute au\n         *       cluster les processus\
+  \ dont les noms et capacités sont donnés dans\n         *       le fichier, selon\
+  \ le format généré par saveState.  Arrête le\n         *       programme si une\
+  \ erreur d'I/O se produit ou si la capacité du\n         *       cluster est insuffisante.\n\
+  \         */\n        public void loadState(String fileName)\n\n             QUESTION\
+  \ 7\n\n    }\n\n\n\n"
+environment: default
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Examen Juin 2011 online : Enoncé'
+network_grading: false
+order: 195
+problems:
+  q1: {header: '**Ne rien soumettre ici !**', language: java, name: '', type: code-single-line}

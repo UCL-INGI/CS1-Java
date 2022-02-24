@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-17 16:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: m01q18/student/Exercice12.java:28
+msgid "Le code semble comporter des erreurs : "
+msgstr ""
+
+#: m01q18/student/Exercice12.java:33
+msgid ""
+"Le résultat attendu pour l'année {0,number,#} est : {1,number,#} or votre "
+"code indique: {2,number,#}"
+msgstr ""
+
+#: m01q18/student/Exercice12.java:50
+msgid "Le code est incorrect : il est interdit de diviser par zéro."
+msgstr ""
+
+#: m01q18/student/Exercice12.java:53
+msgid "Attention, certaines variables ont été mal castées\t!"
+msgstr ""
+
+#: m01q18/student/Exercice12.java:57
+msgid ""
+"Attention, vous tentez de lire en dehors des limites d'un String ! "
+"(StringIndexOutOfBoundsException)"
+msgstr ""
+
+#: m01q18/student/Exercice12.java:61
+msgid ""
+"Attention, vous tentez de lire en dehors des limites d'un tableau ! "
+"(ArrayIndexOutOfBoundsException)"
+msgstr ""
+
+#: m01q18/student/Exercice12.java:64
+msgid ""
+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à "
+"bien gérer ce cas."
+msgstr ""
+
+#: m01q18/student/Exercice12.java:81
+msgid "Tous les tests se sont passés sans encombre"
+msgstr ""

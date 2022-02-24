@@ -1,0 +1,51 @@
+package StudentCode;
+
+/**
+ * Une classe représentant une fraction
+ *
+ * @author O. Bonaventure
+ * @version Oct. 2016
+ */
+public class Fraction implements Comparable
+{
+	private int num; // numerateur
+	private int den; // denominateur
+
+	/**
+	 * @pre num>=0, den>0
+	 * @post construit la fraction num/den
+	 */
+	public Fraction(int num, int den)
+	{
+		this.num=num;
+		this.den=den;
+	}
+
+	/*
+	 * @pre -
+	 * @post retourne le dénominateur de la fraction
+	 */
+	public int getDen()
+	{
+		return this.den;
+	}
+
+
+	/*
+	 * @pre -
+	 * @post retourne le numérateur de la fraction
+	 */
+	public int getNum()
+	{
+
+		return this.num;
+	}
+
+	// la méthode qui manque
+	@ @q1@@
+
+	public String toString() {
+		return "["+this.getNum()+"/"+this.getDen()+"]";
+	}
+
+}

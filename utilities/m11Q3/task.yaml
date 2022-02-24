@@ -1,0 +1,93 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Une queue est une structure de donnée qui dispose d'une entrée et d'une sortie. Les objets sont ajoutés à la queue via son entrée et sont retirés via sa sortie. La queue garantit un fonctionnement First-In First-Out (FIFO, premier entré, premier sorti)
+    On vous donne la classe ``FIFOQueue`` incomplète suivante :
+
+    .. code-block:: java
+
+      /**
+       * Une FIFO queue représentée sous la forme d'une structure chaînée
+       *
+       * @author O. Bonaventure
+       * @version Novembre 2016
+       */
+        public class FIFOQueue {
+
+           // une classe interne représentant un noeud de la queue
+            private class Noeud {
+                Object element;
+                Noeud suivant;
+
+                public Noeud(Object o, Noeud n) {
+                    element = o;
+                    suivant = n;
+                }
+            }
+
+           private Noeud entree; // correspond à tout moment à l'entrée de la queue
+           private Noeud sortie; // correspond à tout moment à la sortie de la queue
+
+           /*
+            * @pre -
+            * @post a initialisé une queue vide
+            */
+            public FIFOQueue() {
+                entree = null;
+                sortie = null;
+            }
+
+           /**
+            * @pre o != null
+            * @post ajoute l'objet à la queue via le noeud entree
+            */
+            public void ajoute(Object o) {
+                Noeud ajout;
+                ajout = new Noeud(o, entree);
+                entree = ajout;
+                if(sortie == null) {
+                     sortie = ajout;
+                }
+           }
+
+           /**
+            * @pre -
+            * @post retourne le plus ancien objet de la queue via le noeud sortie et
+            *       le retire de la queue
+            *       null si la queue est vide
+            */
+           public Object retire () {
+              // A compléter
+           }
+        }
+
+    Complétez cette classe.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 11 : Q* FIFOQueue'
+network_grading: false
+order: 182
+problems:
+    q1:
+        type: code
+        name: Retire
+        header: Ecrivez le corps de la méthode retire
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

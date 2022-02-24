@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=rack\ row
+comment0.target=ClusterNode(int,\ int)
+comment0.text=\nConstructeur\n\n
+comment1.target=int\ getRack()
+comment1.text=\n@pre\ -\n@post\ a\ retourn\u00E9\ le\ num\u00E9ro\ du\ rack\ o\u00F9\ le\ noeud\ se\ trouve\n\n
+comment2.target=int\ getRow()
+comment2.text=\n@pre\ -\n@post\ a\ retourn\u00E9\ la\ position\ du\ noeud\ dans\ le\ rack\n\n
+comment3.params=o
+comment3.target=boolean\ equals(Object)
+comment3.text=\n@pre\ -\n@post\ retourne\ vrai\ si\ les\ deux\ noeuds\ sont\ \u00E9gaux\ (m\u00EAme\ rack,\ m\u00EAme\ row)\n\n
+comment4.target=String\ toString()
+comment4.text=\n@pre\ -\n@post\ retourne\ une\ chaine\ de\ caract\u00E8res\ d\u00E9crivant\ le\ noeud\n\n
+numComments=5

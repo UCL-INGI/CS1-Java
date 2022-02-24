@@ -1,0 +1,61 @@
+/**
+ * @author O. Bonaventure
+ */
+package StudentCode;
+
+import src.librairies.MyString;
+
+public class StringTab implements MyString {
+
+	private char [] s;
+
+	/**
+	 * @pre		-
+	 * @post	Constructeur
+	 */
+	public StringTab(char c) {
+		this.s = new char [] {c};
+	}
+
+	/**
+	 * @pre		-
+	 * @post	Constructeur
+	 */
+	public StringTab(char [] c) {
+		this.s = c;
+	}
+
+
+	public MyString concat(char c) {
+		char [] newS = new char[this.s.length+1];
+		for(int i=0;i<this.s.length;i++)
+			newS[i] = this.s[i];
+		newS[newS.length-1] = c;
+		return new StringTab(newS);
+	}
+
+	public boolean contains(MyString s) {
+		@	@q1@@
+	}
+
+	public int length(){
+		return this.s.length;
+	}
+
+	public char charAt(int i) {
+		return this.s[i];
+	}
+
+
+	/**
+	 * Ne pas montrer aux étudiants. Fonctions utilisées pour
+	 * les tests
+	 * 
+	 */
+	 public void setArray(char [] c) {
+		this.s = c;
+	}
+
+	public char [] getS(){ return this.s;}
+}
+

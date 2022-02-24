@@ -1,0 +1,58 @@
+accessible: true
+author: Sébastien Combéfis, Naitali Brandon
+categories: []
+contact_url: ''
+context: |
+    Vous devez implémenter une méthode ``getMax`` dont le but est de retrouver, dans un fichier, la ligne contenant le nombre flottant avec la plus grande valeur. Si un tel nombre n'existe pas, la méthode doit renvoyer -∞. En cas d'erreur lors de la lecture du fichier, le programme doit se quitter et afficher exactement ``ERREUR`` sur ``System.err``.
+
+    Voici la spécification préçise de la méthode :
+
+    .. code-block:: java
+
+        /**
+         * @pre filename != null, filename est le nom d’un fichier de texte.
+         *      Chaque ligne valide du fichier représente un seul nombre réel.
+         * @post - La valeur renvoyée contient le nombre flottant avec la plus grande valeur
+         *         parmi tous les nombres flottants valides du fichier.
+         *         S'il n'y a aucun nombre valide, la valeur renvoyée contient -∞.
+         *       - Si le fichier n’existe pas ou si une erreur d'entrée/sortie survient,
+         *         le programme se termine en affichant ERREUR System.err.
+         *
+         *       Par exemple, la méthode renvoie 10.0 pour le contenu de fichier suivant :
+         *          0.345.67
+         *          hello
+         *          -543.0
+         *          500.0 1000.0 2000.0
+         *          10.0
+         *          3.1416
+         */
+        public static double getMax (String filename)
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '300'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 9 : Question de Bilan Final'
+network_grading: false
+order: 164
+problems:
+    q1:
+        type: code
+        name: ''
+        header: |+
+            Complétez ici le corps de la méthode ``getMax`` dont la spécification est donnée dans l'énoncé.
+
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

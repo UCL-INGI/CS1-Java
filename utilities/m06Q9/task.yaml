@@ -1,0 +1,85 @@
+accessible: true
+author: Ludovic TAFFIN
+categories: []
+contact_url: ''
+context: |-
+    Considérons la classe ``Rectangle``:
+
+    .. code-block:: java
+
+        /**
+          * Un objet Java représentant un rectangle
+          *
+          * @author O. Bonaventure
+          * @version Oct. 2016
+          */
+         public class Rectangle{
+             private double longueur;
+             private double largeur;
+
+             /**
+              * @pre long, larg >0
+              * @post a construit un rectangle de longueur lon et de largeur larg
+              */
+             public Rectangle(double lon, double larg){
+                 longueur = lon;
+                 largeur = larg;
+             }
+
+             /*
+              * @pre -
+              * @post retourne la longueur du rectangle
+              */
+             public double getLongueur(){
+                 return longueur;
+             }
+
+             /*
+              * @pre -
+              * @post retourne la largeur du rectangle
+              */
+             public double getLargeur(){
+                 return largeur;
+             }
+
+             /*
+              * @pre -
+              * @post retourne la surface du rectangle
+              */
+             // A compléter
+         }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 6 : Q* surface'
+network_grading: false
+order: 118
+problems:
+    q1:
+        type: code
+        name: surface
+        header: |-
+            Écrivez ici la méthode ``surface`` dont les spécifications sont:
+
+            .. code-block:: java
+
+                /*
+                 * @pre -
+                 * @post retourne la surface du rectangle
+                 */
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,38 @@
+author: François MICHEL
+context: 'Vous pouvez soumettre ici ou via BlueJ votre phase de réalisation pour la
+  mission 5.
+
+
+  Nous attendons une archive **.zip** contenant uniquement les fichiers :
+
+
+  - ImageGray.java
+
+  - LibrairieImage.java
+
+  - LibrairieIO.java
+
+  - Test.java
+
+  - TestRescale.java
+
+  - TestBrighten.java
+
+  - TestContains.java
+
+  - TestSubtract.java
+
+  - README.txt
+
+  '
+environment: java7
+limits: {memory: '100', output: '2', time: '30'}
+name: 'Mission 5: Phase de réalisation: Soumission'
+network_grading: false
+order: 103
+problems:
+  q1:
+    allowed_exts: [.zip]
+    header: Soumettez ici l'archive zip ou faites-le directement via BlueJ.
+    name: Phase de réalisation de la Mission 5
+    type: code-file

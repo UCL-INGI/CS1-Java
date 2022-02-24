@@ -1,0 +1,76 @@
+accessible: true
+author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
+context: |-
+    Revenons à la classe Fraction. Pour faciliter la création de fractions sur base de données lues depuis le clavier ou dans un fichier, on vous demande d'ajouter à cette classe un constructeur qui prend comme argument un String. Si ce String a comme format x/y avec x et y qui sont des entiers, il crée l'instance de la classe Fraction ayant x comme numérateur et y comme dénominateur. Pour les cas de String null / qui ne respectent pas le format demandé/ qui génère une division par zéro, lancez une NumberFormatException.
+
+    .. code-block:: java
+
+      public class Fraction implements Comparable<Fraction> {
+        private int num; // numerateur
+        private int den; // denominateur
+
+        /**
+        * @pre den>0
+        * @post construit la fraction num/den
+        */
+        public Fraction(int num, int den) {
+            this.num=num;
+            this.den=den;
+        }
+
+        /*
+        * @pre -
+        * @post construit une fraction sur base d'une chaine caractère de la
+        * forme num/den  où num est un entier et den un entier non nul
+        * lance une exception lorsque la chaîne de caractères passée
+        * en argument ne respecte pas ce format ou que le dénominateur est nul
+        */
+        public Fraction(String s) throws NumberFormatException {
+            // à compléter
+        }
+
+        /*
+        * @pre -
+        * @post retourne le dénominateur de la fraction
+        */
+        public int getDen() {
+            return this.den;
+        }
+
+        /*
+        * @pre -
+        * @post retourne le numérateur de la fraction
+        */
+        public int getNum() {
+            return this.num;
+        }
+      }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 10 : Q* Fraction - Constructeur'
+network_grading: false
+order: 169
+problems:
+    q1:
+        type: code
+        name: Constructeur de Fraction
+        header: Ecrivez le corps du constructeur
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

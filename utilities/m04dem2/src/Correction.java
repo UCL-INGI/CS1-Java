@@ -1,0 +1,30 @@
+/**
+ *  Copyright (c)  François Michel, 2017 Brandon Naitali
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package src;
+import static org.junit.Assert.*;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.*;
+
+public class Correction{
+	public static String cat(String s1, String s2){
+		return s1+s2;
+	}
+	
+	public static String cat(String s1, char c){
+		return s1+c;
+	}
+}

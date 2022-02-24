@@ -1,0 +1,82 @@
+accessible: true
+author: François MICHEL
+context: |-
+    Considérez maintenant la classe ``OrderedPair``, qui prend comme variable d'instance un objet de type ``Pair`` dont la classe se trouve dans la queston précédente. Voici la classe ``OrderedPair`` :
+
+    .. code-block:: java
+
+        public class OrderedPair {
+
+            private boolean ordered;  /* vrai si p est ordonnée */
+                                  /* p.getA() <= p.getB() */
+            private Pair p;
+
+            /**
+             * @pre -
+             * @post crée un paire ordonnée (0,0)
+             */
+            public OrderedPair() {
+              p=new Pair(0, 0);
+              ordered=true;
+            }
+
+            /**
+             * @pre -
+             * @post donne au premier élément de la paire la valeur nA
+             */
+            public void setA(int nA) {
+              // À implémenter
+            }
+            /**
+             * @pre -
+             * @post donne au second élément de la paire la valeur nB
+             */
+            public void setB(int nB) {
+              // À implémenter
+            }
+
+            /**
+             * @pre -
+             * @post retourne vrai si la paire est ordonnée, faux sinon
+             */
+            public boolean getOrdered() {
+              return ordered;
+            }
+
+            /**
+             * @pre -
+             * @post retourne le premier élément de la paire
+             */
+            public int getA() {
+              return p.getA();
+            }
+
+            /**
+             * @pre -
+             * @post retourne le second élément de la paire
+             */
+            public int getB() {
+              return p.getB();
+            }
+        }
+
+    Le but de l'exercice est d'implémenter les méthodes ``setA()`` et ``setB()`` sans oublier de mettre à jour ``ordered`` en fonction des nouvelles valeurs des nombres dans la paire.
+environment: java7
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: 'Mission 6: Question de démarrage 2: OrderedPair'
+problems:
+    q1:
+        name: setA()
+        header: Implémentez le corps de setA(). N'oubliez pas de mettre à jour ordered.
+        language: Java
+        type: code
+    q2:
+        name: setB()
+        type: code
+        language: Java
+        header: Implémentez le corps de setB(). N'oubliez pas de mettre à jour ordered.
+weight: 1.0
+order: 56

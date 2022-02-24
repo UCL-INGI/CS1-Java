@@ -1,0 +1,104 @@
+accessible: true
+author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
+context: |-
+    Une liste est une structure de données permettant de stocker des objets. Les objets sont ajoutés à la liste via sa tete. Elle supporte trois commandes :
+    ajout pour ajouter un objet à la liste
+    retire pour retirer un élément se trouvant dans la liste
+    contient pour voir si un objet se trouve dans la liste
+
+    On vous donne la classe ``Liste`` incomplète suivante :
+
+    .. code-block:: java
+
+        /**
+         * Une liste représentée sous la forme d'une structure chaînée
+         *
+         * @author O. Bonaventure
+         * @version Décembre 2016
+         */
+        public class Liste {
+
+           // une classe interne représentant un noeud de la liste
+            private class Noeud {
+                Object element;
+                Noeud suivant;
+
+                public Noeud(Object o, Noeud n) {
+                    element = o;
+                    suivant = n;
+                }
+            }
+
+            private Noeud tete; // le début de la liste
+
+           /*
+            * @pre -
+            * @post a initialisé une liste vide
+            */
+            public Liste() {
+                tete = null;
+            }
+
+           /**
+            * @pre o != null
+            * @post ajoute l'objet à la liste
+            */
+            public void ajoute(Object o) {
+                // Code non fourni
+            }
+
+           /*
+            * @pre o != null
+            * @post retourne true si l'objet o se trouve dans la liste, false sinon
+            */
+            public boolean contient(Object o) {
+                // Question 1
+            }
+
+           /**
+            * @pre o != null
+            * @post retire toutes les copies de l'objet o de la liste.
+            *       Retourne le nombre d'objets qui ont été retiré de la liste
+            *       (0 si l'objet o n'était pas présent dans la liste)
+            */
+            public int retire(Object o) {
+                // Question 2
+            }
+        }
+
+    Complétez cette classe.
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Mission 11 : Q** List'
+network_grading: false
+order: 185
+problems:
+    q1:
+        type: code
+        name: Contient
+        header: Ecrivez le corps de la méthode contient
+        language: Java
+        default: ''
+    q2:
+        type: code
+        name: Retire
+        header: Ecrivez le corps de la méthode retire
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
