@@ -1,4 +1,7 @@
+accessible: true
 author: 'Munyabarenzi Clémentine Zaninka (ressource : Syllabus d''exercices LSINF1101)'
+categories: []
+contact_url: ''
 context: |+
     Dans la phase de réalisation, vous devez utiliser des méthodes provenant du framework de test **JUnit** afin de tester votre implémentation dans BlueJ. L'objectif de cet exercice est d'utiliser les méthodes de JUnit pour vérifier le bon fonctionnement de la classe ``DList``. ci-après :
 
@@ -106,52 +109,59 @@ context: |+
                 assertEquals("La verification de la presence d'un element qui n'est plus present dans la liste devrait renvoyer false", /*(7)???*/, /*(8)???*/);
             }
 
-environment: java7
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: mcq
+environment_parameters: {}
+environment_type: mcq
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 11 : Question de Démarrage 1 : JUnit (partie1)'
 network_grading: false
 order: 176
 problems:
     q1:
-        type: code-single-line
-        header: ''
+        type: match
         name: ''
-        language: java
+        header: ''
+        answer: 'true'
     q2:
-        header: ''
+        type: match
         name: ''
-        type: code-single-line
-        language: java
+        header: ''
+        answer: l.contains(new Double(2.3))
     q3:
-        language: java
+        type: match
         name: ''
         header: ''
-        type: code-single-line
+        answer: 'true'
     q4:
-        header: ''
-        language: java
-        type: code-single-line
+        type: match
         name: ''
+        header: ''
+        answer: l.contains(new Double(2.4))
     q5:
-        header: ''
-        language: java
-        type: code-single-line
+        type: match
         name: ''
+        header: ''
+        answer: 'false'
     q6:
+        type: match
         name: ''
-        language: java
-        type: code-single-line
         header: ''
+        answer: l.contains(new Double(2.2)
     q7:
-        language: java
-        header: ''
+        type: match
         name: ''
-        type: code-single-line
+        header: ''
+        answer: 'false'
     q8:
-        type: code-single-line
-        language: java
-        header: ''
+        type: match
         name: ''
+        header: ''
+        answer: l.contains(new Double(2.3)
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -34,8 +34,8 @@ SOUMISSION="student/*.java"
 # EXECCUSTOM vaut 0 si on n'exécute pas de script "custom" pour faire des vérifications supplémentaires
 EXECCUSTOM=1
 CODELITTERAL="::\n\n"
-JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
-JAVA="run_student java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
+JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
+JAVA="run_student java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
 
 # On met la machine en UTF-8
 export LC_ALL=en_US.UTF-8

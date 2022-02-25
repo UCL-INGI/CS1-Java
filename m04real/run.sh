@@ -34,8 +34,8 @@ SOUMISSION="student/BioInfo.java"
 # EXECCUSTOM vaut 0 si on n'exécute pas de script "custom" pour faire des vérifications supplémentaires
 EXECCUSTOM=1
 CODELITTERAL="::\n\n"
-JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
-JAVA="run_student java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
+JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
+JAVA="run_student java -ea -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
 
 # On met la machine en UTF-8
 export LC_ALL=en_US.UTF-8
@@ -70,15 +70,6 @@ if [ $ERREURENSEIGNANT -ne 0 ];	then
 fi
 
 ERREUR=0
-
-OUTCUSTOM=0
-if [ $EXECCUSTOM -ne 0 ]; then
-	OUTCUSTOM=$($CUSTOMSCRIPT)
-fi
-
-if [ $OUTCUSTOM -ne 0 ]; then
-	exit
-fi
 
 # Si le fichier est vide et qu'il n'y a donc pas d'erreur de compilation
 if [ "$OUTPUT" = "" ]; then

@@ -70,7 +70,7 @@ problems:
 
             Les méthodes implémentées dans la  librairie standard Java sont souvent très utile pour faciliter l'écriture de méthodes plus compliquées. Considérons l'implémentation d'une méthode permettant de calculer le minimum entre trois réels passés en argument. Une telle méthode peut s'écrire en utilisant une suite d'instructions conditionnelles, mais il est aussi possible de réutiliser la méthode ``Math.min`` qui retourne le minimum entre ses deux arguments. Laquelle des méthodes ci-dessous est un calcul correct du minimum entre trois nombres réels ?
         name: Utilisation de méthodes
-        type: multiple-choice
+        type: multiple_choice
         limit: 3
     q2:
         choices:
@@ -160,7 +160,7 @@ problems:
             feedback: |4
 
                 Cette méthode ne retourne pas exactement le nombre de diviseurs entiers. Vérifiez les limites de la boucle ``for``.
-        type: multiple-choice
+        type: multiple_choice
         name: Diviseurs entiers
         limit: 3
         header: |4
@@ -264,7 +264,7 @@ problems:
                    }
                  }
                  return count;
-        type: multiple-choice
+        type: multiple_choice
         limit: 3
         header: |4
 

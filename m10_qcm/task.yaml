@@ -79,7 +79,7 @@ problems:
       '
     limit: 3
     name: Instruction throw
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: ".. code-block:: java\n\n   Debut de main\n   Debut de task1\n   Debut\
@@ -148,7 +148,7 @@ problems:
       Fin de task4\");\n    }\n\n"
     limit: 3
     name: Propagation d'exceptions
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: ".. code-block:: java\n\n   import java.io.*;\n   ...\n   public String\
@@ -193,7 +193,7 @@ problems:
       '
     limit: 3
     name: Déclaration throws
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: ".. code-block:: java\n\n   public static void main(String[] args)\n\
@@ -245,7 +245,7 @@ problems:
       \ sans déclarations inutiles ?\n"
     limit: 3
     name: Exceptions sous contrôle
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n   public class GraveException extends RuntimeException\
@@ -288,7 +288,7 @@ problems:
       '
     limit: 3
     name: Définition d'exceptions
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: '``List<T>`` est une interface qui représente une séquence ordonnée d''éléments
@@ -344,7 +344,7 @@ problems:
       '
     limit: 3
     name: Les collections Java
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: ".. code-block:: java\n\n   import java.util.*;\n   ...\n   List<String>\
@@ -391,7 +391,7 @@ problems:
       '
     limit: 3
     name: ArrayList<T>
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: ".. code-block:: java\n\n   List<Integer> list = makeList();  // crée\
@@ -442,4 +442,4 @@ problems:
       '
     limit: 3
     name: Itérateurs
-    type: multiple-choice
+    type: multiple_choice

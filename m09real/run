@@ -49,7 +49,7 @@ if (unzipOutput):
 else:
     system('sh custom.sh')
     try:
-        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
+        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
         output += "Your archive has the correct content.\n"
         output += "\n**Archive content: 1/1**"
         feedback.set_global_result("success")

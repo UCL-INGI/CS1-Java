@@ -79,7 +79,7 @@ problems:
       '
     limit: 3
     name: Initialisation de variables
-    type: multiple-choice
+    type: multiple_choice
   q10:
     choices:
     - {text: "\n.. code:: java\n\n   int n=...;  // >0 à initialiser correctement\n\
@@ -148,7 +148,7 @@ problems:
       '
     limit: 3
     name: Boucles while
-    type: multiple-choice
+    type: multiple_choice
   q11:
     choices:
     - {text: "\n.. code:: java\n\n   long n=17;\n   long fact=1;  // factorielle\n\
@@ -198,7 +198,7 @@ problems:
       '
     limit: 3
     name: Boucles while
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: "\n.. code:: java\n\n   int i=1;\n   double d=2.0;\n   char c='3';\n\
@@ -260,7 +260,7 @@ problems:
       '
     limit: 3
     name: Initialisation de variables
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: "\n.. code:: java\n\n  /***********************\n   * Mon programme\n\
@@ -326,7 +326,7 @@ problems:
       '
     limit: 3
     name: Les commentaires
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: "\n.. code:: java\n\n   public class Hello {\n\n    public static void\
@@ -379,7 +379,7 @@ problems:
       '
     limit: 3
     name: Syntaxe de Java
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {feedback: '
@@ -419,7 +419,7 @@ problems:
       \ de la variable ``b`` ?\n"
     limit: 3
     name: Echange du contenu de variables
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: "\n.. code:: java\n\n   if(a>b)\n   {\n     min=b;\n   }\n   else\n \
@@ -463,7 +463,7 @@ problems:
       .. code:: java\n\n   double a;\n   double b;\n   double min;\n"
     limit: 3
     name: Calcul du minimum
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: "\n.. code:: java\n\n   double abs;\n   if( x<0 ) {\n     abs=-x;\n \
@@ -492,7 +492,7 @@ problems:
       '
     limit: 3
     name: Valeur absolue
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: "\n.. code:: java\n\n   if(x>=a) {\n     if(x<b) {\n        System.out.println(\"\
@@ -548,7 +548,7 @@ problems:
       '
     limit: 3
     name: Intervalles
-    type: multiple-choice
+    type: multiple_choice
   q9:
     choices:
     - {text: "\n.. code:: java\n\n   int i=2;\n   int j=3;\n   int k=i/j;\n   if(k==0)\
@@ -593,4 +593,4 @@ problems:
       '
     limit: 3
     name: Opérations arithmétiques
-    type: multiple-choice
+    type: multiple_choice

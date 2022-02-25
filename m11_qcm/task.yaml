@@ -128,7 +128,7 @@ problems:
       '
     limit: 3
     name: Classes internes
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: ".. code-block:: java\n\n  public void push( int N ) {\n     Node n =\
@@ -177,7 +177,7 @@ problems:
       '
     limit: 3
     name: Ajouter un noeud dans une chaîne
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: '
@@ -252,7 +252,7 @@ problems:
       \ suivantes, lequel est correct au point ``/***/`` ?\n"
     limit: 3
     name: Elements d'une structure chaînée
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: ".. code-block:: java\n\n   public int sum() {\n       int sum = 0;\n\
@@ -303,7 +303,7 @@ problems:
       '
     limit: 3
     name: Parcours de structure chaînée
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n  public int swap() {\n     assert (top != null\
@@ -338,7 +338,7 @@ problems:
       '
     limit: 3
     name: Manipulation de structures chaînées
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: '
@@ -420,7 +420,7 @@ problems:
       '
     limit: 3
     name: Structures de données à base de listes
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: '
@@ -480,4 +480,4 @@ problems:
       \ b = stack.pop();\n        stack.push(a+b);\n    }\n"
     limit: 3
     name: 'Pile : utilisation'
-    type: multiple-choice
+    type: multiple_choice

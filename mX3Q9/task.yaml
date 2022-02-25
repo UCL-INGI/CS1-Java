@@ -18,7 +18,7 @@ evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: 'NON Mission 3 : Fonctions solution d''une équation du second degré'
+name: 'Mission 3 : Fonctions solution d''une équation du second degré'
 network_grading: false
 order: 58
 problems:

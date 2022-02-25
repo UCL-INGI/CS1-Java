@@ -37,4 +37,4 @@ problems:
     header: ''
     limit: 3
     name: choix multiple
-    type: multiple-choice
+    type: multiple_choice

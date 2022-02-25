@@ -21,7 +21,7 @@ evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: 'NON Mission 3 : Phase de réalisation'
+name: 'Mission 3 : Phase de réalisation'
 network_grading: false
 order: 61
 problems:

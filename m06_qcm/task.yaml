@@ -146,7 +146,7 @@ problems:
       \ // end class PairOfDice\n\nLaquelle des propositions ci-dessous est correcte ?\n"
     limit: 3
     name: Classe, objets et instances
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: ".. code-block:: java\n\n   public class Fraction {\n       private int\
@@ -198,7 +198,7 @@ problems:
       \nimprime le résultat ``0.75``  ?\n"
     limit: 3
     name: Définition de classe
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: '
@@ -272,7 +272,7 @@ problems:
       \n"
     limit: 3
     name: Initialisation d'objets
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: ".. code-block:: java\n\n   public int getNum() {\n       return num;\n\
@@ -312,7 +312,7 @@ problems:
       3\"\n  f.setNum(5);\n  System.out.println(f.getNum());  // imprime \"5\"\n"
     limit: 3
     name: Accesseurs et mutateurs
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n   // un étudiant non-bisseur\n   public Etudiant(String\
@@ -353,7 +353,7 @@ problems:
       \ de constructeurs suivantes, laquelle est correcte ?\n"
     limit: 3
     name: Constructeurs
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: ".. code-block:: java\n\n   15,20\n   40,40\n   40,0\n", valid: true}
@@ -392,7 +392,7 @@ problems:
       \ + \",\" + c2.valeur());\n"
     limit: 3
     name: Références
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: ".. code-block:: java\n\n       public String toString() {\n        \
@@ -452,7 +452,7 @@ problems:
       \naffiche le texte suivant :\n\n    ``John Doe (987612) non-bisseur``\n\n"
     limit: 3
     name: toString()
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: ".. code-block:: java\n\n   TextIO.readFile(\"README\");\n   while (!TextIO.eof())\
@@ -498,4 +498,4 @@ problems:
       '
     limit: 3
     name: ' TextIO'
-    type: multiple-choice
+    type: multiple_choice

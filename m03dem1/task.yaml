@@ -18,7 +18,7 @@ problems:
     header: 'Indiquez les instructions acceptées par le compilateur:'
     limit: 0
     name: ''
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: wallet_d = euro;, valid: true}
@@ -27,7 +27,7 @@ problems:
     header: 'Indiquez les instructions acceptées par le compilateur:'
     limit: 0
     name: ''
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: wallet_d parcequ'il contient des valeurs de type double}
@@ -39,4 +39,4 @@ problems:
       et pourquoi?
     limit: 0
     name: ''
-    type: multiple-choice
+    type: multiple_choice

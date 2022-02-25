@@ -18,603 +18,231 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+import java.text.MessageFormat;
+
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Mission4Test
 {
-	Class<?> bioInfo;
-	Method method;
-	ThreadMXBean threadMXB;
-	long start;
-	long end;
-	
-	@Rule
-	public ErrorCollector collector = new ErrorCollector();
-	
-	@Before
+	public String errorQ1Message = "Question 1 : ";
+    private String feedback;
+    private Class<?> bioInfo;
+    
+    @Before
 	public void before() throws ClassNotFoundException
 	{
 		bioInfo = Class.forName("BioInfo");
-		threadMXB = ManagementFactory.getThreadMXBean();
-	}
-	
-	public void printTime(String name, Object... parameters) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException
-	{
-		start = threadMXB.getCurrentThreadCpuTime();
-		method.invoke(null, parameters);
-		end = threadMXB.getCurrentThreadCpuTime();
-		
-		System.out.println("§" + name);
-		System.out.println(end - start);
-	}
-	
-	public void checkMethod(Class<?> returnType, String name, Class<?>... parameters) throws Throwable
-	{
-		method = bioInfo.getDeclaredMethod(name, parameters);
-		if (!method.getReturnType().equals(returnType))
-			throw new NoSuchMethodException("Wrong return type");
-		method.setAccessible(true);
-	}
-	
-	@Test
-	public void isADN() throws Throwable
-	{
-		
-		checkMethod(boolean.class, "isADN", String.class);
-		String str = "La méthode isADN comporte des problèmes : ";
-		
-		try{	
-			collector.checkThat(str + "la séquence agtc est une séquence d'ADN. ", (boolean) method.invoke(null, "agtc"), equalTo(true));
-			collector.checkThat(str + "la séquence agxtc n'est pas une séquence d'ADN. ", (boolean) method.invoke(null, "agxtc"), equalTo(false));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void isADN_first() throws Throwable
-	{
-	
-		checkMethod(boolean.class, "isADN", String.class);
-		String str = "La méthode isADN comporte des erreurs : ";
-	
-		try{
-			collector.checkThat(str + "La séquence \"xagtc\" n'est pas une séquence d'ADN. ", (boolean) method.invoke(null, "xagtc"), equalTo(false));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void isADN_last() throws Throwable
-	{
-		
-		checkMethod(boolean.class, "isADN", String.class);
-		String str = "La méthode isADN comporte des problèmes : ";
-		
-		try{
-			collector.checkThat(str + "la séquence \"agtcx\" n'est pas une séquence d'ADN. ", (boolean) method.invoke(null, "agtcx"), equalTo(false));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void isADN_empty() throws Throwable
-	{
-		
-		checkMethod(boolean.class, "isADN", String.class);
-		String str = "La méthode isADN comporte des problèmes : ";
-		
-		try{
-			collector.checkThat(str + "la séquence \"\" n'est pas une séquence d'ADN. ", (boolean) method.invoke(null, ""), equalTo(false));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void count() throws Throwable
-	{
-		
-		checkMethod(int.class, "count", String.class, char.class);
-		String str = "La méthode count comporte des problèmes : ";
-		
-		try{
-			collector.checkThat(str + "le caractère 'a' apparaît 4 fois dans la séquence \"aaxaa\". ", (int) method.invoke(null, "aaxaa", 'a'), equalTo(4));
-			collector.checkThat(str + "le caractère 'a' apparaît 1 fois dans la séquence \"xxaxx\". ", (int) method.invoke(null, "xxaxx", 'a'), equalTo(1));
-			collector.checkThat(str + "le caractère 'x' apparaît 4 fois dans la séquence \"xxaxx\". ", (int) method.invoke(null, "xxaxx", 'x'), equalTo(4));
-			collector.checkThat(str + "le caractère 'x' apparaît 1 fois dans la séquence \"aaxaa\". ", (int) method.invoke(null, "aaxaa", 'x'), equalTo(1));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void count_empty() throws Throwable
-	{
-	
-		checkMethod(int.class, "count", String.class, char.class);
-		String str = "La méthode count comporte des erreurs : ";
-		try{
-			collector.checkThat(str + "le caractère 'x' apparaît 0 fois dans la séquence \"\". ", (int) method.invoke(null, "", 'x'), equalTo(0));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void distanceH() throws Throwable
-	{
-		
-		checkMethod(int.class, "distanceH", String.class, String.class);
-		String str = "La méthode distanceH comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"a\" et \"a\" est de 0. ", (int) method.invoke(null, "a", "a"), equalTo(0));
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"abcd\" et \"abcd\" est de 0. ", (int) method.invoke(null, "abcd", "abcd"), equalTo(0));
-		
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"aabaa\" et \"aaaaa\" est de 1. ", (int) method.invoke(null, "aabaa", "aaaaa"), equalTo(1));
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"aaaaa\" et \"aabaa\" est de 1. ", (int) method.invoke(null, "aaaaa", "aabaa"), equalTo(1));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void distanceH_first() throws Throwable
-	{
-		checkMethod(int.class, "distanceH", String.class, String.class);
-		String str = "La méthode distanceH comporte des erreurs : ";
-		try{
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"aaaaa\" et \"baaaa\" est de 1. ", (int) method.invoke(null, "aaaaa", "baaaa"), equalTo(1));
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"baaaa\" et \"aaaaa\" est de 1. ", (int) method.invoke(null, "baaaa", "aaaaa"), equalTo(1));		
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void distanceH_last() throws Throwable
-	{
-		checkMethod(int.class, "distanceH", String.class, String.class);
-		String str = "La méthode distanceH comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"aaaaa\" et \"aaaab\" est de 1. ", (int) method.invoke(null, "aaaaa", "aaaab"), equalTo(1));
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"aaaab\" et \"aaaaa\" est de 1. ", (int) method.invoke(null, "aaaab", "aaaaa"), equalTo(1));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void distanceH_empty() throws Throwable
-	{
-		checkMethod(int.class, "distanceH", String.class, String.class);
-		String str = "La méthode distanceH comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "la distance de Hamming entre les séquences \"\" et \"\" est de 0. ", (int) method.invoke(null, "", ""), equalTo(0));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void plusLongPalindrome() throws Throwable
-	{
-		checkMethod(String.class, "plusLongPalindrome", String.class);
-		String str = "La méthode plusLongPalindrome comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abbbc\" est \"bbb\". ", (String) method.invoke(null, "abbbc"), equalTo("bbb"));
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abbcd\" est \"bb\". ", (String) method.invoke(null, "abbcd"), equalTo("bb"));
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abccd\" est \"cc\". ", (String) method.invoke(null, "abccd"), equalTo("cc"));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void plusLongPalindrome_beginning() throws Throwable
-	{
-		checkMethod(String.class, "plusLongPalindrome", String.class);
-		String str = "La méthode plusLongPalindrome comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "le plus long palindrome de la séquence \"aabcd\" est \"aa\". ", (String) method.invoke(null, "aabcd"), equalTo("aa"));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void plusLongPalindrome_end() throws Throwable
-	{
-		checkMethod(String.class, "plusLongPalindrome", String.class);
-		String str = "La méthode plusLongPalindrome comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abcdd\" est \"dd\". ", (String) method.invoke(null, "abcdd"), equalTo("dd"));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void plusLongPalindrome_empty() throws Throwable
-	{
-		checkMethod(String.class, "plusLongPalindrome", String.class);
-		String str = "La méthode plusLongPalindrome comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "le plus long palindrome de la séquence \"\" est \"\". ", (String) method.invoke(null, ""), equalTo(""));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void plusLongPalindrome_singleCharacter() throws Throwable
-	{
-		checkMethod(String.class, "plusLongPalindrome", String.class);
-		String str = "La méthode plusLongPalindrome comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abc\" est \"a\", \"b\" ou \"c\". ", (String) method.invoke(null, "abc"), anyOf(equalTo("a"), equalTo("b"), equalTo("c")));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
-	
-	@Test
-	public void plusLongPalindrome_longest() throws Throwable
-	{
-		checkMethod(String.class, "plusLongPalindrome", String.class);
-		String str = "La méthode plusLongPalindrome comporte des erreurs : ";
-		
-		try{
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abbcddde\" est \"ddd\". ", (String) method.invoke(null, "abbcddde"), equalTo("ddd"));
-			collector.checkThat(str + "le plus long palindrome de la séquence \"abbcdde\" est \"bb\" ou \"dd\". ", (String) method.invoke(null, "abbcdde"), anyOf(equalTo("bb"), equalTo("dd")));
-		}catch(InvocationTargetException e){
-			Throwable t = e.getCause();
-            t.printStackTrace();
-			if(t instanceof ArithmeticException){
-				fail(str+"Le code est incorrect : il est interdit de diviser par zéro.");
-			}
-			else if(t instanceof ClassCastException){
-				fail(str+"Attention, certaines variables ont été mal castées	!");
-			}
-			else if(t instanceof StringIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)");
-			}
-			else if(t instanceof ArrayIndexOutOfBoundsException){
-				fail(str+"Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)" + t.getMessage());
-			}
-			else if(t instanceof NullPointerException){
-				fail(str+"Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
-			}
-			else{
-				fail(str + "\n" + t.getMessage());
-			}
-		}catch(Exception e){
-			fail(str + "\n" + e.getMessage());
-		}
-	}
+    }
+    
+    public void testIsADN(){
+        Method isADNStud = null;
+
+        try {
+        	isADNStud = bioInfo.getDeclaredMethod("isADN", String.class);  
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode isADN.");
+        }        
+        
+        String[] tests = {"", "A", "Z", "AT", "AZ", "ATCG", "ATZG"};
+        boolean[] answers = {false, true, false, true, false, true, false};
+
+        for(int i = 0; i < tests.length; i++){
+            boolean expected = answers[i];
+            boolean studentAnswer = false;
+            
+            try{
+            	Object returStudentAnswer = isADNStud.invoke(null, tests[i]);
+                studentAnswer = (Boolean) returStudentAnswer;
+                
+            } catch(Exception e){
+                fail(errorQ1Message + "\n" + e.toString());
+            }
+            feedback = errorQ1Message + "Avec {0}, isADN devait renvoyer {1} or vous avez renvoyé {2}.";
+            assertTrue(MessageFormat.format(feedback, tests[i], expected, studentAnswer), expected == studentAnswer);
+        }
+    }
+    
+    public void testTestIsADN(){
+        Method testIsADNStud = null;
+        
+        try {
+        	testIsADNStud = bioInfo.getDeclaredMethod("testIsADN");
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode testIsADN.");
+        }        
+        
+        try{
+            testIsADNStud.invoke(null);
+        } catch(AssertionError e){
+            fail(errorQ1Message + "Les tests dans votre testIsADN ne passent pas");
+        } catch(Exception e){
+            fail(errorQ1Message + "\n" + e.getMessage());
+        }
+    }
+    
+    public void testCount(){
+        Method countStud = null;
+        
+        try {
+        	countStud = bioInfo.getDeclaredMethod("count", String.class, char.class);
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode count.");
+        }        
+        
+        String[] tests = {"", "A", "Z", "AT", "AZ", "ATCG", "TACG", "TAGACGTA"};
+        int[] answers = {0, 1, 0, 1, 1, 1, 1, 3};
+        
+        for(int i = 0; i < tests.length; i++){
+            int expected = answers[i];
+            int studentAnswer = 0;
+            
+            try{
+            	studentAnswer = (int) countStud.invoke(null, tests[i], 'A');
+            } catch(Exception e){
+                fail(errorQ1Message + "\n" + e.getMessage());
+            }
+
+            feedback = errorQ1Message + "Le count devait renvoyer {0} or vous avez renvoyé {1}.";
+            assertTrue(MessageFormat.format(feedback, expected, studentAnswer), expected == studentAnswer);
+        }
+    }
+    
+    public void testTestCount(){
+        Method testCountStud = null;
+        
+        try {
+        	testCountStud = bioInfo.getDeclaredMethod("testCount");
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode testCount.");
+        }
+        
+        try{
+            testCountStud.invoke(null);
+        } catch(AssertionError e){
+            fail(errorQ1Message + "Les tests dans votre testCount ne passent pas");
+        }  catch(Exception e){
+                fail(errorQ1Message + "\n" + e.getMessage());
+        }
+    }
+    
+    public void testDistanceH(){
+        Method distanceHStud = null;
+        
+        try {
+        	distanceHStud = bioInfo.getDeclaredMethod("distanceH", String.class, String.class);
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode distanceH.");
+        }        
+        
+        String[] testsString1 = {"A", "AG", "AG", "ATGAC", "ATGAC", "ATGAC"};
+        String[] testsString2 = {"A", "GG", "AT", "ATGAC", "AGGAG", "TGACG"};
+        int[] answers = {0, 1, 1, 0, 2, 5};
+        
+        for(int i = 0; i < testsString1.length; i++){
+            int expected = answers[i];
+            int studentAnswer = 0;
+            
+            try{
+            	studentAnswer = (int) distanceHStud.invoke(null, testsString1[i], testsString2[i]);
+            } catch(Exception e){
+                fail(errorQ1Message + "\n" + e.getMessage());
+            }
+            
+            feedback = errorQ1Message + "distanceH devait renvoyer {0} or vous avez renvoyé {1}.";
+            assertTrue(MessageFormat.format(feedback, expected, studentAnswer), expected == studentAnswer);
+        }
+    }
+    
+    public void testTestDistanceH(){
+        Method testDistanceHStud = null;
+        
+        try {
+        	testDistanceHStud = bioInfo.getDeclaredMethod("testDistanceH");
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode testDistanceH.");
+        }        
+        
+        try{
+            testDistanceHStud.invoke(null);
+        } catch(AssertionError e){
+            fail(errorQ1Message + "Les tests dans votre testDistanceH ne passent pas");
+        }  catch(Exception e){
+                fail(errorQ1Message + "\n" + e.getMessage());
+        }
+    }
+    
+    public void testPlusLongPalindrome(){
+        Method plusLongPalindromeStud = null;
+        
+        try {
+        	plusLongPalindromeStud = bioInfo.getDeclaredMethod("plusLongPalindrome", String.class);
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode plusLongPalindrome.");
+        }        
+    
+        String[] testsString = {"A", "AGATCG", "TAAGAGTA", "ACCTGTTAGGATTC", "ATAGACAATTAAGG"};
+        String[] answers = {"A", "AGA", "AGA", "TTAGGATT", "AATTAA"};
+        
+        for(int i = 0; i < testsString.length; i++){
+            String expected = answers[i];
+            String studentAnswer = "";
+            
+            try{
+            	studentAnswer = (String) plusLongPalindromeStud.invoke(null, testsString[i]);
+            } catch(Exception e){
+                fail(errorQ1Message + "\n" + e.getMessage());
+            }
+
+            feedback = errorQ1Message + "plusLongPalindromeStud devait renvoyer {0} or vous avez renvoyé {1}.";
+            assertTrue(MessageFormat.format(feedback, expected, studentAnswer), expected.equals(studentAnswer));
+        }
+    }
+    
+    public void testTestPlusLongPalindrome(){
+        Method testPlusLongPalindromeStud = null;
+        
+        try {
+        	testPlusLongPalindromeStud = bioInfo.getDeclaredMethod("testPlusLongPalindrome");
+        } catch (NoSuchMethodException e){
+        	fail(errorQ1Message + "Il vous faut une méthode testPlusLongPalindrome.");
+        }        
+        
+        try{
+            testPlusLongPalindromeStud.invoke(null);
+        } catch(AssertionError e){
+            fail(errorQ1Message + "Les tests dans votre testPlusLongPalindrome ne passent pas");
+        } catch(Exception e){
+                fail(errorQ1Message + "\n" + e.toString());
+        }
+    }
+    
+    @Test
+    public void testLauncher(){
+        try{
+            testIsADN();
+            testTestIsADN();
+            testCount();
+            testTestCount();
+            testDistanceH();
+            testTestDistanceH();
+            testPlusLongPalindrome();
+            testTestPlusLongPalindrome();
+        }catch (ArithmeticException e){
+            fail("Attention, il est interdit de diviser par zéro.");
+        }catch(ClassCastException e){
+            fail("Attention, certaines variables ont été mal castées !");
+        }catch(StringIndexOutOfBoundsException e){
+            fail("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException) " + e.toString());
+        }catch(ArrayIndexOutOfBoundsException e){
+            fail("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)");
+        }catch(NullPointerException e){
+            fail("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.");
+        }catch(Exception e){
+            fail("Une erreur inattendue est survenue dans votre tâche : " + e.toString());
+        }
+    }
 }

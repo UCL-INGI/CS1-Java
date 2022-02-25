@@ -51,7 +51,7 @@ if (unzipOutput):
 else:
     system('sh custom.sh')
     try:
-        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
+        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
         output += "Your archive has the correct content.\n"
         output += "\n**Archive content: 1/1**"
         feedback.set_global_result("success")
@@ -64,6 +64,7 @@ else:
         feedback.set_global_result("failed")
         feedback.set_global_feedback(output)
         exit(1)
+    
     # On lance le feedback complet
     system('sh run.sh')
     if (os.stat("feedback.out").st_size != 0):

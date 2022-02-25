@@ -37,7 +37,7 @@ evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: 'NON Mission 2 : Exercice complémentaire 2 : Equations du second degré'
+name: 'Mission 2 : Exercice complémentaire 2 : Equations du second degré'
 network_grading: false
 order: 41
 problems:

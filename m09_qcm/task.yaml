@@ -116,7 +116,7 @@ problems:
       '
     limit: 3
     name: Erreurs arithmétiques
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: ".. code-block:: java\n\n   public static int toInt(String s) {\n   \
@@ -176,7 +176,7 @@ problems:
       '
     limit: 3
     name: Traitement des exceptions
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: '
@@ -291,7 +291,7 @@ problems:
       \ est correct ?\n"
     limit: 3
     name: Traitement des exceptions
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: ".. code-block:: java\n\n   import java.io.*;\n   ...\n   BufferedReader\
@@ -342,7 +342,7 @@ problems:
       '
     limit: 3
     name: Classes d'entrée-sortie
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n   import java.io.*;\n   ...\n   public void\
@@ -425,7 +425,7 @@ problems:
       '
     limit: 3
     name: Lecture de fichier
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: ".. code-block:: java\n\n   import java.util.Scanner;\n   ...\n   try\
@@ -482,7 +482,7 @@ problems:
       .. |Scanner| replace:: ``java.util.Scanner``\n"
     limit: 3
     name: La classe Scanner
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: ".. code-block:: java\n\n   public class Student implements Comparable\
@@ -534,7 +534,7 @@ problems:
       '
     limit: 3
     name: Méthodes de comparaison
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: ".. code-block:: java\n\n   import java.util.Arrays;\n   ...\n   public\
@@ -597,4 +597,4 @@ problems:
       '
     limit: 3
     name: La classe Arrays
-    type: multiple-choice
+    type: multiple_choice

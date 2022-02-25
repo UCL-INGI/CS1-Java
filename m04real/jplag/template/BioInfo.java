@@ -1,3 +1,5 @@
+package StudentCode;
+
 import java.util.Random;
 
 /**
@@ -6,7 +8,7 @@ import java.util.Random;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BioInfo
+public class BioInfoTemp
 {
 	
 	

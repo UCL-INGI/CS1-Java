@@ -24,7 +24,7 @@ evaluate: best
 file: ''
 groups: false
 input_random: '0'
-name: 'NON Mission 2 : Question supplémentaire : Division euclidienne'
+name: 'Mission 2 : Question supplémentaire : Division euclidienne'
 network_grading: false
 order: 30
 problems:

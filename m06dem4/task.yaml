@@ -35,7 +35,19 @@ input_random: '0'
 name: 'Mission 6 : Question de démarrage 4 : Lecture de fichiers'
 network_grading: false
 order: 109
-problems: {}
+problems:
+    q1:
+        type: code
+        name: ''
+        header: ''
+        language: ''
+        default: ''
+    q2:
+        type: code
+        name: ''
+        header: ''
+        language: ''
+        default: ''
 stored_submissions: 0
 submission_limit:
     amount: -1

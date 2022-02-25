@@ -146,7 +146,7 @@ problems:
       '
     limit: 3
     name: 'Héritage : vocabulaire'
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: ".. code-block:: java\n\n   public class C2 extends C1 {\n       private\
@@ -213,7 +213,7 @@ problems:
       \ une extension de ``C1`` ?\n"
     limit: 3
     name: Extension de classe
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: ".. code-block:: java\n\n   C3 obj3 = new C3();\n   C2 obj2 = new C3();\n\
@@ -270,7 +270,7 @@ problems:
       \ compilateur Java ?\n"
     limit: 3
     name: Extension et types
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: ".. code-block:: java\n\n   C2 conv12 = obj1;       // => erreur à la\
@@ -350,7 +350,7 @@ problems:
       \ ces erreurs ?\n"
     limit: 3
     name: Conversions de type
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n       public int m1(String s, int n) {\n  \
@@ -395,7 +395,7 @@ problems:
       \ ``m1`` de la classe ``C1`` et non une *surcharge* (overloading) ?\n"
     limit: 3
     name: Re-définition et surcharge
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: '
@@ -515,7 +515,7 @@ problems:
       \ suivants, lequel est correct ?\n"
     limit: 3
     name: Modificateurs de visibilité
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {feedback: '
@@ -570,7 +570,7 @@ problems:
       \ de méthode, lesquelles produisent une erreur de compilation ?\n"
     limit: 3
     name: Variables et méthodes de classe
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {feedback: '
@@ -610,7 +610,7 @@ problems:
       \ résultat affiché ?\n"
     limit: 3
     name: Variables de classe et d'instance
-    type: multiple-choice
+    type: multiple_choice
   q9:
     choices:
     - {text: ".. code-block:: java\n\n   public boolean equals(Object other) {\n \
@@ -656,4 +656,4 @@ problems:
       \ la classe ``Object`` ?\n"
     limit: 3
     name: La méthode equals
-    type: multiple-choice
+    type: multiple_choice

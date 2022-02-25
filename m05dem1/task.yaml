@@ -1,36 +1,51 @@
+accessible: true
 author: Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Répondez aux questions simples suivantes au sujet de la syntaxe des tableaux. Vous *devez* respecter les noms de variables suggérés.
     (Nous utilisons le type ``int`` pour les entiers et le type ``double`` pour les réels.)
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 5 : Question de démarrage 1 : Syntaxe et Tableaux'
 network_grading: false
 order: 86
 problems:
     q1:
-        language: java
+        type: code_single_line
+        name: ''
         header: Déclarez un tableau  *v*  pouvant contenir *n* entiers (la variable
             *n* est déjà déclarée).
-        type: code-single-line
-        name: ''
+        default: ''
     q2:
-        language: java
-        type: code-single-line
+        type: code_single_line
         name: ''
-        header: Déclarer un matrice  *m*  rectangulaire, de  *k*  tableaux contenant  *l*  éléments chacun,
-            pouvant contenir des réels (*l* et *k* sont déjà déclarées).
+        header: Déclarer un matrice  *m*  rectangulaire, de  *k*  tableaux contenant  *l*  éléments
+            chacun, pouvant contenir des réels (*l* et *k* sont déjà déclarées).
+        default: ''
     q3:
+        type: code_single_line
+        name: ''
         header: Considérant la matrice de la question 2 récupérez le nombre de colonnes  *k*.
-        language: java
-        name: ''
-        type: code-single-line
+        default: ''
     q4:
+        type: code_single_line
         name: ''
-        language: java
         header: Considérant la matrice de la question 2 récupérez le nombre de lignes
             *l*.
-        type: code-single-line
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
