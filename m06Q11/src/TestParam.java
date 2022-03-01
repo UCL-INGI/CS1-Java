@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -49,11 +49,13 @@ public class TestParam {
 		Rectangle r2 = new Rectangle(0,0);
 		Rectangle r3 = new Rectangle(2,1);
 		Rectangle r4 = r2;
+        Rectangle r5 = new Rectangle(0,1);
 		return Arrays.asList(new Object [][]{
 			{r1,r1,true},
 			{r1,r2,true},
 			{r1,r3,false},
-			{r4,r2,true}
+			{r4,r2,true},
+            {r1, r5, false}
 		});
 	}
 
@@ -62,7 +64,7 @@ public class TestParam {
 		try {
 			String msg = Translator.translate("Lorsque l''on exécute votre code avec les rectangles {0} et {1}, votre méthode devrait renvoyer {2} mais ce n'est pas le cas !");
 			String feed = MessageFormat.format(msg,r1,r2,same);
-			assertThat(feed,r1.identique(r2),is(same));
+			assertTrue(feed,r1.identique(r2) == same);
         }catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

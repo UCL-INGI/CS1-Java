@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -68,9 +68,9 @@ public class TestAnd {
 			bs2.setSb(new StringBuilder(s2));
 			ByteString r =(ByteString) bs1.and(bs2);
 			String out = r.getRep();
-			String msg = "@3 :\n" + Translator.translate("Test 8 : lorsque l''on fait un ET logique entre les ByteString {0} et {1} (représentation en String), votre méthode retourne le Byte {2} au lieu de {3} (représentation String)");
+			String msg = "@3 :\n" + Translator.translate("Test 8 : lorsque l''on fait un ET logique entre les ByteString {0} et {1} (représentation en String), votre méthode retourne le Byte {2} au lieu de {3} (représentation String)") + "\n";
 			String feed = MessageFormat.format(msg,s1,s2,out,res);
-			assertThat(feed,out,is(res));
+			assertTrue(feed,out.equals(res));
 	}catch (ArithmeticException e){
             fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

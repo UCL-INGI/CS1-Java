@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -87,7 +87,7 @@ public class TestCode{
 			check_function();
 			boolean res = Etudiant.accessible("./fileThatDoNotExist");
 			String feed = MessageFormat.format(Translator.translate("{0} : lorsque le fichier n''existe pas, votre méthode devrait renvoyer false mais ce n''est pas le cas !"),test_name());
-			assertThat(feed,res,is(false));
+			assertTrue(feed,res == false);
 			return null;
 		}
 	}
@@ -102,7 +102,7 @@ public class TestCode{
 			check_function();
 			boolean res = Etudiant.accessible("./file");
 			String feed = MessageFormat.format(Translator.translate("{0} : lorsque le fichier existe et est accessible, votre méthode devrait renvoyer true mais ce n''est pas le cas !"),test_name());
-			assertThat(feed,res,is(true));
+			assertTrue(feed,res == true);
 			return null;
 		}
 	}

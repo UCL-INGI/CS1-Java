@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -58,9 +58,9 @@ public class TestMax {
     String method_tested = "max() : ";
 		try {
 			MatriceCarree m = new MatriceCarree(this.m);
-			String msg = Translator.translate("Test max : lorsque l''on exécute votre méthode max() sur la matrice\n{0}\nvotre code renvoie {1} au lieu de {2}");
+			String msg = Translator.translate("Test max : lorsque l''on exécute votre méthode max() sur la matrice\n{0}\nvotre code renvoie {1} au lieu de {2}") + "\n";
 			String feed = MessageFormat.format(msg,m,m.max(),res);
-			assertThat(feed, m.max(),is(res));
+			assertTrue(feed, m.max() == res);
 		}catch (ArithmeticException e){
             fail(method_tested + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -34,7 +34,7 @@ public class TestCode{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi") + "\n",test_name()));
 	}
 
 	private String test_name() {
@@ -67,12 +67,12 @@ public class TestCode{
 
 	/**
 	 * @pre		-
-	 * @post	Crée un tableau de taille aléatoire entre 0 et 10
+	 * @post	Crée un tableau de taille aléatoire entre 2 et 12
 	 *			comprenant des caractère aléatoire entre 'a' et 'z'
 	 */
 	private char [] randomCharArray() {
 		Random r = new Random();
-		char [] tab = new char[r.nextInt(11)];
+		char [] tab = new char[r.nextInt(11) + 2];
 		for(int i = 0;i<tab.length;i++) {
 			int n = r.nextInt(26)+97;
 			tab[i] = (char)n;
@@ -105,7 +105,7 @@ public class TestCode{
 			}
 			String message = "@1 :\n" + Translator.translate("{0} : votre code ne construit pas un StringTab de taille 1 !");
 			String feed = MessageFormat.format(message,test_name());
-			assertThat(feed,s.realLength(),is(1));
+			assertTrue(feed,s.realLength() == 1);
 			return null;
 		}
 	}
@@ -126,7 +126,7 @@ public class TestCode{
 			}
 			String msg = "@1 :\n" + Translator.translate("{0} : lorsque l''on exécute votre constructeur avec comme paramètre {1}, la première lettre de votre StringTab est {2}");
 			String feed = MessageFormat.format(msg,test_name(),c,s.realCharAt(0));
-			assertThat(feed,s.realCharAt(0),is(c));
+			assertTrue(feed,s.realCharAt(0) == c);
 			return null;
 		}
 	}
@@ -146,7 +146,7 @@ public class TestCode{
 			}
 			String msg = "@2 :\n" + Translator.translate("{0} : lorsque l''on passe comme paramètre {1} à votre constructeur, vous construisez un String de taille {2}");
 			String feed = MessageFormat.format(msg,test_name(),Arrays.toString(c),s.realLength());
-			assertThat(feed,s.realLength(),is(c.length));
+			assertTrue(feed,s.realLength() == c.length);
 			return null;
 		}
 	}
@@ -163,7 +163,7 @@ public class TestCode{
 			StringTab s = new StringTab(c);
 			String msg = "@2 :\n" + Translator.translate("{0} : lorsque l''on passe comme paramètre {1} à votre constructeur, votre tableau est {2}");
 			String feed = MessageFormat.format(msg,test_name(),Arrays.toString(c),Arrays.toString(s.getS()));
-			assertThat(feed,Arrays.equals(s.getS(),c),is(true));
+			assertTrue(feed,Arrays.equals(s.getS(),c));
 			return null;
 		}
 	}
@@ -180,7 +180,7 @@ public class TestCode{
 			s.setArray(c); // On assure que le tableau sera c
 			String msg =  "@3 :\n" + Translator.translate("{0} lorsque l''on utilise votre méthode length() sur le StringTab {1}, votre méthode renvoie {2}");
 			String feed = MessageFormat.format(msg,test_name(),Arrays.toString(c),s.length());
-			assertThat(feed,s.length(),is(c.length));
+			assertTrue(feed,s.length() == c.length);
 			return null;
 		}
 	}
@@ -195,9 +195,9 @@ public class TestCode{
 			char c [] = randomCharArray();
 			StringTab s = new StringTab(c);
 			s.setArray(c); // On assure que le tableau sera c
-			int indice = new Random().nextInt(c.length +1);
+			int indice = new Random().nextInt(c.length);
 			String feed = MessageFormat.format("@3 :\n" + Translator.translate("{0} lorsque l''on a le tableau {1} et que l''on fait charAt({2}), votre méthode renvoie {3}"),test_name(),Arrays.toString(c),indice,s.charAt(indice));
-			assertThat(feed,s.charAt(indice),is(c[indice]));
+			assertTrue(feed,s.charAt(indice) == c[indice]);
 			return null;
 		}
 	}

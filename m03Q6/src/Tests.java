@@ -35,7 +35,7 @@ public class Tests {
         int expected = Correction.fact(a);
         String feedbackBuilder = Translator.translate("La factorielle de {0,number,#} vaut {1,number,#} et votre programme calcule {2,number,#}.\n");
         String feedback = MessageFormat.format(feedbackBuilder, a, expected, reponse_etudiant);
-        assertEquals(feedback, expected, reponse_etudiant);
+        assertTrue(feedback, expected == reponse_etudiant);
     }
     
     /**

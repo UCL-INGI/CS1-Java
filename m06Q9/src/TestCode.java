@@ -15,7 +15,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -93,8 +93,8 @@ public class TestCode {
 			String feed1 = MessageFormat.format(msg,test_name(),r1,r1.surface(),0);
 			String feed2 = MessageFormat.format(msg,test_name(),r2,r2.surface(),lon*larg);
 
-			assertThat(feed1,r1.surface(),is(0.0));
-			assertThat(feed2,r2.surface(),is(lon*larg));
+			assertTrue(feed1,r1.surface() == 0.0);
+			assertTrue(feed2,r2.surface() == lon*larg);
 			return null;
 		}
 	}

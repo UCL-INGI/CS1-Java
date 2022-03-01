@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -72,9 +72,9 @@ public class TestGet {
 	public void test() {
 		String pre = "@3 :\n";
 		try {
-			String msg = "@3 :\n" + Translator.translate("Test 3 : lorsque l''on exécute votre méthode getBit({0}) sur le ByteString dont la représentation naturelle est {1}, votre code renvoie {2} au lieu de {3}.");
+			String msg = "@3 :\n" + Translator.translate("Test 3 : lorsque l''on exécute votre méthode getBit({0}) sur le ByteString dont la représentation naturelle est {1}, votre code renvoie {2} au lieu de {3}.") + "\n";
 			String feed = MessageFormat.format(msg,this.arg,this.bs.toString(),this.bs.getBit(arg),res);
-			assertThat(feed,this.bs.getBit(arg),is(res));
+			assertTrue(feed,this.bs.getBit(arg) == res);
 		}catch (ArithmeticException e){
             fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

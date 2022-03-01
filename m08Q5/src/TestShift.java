@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -74,7 +74,7 @@ public class TestShift {
 
 			String msg = Translator.translate("Test 4 : lorsque l''on appelle votre méthode shiftLeft() sur le byte {0} (représentation en String), il devient {1} au lieu de {2}");
 			String feed = MessageFormat.format(msg,input,out,expected);
-			assertThat(feed,out,is(expected));
+			assertTrue(feed,out.equals(expected));
 		}catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

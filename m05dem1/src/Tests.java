@@ -43,7 +43,7 @@ public class Tests {
             int question = 1;
             int size = new Random().nextInt(11)+1;
             int[] v = Etudiant.createIntArray(size);
-            assertEquals(MessageFormat.format(feedbackBuilder1, question, size, v.length), size, v.length);
+            assertTrue(MessageFormat.format(feedbackBuilder1, question, size, v.length), size == v.length);
             return null;
         }
     }
@@ -56,8 +56,8 @@ public class Tests {
             int size_k = new Random().nextInt(5)+1;
             int size_l = new Random().nextInt(5)+7;
             double[][] v = Etudiant.createDoubleMatrix(size_k, size_l);
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, size_l, size_k, v.length, v[0].length), size_l, v.length);
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, size_l, size_k, v.length, v[0].length), size_k, v[0].length);
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, size_l, size_k, v.length, v[0].length), size_l == v.length);
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, size_l, size_k, v.length, v[0].length), size_k == v[0].length);
             return null;
         }
     }
@@ -70,7 +70,7 @@ public class Tests {
             int size_k = new Random().nextInt(5)+1;
             int size_l = new Random().nextInt(5)+7;
             int response_etu = Etudiant.getNumLines(new double[size_k][size_l]);
-            assertEquals(MessageFormat.format(feedbackBuilder3, question), size_l, response_etu);
+            assertTrue(MessageFormat.format(feedbackBuilder3, question), size_l == response_etu);
             return null;
         }
     }
@@ -83,7 +83,7 @@ public class Tests {
             int size_k = new Random().nextInt(5)+1;
             int size_l = new Random().nextInt(5)+7;
             int response_etu = Etudiant.getNumColumns(new double[size_k][size_l]);
-            assertEquals(MessageFormat.format(feedbackBuilder4, question), size_k, response_etu);
+            assertTrue(MessageFormat.format(feedbackBuilder4, question), size_k == response_etu);
             return null;
         }
     }

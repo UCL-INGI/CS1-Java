@@ -39,7 +39,7 @@ public class TestCode{
 	}
 
 	private void printSucceed(){
-		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi\n"),test_name()));
 	}
 	
 	private class t1 implements Callable<Void> {

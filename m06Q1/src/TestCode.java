@@ -17,7 +17,7 @@
 
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -48,9 +48,9 @@ public class TestCode {
 		
 
 		String feedback = MessageFormat.format(msg,jour,mois,année,date.getJour(),date.getMois(),date.getAnnee());
-		assertThat(feedback,date.getJour(),is(jour));
-		assertThat(feedback,date.getMois(),is(mois));
-		assertThat(feedback,date.getAnnee(),is(année));
+		assertTrue(feedback,date.getJour() == jour);
+		assertTrue(feedback,date.getMois() == mois);
+		assertTrue(feedback,date.getAnnee() == année);
 	}
 
 	@Test

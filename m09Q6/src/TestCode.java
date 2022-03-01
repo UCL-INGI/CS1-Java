@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -200,8 +200,8 @@ public class TestCode{
 			boolean res1 = compareFile(file1,rep1);
 			boolean res2 = compareFile(file2,rep2);
 
-			assertThat(feed1,res1,is(true));
-			assertThat(feed2,res2,is(true));
+			assertTrue(feed1,res1);
+			assertTrue(feed2,res2);
 			return null;
 		}
 	}

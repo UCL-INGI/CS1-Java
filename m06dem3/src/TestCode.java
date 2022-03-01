@@ -4,7 +4,7 @@ package src;
  *  refactor 2017 by Alexandre Dubray
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -81,19 +81,19 @@ public class TestCode{
 			Drapeau d = new Drapeau(true);
 			Drapeau d2 = new Drapeau(true);
 			String feed1 = MessageFormat.format(msg,test_name(),"true","true","true");
-			assertThat(feed1,d2.same(d),is(true));
+			assertTrue(feed1, d2.same(d) == true);
 
 			String feed2 = MessageFormat.format(msg,test_name(),"false","true","false");
 			d.set(false);
-			assertThat(feed2,d2.same(d),is(false));
+			assertTrue(feed2, d2.same(d) == false);
 
 			String feed3 = MessageFormat.format(msg,test_name(),"false","false","true");
 			d2.set(false);
-			assertThat(feed3,d2.same(d),is(true));
+			assertTrue(feed3, d2.same(d) == true);
 
 			String feed4 = MessageFormat.format(msg,test_name(),"true","false","false");
 			d.set(true);
-			assertThat(feed4,d2.same(d),is(false));
+			assertTrue(feed4, d2.same(d) == false);
 			return null;
 		}
 	}

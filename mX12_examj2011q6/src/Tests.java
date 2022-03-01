@@ -40,38 +40,38 @@ public class Tests {
 
 			int oldCount = cl.get__C_oou__n_t();
 			//remove un computer qui est dans le cluster assertTrue
-			assertEquals("Le retrait d'un Cluster d'un Computer qui en fait partie "
-					+ "devrait renvoyer true", true, cl.removeComputer(bc2));
+			assertTrue("Le retrait d'un Cluster d'un Computer qui en fait partie "
+					+ "devrait renvoyer true", cl.removeComputer(bc2));
 			//assert que count est décrémenté
-			assertEquals("Après avoir retiré un Computer d'un Cluster "
-					+ "son attribut count devrait être décrémenté de 1", oldCount-1, cl.get__C_oou__n_t());
+			assertTrue("Après avoir retiré un Computer d'un Cluster "
+					+ "son attribut count devrait être décrémenté de 1", oldCount-1 == cl.get__C_oou__n_t());
 			//assert que second remove du meme comp echoue
-			assertEquals("Le retrait d'un Cluster d'un Computer qui n'en fait plus partie "
-					+ "devrait renvoyer false ", false, cl.removeComputer(bc2));
+			assertTrue("Le retrait d'un Cluster d'un Computer qui n'en fait plus partie "
+					+ "devrait renvoyer false ", false == cl.removeComputer(bc2));
 			
 			oldCount = cl.get__C_oou__n_t();
 			//remove un autre computer qui est dans le cluster assertTrue
-			assertEquals("Le retrait d'un Cluster d'un Computer qui en fait partie "
-					+ "devrait renvoyer true", true, cl.removeComputer(bc3));
+			assertTrue("Le retrait d'un Cluster d'un Computer qui en fait partie "
+					+ "devrait renvoyer true", cl.removeComputer(bc3));
 			//assert que count est décrémenté
-			assertEquals("Après avoir retiré un Computer d'un Cluster "
-					+ "son attribut count devrait être décrémenté de 1", oldCount-1, cl.get__C_oou__n_t());
+			assertTrue("Après avoir retiré un Computer d'un Cluster "
+					+ "son attribut count devrait être décrémenté de 1", oldCount-1 == cl.get__C_oou__n_t());
 			//assert que second remove du même comp échoue
-			assertEquals("Le retrait d'un Cluster d'un Computer qui n'en fait plus partie "
-					+ "devrait renvoyer false ", false, cl.removeComputer(bc3));
+			assertTrue("Le retrait d'un Cluster d'un Computer qui n'en fait plus partie "
+					+ "devrait renvoyer false ", false == cl.removeComputer(bc3));
 			
 			//remove seul computer qui est dans le cluster assertTrue
-			assertEquals("Le retrait d'un Cluster de son unique Computer "
-					+ "devrait revoyer true",true, cl.removeComputer(bc1) );
+			assertTrue("Le retrait d'un Cluster de son unique Computer "
+					+ "devrait revoyer true",true == cl.removeComputer(bc1) );
 			//assert que count est décrémenté
-			assertEquals("Après avoir retiré l'unique Computer d'un Cluster "
-					+ "son attribut count devrait être égal à zéro",0, cl.get__C_oou__n_t());
+			assertTrue("Après avoir retiré l'unique Computer d'un Cluster "
+					+ "son attribut count devrait être égal à zéro",0 == cl.get__C_oou__n_t());
 			//assert que le current est mis à null
-			assertEquals("Après avoir retiré l'unique Computer d'un Cluster "
-					+ "son attribut current devrait être mis à null", null, cl.get_____Ccur_ren_rt__() );
+			assertTrue("Après avoir retiré l'unique Computer d'un Cluster "
+					+ "son attribut current devrait être mis à null", null == cl.get_____Ccur_ren_rt__() );
 			//assert que le second remove du meme comp echoue
-			assertEquals("Le retrait d'un Cluster d'un Computer qui n'en fait plus partie "
-					+ "devrait renvoyer false ", false, cl.removeComputer(bc1));
+			assertTrue("Le retrait d'un Cluster d'un Computer qui n'en fait plus partie "
+					+ "devrait renvoyer false ", false == cl.removeComputer(bc1));
                     
   			//réajouter 2 comp
 			cl.addComputer(bc1);

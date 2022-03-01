@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -71,7 +71,7 @@ public class TestParam2 {
 			d.set(arg);
 			String msg = pre + Translator.translate("Test 2 : lorsque l''on exécute votre méthode set(''{0}'') sur un drapeau avec l''état {1}, l''état du drapeau devient {2}\n");
 			String feed = MessageFormat.format(msg,arg,init,d.toBoolean());
-			assertThat(feed,d.toBoolean(),is(exp));
+			assertTrue(feed,d.toBoolean() == exp);
         }catch (ArithmeticException e){
             fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

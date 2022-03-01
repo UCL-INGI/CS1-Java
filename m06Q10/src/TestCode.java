@@ -15,7 +15,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -96,7 +96,7 @@ public class TestCode {
 			String msg = Translator.translate("{0} : lorsque l''on compare les rectangle {1} et {2}, votre méthode devrait renvoyer {3} mais ce n'est pas le cas !");
 			String feed = MessageFormat.format(msg,test_name(),r1,r2,lon1*larg1 == lon2*larg2);
 
-			assertThat(feed,r1.memeSurface(r2),is(lon1*larg1 == lon2*larg2));
+			assertTrue(feed,r1.memeSurface(r2) == (lon1*larg1 == lon2*larg2));
 
 			return null;
 		}

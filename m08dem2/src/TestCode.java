@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -86,7 +86,7 @@ public class TestCode{
 		public Void call() {
 			String res = Etudiant.repeat(null,10);
 			String feed = MessageFormat.format(Translator.translate("{0} : attention, lorsque s vaut null, vous renvoyez {1} au lieu de null"),test_name(),res);
-			assertThat(feed,res,nullValue());
+			assertTrue(feed,res == null);
 			return null;
 		}
 	}
@@ -100,7 +100,7 @@ public class TestCode{
 		public Void call() {
 			String res = Etudiant.repeat("Hello",0);
 			String feed = MessageFormat.format(Translator.translate("{0} : attention, lorsque n vaut 0, vous renvoyez {1} au lieu de null"),test_name(),res);
-			assertThat(feed,res,nullValue());
+			assertTrue(feed,res == null);
 			return null;
 		}
 	}

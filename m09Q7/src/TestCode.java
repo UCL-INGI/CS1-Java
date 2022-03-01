@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -137,7 +137,7 @@ public class TestCode{
 			try {
 				int [] v = Etudiant.readVector("./file_with_bad_format");
 				String feed = MessageFormat.format(Translator.translate("{0} : vous ne renvoyez pas null lorsque le fichier a un mauvais format !"),test_name());
-				assertThat(feed,v,nullValue());
+				assertTrue(feed,v == null);
 				//verify(mockedBr,times(1)).close();
 			} catch (NumberFormatException e) {
 				fail(MessageFormat.format(Translator.translate("{0} : vous ne gérez pas le cas ou le fichier a un mauvais format de chiffre !"),test_name()));
@@ -203,8 +203,8 @@ public class TestCode{
 			String feed1 = MessageFormat.format(msg,test_name(),file_to_string("./file1"),Arrays.toString(v1),Arrays.toString(r1));
 			String feed2 = MessageFormat.format(msg,test_name(),file_to_string("./file2"),Arrays.toString(v2),Arrays.toString(r2));
 
-			assertThat(feed1,v1,is(r1));
-			assertThat(feed2,v2,is(r2));
+			assertTrue(feed1,v1 == r1);
+			assertTrue(feed2,v2 == r2);
 			return null;
 		}
 	}

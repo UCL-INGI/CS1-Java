@@ -15,7 +15,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -61,7 +61,7 @@ public class TestParam {
 		try {
 			String msg = Translator.translate("Test 2 : lorsque l''on lance la fonction entier() avec la fraction {0}, votre code devrait renvoyer {1} mais ce n''est pas le cas.");
 			String feedback = MessageFormat.format(msg,f,res);
-			assertThat(feedback,f.entier(),is(res));
+			assertTrue(feedback,f.entier() == res);
         }catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

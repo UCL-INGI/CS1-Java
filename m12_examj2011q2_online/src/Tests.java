@@ -37,18 +37,18 @@ public class Tests {
 						+ "un nom incorrect: "+e.toString());
 			}
 			try{
-			assertEquals("Un objet FullComputer est créé avec "
-					+ "un nombre de processus supportés incorrect. ", numProc, fc.getProcs().length);
+			assertTrue("Un objet FullComputer est créé avec "
+					+ "un nombre de processus supportés incorrect. ", numProc == fc.getProcs().length);
 			}
 			catch(NullPointerException e){
 				fail("Un objet FullComputer est créé avec "
 						+ "un nombre de processus supportés incorrect: "+e.toString()+". Vérifiez que vous initialisez bien toutes les variables d'instance.");
 			}
-			assertEquals("Un objet FullComputer est créé avec "
-					+ "une capacité maximale de stockage incorrecte. ", maxStorage, fc.getStorage());
-			assertEquals("Un objet est créé avec "
-					+ "une capacité de stockage disponible incorrecte. ", maxStorage, fc.getAvailStorage());
-			assertEquals("Un objet FullComputer est créé avec "
-					+ "un nombre de processus présents incorrect. ", 0, fc.getCount());
+			assertTrue("Un objet FullComputer est créé avec "
+					+ "une capacité maximale de stockage incorrecte. ", maxStorage == fc.getStorage());
+			assertTrue("Un objet est créé avec "
+					+ "une capacité de stockage disponible incorrecte. ", maxStorage == fc.getAvailStorage());
+			assertTrue("Un objet FullComputer est créé avec "
+					+ "un nombre de processus présents incorrect. ", 0 == fc.getCount());
 		}
 	}

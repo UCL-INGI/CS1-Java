@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -60,7 +60,7 @@ public class TestMin {
 			Vecteur v = new Vecteur(this.t);
 			String msg = Translator.translate("Test min : lorsque l''on exécute la méthode min() avec le tableau {0}, le résultat est {1} au lieu de {2}");
 			String feed = MessageFormat.format(msg,v.toString(),v.min(),min);
-			assertThat(feed,v.min(),is(min));
+			assertTrue(feed,v.min() == min);
 		}catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

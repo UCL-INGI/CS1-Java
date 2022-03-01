@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -79,11 +79,11 @@ public class TestCode{
 
 			int res = spy.lance();
 			String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyer le résultat donné par le dé"),test_name());
-			assertThat(feed,res,is(n));
+			assertTrue(feed,res == n);
 			
 			when(spy.realLance()).thenReturn(1);
 			res = spy.lance();
-			assertThat(feed,res,is(1));
+			assertTrue(feed,res == 1);
 			return null;
 		}
 	}

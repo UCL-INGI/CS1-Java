@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -108,7 +108,7 @@ public class TestCode{
 			StringTab sConcat = (StringTab)s.concat(randomC);
 			String msg = Translator.translate("{0} : lorsque l''on concatène {1} avec {2}, votre code renvoie {2}");
 			String feed = MessageFormat.format(msg,test_name(),randomC,Arrays.toString(randomS),Arrays.toString(sConcat.getS()));
-			assertThat(feed,Arrays.equals(res,sConcat.getS()),is(true));
+			assertTrue(feed,Arrays.equals(res,sConcat.getS()));
 			return null;
 		}
 	}

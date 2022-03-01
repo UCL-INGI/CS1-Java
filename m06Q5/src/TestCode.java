@@ -16,7 +16,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -37,7 +37,7 @@ public class TestCode {
 	public TestName name = new TestName();
 
 	private void printSucceed(){
-		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi\n"),test_name()));
 	}
 
 	private String test_name(){
@@ -58,7 +58,7 @@ public class TestCode {
 			Fraction f = new Fraction(n,d);
 			String msg = Translator.translate("{0} : lorsque la fraction vaut {1}, votre méthode getNum() retourne {2} au lieu de {3}");
 			String feedback = MessageFormat.format(msg,test_name(),f,f.getNum(),n);
-			assertThat(feedback,f.getNum(),is(n));
+			assertTrue(feedback,f.getNum() == n);
 			return null;
 		}
 	}
@@ -73,7 +73,7 @@ public class TestCode {
 			Fraction f = new Fraction(n,d);
 			String msg = Translator.translate("Test : lorsque la fraction vaut {0}, votre méthode getDen() retourne {1} au lieu de {2}");
 			String feedback = MessageFormat.format(msg,f,f.getDen(),d);
-			assertThat(feedback,f.getDen(),is(d));
+			assertTrue(feedback,f.getDen() == d);
 			return null;
 		}
 	}

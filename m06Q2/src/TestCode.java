@@ -16,7 +16,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -59,7 +59,7 @@ public class TestCode {
 			int jour = r.nextInt(31), mois = 10, annee = 2017;
 			Date d = new Date(jour,mois,annee);
 			String feedback = MessageFormat.format(msg,test_name(),d,d.getJour(),jour);
-			assertThat(feedback,d.getJour(),is(jour));
+			assertTrue(feedback,d.getJour() == jour);
 			return null;
 		}
 	}
@@ -74,7 +74,7 @@ public class TestCode {
 			int jour = 10, mois = r.nextInt(13), annee = 2017;
 			Date d = new Date(jour, mois,annee);
 			String feedback = MessageFormat.format(msg,test_name(),d,d.getMois(),mois);
-			assertThat(feedback,d.getMois(),is(mois));
+			assertTrue(feedback,d.getMois() == mois);
 			return null;
 		}
 	}
@@ -90,7 +90,7 @@ public class TestCode {
 			int jour = 10, mois = 2, annee = r.nextInt(2021);
 			Date d = new Date(jour,mois,annee);
 			String feedback = MessageFormat.format(msg,test_name(),d,d.getAnnee(),annee);
-			assertThat(feedback,d.getAnnee(),is(annee));
+			assertTrue(feedback,d.getAnnee() == annee);
 			return null;
 		}
 	}

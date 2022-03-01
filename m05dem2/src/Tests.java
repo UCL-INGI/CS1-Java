@@ -56,10 +56,10 @@ public class Tests {
             double[] t6 = {0.1, 0.2, 0.3};
             double[] t7 = {};
 
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t4)), Correction.egal(t3, t4), Etudiant.egal(t3, t4));
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t5)), Correction.egal(t3, t5), Etudiant.egal(t3, t5));
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t3)), Correction.egal(t6, t3), Etudiant.egal(t6, t3));
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t7)), Correction.egal(t6, t7), Etudiant.egal(t6, t7));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t4)), Correction.egal(t3, t4) == Etudiant.egal(t3, t4));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t5)), Correction.egal(t3, t5) == Etudiant.egal(t3, t5));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t3)), Correction.egal(t6, t3) == Etudiant.egal(t6, t3));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t7)), Correction.egal(t6, t7) == Etudiant.egal(t6, t7));
             return null;
         }
     }

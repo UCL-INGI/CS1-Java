@@ -15,7 +15,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -59,9 +59,9 @@ public class TestParam {
 	@Test
 	public void testLauncher() {
 		try {
-			String msg = Translator.translate("Test 2 : Attention, pour les date {0} et {1}, votre code devrait renvoyer {2} mais ce n'est pas la cas !");
+			String msg = Translator.translate("Test 2 : Attention, pour les dates {0} et {1}, votre code devrait renvoyer {2} mais ce n'est pas la cas !");
 			String feedback = MessageFormat.format(msg,d1,d2,equal);
-			assertThat(feedback,d1.identique(d2),is(equal));
+			assertTrue(feedback,d1.identique(d2) == equal);
         }catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

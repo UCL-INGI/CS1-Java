@@ -3,7 +3,7 @@ package src;
  *  @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -73,7 +73,7 @@ public class TestCode{
 		public Void call() {
 			Directeur d = new Directeur("Jean",2000,0.5);
 			String feed = MessageFormat.format(Translator.translate("{0} : attention, votre constructeur ne construit pas un directeur avec le bon nom !"),test_name());
-			assertThat(feed,d.getNom(),is("Jean"));
+			assertTrue(feed,d.getNom() == "Jean");
 			return null;
 		}
 	}
@@ -87,7 +87,7 @@ public class TestCode{
 		public Void call() {
 			Directeur d = new Directeur("Edouard",1500,0.1);
 			String feed = MessageFormat.format(Translator.translate("{0} : attention, votre constructeur ne construit pas un directeur avec le bon salaire !"),test_name());
-			assertThat(feed,d.getBaseSalaire(),is(1500.0));
+			assertTrue(feed,d.getBaseSalaire() == 1500.0);
 			return null;
 		}
 	}
@@ -101,7 +101,7 @@ public class TestCode{
 		public Void call() {
 			Directeur d = new Directeur("Paul",3000,0.6);
 			String feed = MessageFormat.format(Translator.translate("{0} : attention, votre constructeur ne construit pas un directeur avec la bonne prime !"),test_name());
-			assertThat(feed,d.getPrime(),is(0.6));
+			assertTrue(feed,d.getPrime() == 0.6);
 			return null;
 		}
 	}

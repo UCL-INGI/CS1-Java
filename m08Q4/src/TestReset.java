@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -70,10 +70,10 @@ public class TestReset {
 	public void test() {
 		String pre = "@3 :\n";
 		try {
-			String msg = "@3 :\n" + Translator.translate("Test 5 : lorsque l''on exécute votre méthode resetBit({0}) sur le ByteString dont la représentation en ByteString est {1}, le chaîne devient {2} au lieu de {3}.");
+			String msg = "@3 :\n" + Translator.translate("Test 5 : lorsque l''on exécute votre méthode resetBit({0}) sur le ByteString dont la représentation en ByteString est {1}, le chaîne devient {2} au lieu de {3}.") + "\n";
 			this.bs.resetBit(arg);
 			String feed = MessageFormat.format(msg,this.arg,this.org,this.bs.getRep(),res);
-			assertThat(feed,this.bs.getRep(),is(res));
+			assertTrue(feed,this.bs.getRep().equals(res));
 	}catch (ArithmeticException e){
             fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

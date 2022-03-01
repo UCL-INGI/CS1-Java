@@ -3,9 +3,8 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.Rule;
 import org.junit.Before;
@@ -148,7 +147,7 @@ public class TestCode{
 			try {
 				String ret  = (String) Inspector.run_method(e,"getNom",new Object []{});
 				String feed = MessageFormat.format(error_msg,test_name(),name,ret);
-				assertThat(feed,ret,is(name));
+				assertTrue(feed,ret == name);
 			} catch (NoSuchMethodException err) {
 				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"getNom"));
 			}
@@ -171,7 +170,7 @@ public class TestCode{
 			try {
 				float ret = (Float) Inspector.run_method(e,"getSalaire",new Object [] {});
 				String feed = MessageFormat.format(Translator.translate("{0} : lorsque l''on a un employé avec un salaire de {1}, votre méthode getSalaire() retourne {2}"),test_name(),salaire,ret);
-				assertThat(feed,ret,is(salaire));
+				assertTrue(feed,ret == salaire);
 			} catch (NoSuchMethodException err) {
 				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"getSalaire"));
 			}
@@ -194,7 +193,7 @@ public class TestCode{
 			try {
 				String ret = (String) Inspector.run_method(e,"toString",new Object [] {});
 				String feed = MessageFormat.format(Translator.translate("{0} : lorsque l''on a un l''Employe {1} avec le salaire {2}, votre méthode toString retourn {3}"),test_name(),name,salaire,ret); 
-				assertThat(feed,ret,is(name + " : "+ salaire));
+				assertTrue(feed,ret == name + " : "+ salaire);
 			} catch (NoSuchMethodException err) {
 				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"toString"));
 			}
@@ -220,7 +219,7 @@ public class TestCode{
 				Inspector.run_method_specified(e,"augmente",pourcentage);
 				Float new_salaire =(Float) Inspector.run_method(e,"getSalaire",new Object [] {});
 				String feed = MessageFormat.format(Translator.translate("{0} : lorsque l''on a un Employe avec un salaire de {1} et que l''on augmente de {2}, votre méthode fixe son salaire à {3}"),test_name(),salaire,pourcentage,new_salaire);
-				assertEquals(feed,salaire*(1+(pourcentage/100)),new_salaire,0.01);
+				assertTrue(feed,salaire*(1+(pourcentage/100)) == new_salaire);
 				//assertThat(feed,new_salaire,is(salaire*(1+(pourcentage/100))));
 			} catch (NoSuchMethodException err) {
 				fail(MessageFormat.format(Translator.translate("{0} : la méthode {1} n''as pas été trouvée dans votre réponse !"),test_name(),"augmente"));

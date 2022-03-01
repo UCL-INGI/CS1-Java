@@ -45,24 +45,21 @@ public class Tests {
 			System.out.println(pid);
 			boolean error = false;
 			try{
-				assertEquals(str + "lorsque l'on crée un processus avec le nom \"init\", la méthode getName() renvoie \""+s+"\". ", "init",
-																																  s);
+				assertTrue(str + "lorsque l'on crée un processus avec le nom \"init\", la méthode getName() renvoie \""+s+"\". ", "init".equals(s));
 			}catch(AssertionError e){
 				error = true;
 				errorMessage.append("\n");
 				errorMessage.append(e.getMessage());
 			}
 			try{
-				assertEquals(str + "lorsque l'on crée un processus avec le storage 0, la méthode getRequiredStorage() renvoie "+storage+". ",
-																																   0,
-																																   storage);
+				assertTrue(str + "lorsque l'on crée un processus avec le storage 0, la méthode getRequiredStorage() renvoie "+storage+". ", 0 == storage);
 			}catch(AssertionError e){
 				error = true;
 				errorMessage.append("\n");
 				errorMessage.append(e.getMessage());
 			}
 			try{
-				assertEquals(str + "le premier processus créé ne dispose pas du pid numéro 1 (getPid() renvoie "+pid+"). ", 1, pid);
+				assertTrue(str + "le premier processus créé ne dispose pas du pid numéro 1 (getPid() renvoie "+pid+"). ", 1 == pid);
 			}catch(AssertionError e){
 				error = true;
 				errorMessage.append("\n");
@@ -81,24 +78,22 @@ public class Tests {
 				pid = p.getPid();
 				storage = p.getRequiredStorage();
 				try{
-					assertEquals(str + "lorsque l'on crée un processus avec le nom \""+name+"\", la méthode getName() renvoie \""+s+"\". ", name,
-																																		   s);
+					assertTrue(str + "lorsque l'on crée un processus avec le nom \""+name+"\", la méthode getName() renvoie \""+s+"\". ", name.equals(s));
 				}catch(AssertionError e){
 					error = true;
 					errorMessage.append("\n");
 					errorMessage.append(e.getMessage());
 				}
 				try{
-					assertEquals(str + "lorsque l'on crée un processus avec le storage "+storageExp+", la méthode getRequiredStorage() renvoie "+storage+". ",
-																																	storageExp,
-																																	storage);
+					assertTrue(str + "lorsque l'on crée un processus avec le storage "+storageExp+", la méthode getRequiredStorage() renvoie "+storage+". ",
+																																	storageExp == storage);
 				}catch(AssertionError e){
 					error = true;
 					errorMessage.append("\n");
 					errorMessage.append(e.getMessage());
 				}
 				try{
-					assertEquals(str + "le "+i+"ème processus créé ne dispose pas du pid numéro "+i+" (getPid() renvoie "+pid+"). ", i, pid);
+					assertTrue(str + "le "+i+"ème processus créé ne dispose pas du pid numéro "+i+" (getPid() renvoie "+pid+"). ", i == pid);
 				}catch(AssertionError e){
 					error = true;
 					errorMessage.append("\n");
@@ -106,7 +101,7 @@ public class Tests {
 				}
 				
 				try{
-					assertEquals(str + "pour un même Processus, la méthode getPid() ne renvoie plus ne même pid qu'avant, lorsqu'un nouveau processus a été créé.", i-1, oldProcess.getPid());
+					assertTrue(str + "pour un même Processus, la méthode getPid() ne renvoie plus ne même pid qu'avant, lorsqu'un nouveau processus a été créé.", i-1 == oldProcess.getPid());
 				}catch(AssertionError e){
 					error = true;
 					errorMessage.append("\n");
@@ -153,8 +148,8 @@ public class Tests {
 			if(tab.length < 2){
 				fail(str + "le format de getDescr() doit être : \"nom requiredStorage\", or, getDescr() renvoie \""+desc+"\". ");
 			}
-			assertEquals(str + "getDescr() renvoie une mauvaise réponse. Au lieu de renvoyer \""+descExp+"\", getDescr() "
-							 + "renvoie \""+desc+"\". ", descExp, desc);
+			assertTrue(str + "getDescr() renvoie une mauvaise réponse. Au lieu de renvoyer \""+descExp+"\", getDescr() "
+							 + "renvoie \""+desc+"\". ", descExp.equals(desc));
 			for(int i = 0 ; i < 20 ; i++){
 				nameExp = generateString(r.nextInt(7) + 3);
 				storageExp = r.nextInt(100);
@@ -165,8 +160,8 @@ public class Tests {
 				if(tab.length < 2){
 					fail(str + "le format de getDescr() doit être : \"nom requiredStorage\", or, getDescr() renvoie \""+desc+"\". ");
 				}
-				assertEquals(str + "getDescr() renvoie une mauvaise réponse pour le processus \"" + tab[0] + "\". Au lieu de renvoyer \""+descExp+"\", getDescr() "
-								 + "renvoie \""+desc+"\". ", descExp, desc);
+				assertTrue(str + "getDescr() renvoie une mauvaise réponse pour le processus \"" + tab[0] + "\". Au lieu de renvoyer \""+descExp+"\", getDescr() "
+								 + "renvoie \""+desc+"\". ", descExp.equals(desc));
 				
 			}
 		} catch (ArithmeticException e) {

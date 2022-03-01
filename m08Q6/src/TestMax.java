@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -60,7 +60,7 @@ public class TestMax {
 			Vecteur v = new Vecteur(this.t);
 			String msg = Translator.translate("Test max : lorsque l''on exécute la méthode max() avec le tableau {0}, le résultat est {1} au lieu de {2}");
 			String feed = MessageFormat.format(msg,v.toString(),v.max(),max);
-			assertThat(feed,v.max(),is(max));
+			assertTrue(feed,v.max() == max);
 		}catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

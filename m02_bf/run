@@ -3,6 +3,8 @@ import importlib.util
 import sys
 import json
 from json import JSONDecodeError
+from distutils.file_util import copy_file
+import os
 
 # Dynamically load modules we need
 # Credits to https://stackoverflow.com/a/67692/6149867
@@ -20,6 +22,13 @@ def dynamically_load_module(module, path):
 sys.path.append("/course/common")
 
 runfile = dynamically_load_module("runfile", "/course/common/runfile.py")
+
+isExist = os.path.exists("./student/Translations")
+
+if not isExist:
+  os.makedirs("./student/Translations")
+
+copy_file("/course/common/student/Translations/Translator.java", "./student/Translations/Translator.java")
 
 try:
     task_options = json.load(open('config.json', 'r', encoding="utf-8"))

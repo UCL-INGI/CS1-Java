@@ -14,7 +14,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -46,7 +46,7 @@ public class TestCode {
 	}
 
 	private void printSucceed(String q) {
-		System.err.println(MessageFormat.format(q + Translator.translate("{0} : réussi"), test_name()));
+		System.err.println(MessageFormat.format(q + " " + Translator.translate("{0} : réussi\n"), test_name()));
 	}
 
 	private class t2 implements Callable<Void> {
@@ -59,7 +59,7 @@ public class TestCode {
 			Ticket t2 = new Ticket();
 			String msg = "@2 :\n" + Translator.translate("{0} : votre classe n''incrémente pas les tickets !");
 			String feed = MessageFormat.format(msg,test_name());
-			assertThat(feed,t2.getNumero(),is(t.getNumero()+1));
+			assertTrue(feed,t2.getNumero() == t.getNumero()+1);
 			return null;
 		}
 	}
@@ -74,7 +74,7 @@ public class TestCode {
 			Ticket t = new Ticket();
 			String msg = "@1 :\n" + Translator.translate("{0} : le premier ticket n''as pas le numéro 1, il a le numéro {1}");
 			String feed = MessageFormat.format(msg,test_name(),t.getNumero());
-			assertThat(feed,t.getNumero(),is(1));
+			assertTrue(feed,t.getNumero() == 1);
 			return null;
 		}
 	}

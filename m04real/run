@@ -1,83 +1,40 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-from os import listdir, system
-import zipfile 
-import inginiousUtils
-import time
+#!/bin/python3
+import importlib.util
+import sys
+import json
+from json import JSONDecodeError
+from distutils.file_util import copy_file
 import os
-import subprocess
-from inginious import feedback
 
-# changer : le truc rajouté par les écrivains du script
-#			hidden until
-#			ajouter subprocess
-#			modifier run.sh
-#			enlever l'heure dans la deadline
+# Dynamically load modules we need
+# Credits to https://stackoverflow.com/a/67692/6149867
+# And for the explanation : http://www.blog.pythonlibrary.org/2016/05/27/python-201-an-intro-to-importlib/
+def dynamically_load_module(module, path):
+    spec = importlib.util.spec_from_file_location(module, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
-os.environ['TZ'] = 'Europe/Brussels'
 
-# Variable to modify. Contains the deadline after which the script has to deliver the results of the complete test of the mission.
-# Before the deadline, the script will only verify if the right files are in the ZIP archive.
+#####################################
+# Our import for common run file    #
+#####################################
+sys.path.append("/course/common")
 
-# Variable à modifier. Contient la deadline après laquelle le script doit fournir les résultats du test complet de la mission.
-# Avant cette deadline, le script affichera uniquement si les bons fichiers sont présents dans l'archive ZIP.
+runfile = dynamically_load_module("runfile", "/course/common/runfile.py")
 
-#           jj/mm/aaaa
-deadline = "10/10/2015"
+isExist = os.path.exists("./student/Translations")
 
-temps_deadline = time.strptime(deadline, "%d/%m/%Y")
+if not isExist:
+  os.makedirs("./student/Translations")
 
-# Verify the file content
-system('getinput "q1" > basicSubmission.zip')
+copy_file("/course/common/student/Translations/Translator.java", "./student/Translations/Translator.java")
 
-#totalPoints = 0
-#maxPoints = 5
+try:
+    task_options = json.load(open('config.json', 'r', encoding="utf-8"))
+except JSONDecodeError as e:
+    print(_("Impossible de décoder le config.json"))
+    print(e)
+    exit()
 
-output = ""#".. role:: bash(code)\n\t:language: bash\n\n"
-
-title1 = "Testing content of archive"
-output += inginiousUtils.get_rst_title(title1) + "\n\n"
-
-expectedFiles = ['BioInfo.java', 'README.TXT']
-
-unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expectedFiles)
-
-if (unzipOutput):
-    output += unzipOutput
-    output += "\n**Archive Content: 0/1**"
-    feedback.set_global_result("failed")
-    feedback.set_global_feedback(output)
-    exit(0)
-else:
-    system('sh custom.sh')
-    try:
-        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
-        output += "Your archive has the correct content.\n"
-        output += "\n**Archive content: 1/1**"
-        feedback.set_global_result("success")
-        feedback.set_global_feedback(output)
-    except subprocess.CalledProcessError as e:
-        output += "There are some compilation errors with your program :\n::\n\n"
-        #system("echo \""+e.output+"\" > outjavac.log")
-        sp = subprocess.Popen(["sed", "-e", "s/^/\\t/"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output += sp.communicate(e.output)[0].decode("utf-8")
-        feedback.set_global_result("failed")
-        feedback.set_global_feedback(output)
-        exit(1)
-    
-    # On lance le feedback complet
-    system('sh run.sh')
-    if (os.stat("feedback.out").st_size != 0):
-        feedback.set_problem_result("success","q1")
-        feedback.set_global_result("success")
-        feedback.set_global_feedback("")
-    else:
-        output += "\n\n.. hidden-until:: \"" + deadline + "\"\n\n"
-        system('echo "' + output + '" > feed1')
-        system('echo "Bravo, les tests se sont bien passés !" > feedback.out')
-        system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
-        output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
-        feedback.set_problem_result("success","q1")
-        feedback.set_problem_feedback(output2,"q1")
-        feedback.set_global_result("success")
-        feedback.set_global_feedback("")
+runfile.run(**task_options)

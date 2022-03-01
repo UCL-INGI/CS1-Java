@@ -77,7 +77,7 @@ public class TestCode{
 			d.setRes(t);
 			String s = d.toString();
 			String res = "Dé 2210 "+Arrays.toString(d.getResultats());
-			String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyez le bon String. Vous renvoyez\n''{1}'' à la place de\n''{2}''"),test_name(),s,res);
+			String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyez le bon String. Vous renvoyez\n''{1}''\n à la place de\n''{2}''"),test_name(),s,res);
 			if(!s.equals(res))
 				fail(feed);
 			return null;

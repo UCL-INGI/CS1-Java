@@ -103,7 +103,7 @@ public class TestCode{
 		public Void call() {
 			Employe e = new Employe("Francis",2000);
 			String 	s = e.toString();
-            String correctionString = "Francis 2000";
+            String correctionString = "Francis 2000.0";
 			String feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyé un String correcte !\n"
                                                                    ) + "Expected : {1}\nAu lieu de : {2}",test_name(), correctionString, s);
 			assertTrue(feed,s.equals(correctionString));

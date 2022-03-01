@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -62,7 +62,7 @@ public class TestParam {
 		try {
 			String msg = Translator.translate("Test 2 : lorsque l''on exécute votre code avec l'employé {0} par rapport à l'objet {1}, votre code renvoie {2} au lieu de {3}");
 			String feed = MessageFormat.format(msg,e1,e2,e1.equals(e2),res);
-			assertThat(feed,e1.equals(e2),is(res));
+			assertTrue(feed,e1.equals(e2) == res);
         }catch (ArithmeticException e){
             fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

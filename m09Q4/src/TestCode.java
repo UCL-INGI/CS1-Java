@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -107,7 +107,7 @@ public class TestCode{
 			try {
 				res = Etudiant.contains("Spok","./file1");
 				String feed = MessageFormat.format(Translator.translate("{0} : vous ne renvoyez pas false lorsqu''une erreur se produit !"),test_name());
-				assertThat(feed,res,is(false));
+				assertTrue(feed,res == false);
 				return null;
 			} catch (IOException e) {
 				String feed = MessageFormat.format(Translator.translate("{0} : vous ne gérez pas bien les IOExceptions !"),test_name());

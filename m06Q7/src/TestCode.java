@@ -19,7 +19,7 @@ package src;
 import org.junit.Test;
 import org.junit.Rule;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import org.junit.rules.TestName;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -57,7 +57,7 @@ public class TestCode {
 			Point p = new Point(x,y);
 
 			String feed = MessageFormat.format(Translator.translate("{0} : pour la paire {1}, votre méthode getX() renvoie {2} au lieu de {3}"),test_name(),p,p.getX(),x);
-			assertThat(feed,p.getX(),is(x));
+			assertTrue(feed,p.getX() == x);
 			return null;
 		}
 	}
@@ -74,7 +74,7 @@ public class TestCode {
 			Point p = new Point(x,y);
 
 			String feed = MessageFormat.format(Translator.translate("{0} : pour la paire {1}, votre méthode getY() renvoie {2} au lieu de {3}"),test_name(),p,p.getY(),y);
-			assertThat(feed,p.getY(),is(y));
+			assertTrue(feed,p.getY() == y);
 			return null;
 		}
 	}

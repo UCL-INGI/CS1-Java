@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -33,7 +33,7 @@ public class TestConstruct{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi") + "\n",test_name()));
 	}
 
 	private String test_name() {
@@ -79,8 +79,8 @@ public class TestConstruct{
 		 *			le byte 00000000
 		 */
 		public Void call() {
-			String msg = "@1 :\n" + Translator.translate("{0} : votre code construit le byte {1} (représentation naturelle) au lieu du byte 00000000 (représentation naturelle)");
-			String ngLength = "@1 :\n"+ Translator.translate("{0} : votre code ne construit pas un String de taille 8");
+			String msg = Translator.translate("{0} : votre code construit le byte {1} (représentation naturelle) au lieu du byte 00000000 (représentation naturelle)") + "\n";
+			String ngLength = "@1 :\n"+ Translator.translate("{0} : votre code ne construit pas un String de taille 8") + "\n";
 			String ngFeed = MessageFormat.format(ngLength,test_name());
 			ByteString bs = new ByteString();
 			String feed = MessageFormat.format("@1 :\n" + msg,test_name(),bs.toString());
@@ -88,7 +88,7 @@ public class TestConstruct{
 				fail(ngFeed);
 				return null;
 			}
-			assertThat(feed,bs.toString(),is("00000000"));
+			assertTrue(feed,bs.toString().equals("00000000"));
 			return null;
 		}
 	}
@@ -101,15 +101,15 @@ public class TestConstruct{
 		 *			le String
 		 */
 		public Void call() {
-			String msg = Translator.translate("{0} : lorsque l''on passe comme argument {1} à votre constructeur, il crée le byte {2} (représentation naturelle)");
+			String msg = Translator.translate("{0} : lorsque l''on passe comme argument {1} à votre constructeur, il crée le byte {2} (représentation naturelle)") + "\n";
 			String rb = generateByte();
 			ByteString bs = new ByteString(rb);
 			if(bs.toString().length() != 8) {
-				fail(MessageFormat.format("@2 :\n" + Translator.translate("{0} : votre code ne construit pas un byte de taille 8"),test_name()));
+				fail(MessageFormat.format("@2 :\n" + Translator.translate("{0} : votre code ne construit pas un byte de taille 8")  + "\n",test_name()));
 				return null;
 			}
 			String feed = MessageFormat.format("@2 :\n" + msg,test_name(),rb,bs.toString());
-			assertThat(feed,bs.toString(),is(rb));
+			assertTrue(feed,bs.toString().equals(rb));
 			return null;
 		}
 	}

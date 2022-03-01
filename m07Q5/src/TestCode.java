@@ -4,7 +4,7 @@ package src;
  *  refactor 2017 by Alexandre Dubray
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -98,10 +98,10 @@ public class TestCode{
 			Directeur d4 = new Directeur("Hervé",1769,0.675);
 
 			String msg = Translator.translate("{0} : Pour le directeur {1}, votre méthode renvoie {2,number,#} au lieu de {3,number,#}");
-			assertThat(MessageFormat.format(msg,test_name(),d1,d1.getSalaire(),2000),d1.getSalaire(),is(2000.0));
-			assertThat(MessageFormat.format(msg,test_name(),d2,d2.getSalaire(),2250),d2.getSalaire(),is(2250.0));
-			assertThat(MessageFormat.format(msg,test_name(),d3,d3.getSalaire(),5000),d3.getSalaire(),is(5000.0));
-			assertThat(MessageFormat.format(msg,test_name(),d4,d4.getSalaire(),1769*1.675),d4.getSalaire(),is(1769*1.675));
+			assertTrue(MessageFormat.format(msg,test_name(),d1,d1.getSalaire(),2000),d1.getSalaire() == 2000.0);
+			assertTrue(MessageFormat.format(msg,test_name(),d2,d2.getSalaire(),2250),d2.getSalaire() == 2250.0);
+			assertTrue(MessageFormat.format(msg,test_name(),d3,d3.getSalaire(),5000),d3.getSalaire() == 5000.0);
+			assertTrue(MessageFormat.format(msg,test_name(),d4,d4.getSalaire(),1769*1.675),d4.getSalaire() == 1769*1.675);
 			return null;
 		}
 	}

@@ -6,7 +6,7 @@ import java.util.Random;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -35,7 +35,7 @@ public class TestCode {
 	public TestName name = new TestName();
 
 	private void printSucceed(String q) {
-		System.err.println(MessageFormat.format(Translator.translate(q + "{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate(q + "{0} : réussi\n"),test_name()));
 	}
 
 	private String test_name() {
@@ -124,12 +124,12 @@ public class TestCode {
 				//	On met ici "@1 : " devant le message d'erreur pour que le script exécutant les tests
 				//	Puisse associer le message d'erreur à la question désirée.
 				String feed1 = MessageFormat.format(msg,test_name(),a,p.getA(),p.getB(),ordered,Math.min(p.getA(),p.getB()),Math.max(p.getA(),p.getB()));
-				assertThat(feed1,p.getOrdered(),is(ordered));
+				assertTrue(feed1,p.getOrdered() == ordered);
 				p.setA(-a);
 				ordered = (p.getA() <= p.getB());
 		
 				String feed2 = MessageFormat.format(msg,test_name(),-a,p.getA(),p.getB(),ordered,Math.min(p.getA(),p.getB()),Math.max(p.getA(),p.getB()));
-				assertThat(feed2,p.getOrdered(),is(ordered));
+				assertTrue(feed2,p.getOrdered() == ordered);
 
 				a = r.nextInt(1000);
 				b = r.nextInt(1000);
@@ -156,12 +156,12 @@ public class TestCode {
 				p.setB(b);
 				ordered = (p.getA() <= p.getB());
 				String feed1 = MessageFormat.format(msg,test_name(),b,p.getA(),p.getB(),ordered,Math.min(p.getA(),p.getB()),Math.max(p.getA(),p.getB()));
-				assertThat(feed1,p.getOrdered(),is(ordered));
+				assertTrue(feed1,p.getOrdered() == ordered);
 
 				p.setB(-b);
 				ordered = (p.getA() <= p.getB());
 				String feed2 = MessageFormat.format(msg,test_name(),-b,p.getA(),p.getB(),ordered,Math.min(p.getA(),p.getB()),Math.max(p.getA(),p.getB()));
-				assertThat(feed2,p.getOrdered(),is(ordered));
+				assertTrue(feed2,p.getOrdered() == ordered);
 
 				a = r.nextInt(1000);
 				b = r.nextInt(1000);
@@ -191,22 +191,22 @@ public class TestCode {
 				p.setA(a);
 				newA = p.getA();
 				String feed1 = MessageFormat.format(msg,test_name(),a,newA,a);
-				assertThat(feed1,newA,is(a));
+				assertTrue(feed1,newA == a);
 
 				newB = p.getB();
 				String feed2 = MessageFormat.format(msg2,test_name(),"b",a,oldB,newB);
-				assertThat(feed2,newB,is(oldB));
+				assertTrue(feed2,newB == oldB);
 
 				oldA = newA;
 				p.setA(-b);
 				newA = p.getA();
 
 				String feed3 = MessageFormat.format(msg2,test_name(),-b,"a",newA,-b);
-				assertThat(feed3,newA,is(-b));
+				assertTrue(feed3,newA == -b);
 
 				newB = p.getB();
 				String feed4 = MessageFormat.format(msg2,test_name(),-b,"b",oldB,newB);
-				assertThat(feed4,newB,is(oldB));
+				assertTrue(feed4,newB == oldB);
 				oldA = newA;
 				b = r.nextInt(1000);
 				a = r.nextInt(1000);
@@ -236,21 +236,21 @@ public class TestCode {
 				p.setB(b);
 				newB = p.getB();
 				String feed1 = MessageFormat.format(msg,test_name(),b,newB,b);
-				assertThat(feed1,newB,is(b));
+				assertTrue(feed1,newB == b);
 
 				newA = p.getA();
 				String feed2 = MessageFormat.format(msg2,test_name(),b,"a",oldA,newA);
-				assertThat(feed2,newA,is(oldA));
+				assertTrue(feed2,newA == oldA);
 
 				oldB = newB;
 				p.setB(-a);
 				newB = p.getB();
 				String feed3 = MessageFormat.format(msg,test_name(),-a,newB,-a);
-				assertThat(feed3,newB,is(-a));
+				assertTrue(feed3,newB == -a);
 
 				newA = p.getA();
 				String feed4 = MessageFormat.format(msg2,test_name(),-a,"a",oldA,newA);
-				assertThat(feed4,newA,is(oldA));
+				assertTrue(feed4,newA == oldA);
 				
 				oldB = newB;
 				b = r.nextInt(1000);

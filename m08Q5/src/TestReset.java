@@ -19,7 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -72,7 +72,7 @@ public class TestReset {
 			String out = reverse(bt.toString());
 			String msg = Translator.translate("Test 2 : lorsque l''on appelle votre méthode resetBit({0}) avec comme byte {1} (représentation en String), le byte devient {2} au lieu de {3}");
 			String feed = MessageFormat.format(msg,this.arg,input,out,output);
-			assertThat(feed,out,is(output));
+			assertTrue(feed,out.equals(output));
 		}catch (ArithmeticException e){
             fail(pre + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){

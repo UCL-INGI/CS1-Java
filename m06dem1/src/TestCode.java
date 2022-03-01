@@ -8,7 +8,7 @@ import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.Rule;
@@ -75,7 +75,7 @@ public class TestCode{
 				Pair p = new Pair(a,b);
 				Pair res = p.opposite();
 				String feedback = MessageFormat.format(msg,test_name());
-				assertThat(feedback,res,not(sameInstance(p)));
+				assertTrue(feedback,res != p);
 				a = r.nextInt(1000);	
 				b = r.nextInt(1000);
 			}
@@ -97,11 +97,10 @@ public class TestCode{
 				Pair p = new Pair(a,b);
 				Pair res = p.opposite();
 				String feedback = MessageFormat.format(msg,test_name(),a,b,res.getA(),res.getB(),-a,-b);
-				assertThat(feedback,res,is(equalTo(new Pair(-a,-b))));
+				assertTrue(feedback,res.equals(new Pair(-a,-b)));
 				a = r.nextInt(1000);
 				b = r.nextInt(1000);
 			}
-            System.out.println("OK 4");
 			return null;
 		}
 	}
@@ -121,8 +120,8 @@ public class TestCode{
 				Pair p = new Pair(a,b);
 				Pair res = p.opposite();
 				String feedback = MessageFormat.format(msg,test_name(),a,b,p.getA(),p.getB());
-				assertThat(feedback,p.getA(),is(a));
-				assertThat(feedback,p.getB(),is(b));
+				assertTrue(feedback,p.getA() == a);
+				assertTrue(feedback,p.getB() == b);
 				a = r.nextInt(1000);	
 				b = r.nextInt(1000);
 			}

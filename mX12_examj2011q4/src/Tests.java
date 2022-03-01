@@ -46,14 +46,14 @@ public class Tests {
 				fail("L'ajout d'un processus à l'ordinateur provoque l'exception suivante: "+e.toString());
 			}
 			//asserts
-			assertEquals("L'ajout réussi d'un processus à l'ordinateur devrait renvoyer true. ", true, res);
-			assertEquals("Le nombre de processus d'un ordinateur après l'ajout d'un processus"
-					+ " devrait être de incrémenté de 1", oldCount +1 ,fc.getCount() );
+			assertTrue("L'ajout réussi d'un processus à l'ordinateur devrait renvoyer true. ", res);
+			assertTrue("Le nombre de processus d'un ordinateur après l'ajout d'un processus"
+					+ " devrait être de incrémenté de 1", oldCount +1 == fc.getCount() );
 			assertTrue("L'ordinateur devrait avoir accès"
 						+ " à un processus qui lui a été ajouté: "+p.toString()+"versus"+fc.getProcs()[fc.getCount()-1].toString(),
 						p.equals(fc.getProcs()[fc.getCount()-1]));
-			assertEquals("La capacité de stockage de l'ordinateur après ajout d'un processus plus petit"
-					+ "est incorrecte.", oldStorage - p.getRequiredStorage() , fc.getAvailStorage());
+			assertTrue("La capacité de stockage de l'ordinateur après ajout d'un processus plus petit"
+					+ "est incorrecte.", oldStorage - p.getRequiredStorage() == fc.getAvailStorage());
 			//ajout du grand processus
 			oldCount = fc.getCount();
 			oldStorage = fc.getAvailStorage();
@@ -64,14 +64,14 @@ public class Tests {
 			catch(Throwable e){
 				fail("L'ajout d'un processus \"trop grand\" à l'ordinateur provoque l'exception suivante: "+e.toString());
 			}
-			assertEquals("L'ajout non réussi d'un processus à l'ordinateur devrait renvoyer false. ", false, res );
-			assertEquals("Le nombre de processus d'un ordinateur après une tentative "
+			assertTrue("L'ajout non réussi d'un processus à l'ordinateur devrait renvoyer false. ", false == res );
+			assertTrue("Le nombre de processus d'un ordinateur après une tentative "
 					+ "d'ajout d'un processus \"trop grand\" est incorrecte. "
-					, oldCount ,fc.getCount() );
-			assertFalse("L'odinateur ne devrait pas avoir accès"
+					, oldCount == fc.getCount() );
+			assertTrue("L'odinateur ne devrait pas avoir accès"
 						+ " à un processus qui ne lui a pas été ajouté.",
-						pBig.equals(fc.getProcs()[fc.getCount()-1]));
-			assertEquals("La capacité de stockage de l'ordinateur après ajout d'un processus \"plus grand\" "
-					+ "est incorrecte.", oldStorage , fc.getAvailStorage());
+						!pBig.equals(fc.getProcs()[fc.getCount()-1]));
+			assertTrue("La capacité de stockage de l'ordinateur après ajout d'un processus \"plus grand\" "
+					+ "est incorrecte.", oldStorage == fc.getAvailStorage());
 		}
 	}
