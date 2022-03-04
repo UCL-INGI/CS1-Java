@@ -68,7 +68,7 @@ problems:
       \ ci-dessus. Laquelle de ces propositions est-elle correcte ?\n"
     limit: 3
     name: Portée des variables
-    type: multiple-choice
+    type: multiple_choice
   q10:
     choices:
     - {text: "\n.. code-block:: java\n\n  {\n   for(int i=0;i<s.length();i=i+1) {\n\
@@ -126,7 +126,7 @@ problems:
       \ contains(String s, char c)\n"
     limit: 3
     name: Méthode contains
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {feedback: '
@@ -186,7 +186,7 @@ problems:
       '
     limit: 3
     name: Portée des variables
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: "\n.. code-block:: java\n\n  affiche('0',-4);\n  affiche(\"abc\",3.23);\n\
@@ -235,7 +235,7 @@ problems:
       \ double\n  int, int\n  String, boolean\n"
     limit: 3
     name: Surcharge de méthodes
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {feedback: '
@@ -274,7 +274,7 @@ problems:
       \ affiche-t-elle ``3`` à l'écran ?\n"
     limit: 3
     name: Conversion de types
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {feedback: "\nDans cette expression, le dénominateur est une somme de nombres\
@@ -312,7 +312,7 @@ problems:
       .. |jn2.5.6| replace:: `2.5.6 : Assignment Operators and Type-Casts`\n"
     limit: 3
     name: Conversion de types
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {feedback: '
@@ -379,7 +379,7 @@ problems:
       \ à l'écran ?\n"
     limit: 3
     name: Chaînes de caractères
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: "\n.. code-block:: java\n\n  String s1=\"OOOO\";\n  String s2=\"KKKK\"\
@@ -411,7 +411,7 @@ problems:
       '
     limit: 3
     name: Extraction de chaînes de caractères
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: "\n.. code-block:: java\n\n  if(s3.indexOf(s2)>=0) {\n     System.out.println(\"\
@@ -453,7 +453,7 @@ problems:
       \ ?\n"
     limit: 3
     name: Méthode indexOf
-    type: multiple-choice
+    type: multiple_choice
   q9:
     choices:
     - {text: '``s1.equalsIgnoreCase(s2)`` est un booléen, ``s1.charAt(2)`` est un
@@ -497,4 +497,4 @@ problems:
       \ s3=\"abcdefijklmnopqrstuvwxyz\";\n"
     limit: 3
     name: Méthodes de la classe String
-    type: multiple-choice
+    type: multiple_choice

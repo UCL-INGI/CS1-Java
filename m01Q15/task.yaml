@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Connaissant une date (``jour``/``mois``) de l'année 2016, placez dans la variable ``saison`` le nom de la saison correspondante. Pour rappel, en 2016 les saisons officielles commençaient aux dates suivantes :
 
@@ -12,17 +15,30 @@ context: |-
         int jour; // le jour
         int mois; // le mois
         String saison; // le nom de la saison (automne, hiver, printemps, été)
-environment: java7mockito
-limits:
-    memory: '100'
-    time: '30'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Sélecteur de saison'
 network_grading: false
 order: 7
 problems:
     q1:
         type: code
-        language: java
-        header: ''
         name: Calcul de la saison d'une date donnée
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

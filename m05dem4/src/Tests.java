@@ -26,7 +26,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -68,19 +68,19 @@ public class Tests {
             try{
                 c_student = Etudiant.add(a, b);
             }catch(AssertionError e){
-                fail(MessageFormat.format(_("{0} : vous utilisez mal les assertions."), test_name()));
+                fail(MessageFormat.format(Translator.translate("{0} : vous utilisez mal les assertions."), test_name()));
             }
             
-            String noModif = _("Votre méthode modifie le contenu du tableau passé en argument. Une telle modification n'est autorisée que si elle est explicitement indiquée dans les spécifications. Ce n'est pas le cas pour cette méthode.\n");
+            String noModif = Translator.translate("Votre méthode modifie le contenu du tableau passé en argument. Une telle modification n'est autorisée que si elle est explicitement indiquée dans les spécifications. Ce n'est pas le cas pour cette méthode.\n");
             assertTrue(noModif, java.util.Arrays.deepEquals(a,origin_a));
             assertTrue(noModif, java.util.Arrays.deepEquals(b,origin_b));
             
             if(c_student == null)
-                fail(MessageFormat.format(_("{0} : votre code retourne null."), test_name()));
+                fail(MessageFormat.format(Translator.translate("{0} : votre code retourne null."), test_name()));
             if(! Arrays.deepEquals(c_student, c_expected))
-                fail(MessageFormat.format(_("{0} : votre code ne calcule pas la somme correctement."), test_name()));
+                fail(MessageFormat.format(Translator.translate("{0} : votre code ne calcule pas la somme correctement."), test_name()));
             else
-                System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+                System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
             return null;
         }
     }
@@ -100,13 +100,13 @@ public class Tests {
                 Etudiant.add(null, null);
             }catch(AssertionError e){
                 //Si l'étudiant à correctement lancé une AssertionError
-                System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+                System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
                 return null;
             }catch(NullPointerException e){
-            	fail(MessageFormat.format(_("{0} : vous devez lancer un assert dans le cas où a et/ou b est null.") + "\n" + _("Faites aussi attention à l''ordre de vos assertions. Par exemple, l''assertion qui vérifie que ''a'' est différent de null doit venir avant l''assertion qui vérifie la taille de la matrice car sinon, vous allez provoquer une NullPointerException."), test_name()));            }catch(Exception e){
+            	fail(MessageFormat.format(Translator.translate("{0} : vous devez lancer un assert dans le cas où a et/ou b est null.") + "\n" + Translator.translate("Faites aussi attention à l''ordre de vos assertions. Par exemple, l''assertion qui vérifie que ''a'' est différent de null doit venir avant l''assertion qui vérifie la taille de la matrice car sinon, vous allez provoquer une NullPointerException."), test_name()));            }catch(Exception e){
                 //Intercept eventual exceptions due to missing assert of student
             }
-            fail(MessageFormat.format(_("{0} : vous devez lancer un assert dans le cas où a et/ou b est null."), test_name()));
+            fail(MessageFormat.format(Translator.translate("{0} : vous devez lancer un assert dans le cas où a et/ou b est null."), test_name()));
             return null;
         }
     }
@@ -132,12 +132,12 @@ public class Tests {
                 Etudiant.add(d, gen_random_matrix(10,10));
             }catch(AssertionError e){
                 //Si l'étudiant à correctement lancé une AssertionError
-                System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+                System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
                 return null;
             }catch(Exception e){
                 //Intercept eventual exceptions due to missing assert of student
             }
-            fail(MessageFormat.format(_("{0} : vous devez lancer un assert dans le cas où les lignes/colonnes ne sont pas TOUTES de le même longeur (si un des double tableaux est arrangé sous forme triangle par exemple)."), test_name()));
+            fail(MessageFormat.format(Translator.translate("{0} : vous devez lancer un assert dans le cas où les lignes/colonnes ne sont pas TOUTES de le même longeur (si un des double tableaux est arrangé sous forme triangle par exemple)."), test_name()));
             return null;
         }
     }
@@ -158,12 +158,12 @@ public class Tests {
                 Etudiant.add(gen_random_matrix(4,6), gen_random_matrix(6,2));
             }catch(AssertionError e){
                 //Si l'étudiant à correctement lancé une AssertionError
-                System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+                System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
                 return null;
             }catch(Exception e){
                 //Intercept eventual exceptions due to missing assert of student
             }
-            fail(MessageFormat.format(_("{0} : vous devez lancer un assert dans le cas où les matrices ne sont pas de la même taille."), test_name()));
+            fail(MessageFormat.format(Translator.translate("{0} : vous devez lancer un assert dans le cas où les matrices ne sont pas de la même taille."), test_name()));
             return null;
         }
     }
@@ -172,21 +172,21 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     

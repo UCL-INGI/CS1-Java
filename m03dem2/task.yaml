@@ -1,4 +1,7 @@
+accessible: true
 author: Clémentine Munyabarenzi, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Ecrivez *la signature* et *le corps* d’une methode baptisée
     ``afficheMax`` qui prend deux nombres entiers comme arguments et
@@ -12,17 +15,30 @@ context: |-
         ∗ @pre -
         ∗ @post affiche le maximum entre les nombres entiers a et b
         ∗ /
-environment: java7mockito
-limits:
-    output: '2'
-    memory: '100'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Question de Démarrage 2 : Le Nombre Maximum'
 network_grading: false
 order: 46
 problems:
     q1:
-        header: Ecrivez ci-dessous la *signature* et le *corps* de la méthode ``afficheMax``.
         type: code
         name: ''
+        header: Ecrivez ci-dessous la *signature* et le *corps* de la méthode ``afficheMax``.
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,52 +1,40 @@
-#!/usr/bin/python3
-
-# A modifier : 
-# La liste expectedFiles, mettre les fichiers attendus dans l'archive zip.
-
-from os import listdir, system
-import zipfile
-import inginiousUtils
+#!/bin/python3
+import importlib.util
+import sys
+import json
+from json import JSONDecodeError
+from distutils.file_util import copy_file
 import os
-import subprocess
-from inginious import feedback
 
-os.environ['TZ'] = 'Europe/Brussels'
+# Dynamically load modules we need
+# Credits to https://stackoverflow.com/a/67692/6149867
+# And for the explanation : http://www.blog.pythonlibrary.org/2016/05/27/python-201-an-intro-to-importlib/
+def dynamically_load_module(module, path):
+    spec = importlib.util.spec_from_file_location(module, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
-# Verify the file content
-system('getinput "q1" > basicSubmission.zip')
 
-#totalPoints = 0
-#maxPoints = 5
+#####################################
+# Our import for common run file    #
+#####################################
+sys.path.append("/course/common")
 
-output = ".. role:: bash(code)\n\t:language: bash\n\n"
+runfile = dynamically_load_module("runfile", "/course/common/runfile.py")
 
-title1 = "Testing content of archive"
-output += inginiousUtils.get_rst_title(title1) + "\n\n"
+isExist = os.path.exists("./student/Translations")
 
-expectedFiles = ['README.TXT']
+if not isExist:
+  os.makedirs("./student/Translations")
 
-unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expectedFiles)
+copy_file("/course/common/student/Translations/Translator.java", "./student/Translations/Translator.java")
 
-if (unzipOutput):
-    output += unzipOutput
-    output += "\n**Archive Content: 0/1**"
-    feedback.set_global_result("failed")
-    feedback.set_global_feedback(output)
-    exit(0)
-else:
-    system('sh custom.sh')
-    outjavac = ""
-    try:
-        subprocess.check_output("javac student/*.java", stderr = subprocess.STDOUT, shell = True)
-        output += "Your archive has the correct content.\n"
-        output += "\n**Archive content: 1/1**"
-        feedback.set_global_result("success")
-        feedback.set_global_feedback(output)
-    except subprocess.CalledProcessError as e:
-        output += "There are some compilation errors with your program :\n::\n\n"
-        system("echo \""+e.output+"\" > outjavac.log")
-        output += subprocess.check_output("sed -e \'s/^/\\t/\' < outjavac.log", shell = True)
-        feedback.set_global_result("failed")
-        feedback.set_global_feedback(output)
-    
-    exit(0)
+try:
+    task_options = json.load(open('config.json', 'r', encoding="utf-8"))
+except JSONDecodeError as e:
+    print(_("Impossible de décoder le config.json"))
+    print(e)
+    exit()
+
+runfile.run(**task_options)

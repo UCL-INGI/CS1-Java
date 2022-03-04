@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Olivier MARTIN
+categories: []
+contact_url: ''
 context: |-
     Ecrivez la méthode ``boolean croissant(int[] t)`` qui retourne true si les éléments du tableau ``t`` sont croissants, false sinon.
     la spécification est :
@@ -9,17 +12,30 @@ context: |-
          * @pre t != null
          * @post retourne true si les éléments du tableau t sont croissants, false sinon
          */
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 5 : Q* : Tableau croissant'
 network_grading: false
 order: 93
 problems:
     q1:
-        header: Écrivez ici la méthode
-        language: Java
         type: code
         name: Croissant
+        header: Écrivez ici la méthode
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

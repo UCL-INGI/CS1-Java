@@ -24,13 +24,13 @@ import org.junit.rules.TestName;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
-    private String feedbackBuilder = _("{0} : Un véhicule roulant à {1}km/h dans une zone limitée à {2}km/h doit recevoir une amende de {3}€. Cependant, votre code calcule {4}€.\n");
+    private String feedbackBuilder = Translator.translate("{0} : Un véhicule roulant à {1}km/h dans une zone limitée à {2}km/h doit recevoir une amende de {3}€. Cependant, votre code calcule {4}€.\n");
     @Rule public TestName name = new TestName();
     
     private class Test_inner implements Callable<Void> {
@@ -48,8 +48,8 @@ public class Tests {
             double reponse_etudiant = Etudiant.amende(v_max, v_vehicule);
             double expected = Correction.amende(v_max, v_vehicule);
             String feedback = MessageFormat.format(feedbackBuilder, test_name(), v_vehicule, v_max, expected, reponse_etudiant) + " " + more_feeback;
-            assertEquals(feedback, expected, reponse_etudiant, 0.001);
-            System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+            assertTrue(feedback, expected == reponse_etudiant);
+            System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
             return null;
         }
     }
@@ -61,39 +61,39 @@ public class Tests {
     
     @Test
     public void test_2(){
-        catcher(new Test_inner(50, 62, _("Lorsque l'excès de vitesse dépasse 10km/h, l'amende est doublée.\n")));
+        catcher(new Test_inner(50, 62, Translator.translate("Lorsque l'excès de vitesse dépasse 10km/h, l'amende est doublée.\n")));
     }
 
     @Test
     public void test_3(){
-        catcher(new Test_inner(50, 50, _("Lorsque les vitesses sont égales, l'amende doit être de zéro.\n")));
+        catcher(new Test_inner(50, 50, Translator.translate("Lorsque les vitesses sont égales, l'amende doit être de zéro.\n")));
     }
       
     @Test
     public void test_4(){
-        catcher(new Test_inner(50, 50, _("Lorsque les vitesses sont égales, l'amende doit être de zéro.\n")));
+        catcher(new Test_inner(50, 50, Translator.translate("Lorsque les vitesses sont égales, l'amende doit être de zéro.\n")));
     }
 
     @Test
     public void test_5(){
-        catcher(new Test_inner(50, 40, _("Pas d'amende requise car la vitesse du véhicule est inférieure à la vitesse maximale.\n")));
+        catcher(new Test_inner(50, 40, Translator.translate("Pas d'amende requise car la vitesse du véhicule est inférieure à la vitesse maximale.\n")));
     }
 
     public void catcher(Callable<Void> test) {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     

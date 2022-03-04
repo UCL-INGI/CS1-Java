@@ -33,7 +33,7 @@ import java.security.Permission;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 import src.librairies.*;
@@ -70,9 +70,9 @@ public class TestErr{
 		// Changement de permission
 		f1.setReadable(false);
 	}catch(IOException e){
-	    fail(_("Erreur de lecture de fichier dans le test de l'IOException\n"));
+	    fail(Translator.translate("Erreur de lecture de fichier dans le test de l'IOException\n"));
 	}
-	catcher(new TestRead(file1, _("votre méthode n''affiche pas \"ERREUR\" sur la sortie d''erreur standard.\n")), 1); 
+	catcher(new TestRead(file1, Translator.translate("votre méthode n''affiche pas \"ERREUR\" sur la sortie d''erreur standard.\n")), 1); 
     }
 
     private class TestRead implements Callable<Void> {
@@ -83,7 +83,7 @@ public class TestErr{
 		this.feedbackAdd = feedbackAdd; 
 	}
         public Void call() { 
-	    	String feedback = MessageFormat.format(_("{0} : raté : " + feedbackAdd), test_name());
+	    	String feedback = MessageFormat.format(Translator.translate("{0} : raté : " + feedbackAdd), test_name());
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
         	PrintStream ps = new PrintStream(baos);
         	PrintStream old = System.err;
@@ -92,7 +92,7 @@ public class TestErr{
 			Etudiant.getMax(file);
 			System.setErr(old);
 			if(baos.toString().contains("ERREUR")) 
-				System.err.println(MessageFormat.format(_("{0} : réussi\n"), test_name()));
+				System.err.println(MessageFormat.format(Translator.translate("{0} : réussi\n"), test_name()));
 			else 
 				fail(feedback);
 		}catch(IOException e){
@@ -100,7 +100,7 @@ public class TestErr{
 			fail(feedback);
 		}catch(Exception e){
 			System.setErr(old);
-			fail(MessageFormat.format(_("{0} : raté : votre programme génère une exception non gérée : " + e.toString() + "\n"), test_name()));
+			fail(MessageFormat.format(Translator.translate("{0} : raté : votre programme génère une exception non gérée : " + e.toString() + "\n"), test_name()));
 		}
 		return null;
 	}
@@ -110,21 +110,21 @@ public class TestErr{
         	try{
 		    test.call();
 		}catch (ArithmeticException e){
-		    fail(_("Attention, il est interdit de diviser par zéro."));
+		    fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
 		}catch(ClassCastException e){
-		    fail(_("Attention, certaines variables ont été mal castées !"));
+		    fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
 		}catch(StringIndexOutOfBoundsException e){
-		    fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+		    fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
 		}catch(ArrayIndexOutOfBoundsException e){
-		    fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+		    fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
 		}catch(NullPointerException e){
-		    fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+		    fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
 		}catch(NegativeArraySizeException e){
-		    fail(_("Vous initialisez un tableau avec une taille négative."));
+		    fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
 		}catch(StackOverflowError e){
-		    fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+		    fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
 		}catch(Exception e){
-		    fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+		    fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 		}
     }
 

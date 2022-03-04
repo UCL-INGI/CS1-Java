@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |+
     Les langages de programmation sont souvent utilisés à des fins mathématiques et il est intéressant de savoir implémenter certaines fonctions mathématiques simples.
 
@@ -12,18 +15,31 @@ context: |+
         int a = // a peut prendre n'importe quelle valeur
         int valeur = 1;
 
-environment: java7mockito
-limits:
-    memory: '200'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 2 : Question de démarrage 3 : Puissances'
 network_grading: false
 order: 26
 problems:
     q1:
+        type: code
         name: Puissance d'un entier
         header: Écrivez ici le bout de programme permettant de calculer l'entier ``a``
             élevé à la puissance ``n``.
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

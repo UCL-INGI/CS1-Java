@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Dans un programme Java, on écrit une classe permettant de représenter une date. Les variables d'instant de cette classe sont définies comme suite :
 
@@ -38,17 +41,30 @@ context: |-
 
 
     Ecrivez le constructeur de cette classe ``Date``.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Q* constructeur Date'
 network_grading: false
 order: 110
 problems:
     q1:
         type: code
-        header: Écrivez ici le constructeur
         name: constructeur de Date
+        header: Écrivez ici le constructeur
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

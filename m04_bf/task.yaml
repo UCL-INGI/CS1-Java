@@ -1,4 +1,7 @@
+accessible: true
 author: Sébastien Combéfis, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     La classe **String** contient de nombreuses méthodes permettant de manipuler les chaînes de caractères. Parmi celles-ci, on peut citer ``length()`` qui retourne la longueur de la chaîne de caractères, ``charAt(int i)`` qui retourne le caractère de la ième position ou ``substring(int begin, int end)`` qui retourne la sous-chaîne de caractères démarrant à la position ``begin`` et se terminant à la position ``end - 1``.
 
@@ -33,18 +36,25 @@ context: |-
     Affiche les valeurs 0, 1, 2, 3 et 4.
 
     Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 4 : Question de bilan final'
 network_grading: false
 order: 84
 problems:
     q1:
+        type: code
         name: ''
-        language: java
         header: |+
             Complétez ici le corps de la méthode
 
@@ -52,12 +62,19 @@ problems:
 
                 public static int count (String p, String s)
 
-        type: code
-    q2:
-        optional: true
         language: java
-        name: ''
+        default: ''
+    q2:
         type: code
+        name: ''
         header: |+
             Déclarez ici les méthodes privées que vous souhaitez utiliser pour décomposer le problème en sous-problèmes. Attention, veillez à n'utiliser que des méthodes de classe ``static``. Si une exception survient dans ce code, le feedback sera indiqué dans la question 1.
 
+        language: java
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

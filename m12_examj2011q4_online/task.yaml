@@ -1,28 +1,68 @@
+accessible: true
 author: 'Munyabarenzi Clémentine Zaninka (ressource : sources examen LFSAB1401 juin
-  2011)'
-context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. _juin2011:\
-  \  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online\n\
-  __ juin2011_\n\nQuestion 4 : Ecrivez le corps de la méthode ``addProcess`` de la\
-  \ classe ``FullComputer``. Pensez à utiliser les méthodes de la classe ``Process``\
-  \ définies à la question 3. :\n\n.. code-block:: java\n\n   /**\n    * @pre p !=\
-  \ null, p ne se trouve pas déjà sur cet ordinateur\n    * @post le processus p a\
-  \ été ajouté à cet ordinateur, si (1)le\n    *       nombre de processus maximal\
-  \ n'est pas atteint et (2) la capacité de\n    *       stockage nécessaire pour\
-  \ p est disponible. Retourne true si le\n    *       processus a été ajouté, false\
-  \ sinon.\n    */\n       public boolean addProcess(Process p)\n    {\n        /***\
-  \ VOTRE REPONSE ***/\n    }"
-environment: java7
-limits: {memory: '100', output: '2', time: '30'}
+    2011)'
+categories: []
+contact_url: ''
+context: |-
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online
+    __ juin2011_
+
+    Question 4 : Ecrivez le corps de la méthode ``addProcess`` de la classe ``FullComputer``. Pensez à utiliser les méthodes de la classe ``Process`` définies à la question 3. :
+
+    .. code-block:: java
+
+       /**
+        * @pre p != null, p ne se trouve pas déjà sur cet ordinateur
+        * @post le processus p a été ajouté à cet ordinateur, si (1)le
+        *       nombre de processus maximal n'est pas atteint et (2) la capacité de
+        *       stockage nécessaire pour p est disponible. Retourne true si le
+        *       processus a été ajouté, false sinon.
+        */
+           public boolean addProcess(Process p)
+        {
+            /*** VOTRE REPONSE ***/
+        }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Examen juin 2011 online : Question 4'
 network_grading: false
 order: 199
 problems:
-  q1: {header: 'Veillez à n''implémenter que le corps de la méthode, ne réécrivez
-      pas la signature.', language: java, name: Corps de la méthode addProcess, type: code}
-  zmontest: {header: "Insérez votre code de test optionnel ci-dessous. Vous pouvez\
-      \ utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.\
-      \  Votre code sera exécuté dans une méthode ``montest``:\n\n.. code-block::\
-      \ java\n\n    public static void montest() { /* VOTRE CODE */ }\n\nAttention,\
-      \ toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.\
-      \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n",
-    language: java, name: Fonction de test optionnelle, optional: true, type: code}
+    q1:
+        type: code
+        name: Corps de la méthode addProcess
+        header: Veillez à n'implémenter que le corps de la méthode, ne réécrivez pas
+            la signature.
+        language: java
+        default: ''
+    zmontest:
+        type: code
+        name: Fonction de test optionnelle
+        header: |
+            Insérez votre code de test optionnel ci-dessous. Vous pouvez utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.  Votre code sera exécuté dans une méthode ``montest``:
+
+            .. code-block:: java
+
+                public static void montest() { /* VOTRE CODE */ }
+
+            Attention, toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.  Vous *devez* effacer ce code de test pour finaliser votre soumission.
+        language: java
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

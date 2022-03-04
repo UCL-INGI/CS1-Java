@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Naitali Brandon
+categories: []
+contact_url: ''
 context: |-
     Les variables ``a``, ``b`` et ``c`` contiennent des nombres réels. Placez dans la variable ``moyenne`` la moyenne arithmétique entre ces trois nombres. Si vous avez un doute sur la définition de cette moyenne, consultez `sa page sur wikipédia <https://fr.wikipedia.org/wiki/Moyenne_arithm%C3%A9tique>`_
 
@@ -9,17 +12,30 @@ context: |-
         double a;
         double b;
         double c;
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Moyenne'
 network_grading: false
 order: 1
 problems:
     q1:
-        header: ''
-        language: java
         type: code
         name: Calcul de moyenne de 3 nombres
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

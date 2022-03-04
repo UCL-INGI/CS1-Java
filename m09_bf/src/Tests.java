@@ -24,7 +24,7 @@ import org.junit.rules.TestName;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 import src.librairies.*;
@@ -34,20 +34,20 @@ public class Tests{
     
     @Test
     public void test_4(){ 
-	catcher(new TestRead("testFullInvalid.dat", _("votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier complètement erroné.\n")), 1); 
+	catcher(new TestRead("testFullInvalid.dat", Translator.translate("votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier complètement erroné.\n")), 1); 
     }
     @Test
     public void test_3(){ 
-	catcher(new TestRead("testIncorrect.dat", _("votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier avec une ligne malformée contenant un maximum.\n")), 1); 
+	catcher(new TestRead("testIncorrect.dat", Translator.translate("votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier avec une ligne malformée contenant un maximum.\n")), 1); 
     }
     @Test
     public void test_2(){ 
-	catcher(new TestRead("testErreur.dat", _("votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier avec une ligne malformée.\n")), 1); 
+	catcher(new TestRead("testErreur.dat", Translator.translate("votre méthode ne renvoie pas la bonne valeur du maximum sur un fichier avec une ligne malformée.\n")), 1); 
     }
 
     @Test
     public void test_1(){ 
-	catcher(new TestRead("testCorrect.dat", _("votre méthode ne renvoie pas la bonne valeur du maximum avec un fichier au bon format.\n")), 1); 
+	catcher(new TestRead("testCorrect.dat", Translator.translate("votre méthode ne renvoie pas la bonne valeur du maximum avec un fichier au bon format.\n")), 1); 
     }
 
     private class TestRead implements Callable<Void> {
@@ -58,7 +58,7 @@ public class Tests{
 		this.feedbackAdd = feedbackAdd; 
 	}
         public Void call() { 
-    		String feedback = MessageFormat.format(_("{0} : raté : " + feedbackAdd), test_name());
+    		String feedback = MessageFormat.format(Translator.translate("{0} : raté : " + feedbackAdd), test_name());
 		Double result = Correction.getMax(file);
 		try{
 			Double resultStudent = Etudiant.getMax(file);
@@ -66,7 +66,7 @@ public class Tests{
 		}catch(Exception e){
 			fail(feedback + "votre code génère une exception !\n");
 		}
-		System.err.println(MessageFormat.format(_("{0} : réussi\n"), test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi\n"), test_name()));
 		return null;
 	}
     }
@@ -75,21 +75,21 @@ public class Tests{
         	try{
 		    test.call();
 		}catch (ArithmeticException e){
-		    fail(_("Attention, il est interdit de diviser par zéro."));
+		    fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
 		}catch(ClassCastException e){
-		    fail(_("Attention, certaines variables ont été mal castées !"));
+		    fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
 		}catch(StringIndexOutOfBoundsException e){
-		    fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+		    fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
 		}catch(ArrayIndexOutOfBoundsException e){
-		    fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+		    fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
 		}catch(NullPointerException e){
-		    fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+		    fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
 		}catch(NegativeArraySizeException e){
-		    fail(_("Vous initialisez un tableau avec une taille négative."));
+		    fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
 		}catch(StackOverflowError e){
-		    fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+		    fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
 		}catch(Exception e){
-		    fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+		    fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 		}
     }
 

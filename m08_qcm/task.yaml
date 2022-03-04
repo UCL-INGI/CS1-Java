@@ -105,7 +105,7 @@ problems:
       '
     limit: 3
     name: Packages
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: '
@@ -173,7 +173,7 @@ problems:
       '
     limit: 3
     name: Extension et implémentation
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: ".. code-block:: java\n\n   public interface Direction {\n       /**\
@@ -226,7 +226,7 @@ problems:
       '
     limit: 3
     name: Interface
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {text: ".. code-block:: java\n\n   public class MyPrix implements Prix {\n \
@@ -296,7 +296,7 @@ problems:
       \ classes suivantes, laquelle est une implémentation correcte de ``Prix`` ?\n"
     limit: 3
     name: Interface et implémentation
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n   C2 obj2 = new C2();\n   C3 obj3 = new C3();\n\
@@ -336,4 +336,4 @@ problems:
       \ pour le compilateur Java ?\n"
     limit: 3
     name: ' Interfaces et types'
-    type: multiple-choice
+    type: multiple_choice

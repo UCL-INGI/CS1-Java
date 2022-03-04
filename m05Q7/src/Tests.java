@@ -21,7 +21,7 @@ import java.text.MessageFormat;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import src.librairies.FunctionHelper;
 
 import StudentCode.*;
@@ -30,8 +30,8 @@ public class Tests {
     
     private int[][] array_if_exception;
     
-    private String feedbackBuilder = _("Votre code retourne {0} à la place de {1} avec l''occurence {2} et le tableau :\n\n{3}\n");
-    private String noModif = _("Votre méthode modifie le contenu du tableau passé en argument. Une telle modification n'est autorisée que si elle est explicitement indiquée dans les spécifications. Ce n'est pas le cas pour cette méthode.\n");
+    private String feedbackBuilder = Translator.translate("Votre code retourne {0} à la place de {1} avec l''occurence {2} et le tableau :\n\n{3}\n");
+    private String noModif = Translator.translate("Votre méthode modifie le contenu du tableau passé en argument. Une telle modification n'est autorisée que si elle est explicitement indiquée dans les spécifications. Ce n'est pas le cas pour cette méthode.\n");
     
     public void test(int occurence, int[][] array) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
@@ -47,7 +47,7 @@ public class Tests {
         
         int expected = Correction.count(occurence, array);
         String feed = MessageFormat.format(feedbackBuilder, reponse_etudiant, expected, occurence, Arrays.deepToString(origin).replace("],", "],\n"));
-            assertEquals(feed, expected, reponse_etudiant);
+            assertTrue(feed, expected == reponse_etudiant);
     }
     
     /**
@@ -68,26 +68,26 @@ public class Tests {
         }catch (InvocationTargetException e){
             Throwable t = e.getCause();
             if(t instanceof ArithmeticException){
-                fail(_("Attention, il est interdit de diviser par zéro."));
+                fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
             }else if(t instanceof ClassCastException){
-                fail(_("Attention, certaines variables ont été mal castées !"));
+                fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
             }else if(t instanceof StringIndexOutOfBoundsException){
-                fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+                fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
             }else if(t instanceof ArrayIndexOutOfBoundsException){
                 // Cette exercice utilise un tableau à deux dimensions. Les etudiants se trompent souvent dans la condition de la
                 // deuxième boucle. Il peut être interessant de leur montrer le tableau en cas d'ArrayIndexOutOfBoundsException.
-                fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + "\n" + _("Cette exception est survenue quand le tableau est :\n") + Arrays.deepToString(array_if_exception).replace("],", "],\n"));
+                fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + "\n" + Translator.translate("Cette exception est survenue quand le tableau est :\n") + Arrays.deepToString(array_if_exception).replace("],", "],\n"));
             }else if(t instanceof NullPointerException){
-                fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+                fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
             }else if(t instanceof NegativeArraySizeException){
-                fail(_("Vous initialisez un tableau avec une taille négative."));
+                fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
             }else if(t instanceof StackOverflowError){
-                fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+                fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
             }else{
-                fail(_("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
+                fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
             }
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

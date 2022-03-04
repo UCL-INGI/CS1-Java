@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     En mathématiques, un nombre entier est un `carré parfait <https://fr.wikipedia.org/wiki/Carré_parfait>`_ si il est le carré d'un autre nombre entier.
 
@@ -11,17 +14,30 @@ context: |-
         * @post retourne true si l'entier x est
         * un carré parfait, false sinon
         */
-environment: java7mockito
-limits:
-    output: '2'
-    time: '20'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '20'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Q** Carré parfait'
 network_grading: false
 order: 55
 problems:
     q1:
+        type: code
+        name: ''
         header: Ecrivez ici la méthode carparf
         language: java
-        name: ''
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -34,8 +34,8 @@ SOUMISSION="student/*.java"
 # EXECCUSTOM vaut 0 si on n'exécute pas de script "custom" pour faire des vérifications supplémentaires
 EXECCUSTOM=1
 CODELITTERAL="::\n\n"
-JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
-JAVA="run_student java -da -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar"
+JAVAC="javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
+JAVA="run_student java -da -cp .:./student:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar"
 
 # On met la machine en UTF-8
 export LC_ALL=en_US.UTF-8
@@ -94,7 +94,7 @@ if [ "$OUTPUT" = "" ]; then
 		# Sinon c'est que les tests ont échoué, le programme possède des erreurs.
 		# feedback n'aime pas les "\n", donc on contourne le probleme en l'écrivant dans un fichier puis en le lisant.
 		OUTERR=$(echo "$OUTERR" | sed -e 's/^/\t/' | sed 's/%/%%/g' )
-		FEED=$(printf "Il semble que vous ayiez fait des erreurs dans votre code...\n ${CODELITTERAL}$OUTERR\n")
+		FEED=$(printf "Il semble que vous ayez fait des erreurs dans votre code...\n ${CODELITTERAL}$OUTERR\n")
 		feedback -i q1 -r failed -f "$FEED"
 		ERREUR=1
 	fi

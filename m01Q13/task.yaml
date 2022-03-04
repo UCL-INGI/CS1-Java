@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Les variables ``a``, ``b``, ``c`` et ``d`` contiennent chacune un nombre entier. Ecrivez le code permettant de placer dans la variable ``min`` le minimum entre ces quatre nombres.
 
@@ -10,17 +13,30 @@ context: |-
         int c;
         int d;
         int min; // le plus petit parmi a, b, c, d
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Minimum'
 network_grading: false
 order: 9
 problems:
     q1:
-        header: ''
-        language: java
         type: code
         name: Calcul du minimum
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

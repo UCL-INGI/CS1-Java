@@ -1,5 +1,7 @@
-accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00
+accessible: 2016-09-29 12:00:00/2017-09-20 16:00:00/2017-09-20 16:00:00
 author: Ludovic TAFFIN, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |-
     Dessinez la lettre S en utilisant le caractère ``*`` lorsque l'on vous donne la ``hauteur``.
     La largeur du S sera toujours de 3 caractères. Les espaces ne sont nécéssaires que s'il y a une étoile après.
@@ -19,26 +21,31 @@ context: |-
     .. code-block:: java
 
         int hauteur; // la hauteur du S
-environment: java7mockito
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
 evaluate: best
+file: ''
 groups: false
-limits:
-    time: '30'
-    output: '1'
-    memory: '200'
+input_random: '0'
 name: 'Mission 2 : Question supplémentaire : Dessin de S'
 network_grading: false
 order: 34
 problems:
     q1:
+        type: code
+        name: Lettre S
         header: Écrivez ici le bout de programme permettant de dessiner la lettre
             S
         language: Java
-        name: Lettre S
-        type: code
+        default: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-tags: ''
 weight: 1.0

@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Ecrivez la signature et le corps de la méthode ``max`` qui prend comme  paramètres les entiers ``a``, ``b`` , ``c`` qui retourne le maximum de 3 nombres et dont la spécification est:
 
@@ -10,17 +13,30 @@ context: |-
         */
 
     Vous pouvez réutiliser votre code de la question supplémentaire maximum de la mission 1.
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 :  Q*  Maximum'
 network_grading: false
 order: 50
 problems:
     q1:
-        name: Ecrivez la signature et le corps de la méthode max.
-        language: java
         type: code
+        name: Ecrivez la signature et le corps de la méthode max.
         header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

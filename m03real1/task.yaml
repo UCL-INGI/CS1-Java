@@ -1,13 +1,32 @@
+accessible: true
 author: François MICHEL
+categories: []
+contact_url: ''
 context: Soumettez l'archive zip contenant le fichier LibMath.java et README.txt
-environment: java7
-limits: {memory: '100', output: '2', time: '30'}
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '512'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3: Phase de réalisation: Soumission'
 network_grading: false
 order: 62
 problems:
-  q1:
-    allowed_exts: [.zip]
-    header: Soumettez ici l'archive zip
-    name: Archive zip
-    type: code-file
+    q1:
+        type: file
+        name: Archive zip
+        header: Soumettez ici l'archive zip
+        allowed_exts:
+        - .zip
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

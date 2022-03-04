@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -10,6 +13,8 @@ context: |+
         </p>
         <ul>
           <li>public Temps(int h, int m, int s), avec m et s compris entre 0 et 59)
+          </li>
+          <li>Les différents getters et setters
           </li>
           <li>public int toSecondes(), qui renvoie le nombre total de secondes pour ce temps.
           </li>
@@ -28,21 +33,37 @@ context: |+
         <ul>
           <li>public Chanson(String t, String a, Temps d);
           </li>
+          <li>Les différents getters et setters
+          </li>
           <li>public String getTitre() : renvoie le titre de la chanson
           </li>
           <li>public String getAuteur() : retourne l'auteur de cette chanson
           </li>
           <li>public Temps getDuree() : retourne la durée de cette chanson
           </li>
-          <li>public String toString() : retourne un String décriant cette chanson sous le format TITRE - AUTEUR - DUREE
+          <li>public String toString() : retourne un String décrivant cette chanson sous le format TITRE - AUTEUR - DUREE
           </li>
         </ul>
 
-responseIsHTML: true
-order: 121
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '512'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Phase de réalisation'
+network_grading: false
+order: 121
 problems:
     temps:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -51,10 +72,11 @@ problems:
                   Ecrivez ici le code de la classe Temps
                 </p>public class Temps
 
-        type: code
-        multiple: true
         language: java
+        default: ''
     chanson:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -63,13 +85,10 @@ problems:
                   Ecrivez ici le code de la classe Chanson
                 </p>public class Chanson
 
-        type: code
-        multiple: true
         language: java
-limits:
-    language: java
-    time: 30
-    memory: 32
-    disk: 50
-    output: 5210
-environment: pythia0compat
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

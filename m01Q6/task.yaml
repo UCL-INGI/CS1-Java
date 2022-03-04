@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL & Ludovic TAFFIN & Olivier MARTIN
+categories: []
+contact_url: ''
 context: |+
     Écrivez un programme qui permet de jouer au jeu du `fizzbuzz <https://en.wikipedia.org/wiki/Fizz_buzz>`_
 
@@ -16,17 +19,30 @@ context: |+
         int i = // le nombre à vérifier (i >= 1)
         String temp = "" // fizz, buzz, fizzbuzz, non
 
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Fizzbuzz'
 network_grading: false
 order: 15
 problems:
     q1:
         type: code
-        header: Écrivez le programme pour jouer au Fizzbuzz
         name: Fizzbuzz
+        header: Écrivez le programme pour jouer au Fizzbuzz
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

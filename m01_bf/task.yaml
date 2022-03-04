@@ -1,4 +1,7 @@
+accessible: true
 author: Sébastien Combéfis, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     La `suite de Syracuse <https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse>`_ est une suite de naturels, définie de la manière suivante. Le premier naturel de la suite est n'importe quel naturel non-nul, que nous noterons :math:`s_0`. On peut ensuite calculer les éléments suivants de la suite en appliquant la formule suivante :
 
@@ -16,11 +19,18 @@ context: |-
     Afin d'aider les mathématiciens à éventuellement trouver un contre-exemple, écrivez un programme Java qui permet de calculer la suite de Syracuse pour n’importe quel naturel non-nul :math:`s_0`. Le programme s'arrête bien entendu lorsque le naturel 1 est atteint.
 
     Vous devez afficher chaque élément de la suite sur la sortie standard, avec ``System.out.println()``. La valeur de départ vous est déjà fournie et se trouve dans une variable de type ``int`` nommée ``s0``.
-environment: java7mockito
-limits:
-    output: '5'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question de Bilan Final'
 network_grading: false
 order: 22
@@ -28,7 +38,13 @@ problems:
     q1:
         type: code
         name: ''
-        language: java
         header: |+
             Écrivez ici directement le code à placer dans la méthode ``main``. Vous ne devez pas déclarer, ni initialiser la variable ``s0``
 
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

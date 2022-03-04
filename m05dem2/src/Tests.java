@@ -23,15 +23,15 @@ import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
     //Do not use \n since there are multiple questions.
-    private String feedbackBuilder1 = "@{0} :\n" + _("Le test t1 == t2 ne réussi pas.\n");
-    private String feedbackBuilder2 = "@{0} :\n" + _("Avec t1 = {1} et t2 = {2}, votre code ne donne pas le bon résultat.");
+    private String feedbackBuilder1 = "@{0} :\n" + Translator.translate("Le test t1 == t2 ne réussi pas.\n");
+    private String feedbackBuilder2 = "@{0} :\n" + Translator.translate("Avec t1 = {1} et t2 = {2}, votre code ne donne pas le bon résultat.");
 
     @Test
     public void test_1(){ catcher(new t1(), 1); }
@@ -56,10 +56,10 @@ public class Tests {
             double[] t6 = {0.1, 0.2, 0.3};
             double[] t7 = {};
 
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t4)), Correction.egal(t3, t4), Etudiant.egal(t3, t4));
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t5)), Correction.egal(t3, t5), Etudiant.egal(t3, t5));
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t3)), Correction.egal(t6, t3), Etudiant.egal(t6, t3));
-            assertEquals(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t7)), Correction.egal(t6, t7), Etudiant.egal(t6, t7));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t4)), Correction.egal(t3, t4) == Etudiant.egal(t3, t4));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t3), Arrays.toString(t5)), Correction.egal(t3, t5) == Etudiant.egal(t3, t5));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t3)), Correction.egal(t6, t3) == Etudiant.egal(t6, t3));
+            assertTrue(MessageFormat.format(feedbackBuilder2, question, Arrays.toString(t6), Arrays.toString(t7)), Correction.egal(t6, t7) == Etudiant.egal(t6, t7));
             return null;
         }
     }
@@ -68,21 +68,21 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, il est interdit de diviser par zéro."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, certaines variables ont été mal castées !"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + " " + _("Les deux tableaux ne sont pas forcément de la même taille…"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + " " + Translator.translate("Les deux tableaux ne sont pas forcément de la même taille…"));
         }catch(NullPointerException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Vous initialisez un tableau avec une taille négative."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

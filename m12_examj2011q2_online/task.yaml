@@ -1,26 +1,65 @@
+accessible: true
 author: 'Munyabarenzi Clémentine Zaninka (ressource : sources examen LFSAB1041 juin
-  2011)'
-context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. _juin2011:\
-  \  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online\n\
-  \n__ juin2011_\n\nQuestion 2 : Écrivez complètement le constructeur de la classe\
-  \ ``FullComputer``. Ce constructeur prend dans l'ordre les arguments suivants :\
-  \ le nom, le nombre de processus à supporter, la capacité de stockage.\nSa spécification\
-  \ est la suivante :\n\n.. code-block:: java\n\n   /**\n    * @pre n > 0, name !=\
-  \ null, storage >= 0\n    * @post Construit un FullComputer de nom name, supportant\
-  \ n processus\n    * et avec une capacité de stockage égale à storage\n    */\n\n\
-  \    /*** VOTRE REPONSE ***/\n"
-environment: java7
-limits: {memory: '100', output: '2', time: '30'}
+    2011)'
+categories: []
+contact_url: ''
+context: |
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online
+
+    __ juin2011_
+
+    Question 2 : Écrivez complètement le constructeur de la classe ``FullComputer``. Ce constructeur prend dans l'ordre les arguments suivants : le nom, le nombre de processus à supporter, la capacité de stockage.
+    Sa spécification est la suivante :
+
+    .. code-block:: java
+
+       /**
+        * @pre n > 0, name != null, storage >= 0
+        * @post Construit un FullComputer de nom name, supportant n processus
+        * et avec une capacité de stockage égale à storage
+        */
+
+        /*** VOTRE REPONSE ***/
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Examen Juin 2011 online : Question 2'
 network_grading: false
 order: 197
 problems:
-  q1: {header: Veillez à implémenter la signature et le corps du constructeur., language: java,
-    name: Constructeur de la Classe FullComputer, type: code}
-  zmontest: {header: "Insérez votre code de test optionnel ci-dessous. Vous pouvez\
-      \ utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.\
-      \  Votre code sera exécuté dans une méthode ``montest``:\n\n.. code-block::\
-      \ java\n\n    public static void montest() { /* VOTRE CODE */ }\n\nAttention,\
-      \ toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.\
-      \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n",
-    language: java, name: Fonction de test optionnelle, optional: true, type: code}
+    q1:
+        type: code
+        name: Constructeur de la Classe FullComputer
+        header: Veillez à implémenter la signature et le corps du constructeur.
+        language: java
+        default: ''
+    zmontest:
+        type: code
+        name: Fonction de test optionnelle
+        header: |
+            Insérez votre code de test optionnel ci-dessous. Vous pouvez utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.  Votre code sera exécuté dans une méthode ``montest``:
+
+            .. code-block:: java
+
+                public static void montest() { /* VOTRE CODE */ }
+
+            Attention, toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.  Vous *devez* effacer ce code de test pour finaliser votre soumission.
+        language: java
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

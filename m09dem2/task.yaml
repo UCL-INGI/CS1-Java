@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL
+categories: []
+contact_url: ''
 context: |-
     Un étudiant nommé Jean-Complexe vient vers vous et vous dit que lui et ses amis détestent leur prénom car leur prénom est composé, or, ils trouvent cela trop long à prononcer. Ils désireraient ne garder que la première partie de leur prénom.
 
@@ -44,11 +47,18 @@ context: |-
         public static int premierPrenom(String filename){
             // À implémenter
         }
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 9 : Question de démarrage 2 : la méthode premierPrenom()'
 network_grading: false
 order: 154
@@ -56,7 +66,13 @@ problems:
     q1:
         type: code
         name: Le corps de la méthode premierPrenom
-        language: Java
         header: Écrivez ici le corps de la méthode premierPrenom(). Veillez bien à
             n'écrire que le corps de la méthode, ne recopiez pas sa signature. Respectez
             bien les spécifications.
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

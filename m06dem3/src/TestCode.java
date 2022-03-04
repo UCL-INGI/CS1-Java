@@ -4,7 +4,7 @@ package src;
  *  refactor 2017 by Alexandre Dubray
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Drapeau;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
@@ -33,7 +33,7 @@ public class TestCode{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -62,7 +62,7 @@ public class TestCode{
 				verify(spy2,atLeast(1)).get();
 				return null;
 			} catch (WantedButNotInvoked e) {
-				String feed = MessageFormat.format(_("{0} : Vous devez utiliser la méthode get() pour récupérer la valeur du drapeau !"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : Vous devez utiliser la méthode get() pour récupérer la valeur du drapeau !"),test_name());
 				fail(feed);
 				return null;
 			}
@@ -77,23 +77,23 @@ public class TestCode{
 		 * 			Lance une AssertionError lorsqu'une réponse est incorrecte.
 		 */
 		public Void call(){
-			String msg = _("{0} : lorsque ''d'' a l''état {1} et que la variable drapeau vaut {2}, votre méthode devrait retourner {3} mais ce n''est pas le cas.");
+			String msg = Translator.translate("{0} : lorsque ''d'' a l''état {1} et que la variable drapeau vaut {2}, votre méthode devrait retourner {3} mais ce n''est pas le cas.");
 			Drapeau d = new Drapeau(true);
 			Drapeau d2 = new Drapeau(true);
 			String feed1 = MessageFormat.format(msg,test_name(),"true","true","true");
-			assertThat(feed1,d2.same(d),is(true));
+			assertTrue(feed1, d2.same(d) == true);
 
 			String feed2 = MessageFormat.format(msg,test_name(),"false","true","false");
 			d.set(false);
-			assertThat(feed2,d2.same(d),is(false));
+			assertTrue(feed2, d2.same(d) == false);
 
 			String feed3 = MessageFormat.format(msg,test_name(),"false","false","true");
 			d2.set(false);
-			assertThat(feed3,d2.same(d),is(true));
+			assertTrue(feed3, d2.same(d) == true);
 
 			String feed4 = MessageFormat.format(msg,test_name(),"true","false","false");
 			d.set(true);
-			assertThat(feed4,d2.same(d),is(false));
+			assertTrue(feed4, d2.same(d) == false);
 			return null;
 		}
 	}
@@ -102,21 +102,21 @@ public class TestCode{
 		try {
 			f.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 

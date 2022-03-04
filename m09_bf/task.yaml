@@ -1,4 +1,7 @@
+accessible: true
 author: Sébastien Combéfis, Naitali Brandon
+categories: []
+contact_url: ''
 context: |
     Vous devez implémenter une méthode ``getMax`` dont le but est de retrouver, dans un fichier, la ligne contenant le nombre flottant avec la plus grande valeur. Si un tel nombre n'existe pas, la méthode doit renvoyer -∞. En cas d'erreur lors de la lecture du fichier, le programme doit se quitter et afficher exactement ``ERREUR`` sur ``System.err``.
 
@@ -24,19 +27,32 @@ context: |
          *          3.1416
          */
         public static double getMax (String filename)
-environment: java7mockito
-limits:
-    time: '30'
-    output: '5210'
-    memory: '300'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '300'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 9 : Question de Bilan Final'
 network_grading: false
 order: 164
 problems:
     q1:
+        type: code
+        name: ''
         header: |+
             Complétez ici le corps de la méthode ``getMax`` dont la spécification est donnée dans l'énoncé.
 
         language: java
-        type: code
-        name: ''
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

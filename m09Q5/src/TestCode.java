@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -24,15 +24,11 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Etudiant;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import src.librairies.FunctionHelper;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
-
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
 public class TestCode{
 
@@ -40,7 +36,7 @@ public class TestCode{
 	public TestName name = new TestName();
 	
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -53,22 +49,22 @@ public class TestCode{
 		try {
 			f.call();
 		}catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
 			e.printStackTrace();
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 
@@ -90,8 +86,8 @@ public class TestCode{
 		public Void call() {
 			check_function();
 			boolean res = Etudiant.accessible("./fileThatDoNotExist");
-			String feed = MessageFormat.format(_("{0} : lorsque le fichier n''existe pas, votre méthode devrait renvoyer false mais ce n''est pas le cas !"),test_name());
-			assertThat(feed,res,is(false));
+			String feed = MessageFormat.format(Translator.translate("{0} : lorsque le fichier n''existe pas, votre méthode devrait renvoyer false mais ce n''est pas le cas !"),test_name());
+			assertTrue(feed,res == false);
 			return null;
 		}
 	}
@@ -105,8 +101,8 @@ public class TestCode{
 		public Void call() {
 			check_function();
 			boolean res = Etudiant.accessible("./file");
-			String feed = MessageFormat.format(_("{0} : lorsque le fichier existe et est accessible, votre méthode devrait renvoyer true mais ce n''est pas le cas !"),test_name());
-			assertThat(feed,res,is(true));
+			String feed = MessageFormat.format(Translator.translate("{0} : lorsque le fichier existe et est accessible, votre méthode devrait renvoyer true mais ce n''est pas le cas !"),test_name());
+			assertTrue(feed,res == true);
 			return null;
 		}
 	}

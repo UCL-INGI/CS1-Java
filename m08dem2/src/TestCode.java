@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -25,27 +25,20 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Etudiant;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 import java.lang.StringBuffer;
 import java.io.IOException;
 
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.core.classloader.annotations.PowerMockIgnore;
-import org.powermock.modules.junit4.PowerMockRunner;
-
-@RunWith(PowerMockRunner.class)
-@PrepareForTest({StringBuffer.class,Etudiant.class})
 public class TestCode{
 
 	@Rule
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -58,24 +51,24 @@ public class TestCode{
 		try {
 			f.call();
 		}catch (ArithmeticException e){
-			fail(_("Attention, il est interdit de diviser par zéro."));
+			fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
 			e.printStackTrace();
 		}catch(ClassCastException e){
-			fail(_("Attention, certaines variables ont été mal castées !"));
+			fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
 			e.printStackTrace();
 		}catch(StringIndexOutOfBoundsException e){
 			e.printStackTrace();
-			fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+			fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
 			e.printStackTrace();
 		}catch(ArrayIndexOutOfBoundsException e){
 			e.printStackTrace();
-			fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+			fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
 			e.printStackTrace();
 		}catch(NullPointerException e){
-			fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+			fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
 			e.printStackTrace();
 		}catch(StackOverflowError e) {
-			fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+			fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
 			e.printStackTrace();
 		}catch(Exception e){
 			fail("\n" + e.toString());
@@ -92,8 +85,8 @@ public class TestCode{
 		 */
 		public Void call() {
 			String res = Etudiant.repeat(null,10);
-			String feed = MessageFormat.format(_("{0} : attention, lorsque s vaut null, vous renvoyez {1} au lieu de null"),test_name(),res);
-			assertThat(feed,res,nullValue());
+			String feed = MessageFormat.format(Translator.translate("{0} : attention, lorsque s vaut null, vous renvoyez {1} au lieu de null"),test_name(),res);
+			assertTrue(feed,res == null);
 			return null;
 		}
 	}
@@ -106,8 +99,8 @@ public class TestCode{
 		 */
 		public Void call() {
 			String res = Etudiant.repeat("Hello",0);
-			String feed = MessageFormat.format(_("{0} : attention, lorsque n vaut 0, vous renvoyez {1} au lieu de null"),test_name(),res);
-			assertThat(feed,res,nullValue());
+			String feed = MessageFormat.format(Translator.translate("{0} : attention, lorsque n vaut 0, vous renvoyez {1} au lieu de null"),test_name(),res);
+			assertTrue(feed,res == null);
 			return null;
 		}
 	}
@@ -126,9 +119,9 @@ public class TestCode{
 				strb.append(input);
 			String feed;
 			if(strb.toString().contains(res))
-				feed = MessageFormat.format(_("{0} : votre code ne semble pas répéter assez de fois la chaîne de carctère, vérifiez votre condition!"),test_name());
+				feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas répéter assez de fois la chaîne de carctère, vérifiez votre condition!"),test_name());
 			else
-				feed = MessageFormat.format(_("{0} : votre code ne semble pas renvoyez un string contenant la chaîne de caractère passé en paramètre!"),test_name());
+				feed = MessageFormat.format(Translator.translate("{0} : votre code ne semble pas renvoyez un string contenant la chaîne de caractère passé en paramètre!"),test_name());
 			if(!res.equals(strb.toString()))
 				fail(feed);
 			return null;

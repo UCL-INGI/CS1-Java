@@ -29,7 +29,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 import src.librairies.*;
@@ -91,31 +91,31 @@ public class Tests{
     public void test_1() throws ClassNotFoundException{
         FunctionHelper.check_etudiant_function("StudentCode.Etudiant", "motDePasseValide", boolean.class, new Class[]{String.class});
         
-        String feedback  =_("Vérifiez-vous la présence d'une majuscule ?\n");
+        String feedback  =Translator.translate("Vérifiez-vous la présence d'une majuscule ?\n");
         catcher(new TestMdp1(generateMdp(8, 10, false, true, true), feedback), 1);
     }
     @Test
     public void test_2(){
         if(!check()) return;
-        String feedback  =_("Vérifiez-vous la présence d'une minuscule ?\n");
+        String feedback  =Translator.translate("Vérifiez-vous la présence d'une minuscule ?\n");
         catcher(new TestMdp1(generateMdp(8, 10, true, false, true), feedback), 1);
     }
     @Test
     public void test_3(){
         if(!check()) return;
-        String feedback  =_("Vérifiez-vous la présence d'un chiffre ?\n");
+        String feedback  =Translator.translate("Vérifiez-vous la présence d'un chiffre ?\n");
         catcher(new TestMdp1(generateMdp(8, 10, true, true, false), feedback), 1);
     }
     @Test
     public void test_4(){
         if(!check()) return;
-        String feedback  =_("Vérifiez-vous toutes les conditions simultanément ?\n");
+        String feedback  =Translator.translate("Vérifiez-vous toutes les conditions simultanément ?\n");
         catcher(new TestMdp1(generateMdp(8, 10, true, true, true), feedback), 1);
     }
     @Test
     public void test_5(){
         if(!check()) return;
-        String feedback  =_("Vérifiez-vous la longueur du mot de passe ?\n");
+        String feedback  =Translator.translate("Vérifiez-vous la longueur du mot de passe ?\n");
         catcher(new TestMdp1(generateMdp(3, 1, true, true, true), feedback), 1);
     }
     
@@ -127,11 +127,11 @@ public class Tests{
             this.feedbackAdd = feedback;
         }
         public Void call() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-            String feedback  =_("Avec l''argument s=\"{0}\", la réponse attendue est {1}, malheureusement, votre code renvoie {2}.\n");
+            String feedback  =Translator.translate("Avec l''argument s=\"{0}\", la réponse attendue est {1}, malheureusement, votre code renvoie {2}.\n");
             boolean result = Correction.motDePasseValide(mdp);
             boolean resultStudent = (boolean) FunctionHelper.run_student_function("motDePasseValide", mdp);
             if(result != resultStudent) fail(test_name() + " : " + MessageFormat.format(feedback, mdp, result, resultStudent) + " " + feedbackAdd);
-            System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+            System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
             return null;
         }
         
@@ -142,24 +142,24 @@ public class Tests{
         }catch (InvocationTargetException e){
             Throwable t = e.getCause();
             if(t instanceof ArithmeticException){
-                fail(_("Attention, il est interdit de diviser par zéro."));
+                fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
             }else if(t instanceof ClassCastException){
-                fail(_("Attention, certaines variables ont été mal castées !"));
+                fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
             }else if(t instanceof StringIndexOutOfBoundsException){
-                fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+                fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
             }else if(t instanceof ArrayIndexOutOfBoundsException){
-                fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+                fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
             }else if(t instanceof NullPointerException){
-                fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+                fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
             }else if(t instanceof NegativeArraySizeException){
-                fail(_("Vous initialisez un tableau avec une taille négative."));
+                fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
             }else if(t instanceof StackOverflowError){
-                fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+                fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
             }else{
-                fail(_("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
+                fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
             }
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     private String test_name(){

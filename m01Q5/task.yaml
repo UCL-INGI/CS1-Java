@@ -1,4 +1,7 @@
+accessible: true
 author: Lucas Ody & Tom Rousseaux
+categories: []
+contact_url: ''
 context: |
     Le `OU exclusif <https://fr.wikipedia.org/wiki/Fonction_OU_exclusif>`_ (XOR en anglais) est un opérateur logique à l'instar du "et" et du "ou". Il vous est demandé d'implémenter ce XOR, sachant que, pour ``a`` et ``b`` deux booléens, le résultat de ``a XOR b`` est ``true`` si un et un seul des booléens est ``true``, et ``false`` sinon.
 
@@ -15,11 +18,18 @@ context: |
          boolean a;
          boolean b;
          boolean xor; // placer dans cette variable votre résultat
-environment: java7mockito
-limits:
-    memory: '100'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : OU exclusif'
 network_grading: false
 order: 16
@@ -29,3 +39,9 @@ problems:
         name: ''
         header: ''
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

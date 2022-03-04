@@ -14,7 +14,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 import src.librairies.*;
@@ -23,8 +23,8 @@ import java.lang.reflect.InvocationTargetException;
 
 public class TestOut{
     @Rule public TestName name = new TestName();
-    public String feedbackRes  =_("vérifiez les valeurs de retour de votre programme.\n");
-    public String feedbackException  =_("vérifiez que vous gérez bien les exceptions.\n");
+    public String feedbackRes = Translator.translate("vérifiez les valeurs de retour de votre programme.\n");
+    public String feedbackException = Translator.translate("vérifiez que vous gérez bien les exceptions.\n");
 
     public String readStdout(boolean etudiant, String a, String b){
 	String[] inputs = { a, b, b, "0"};
@@ -46,7 +46,7 @@ public class TestOut{
 	Random r = new Random();
 	int r1 = r.nextInt(19) + 1;
 	int r2 = r.nextInt(19) + 1;
-	String feedback  = MessageFormat.format(_("tous les arguments ne sont pas vérifiés ! Appelez divise avec tous les arguments !\n"), r1, r2);
+	String feedback  = MessageFormat.format(Translator.translate("tous les arguments ne sont pas vérifiés ! Appelez divise avec tous les arguments !\n"), r1, r2);
 	catcher(new TestArg(((Integer)r1).toString(), ((Integer)r2).toString(), feedback), 1); 
     }
     private class TestArg implements Callable<Void> {
@@ -71,7 +71,7 @@ public class TestOut{
 		if(!out.equals(outStudent)) {
 			fail(test_name() + " : " + feedbackAdd);	
 		}
-		System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
 	    	return null;
 	}
 
@@ -82,24 +82,24 @@ public class TestOut{
         	}catch (InvocationTargetException e){
 		    Throwable t = e.getCause();
 		    if(t instanceof ArithmeticException){
-		        fail(_("Attention, il est interdit de diviser par zéro."));
+		        fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
 		    }else if(t instanceof ClassCastException){
-		        fail(_("Attention, certaines variables ont été mal castées !"));
+		        fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
 		    }else if(t instanceof StringIndexOutOfBoundsException){
-		        fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+		        fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
 		    }else if(t instanceof ArrayIndexOutOfBoundsException){
-		        fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+		        fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
 		    }else if(t instanceof NullPointerException){
-		        fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+		        fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
 		    }else if(t instanceof NegativeArraySizeException){
-		        fail(_("Vous initialisez un tableau avec une taille négative."));
+		        fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
 		    }else if(t instanceof StackOverflowError){
-		        fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+		        fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
 		    }else{
-		        fail(_("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
+		        fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
 		    }
 		}catch(Exception e){
-		    fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+		    fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 		}
     }
     private String test_name(){

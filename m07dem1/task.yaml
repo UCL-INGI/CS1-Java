@@ -1,4 +1,7 @@
+accessible: true
 author: Alexandre Dubray
+categories: []
+contact_url: ''
 context: |+
     Considérez la classe ``Pair`` suivante :
 
@@ -26,17 +29,30 @@ context: |+
 
     .. _Object: http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
 
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 7 : Question de Démarrage 1 : Paire d''entiers'
 network_grading: false
 order: 125
 problems:
     q1:
         type: code
-        header: Ecrivez ici **la signature et le corps** de la méthode ``equals``.
         name: ''
+        header: Ecrivez ici **la signature et le corps** de la méthode ``equals``.
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

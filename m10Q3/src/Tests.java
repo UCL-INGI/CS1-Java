@@ -26,7 +26,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import StudentCode.*;
 
 import src.librairies.*;
@@ -82,24 +82,24 @@ public class Tests{
     }
     @Test
     public void test_4(){
-        String feedback  = MessageFormat.format(_("{0} : le test de parsing d'un string qui n'est pas un double ne passe pas : "), test_name());
+        String feedback  = MessageFormat.format(Translator.translate("{0} : le test de parsing d'un string qui n'est pas un double ne passe pas : "), test_name());
         catcher(new TestException(generateRandomStudent(true), feedback), 1);
     }
     @Test
     public void test_3(){
-        String feedback  = MessageFormat.format(_("{0} : le test avec un étudiant possédant une cote supérieure à 20 ne passe pas : "), test_name());
+        String feedback  = MessageFormat.format(Translator.translate("{0} : le test avec un étudiant possédant une cote supérieure à 20 ne passe pas : "), test_name());
         catcher(new TestException(generateRandomStudentWithFault(false), feedback), 1);
     }
     @Test
     public void test_2(){
-        String feedback  = MessageFormat.format(_("{0} : le test avec un étudiant possédant une cote négative ne passe pas : "), test_name());
+        String feedback  = MessageFormat.format(Translator.translate("{0} : le test avec un étudiant possédant une cote négative ne passe pas : "), test_name());
         catcher(new TestException(generateRandomStudentWithFault(true), feedback), 1);
     }
     private class TestException implements Callable<Void> {
         String a;
         String feedbackAdd;
-        String feedbackBad = _("vous ne lancez pas la bonne exception.\n");
-        String feedbackBad2 = _("vous ne lancez pas une exception dans les cas particuliers.\n");
+        String feedbackBad = Translator.translate("vous ne lancez pas la bonne exception.\n");
+        String feedbackBad2 = Translator.translate("vous ne lancez pas une exception dans les cas particuliers.\n");
         public TestException(String a, String feedback){
             this.a = a;
             this.feedbackAdd = feedback;
@@ -110,7 +110,7 @@ public class Tests{
                 Etudiant.Student f= s.new Student(a);
                 fail(feedbackAdd + feedbackBad2);
             }catch(StudentCode.StudentFormatException e){
-                System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+                System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
             }catch(Exception e){
                 fail(feedbackAdd + feedbackBad);
             }
@@ -119,24 +119,24 @@ public class Tests{
     }
     @Test
     public void test_6(){
-        String feedbackT  =  MessageFormat.format(_("{0} : les cotes sont comprises entre 0 et 20 !\n"), test_name());
+        String feedbackT  =  MessageFormat.format(Translator.translate("{0} : les cotes sont comprises entre 0 et 20 !\n"), test_name());
         catcher(new TestParsing(generateRandomStudent(false) + " , 0.0", feedbackT), 1);
     }
     @Test
     public void test_5(){
-        String feedbackT  =  MessageFormat.format(_("{0} : les cotes sont comprises entre 0 et 20 !\n"), test_name());
+        String feedbackT  =  MessageFormat.format(Translator.translate("{0} : les cotes sont comprises entre 0 et 20 !\n"), test_name());
         catcher(new TestParsing(generateRandomStudent(false) + " , 20.0", feedbackT), 1);
     }
     @Test
     public void test_1(){
-        String feedbackT  =  MessageFormat.format(_("{0} : le test avec un string correct ne passe pas : "), test_name());
+        String feedbackT  =  MessageFormat.format(Translator.translate("{0} : le test avec un string correct ne passe pas : "), test_name());
         catcher(new TestParsing(generateRandomStudent(false), feedbackT), 1);
     }
     private class TestParsing implements Callable<Void> {
         String a;
         String feedbackAdd;
-        String feedbackBad = _("vous ne respectez pas le format \"nom; cote1, cote2, cote3\" avec les cotes <=20 et >=0.\n");
-        String feedbackBad2 = _("vous n'initialisez pas correctement les variables d'instances de la classe Student.\n");
+        String feedbackBad = Translator.translate("vous ne respectez pas le format \"nom; cote1, cote2, cote3\" avec les cotes <=20 et >=0.\n");
+        String feedbackBad2 = Translator.translate("vous n'initialisez pas correctement les variables d'instances de la classe Student.\n");
         public TestParsing(String a, String feedback){
             this.a = a;
             this.feedbackAdd = feedback;
@@ -148,7 +148,7 @@ public class Tests{
                 Correction.Student c = co.new Student(a);
                 Etudiant.Student e = s.new Student(a);
                 if(!c.nom.equals(e.nom) || !doubleArrayEquality(c.cotes, e.cotes)) fail(feedbackAdd + feedbackBad2);
-                System.err.println(MessageFormat.format(_("{0} : réussi"), test_name()));
+                System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"), test_name()));
             }catch(Exception e){
                 fail(feedbackAdd + feedbackBad );
             }
@@ -160,21 +160,21 @@ public class Tests{
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
     private String test_name(){

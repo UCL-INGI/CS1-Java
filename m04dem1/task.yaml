@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |
     La classe ``Character`` de l'API Java (https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html) contient un bon nombre de méthodes qui pourront vous être utiles pour manipuler des caractères. Avec ces exercices, vous serez un peu plus familiers avec certaines méthodes qui vous seront certainement utiles dans le futur.
 
@@ -9,25 +12,37 @@ context: |
         char d = // un caractère de a à z, en majuscule ou non
         boolean b; // à assigner dans la Question 1
         char e;    // à assigner dans la Question 2
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 4 : Questions de démarrage 1 : La classe Character'
 network_grading: false
 order: 65
 problems:
     q1:
-        type: code-single-line
+        type: code_single_line
+        name: ''
         header: |
             En utilisant l'API Java de la classe Character, assignez à la variable booléenne b la valeur true si la variable c contient un caractère représentant un chiffre, et la valeur false sinon. Répondez à cette question en une seule ligne.
-        name: ''
-        language: Java
+        default: ''
     q2:
+        type: code_single_line
+        name: ''
         header: Toujours en utilisant l'API Java de la classe Character, assignez
             à la variable e le caractère en majuscule correspondant au caractère contenu
             dans la variable d. Répondez à cette question en une seule ligne.
-        name: ''
-        language: Java
-        type: code-single-line
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

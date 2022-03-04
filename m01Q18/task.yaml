@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin
+categories: []
+contact_url: ''
 context: |-
     Créer un programme permettant de déterminer le siècle d'une année. Placez le résultat de votre calcul dans la variable ``siecle``.
 
@@ -6,17 +9,30 @@ context: |-
 
         int annee;  // l'année à vérifier
         int siecle; // le siècle de l'année
-environment: java7mockito
-limits:
-    output: '2'
-    memory: '100'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Siècle'
 network_grading: false
 order: 3
 problems:
     q1:
-        header: ''
         type: code
         name: Déterminer le siècle d'une année
+        header: ''
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

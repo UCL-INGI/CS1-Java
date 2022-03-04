@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin
+categories: []
+contact_url: ''
 context: |-
     La variable ``carac``  contient un caractère (chiffre ou lettre minuscule). Ecrivez le code Java qui place dans la variable ``retour``, la chaîne de caractères :
 
@@ -10,17 +13,30 @@ context: |-
 
         char carac; // le caractère à vérifier
         String retour; // chiffre, voyelle ou consonne
-environment: java7mockito
-limits:
-    output: '2'
-    memory: '100'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Caractère'
 network_grading: false
 order: 11
 problems:
     q1:
-        header: ''
         type: code
         name: Déterminer si un caractère est un chiffre, une voyelle, une consonne
+        header: ''
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

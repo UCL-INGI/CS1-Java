@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -12,16 +15,24 @@ context: |+
           Par exemple, le nombre d'entiers positifs compris entre -1 et 2, bornes non incluses, sera égal à 2.
         </p>
 
-environment: pythia0compat
-limits:
-    memory: '32'
-    output: '5210'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3: Exercice complémentaire 1'
 network_grading: false
 order: 57
 problems:
     q1:
+        type: code
         name: ''
         header: |+
             .. raw:: html
@@ -32,5 +43,9 @@ problems:
                 </p>public static int countPosIntBetween (int a, int b)
 
         language: java
-        type: code
-responseIsHTML: true
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

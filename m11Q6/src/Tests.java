@@ -24,7 +24,7 @@ import java.util.concurrent.Callable;
 import java.util.Random;
 import java.util.Arrays;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -78,7 +78,7 @@ public class Tests {
             Liste q = new Liste();
             Liste qCorrect = new Liste();
             currentListe = q;
-            assertTrue(currentPre + _("Vous devez retourner 0 quand la liste est vide.\n"), q.retire("Java") == 0);
+            assertTrue(currentPre + Translator.translate("Vous devez retourner 0 quand la liste est vide.\n"), q.retire("Java") == 0);
             
             qCorrect.ajoute("Java");
             q.ajoute("Java");
@@ -113,8 +113,8 @@ public class Tests {
             String liste_before_run_student_code = q.toString();
             boolean expected = q.contientCorrect(to_test[i]);
             boolean student = q.contient(to_test[i]);
-            assertTrue(currentPre + _("Votre méthode a modifié la liste. C'est inacceptable.\n"), liste_before_run_student_code.equals(q.toString()));
-            assertTrue(MessageFormat.format(currentPre + _("{0}(\"{1}\") a retourné {2} avec la liste :\n{3}"), "contient", to_test[i], student, q.toString()), expected == student);
+            assertTrue(currentPre + Translator.translate("Votre méthode a modifié la liste. C'est inacceptable.\n"), liste_before_run_student_code.equals(q.toString()));
+            assertTrue(MessageFormat.format(currentPre + Translator.translate("{0}(\"{1}\") a retourné {2} avec la liste :\n{3}"), "contient", to_test[i], student, q.toString()), expected == student);
         }
     }
     
@@ -123,33 +123,33 @@ public class Tests {
         String origin = q.toString();
         int exp = qCorrect.retireCorrect(to_test);
         int stu = q.retire(to_test);
-        String feedback = MessageFormat.format(currentPre + _("Vous retournez {0} alors qu''il faut retourner {1} lors de l''appel de {2}(\"{3}\") sur la liste :\n{4}"), stu, exp, "retire", to_test, q.toString());
+        String feedback = MessageFormat.format(currentPre + Translator.translate("Vous retournez {0} alors qu''il faut retourner {1} lors de l''appel de {2}(\"{3}\") sur la liste :\n{4}"), stu, exp, "retire", to_test, q.toString());
         assertTrue(feedback, exp == stu);
         
-        feedback = MessageFormat.format(currentPre + _("Votre méthode {0}(\"{1}\") ne retire pas correctement les éléments.\nLa liste est :\n{2}\nVotre liste modifiée est :\n{3}\nLa liste attendue est :\n{4}"), "retire", to_test, origin, q.toString(), qCorrect.toString());
+        feedback = MessageFormat.format(currentPre + Translator.translate("Votre méthode {0}(\"{1}\") ne retire pas correctement les éléments.\nLa liste est :\n{2}\nVotre liste modifiée est :\n{3}\nLa liste attendue est :\n{4}"), "retire", to_test, origin, q.toString(), qCorrect.toString());
         assertTrue(feedback, qCorrect.toString().equals(q.toString()));
     }
 
     public void catcher(Callable<Void> test) {
-        String msg = "\n" + _("Cette erreur est survenue quand la liste est :\n");
+        String msg = "\n" + Translator.translate("Cette erreur est survenue quand la liste est :\n");
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(currentPre + _("Attention, il est interdit de diviser par zéro.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, il est interdit de diviser par zéro.") + msg + currentListe.toString());
         }catch(ClassCastException e){
-            fail(currentPre + _("Attention, certaines variables ont été mal castées !") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, certaines variables ont été mal castées !") + msg + currentListe.toString());
         }catch(StringIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)") + msg + currentListe.toString());
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(currentPre + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)") + msg + currentListe.toString());
         }catch(NullPointerException e){
-            fail(currentPre + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas.") + msg + currentListe.toString());
         }catch(NegativeArraySizeException e){
-            fail(currentPre + _("Vous initialisez un tableau avec une taille négative.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Vous initialisez un tableau avec une taille négative.") + msg + currentListe.toString());
         }catch(StackOverflowError e){
-            fail(currentPre + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même.") + msg + currentListe.toString());
         }catch(Exception e){
-            fail(currentPre + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msg + currentListe.toString());
+            fail(currentPre + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString() + msg + currentListe.toString());
         }
     }
 }

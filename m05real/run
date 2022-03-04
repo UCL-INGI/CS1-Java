@@ -1,101 +1,40 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
-# A modifier : 
-# - La liste expectedFiles, mettre les fichiers attendus dans l'archive zip.
-# - La variable deadline
-
-from os import listdir, system
-import zipfile 
-import inginiousUtils
-import time
+#!/bin/python3
+import importlib.util
+import sys
+import json
+from json import JSONDecodeError
+from distutils.file_util import copy_file
 import os
-import subprocess
-from inginious import feedback
 
-os.environ['TZ'] = 'Europe/Brussels'
+# Dynamically load modules we need
+# Credits to https://stackoverflow.com/a/67692/6149867
+# And for the explanation : http://www.blog.pythonlibrary.org/2016/05/27/python-201-an-intro-to-importlib/
+def dynamically_load_module(module, path):
+    spec = importlib.util.spec_from_file_location(module, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
-# Variable to modify. Contains the deadline after which the script has to deliver the results of the complete test of the mission.
-# Before the deadline, the script will only verify if the right files are in the ZIP archive.
 
-# Variable à modifier. Contient la deadline après laquelle le script doit fournir les résultats du test complet de la mission.
-# Avant cette deadline, le script vérifiera uniquement si les bons fichiers sont présents dans l'archive ZIP.
+#####################################
+# Our import for common run file    #
+#####################################
+sys.path.append("/course/common")
 
-#           jj/mm/aaaa
-deadline = "24/10/2015"
+runfile = dynamically_load_module("runfile", "/course/common/runfile.py")
 
-temps_deadline = time.strptime(deadline, "%d/%m/%Y")
+isExist = os.path.exists("./student/Translations")
 
-# Verify the file content
-system('getinput "q1" > basicSubmission.zip')
+if not isExist:
+  os.makedirs("./student/Translations")
 
-#totalPoints = 0
-#maxPoints = 5
+copy_file("/course/common/student/Translations/Translator.java", "./student/Translations/Translator.java")
 
-title1 = "Testing content of archive"
+try:
+    task_options = json.load(open('config.json', 'r', encoding="utf-8"))
+except JSONDecodeError as e:
+    print(_("Impossible de décoder le config.json"))
+    print(e)
+    exit()
 
-output = ""
-
-output += inginiousUtils.get_rst_title(title1) + "\n\n"
-
-expectedFiles = ['ImageGray.java', 'LibrairieImage.java', 'LibrairieIO.java', 'Test.java', 'TestRescale.java', 'TestBrighten.java', 'TestContains.java', 'TestSubtract.java', 'README.TXT']
-
-unzipOutput = inginiousUtils.extract_zip_content('basicSubmission.zip', expectedFiles)
-
-if (unzipOutput):
-    output += unzipOutput
-    output += "\n**Archive Content: 0/1**"
-    feedback.set_global_result("failed")
-    feedback.set_global_feedback(output)
-    exit(0)
-else:
-    system('sh custom.sh')
-    try:
-        subprocess.check_output("javac -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar student/*.java", stderr = subprocess.STDOUT, shell = True)
-        output += "Your archive has the correct content.\n"
-        output += "\n**Archive content: 1/1**"
-        feedback.set_global_result("success")
-        feedback.set_global_feedback(output)
-    except subprocess.CalledProcessError as e:
-        output += "There are some compilation errors with your program :\n::\n\n"
-        sp = subprocess.Popen(["sed", "-e", "s/^/\\t/"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output += sp.communicate(e.output)[0].decode("utf-8")
-        feedback.set_global_result("failed")
-        feedback.set_global_feedback(output)
-        exit(1)
-    # On lance le feedback complet
-    system('sh run.sh')
-    if (os.stat("feedback.out").st_size != 0):
-        output += "\n\n.. hidden-until:: " + deadline + "\n\n"
-        feed1 = open('feed1', 'w+')
-        feed1.write(output)
-        feedbackout = open('feedback.out', 'r')
-        outputfeedbackout = feedbackout.read()
-        proc = subprocess.Popen(["sed", "-e", "s/^/\\t/"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        outsed = proc.communicate(outputfeedbackout)[0].decode("utf-8")
-        feedback2out = open('feedback2.out', 'w+')
-        feedback2out.write(outsed)
-        feed1.close()
-        feedbackout.close()
-        feedback2out.close()
-        feed1 = open('feed1', 'r')
-        feedback2out = open('feedback2.out', 'r')
-        output2 = feed1.read() + "\n"
-        output2 += feedback2out.read()
-        print(output2)
-        feed1.close()
-        feedback2out.close()
-        feedback.set_problem_result("success","q1")
-        feedback.set_problem_feedback(output2,"q1")
-        feedback.set_global_result("success")
-        feedback.set_global_feedback("L'archive contient les bons fichiers.")
-    else:
-        output += "\n\n.. hidden-until:: \"" + deadline + "\"\n\n"
-        system('echo "' + output + '" > feed1')
-        system('echo "Bravo, les tests se sont bien passés !" > feedback.out')
-        system('sed -e \'s/^/\\t/\' < feedback.out > feedback2.out')
-        output2 = subprocess.check_output("cat feed1 feedback2.out", shell = True)
-        feedback.set_problem_result("success","q1")
-        feedback.set_problem_feedback(output2,"q1")
-        feedback.set_global_result("success")
-        feedback.set_global_feedback("")
+runfile.run(**task_options)

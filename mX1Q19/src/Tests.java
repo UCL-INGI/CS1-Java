@@ -22,7 +22,7 @@ import org.junit.Test;
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
@@ -30,10 +30,10 @@ public class Tests {
     
     private double []values_abs = {0, -0.1, -0.4, -0.5, -0.6, -0.9, -1, 1, 0.5, -7.5};
     private double []values = {0, 0.1, 0.4, 0.5, 0.6, 0.9, 1, 7.5};
-    private String feedbackBuilderAbs = "@{0} :\n" + _("{1} en valeur absolue donne {2}. Cependant, votre code calcule {3}.\n");
-    private String feedbackBuilderCeil = "@{0} :\n" + _("{1} arrondi au dessus donne {2}. Cependant, votre code calcule {3}.\n");
-    private String feedbackBuilderRound = "@{0} :\n" + _("{1} arrondi donne {2}. Cependant, votre code calcule {3}.\n");
-    private String feedbackBuilderFloor = "@{0} :\n" + _("{1} arrondi en dessous donne {2}. Cependant, votre code calcule {3}.\n");
+    private String feedbackBuilderAbs = "@{0} :\n" + Translator.translate("{1} en valeur absolue donne {2}. Cependant, votre code calcule {3}.\n");
+    private String feedbackBuilderCeil = "@{0} :\n" + Translator.translate("{1} arrondi au dessus donne {2}. Cependant, votre code calcule {3}.\n");
+    private String feedbackBuilderRound = "@{0} :\n" + Translator.translate("{1} arrondi donne {2}. Cependant, votre code calcule {3}.\n");
+    private String feedbackBuilderFloor = "@{0} :\n" + Translator.translate("{1} arrondi en dessous donne {2}. Cependant, votre code calcule {3}.\n");
 
     @Test
     public void test_abs(){ catcher(new t1(),1); }
@@ -107,17 +107,17 @@ public class Tests {
         try{
             test.call();
         }catch (ArithmeticException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, il est interdit de diviser par zéro."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, certaines variables ont été mal castées !"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(Exception e){
-            fail(MessageFormat.format("@{0} :\n", nQuestion) + _("Une erreur inattendue est survenue dans votre tâche : ") + e.getMessage());
+            fail(MessageFormat.format("@{0} :\n", nQuestion) + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.getMessage());
             e.printStackTrace();
         }
     }

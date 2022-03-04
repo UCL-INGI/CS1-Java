@@ -1,4 +1,7 @@
+accessible: true
 author: Alexandre Dubray
+categories: []
+contact_url: ''
 context: |4-
      Complétez la classe ``Ticket`` ci-dessous :
 
@@ -29,22 +32,36 @@ context: |4-
                 return numero;
             }
         }
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 7 : Question de Démarrage 2 : Tickets de Parking'
 network_grading: false
 order: 126
 problems:
     q1:
         type: code
+        name: ''
         header: Complétez le fragment de code **(1)** ici.
-        name: ''
         language: java
+        default: ''
     q2:
-        header: Complétez le fragment de code **(2)** ici.
-        name: ''
-        language: java
         type: code
+        name: ''
+        header: Complétez le fragment de code **(2)** ici.
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

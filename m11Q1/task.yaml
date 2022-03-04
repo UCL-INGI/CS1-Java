@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Une pile d'entiers est une structure de données qui permet d'empiler des entiers. Les entiers sont ajoutés à la pile via son sommet. La pile garantit un fonctionnement Last-In First-Out (LIFO, dernier entré, premier sorti).
     On vous donne la classe ``PileInt`` incomplète suivante :
@@ -65,22 +68,36 @@ context: |-
         }
 
     Complétez cette classe.
-environment: java7mockito
-limits:
-    output: '1'
-    memory: '200'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 11 : Q* PileInt'
 network_grading: false
 order: 180
 problems:
     q1:
-        header: Ecrivez le corps de la méthode push
         type: code
         name: Push
+        header: Ecrivez le corps de la méthode push
         language: Java
+        default: ''
     q2:
         type: code
-        header: Ecrivez le corps de la méthode pop
         name: Pop
+        header: Ecrivez le corps de la méthode pop
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

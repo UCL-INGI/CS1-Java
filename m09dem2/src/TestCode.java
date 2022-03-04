@@ -4,6 +4,7 @@ package src;
  */
 
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Etudiant;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
@@ -30,22 +31,18 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.Runtime;
 import java.lang.Process;
-import java.io.PrintStream;
 import java.io.FileNotFoundException;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
 
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(Etudiant.class)
 public class TestCode{
 
 	@Rule
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -59,28 +56,28 @@ public class TestCode{
 			f.call();
 		}catch (ArithmeticException e){
 			e.printStackTrace();
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
 		}catch(ClassCastException e){
 			e.printStackTrace();
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
 			e.printStackTrace();
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
 			e.printStackTrace();
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
 			e.printStackTrace();
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
 			e.printStackTrace();
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
 			e.printStackTrace();
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
 			e.printStackTrace();
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 
@@ -90,17 +87,66 @@ public class TestCode{
 		 * @post	Vérifie que le code de l'étudiant gère bien le cas d'un IOException
 		 */
 		public Void call() throws Exception {
-			PowerMockito.mock(File.class);
-			PowerMockito.whenNew(File.class).withParameterTypes(String.class).withArguments(Mockito.anyString()).thenThrow(new IOException());
+			//Mockito.mock(File.class);
+			//Mockito.when(new File()).withParameterTypes(String.class).withArguments(Mockito.anyString()).thenThrow(new IOException());
 			try {
-				int res =Etudiant.premierPrenom("student/noms.txt");
+				int res =Etudiant.premierPrenom("../student/pasBonFichier.txt");
 				if(res != -1) {
-					String feed = MessageFormat.format(_("{0} : attention, lorsqu''une exception est lancée, votre code doit renvoyer -1 !"),test_name());
+					String feed = MessageFormat.format(Translator.translate("{0} : attention, lorsqu''une exception est lancée, votre code doit renvoyer -1 !"),test_name());
 					fail(feed);
 				}
 				return null;
 			} catch( IOException e) {
-				String feed = MessageFormat.format(_("{0} : attention, vous ne gérer pas les exceptions !"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : attention, vous ne gérer pas les exceptions !"),test_name());
+				fail(feed);
+				return null;
+			}
+		}
+	}
+    
+    private class t2 implements Callable<Void> {
+		/**
+		 * @pre		-
+		 * @post	Vérifie que le code de Scanner scanner = new Scanner( new File("poem.txt") );
+String text = scanner.useDelimiter("\\A").next();
+scanner.close();l'étudiant gère bien le cas d'un IOException
+		 */
+		public Void call() throws Exception {
+			//Mockito.mock(File.class);
+			//Mockito.when(new File()).withParameterTypes(String.class).withArguments(Mockito.anyString()).thenThrow(new IOException());
+			try {
+				int res =Etudiant.premierPrenom("../student/noms.txt");
+				if(res != 0) {
+					String feed = MessageFormat.format(Translator.translate("{0} : attention, aucune exception ne devait être lancée, votre code doit renvoyer 0!"),test_name());
+					fail(feed);
+				}
+                
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                PrintStream ps = new PrintStream(baos);
+                // IMPORTANT: Save the old System.out!
+                PrintStream old = System.out;
+                // Tell Java to use your special stream
+                System.setOut(ps);
+                Etudiant.premierPrenom("../student/noms.txt");
+                System.out.flush();
+				System.setOut(old);
+                
+                ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
+                PrintStream ps2 = new PrintStream(baos2);
+                // IMPORTANT: Save the old System.out!
+                old = System.out;
+                // Tell Java to use your special stream
+                System.setOut(ps2);
+                Correction.premierPrenom("../student/noms.txt");
+                System.out.flush();
+				System.setOut(old);
+                
+                String feed = MessageFormat.format(Translator.translate("{0} : votre code affiche :\n{1}\nOr, on attendait :\n{2}"),test_name(),baos.toString(),baos2.toString());
+                assertTrue(feed, baos2.toString().equals(baos.toString()));
+                
+				return null;
+			} catch( IOException e) {
+				String feed = MessageFormat.format(Translator.translate("{0} : attention, vous ne gérer pas les exceptions !"),test_name());
 				fail(feed);
 				return null;
 			}
@@ -110,6 +156,12 @@ public class TestCode{
 	@Test
 	public void test_1(){
 		catcher(new t1());
+		printSucceed();
+	}
+    
+    @Test
+	public void test_2(){
+		catcher(new t2());
 		printSucceed();
 	}
 }

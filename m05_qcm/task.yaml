@@ -88,7 +88,7 @@ problems:
       '
     limit: 3
     name: Déclaration de tableaux
-    type: multiple-choice
+    type: multiple_choice
   q10:
     choices:
     - {text: ".. code-block:: java\n\n    for(int i=0; i<a.length;i++) {\n     s[i]=a[i]+b[i];\n\
@@ -138,7 +138,7 @@ problems:
       \ vecteurs ``a`` et ``b``?\n"
     limit: 3
     name: Somme de vecteurs
-    type: multiple-choice
+    type: multiple_choice
   q11:
     choices:
     - {text: ".. code-block:: java\n\n   for(int i=0;i<s.length;i++) {\n     if(s[i]==c)\
@@ -177,7 +177,7 @@ problems:
       \ c, char[] s)\n"
     limit: 3
     name: Tableaux de caractères
-    type: multiple-choice
+    type: multiple_choice
   q12:
     choices:
     - {feedback: '
@@ -230,7 +230,7 @@ problems:
       \ ?\n"
     limit: 3
     name: toCharArray
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {feedback: '
@@ -275,7 +275,7 @@ problems:
       '
     limit: 3
     name: Initialisation de tableaux
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: ".. code-block:: java\n\n   System.out.println(tab.length);\n", valid: true}
@@ -306,7 +306,7 @@ problems:
       '
     limit: 3
     name: Initialisation de tableaux
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {feedback: '
@@ -354,7 +354,7 @@ problems:
       '
     limit: 3
     name: Tableaux à plusieurs dimensions
-    type: multiple-choice
+    type: multiple_choice
   q5:
     choices:
     - {text: ".. code-block:: java\n\n   if(t.length==1) {\n       return true;\n\
@@ -407,7 +407,7 @@ problems:
       \ corps à inclure\n  }\n"
     limit: 3
     name: Tableaux ordonnés
-    type: multiple-choice
+    type: multiple_choice
   q6:
     choices:
     - {text: ".. code-block:: java\n\n    (tab[0].length==3) && (tab[1][1]==5)\n",
@@ -436,7 +436,7 @@ problems:
       \ ?\n"
     limit: 3
     name: Initialisation de tableaux à deux dimensions
-    type: multiple-choice
+    type: multiple_choice
   q7:
     choices:
     - {text: ".. code-block:: java\n\n    ( m[li-1][0]==((li-1)*c)+1) && (m[0][c-1]==c)\n",
@@ -473,7 +473,7 @@ problems:
       \ ?\n"
     limit: 3
     name: 'Manipulation de tableau à deux dimensions '
-    type: multiple-choice
+    type: multiple_choice
   q8:
     choices:
     - {text: ".. code-block:: java\n\n  double sum=0.0;\n  for(int i=0;i<t.length;i++)\
@@ -515,7 +515,7 @@ problems:
       \   */\n  public static double sumTab(double[] t)\n"
     limit: 3
     name: Somme des éléments d'un tableau
-    type: multiple-choice
+    type: multiple_choice
   q9:
     choices:
     - {feedback: '
@@ -578,4 +578,4 @@ problems:
       \ méthode ?\n"
     limit: 3
     name: Assertions
-    type: multiple-choice
+    type: multiple_choice

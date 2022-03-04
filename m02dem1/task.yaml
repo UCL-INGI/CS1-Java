@@ -22,7 +22,7 @@ problems:
     header: Quelle est la définition la plus appropriée pour une variable ?
     limit: 3
     name: Choix multiple
-    type: multiple-choice
+    type: multiple_choice
   q2:
     choices:
     - {text: Une partie de la mémoire réservée pour contenir des données}
@@ -34,7 +34,7 @@ problems:
     header: Quelle est la définition la plus appropriée pour une valeur ?
     limit: 3
     name: Choix multiple
-    type: multiple-choice
+    type: multiple_choice
   q3:
     choices:
     - {text: ".. code-block:: java\n\n    int a = 1;\n    int b = 2;\n    int c =\
@@ -55,7 +55,7 @@ problems:
       Java ?
     limit: 3
     name: Choix multiple
-    type: multiple-choice
+    type: multiple_choice
   q4:
     choices:
     - {feedback: La variable pi est de type ``int`` et ne peut contenir que des entiers.,
@@ -82,4 +82,4 @@ problems:
       ?
     limit: 3
     name: Choix multiple
-    type: multiple-choice
+    type: multiple_choice

@@ -1,4 +1,7 @@
+accessible: true
 author: Clémentine Munyabarenzi, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Ecrivez la signature et le corps d'une méthode baptisée ``impair`` qui prend comme argument un entier **n** positif et retourne ``true`` si **n** est impair et ``false`` sinon. Pour rappel, si **n** est un entier positif ``n % 2`` vaut le reste de la division entière de **n** par 2. La spécification de cette méthode est:
 
@@ -8,11 +11,18 @@ context: |-
          ∗ @pre n > 0
          ∗ @post retourne true lorsque n est un nombre entier impair et false sinon.
          ∗ /
-environment: java7mockito
-limits:
-    time: '20'
-    output: '2'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '20'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Question de Démarrage 3 : Nombres impairs'
 network_grading: false
 order: 47
@@ -20,6 +30,12 @@ problems:
     q1:
         type: code
         name: ''
-        language: java
         header: Ecrivez ici la *signature* (sur une seule ligne) et le *corps* de
             votre méthode.
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

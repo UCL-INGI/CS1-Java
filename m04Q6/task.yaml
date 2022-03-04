@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Ecrivez la méthode ``boolean containsOnly(String s, String c)`` qui retourne ``true`` si la chaine ``s`` contient uniquement des caractères se trouvant dans la chaine ``c``, ``false`` sinon.
 
@@ -11,17 +14,30 @@ context: |-
          * @post retourne true si la chaine s contient uniquement des
          *       caracteres se trouvant la chaine c, false sinon
          */
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 4 : Q** containsOnly'
 network_grading: false
 order: 80
 problems:
     q1:
         type: code
-        header: Écrivez ici la signature et le corps de cette méthode.
         name: containsOnly
+        header: Écrivez ici la signature et le corps de cette méthode.
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

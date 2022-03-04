@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |+
     On vous demande d'écrire une méthode permettant de dire si un nombre se trouve dans l'intervalle fermé :math:`[a,b]` dont les spécifications sont les suivantes:
 
@@ -15,17 +18,30 @@ context: |+
     Votre méthode devra s'appeler ``intervalle`` et prendra comme premier argument ``a``, la borne inférieure de l'intervalle, comme deuxième argument, ``b``, la borne supérieure et comme dernier argument la valeur à tester. Ces trois arguments sont des entiers.
 
 
-environment: java7mockito
-limits:
-    output: '1'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 :  Q* intervalle fermé'
 network_grading: false
 order: 53
 problems:
     q1:
-        name: Méthode intervalle
-        language: Java
         type: code
+        name: Méthode intervalle
         header: Écrivez ici la signature et le corps de la méthode intervalle.
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

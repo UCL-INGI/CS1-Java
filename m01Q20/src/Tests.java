@@ -21,23 +21,23 @@ import org.junit.runner.Result;
 import org.junit.Test;
 import java.text.MessageFormat;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import StudentCode.*;
 
 public class Tests {
     
-    private String une_c = _("une consonne");
-    private String une_v = _("une voyelle");
-    private String un_c = _("un chiffre");
+    private String une_c = Translator.translate("une consonne");
+    private String une_v = Translator.translate("une voyelle");
+    private String un_c = Translator.translate("un chiffre");
 
     public void test(char chara){
         
         String reponse_etudiant = Etudiant.car(chara);
         String expected = Correction.car(chara);
-        String feedbackBuilder = _("''{0}'' est {1}. Cependant, votre code indique que c''est {2}.\n");
+        String feedbackBuilder = Translator.translate("''{0}'' est {1}. Cependant, votre code indique que c''est {2}.\n");
         
-        String print_expected = "";
+        String print_expected = Translator.translate(expected);
         if (expected.equals("consonne"))
             print_expected = une_c;
         if (expected.equals("voyelle"))
@@ -45,7 +45,7 @@ public class Tests {
         if (expected.equals("chiffre"))
             print_expected = un_c;
         
-        String print_stu = "???";
+        String print_stu = Translator.translate(reponse_etudiant);
         if (reponse_etudiant.equals("consonne"))
             print_stu = une_c;
         if (reponse_etudiant.equals("voyelle"))
@@ -54,7 +54,7 @@ public class Tests {
             print_stu = un_c;
         
         String feedback = MessageFormat.format(feedbackBuilder, chara, print_expected, print_stu);
-        assertEquals(feedback, expected, reponse_etudiant);
+        assertTrue(feedback, expected.equals(reponse_etudiant));
     }
 	
     /**
@@ -67,17 +67,17 @@ public class Tests {
             for (int i = 0; i < t.length(); i++)
                 test(t.charAt(i));
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 }

@@ -1,4 +1,7 @@
+accessible: true
 author: Sébastien Combéfis, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Soit un naturel non-nul :math:`x`, le naturel non-nul :math:`d` est un **diviseur propre** de :math:`x` s'il est compris entre :math:`x` (exclus) et qu'il divise :math:`x`.
 
@@ -17,18 +20,31 @@ context: |-
         7:1
 
     Votre programme doit afficher son résultat exactement comme présenté dans l'exemple ci-dessus. Vous ne devez pas déclarer, ni initialiser la variable de type ``int`` nommée ``n``, elle vous sera fournie.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '5'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 2 : Question de Bilan Final'
 network_grading: false
 order: 43
 problems:
     q1:
+        type: code
         name: ''
-        language: java
         header: Écrivez ici directement le code de la méthode ``main``. Vous ne devez
             pas déclarer, ni initialiser la variable ``n``.
-        type: code
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

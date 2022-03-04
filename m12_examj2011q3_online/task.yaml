@@ -1,37 +1,76 @@
+accessible: true
 author: François MICHEL
-context: "Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.\n\n.. _juin2011:\
-  \  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online\n\
-  \n__ juin2011_\n\nQuestion 3 : Ecrivez complètement (y compris les spécifications)\
-  \ le corps de la classe ``Process`` qui représente un processus. Chaque processus\
-  \ a un nom (``String``), une capacité de stockage requise (``int``) et un identifiant\
-  \ de processus ou PID (``int``). Les PIDs sont attribus squentiellement à la cration\
-  \ de chaque nouveau processus (1 pour le premier, 2 pour le deuxième, etc.) La classe\
-  \ doit définir :\n\n-    Un constructeur avec le nom et la capacité comme paramètres,\
-  \ dans cet ordre,\n-    Des méthodes ``getName``, ``getRequiredStorage`` et ``getPid``\
-  \ retournant respectivement le nom, la capacité et le PID,\n-    Une méthode ``toString``\
-  \ retournant une chaîne de caractères comprenant le nom du processus et la capacité\
-  \ de stockage nécessaire, séparés par un espace,\n-    Toutes les variables et méthodes\
-  \ complémentaires nécessaires à votre implémentation.\n\nIl n'est pas nécessaire\
-  \ de re-définir la méthode ``equals``.\n\n.. code-block:: java\n\n   /**\n     *\
-  \ Un processus, avec un nom (String), une capacité de stockage\n     * requise (int)\
-  \ et un identifiant de processus, ou PID (int).\n     * Les PIDs sont attribués\
-  \ séquentiellement à la création de chaque\n     * nouveau processus (1 pour le\
-  \ premier, 2 pour le deuxième, etc.).\n     * Le premier argument du constructeur\
-  \ doit être le nom du processus.\n     */\n    public class Process\n    {\n   \
-  \     /*** VOTRE REPONSE ***/\n    }"
-environment: java7
-limits: {memory: '100', output: '2', time: '30'}
+categories: []
+contact_url: ''
+context: |-
+    Prenez connaissance de l'énoncé de l'`examen de juin 2011`__.
+
+    .. _juin2011:  https://inginious.info.ucl.ac.be/course/LSINF1101/m12_examj2011enonce_online
+
+    __ juin2011_
+
+    Question 3 : Ecrivez complètement (y compris les spécifications) le corps de la classe ``Process`` qui représente un processus. Chaque processus a un nom (``String``), une capacité de stockage requise (``int``) et un identifiant de processus ou PID (``int``). Les PIDs sont attribus squentiellement à la cration de chaque nouveau processus (1 pour le premier, 2 pour le deuxième, etc.) La classe doit définir :
+
+    -    Un constructeur avec le nom et la capacité comme paramètres, dans cet ordre,
+    -    Des méthodes ``getName``, ``getRequiredStorage`` et ``getPid`` retournant respectivement le nom, la capacité et le PID,
+    -    Une méthode ``toString`` retournant une chaîne de caractères comprenant le nom du processus et la capacité de stockage nécessaire, séparés par un espace,
+    -    Toutes les variables et méthodes complémentaires nécessaires à votre implémentation.
+
+    Il n'est pas nécessaire de re-définir la méthode ``equals``.
+
+    .. code-block:: java
+
+       /**
+         * Un processus, avec un nom (String), une capacité de stockage
+         * requise (int) et un identifiant de processus, ou PID (int).
+         * Les PIDs sont attribués séquentiellement à la création de chaque
+         * nouveau processus (1 pour le premier, 2 pour le deuxième, etc.).
+         * Le premier argument du constructeur doit être le nom du processus.
+         */
+        public class Process
+        {
+            /*** VOTRE REPONSE ***/
+        }
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Examen Juin 2011 online : Question 3'
 network_grading: false
 order: 198
 problems:
-  q1: {header: 'Veillez à n''implémenter que le corps, ne recopiez pas ``public class
-      Process{...}``. Respectez bien le nom et les paramètres demandés des méthodes
-      et constructeurs.', language: Java, name: La classe Process, type: code}
-  zmontest: {header: "Insérez votre code de test optionnel ci-dessous. Vous pouvez\
-      \ utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.\
-      \  Votre code sera exécuté dans une méthode ``montest``:\n\n.. code-block::\
-      \ java\n\n    public static void montest() { /* VOTRE CODE */ }\n\nAttention,\
-      \ toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.\
-      \  Vous *devez* effacer ce code de test pour finaliser votre soumission.\n",
-    language: java, name: Fonction de test optionnelle, optional: true, type: code}
+    q1:
+        type: code
+        name: La classe Process
+        header: Veillez à n'implémenter que le corps, ne recopiez pas ``public class
+            Process{...}``. Respectez bien le nom et les paramètres demandés des méthodes
+            et constructeurs.
+        language: Java
+        default: ''
+    zmontest:
+        type: code
+        name: Fonction de test optionnelle
+        header: |
+            Insérez votre code de test optionnel ci-dessous. Vous pouvez utiliser ``System.out.println`` dans cette méthode pour débugger votre programme.  Votre code sera exécuté dans une méthode ``montest``:
+
+            .. code-block:: java
+
+                public static void montest() { /* VOTRE CODE */ }
+
+            Attention, toute erreur dans ce code peut empêcher la bonne évaluation de votre réponse.  Vous *devez* effacer ce code de test pour finaliser votre soumission.
+        language: java
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |+
     On vous donne la classe DeStats dont voici le corps:
 
@@ -152,17 +155,30 @@ context: |+
             }
         }
 
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '1'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 7 : Q* DeStats - toString'
 network_grading: false
 order: 136
 problems:
     q1:
         type: code
-        header: Ecrivez le *contenu* de la méthode ``toString`` de la classe ``DeStats``.
         name: toString
+        header: Ecrivez le *contenu* de la méthode ``toString`` de la classe ``DeStats``.
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Une queue est une structure de donnée qui dispose d'une entrée et d'une sortie. Les objets sont ajoutés à la queue via son entrée et sont retirés via sa sortie. La queue garantit un fonctionnement First-In First-Out (FIFO, premier entré, premier sorti)
     On vous donne la classe ``FIFOQueue`` incomplète suivante :
@@ -61,17 +64,30 @@ context: |-
         }
 
     Complétez cette classe.
-environment: java7mockito
-limits:
-    output: '1'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 11 : Q* FIFOQueue'
 network_grading: false
 order: 182
 problems:
     q1:
         type: code
-        header: Ecrivez le corps de la méthode retire
         name: Retire
+        header: Ecrivez le corps de la méthode retire
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

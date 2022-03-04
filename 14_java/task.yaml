@@ -1,4 +1,7 @@
+accessible: true
 author: Sébastien Combéfis
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -47,11 +50,25 @@ context: |+
         }
         </pre>
 
-responseIsHTML: true
-order: 179
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '512'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 11: Structures chainées'
+network_grading: false
+order: 179
 problems:
     q1:
+        type: code
+        name: ''
         header: |+
             .. raw:: html
 
@@ -60,13 +77,10 @@ problems:
                   Complétez le corps de la classe suivante (vous ne devez pas mettre les accolades de la classe).
                 </p>public class Stack implements StackIF
 
-        type: code
-        multiple: true
         language: java
-limits:
-    language: java
-    time: 30
-    memory: 32
-    disk: 50
-    output: 5210
-environment: pythia0compat
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

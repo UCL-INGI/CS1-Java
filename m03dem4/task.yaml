@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |+
     Un étudiant montre à son tuteur la méthode main ci-dessous :
 
@@ -34,19 +37,32 @@ context: |+
           X
           XXXXX
 
-environment: java7mockito
-limits:
-    output: '2'
-    time: '20'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '20'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Question de démarrage 4 : Lettre L'
 network_grading: false
 order: 48
 problems:
     q1:
         type: code
+        name: ''
         header: |-
             Réécrivez **la signature**, **et le corps** de la
             méthode ``lettre_l`` utilisée par cet étudiant.
-        name: ''
         language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

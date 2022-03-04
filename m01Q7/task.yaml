@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL & Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |+
     On vous demande d\'écrire un programme permettant de calculer la somme des entiers pairs entre 1 et ``n`` (inclus).
 
@@ -13,11 +16,18 @@ context: |+
         int n = // n peut prendre n'importe quelle valeur supérieure à zéro
         int sum = 0; // sum est la variable dans laquelle vous devez écrire le résultat final
 
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Somme d''entiers pairs'
 network_grading: false
 order: 18
@@ -25,6 +35,12 @@ problems:
     q1:
         type: code
         name: Somme des entiers pairs entre 1 et n
-        language: Java
         header: 'Écrivez ici le bout de programme permettant de calculer la somme
             des entiers pairs entre 0 et n :'
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

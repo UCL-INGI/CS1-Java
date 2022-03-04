@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL
+categories: []
+contact_url: ''
 context: |-
     Un étudiant a écrit la classe ``Drapeau`` ci-dessous. Il aimerait y ajouter la méthode ``same`` permettant de savoir si deux objets ``Drapeau`` sont dans le même état, mais il ne sait pas bien comment s'y prendre et vous demande votre aide pour y arriver.
 
@@ -50,18 +53,31 @@ context: |-
         }
 
     Aidez cet étudiant en détresse et implémentez la méthode ``same`` dont les spécifications sont fournies ci-dessus. Pensez à gérer le cas où ``d == null``, car les préconditions ne font aucune supposition.
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 6 : Question de démarrage 3 : Drapeau.same()'
 network_grading: false
 order: 108
 problems:
     q1:
         type: code
+        name: La méthode same()
         header: Implémentez ici le corps de la méthode ``public boolean same(Drapeau
             d)``
-        name: La méthode same()
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -16,7 +16,7 @@ package StudentCode;
 
 import java.util.ArrayList; // ne pas montrer aux étudiants, utilisé pour les tests
 import java.text.MessageFormat;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 public class OrderedList{
     
@@ -127,11 +127,11 @@ public class OrderedList{
      */
     public String toString(){
         if(min == null && min == min)
-            return _("Liste vide\n");
+            return Translator.translate("Liste vide\n");
         if(min == null && max != null)
-            return MessageFormat.format(_("Attention ''{0}'' pointe vers null mais pas ''{1}'' !\n"), "min", "max");
+            return MessageFormat.format(Translator.translate("Attention ''{0}'' pointe vers null mais pas ''{1}'' !\n"), "min", "max");
         if(min != null && max == null)
-            return MessageFormat.format(_("Attention ''{0}'' pointe vers null mais pas ''{1}'' !\n"), "max", "min");
+            return MessageFormat.format(Translator.translate("Attention ''{0}'' pointe vers null mais pas ''{1}'' !\n"), "max", "min");
         StringBuilder r = new StringBuilder(400);
         ArrayList<Noeud> l = new ArrayList<Noeud>();
         Noeud n = min;
@@ -139,15 +139,15 @@ public class OrderedList{
             l.add(n);
             n = n.suivant;
             if(l.size() > 50)
-                return _("Attention : votre liste est mal formée. Parcourir votre liste provoque une boucle infinie…\n");
+                return Translator.translate("Attention : votre liste est mal formée. Parcourir votre liste provoque une boucle infinie…\n");
         }
-        r.append(MessageFormat.format(_("Min : Noeud[{0}]\n"), l.indexOf(min)));
-        r.append(MessageFormat.format(_("Max : Noeud[{0}]\n"), l.indexOf(max)));
+        r.append(MessageFormat.format(Translator.translate("Min : Noeud[{0}]\n"), l.indexOf(min)));
+        r.append(MessageFormat.format(Translator.translate("Max : Noeud[{0}]\n"), l.indexOf(max)));
         for(int i = 0; i < l.size(); i++) {
             Noeud nn = l.get(i);
-            String suivS = (nn.suivant == null) ? "null" : MessageFormat.format(_("Noeud[{0}]"), +l.indexOf(nn.suivant));
-            String percS = (nn.precedent == null) ? "null" : MessageFormat.format(_("Noeud[{0}]"), +l.indexOf(nn.precedent));
-            r.append(MessageFormat.format(_("Noeud[{0}] : contenu : {1}, noeud précérent : {2}, noeud suivant : {3}\n"), i, nn.d, percS, suivS));
+            String suivS = (nn.suivant == null) ? "null" : MessageFormat.format(Translator.translate("Noeud[{0}]"), +l.indexOf(nn.suivant));
+            String percS = (nn.precedent == null) ? "null" : MessageFormat.format(Translator.translate("Noeud[{0}]"), +l.indexOf(nn.precedent));
+            r.append(MessageFormat.format(Translator.translate("Noeud[{0}] : contenu : {1}, noeud précérent : {2}, noeud suivant : {3}\n"), i, nn.d, percS, suivS));
         }
         return r.toString();
     }

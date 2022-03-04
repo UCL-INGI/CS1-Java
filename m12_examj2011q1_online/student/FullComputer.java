@@ -6,6 +6,9 @@ package student;
  * @author O. Bonaventure, Ch. Pecheur
  * @version Dec. 2007
  */
+
+import StudentCode.BasicComputer;
+
 public class FullComputer extends BasicComputer
 {
 	/**

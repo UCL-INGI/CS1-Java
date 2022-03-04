@@ -1,4 +1,7 @@
+accessible: true
 author: Olivier Martin
+categories: []
+contact_url: ''
 context: |
     Un étudiant a écrit le programme Java suivant qui permet de compter le nombre de chiffres de la représentation décimale d'un nombre naturel donné.
 
@@ -29,16 +32,25 @@ context: |
     - ``chiffresPairs(5555)`` doit retourner ``true``
     - ``chiffresPairs(555)`` doit retourner ``false``
     - ``chiffresPairs(-555)`` doit retourner ``false``
-environment: java7mockito
-limits:
-    time: '30'
-    output: '2'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Question de Bilan Final'
 network_grading: false
 order: 63
 problems:
     q1:
+        type: code
+        name: ''
         header: |-
             Complétez ici le corps de la méthode ``chiffresPairs``.
 
@@ -49,13 +61,18 @@ problems:
                  * @post Renvoie true si le nombre de chiffres n est pair et false sinon
                  */
                 public static boolean chiffresPairs(int n)
-        name: ''
-        type: code
         language: java
+        default: ''
     q2:
+        type: code
+        name: ''
         header: |
             Déclarez ici les méthodes que vous souhaitez utiliser pour décomposer le problème en sous-problèmes. Attention, veillez à n'utiliser que des méthodes de classe ``static``.
-        name: ''
         language: java
-        type: code
-        optional: true
+        optional: 'on'
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

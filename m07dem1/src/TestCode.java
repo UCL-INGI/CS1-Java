@@ -29,7 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import java.util.concurrent.Callable;
 
 import StudentCode.*;
@@ -50,7 +50,7 @@ public class TestCode {
 	}
 
 	private void printSucceed(){
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
     
     /*
@@ -67,20 +67,20 @@ public class TestCode {
             if(method.getName().equals(fun_name)){
                 methodFound = true;
                 if(! method.getReturnType().equals(expected_type)){
-                    fail(MessageFormat.format(_("Le type de retour de votre fonction doit être du type {0} !\n"), expected_type.toString()));
+                    fail(MessageFormat.format(Translator.translate("Le type de retour de votre fonction doit être du type {0} !\n"), expected_type.toString()));
                 }
                 if(method.getGenericParameterTypes().length != expected_parameters.length){
-                    fail(MessageFormat.format(_("Votre fonction doit prendre {0} argument(s) !\n"), expected_parameters.length));
+                    fail(MessageFormat.format(Translator.translate("Votre fonction doit prendre {0} argument(s) !\n"), expected_parameters.length));
                 }
                 for(int i = 0; i < expected_parameters.length; i++){
                     if(! method.getGenericParameterTypes()[i].equals(expected_parameters[i])){
-                        fail(MessageFormat.format(_("L''argument n°{0} n''est pas de type ''{1}'' comme demandé !\n"), i+1, expected_parameters[i].toString()));
+                        fail(MessageFormat.format(Translator.translate("L''argument n°{0} n''est pas de type ''{1}'' comme demandé !\n"), i+1, expected_parameters[i].toString()));
                     }
                 }
             }
         }
         if(!methodFound)
-            fail(_("Votre fonction n'a pas été définie correctement. Assurez vous que son nom est correctement défini !\n"));
+            fail(Translator.translate("Votre fonction n'a pas été définie correctement. Assurez vous que son nom est correctement défini !\n"));
     }
     
     /*
@@ -120,7 +120,7 @@ public class TestCode {
 		 */
 		public Void call() throws ClassNotFoundException, IllegalAccessException,InvocationTargetException {
 			check_etudiant_function("StudentCode.Pair","equals",boolean.class,new Class[] {Object.class});
-			String msg = _("{0} : lorsque l''on appelle votre méthode avec les paires {1} et {2}, votre code devrait renvoyer {3} mais ce n'est pas le cas !");
+			String msg = Translator.translate("{0} : lorsque l''on appelle votre méthode avec les paires {1} et {2}, votre code devrait renvoyer {3} mais ce n'est pas le cas !");
 			Pair p1 = new Pair(1,1);
 			Pair p2 = new Pair(1,1);
 			Pair p3 = new Pair(2,1);
@@ -155,7 +155,7 @@ public class TestCode {
 				verify(spy1,atLeast(1)).getB();
 				return null;
 			} catch (WantedButNotInvoked e) {
-				String msg = _("{0} : vous devez utiliser les getters pour récupérer les valeurs des variables d''instances !");
+				String msg = Translator.translate("{0} : vous devez utiliser les getters pour récupérer les valeurs des variables d''instances !");
 				String feed = MessageFormat.format(msg,test_name());
 				fail(feed);
 				return null;
@@ -169,20 +169,20 @@ public class TestCode {
         }catch (InvocationTargetException e){
             Throwable t = e.getCause();
             if(t instanceof ArithmeticException){
-                fail(_("Attention, il est interdit de diviser par zéro."));
+                fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
             }else if(t instanceof ClassCastException){
-                fail(_("Attention, certaines variables ont été mal castées !"));
+                fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
             }else if(t instanceof StringIndexOutOfBoundsException){
-                fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+                fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
             }else if(t instanceof ArrayIndexOutOfBoundsException){
-                fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+                fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
             }else if(t instanceof NullPointerException){
-                fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+                fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
             }else{
-                fail(_("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
+                fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + t.toString());
             }
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 

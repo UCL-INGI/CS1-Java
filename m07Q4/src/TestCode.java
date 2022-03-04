@@ -3,7 +3,7 @@ package src;
  *  @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Directeur;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import java.text.MessageFormat;
 import java.util.concurrent.Callable;
@@ -32,7 +32,7 @@ public class TestCode{
 	public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -45,21 +45,21 @@ public class TestCode{
 		try {
 			f.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 
@@ -72,8 +72,8 @@ public class TestCode{
 		 */
 		public Void call() {
 			Directeur d = new Directeur("Jean",2000,0.5);
-			String feed = MessageFormat.format(_("{0} : attention, votre constructeur ne construit pas un directeur avec le bon nom !"),test_name());
-			assertThat(feed,d.getNom(),is("Jean"));
+			String feed = MessageFormat.format(Translator.translate("{0} : attention, votre constructeur ne construit pas un directeur avec le bon nom !"),test_name());
+			assertTrue(feed,d.getNom() == "Jean");
 			return null;
 		}
 	}
@@ -86,8 +86,8 @@ public class TestCode{
 		 */
 		public Void call() {
 			Directeur d = new Directeur("Edouard",1500,0.1);
-			String feed = MessageFormat.format(_("{0} : attention, votre constructeur ne construit pas un directeur avec le bon salaire !"),test_name());
-			assertThat(feed,d.getBaseSalaire(),is(1500.0));
+			String feed = MessageFormat.format(Translator.translate("{0} : attention, votre constructeur ne construit pas un directeur avec le bon salaire !"),test_name());
+			assertTrue(feed,d.getBaseSalaire() == 1500.0);
 			return null;
 		}
 	}
@@ -100,8 +100,8 @@ public class TestCode{
 		 */
 		public Void call() {
 			Directeur d = new Directeur("Paul",3000,0.6);
-			String feed = MessageFormat.format(_("{0} : attention, votre constructeur ne construit pas un directeur avec la bonne prime !"),test_name());
-			assertThat(feed,d.getPrime(),is(0.6));
+			String feed = MessageFormat.format(Translator.translate("{0} : attention, votre constructeur ne construit pas un directeur avec la bonne prime !"),test_name());
+			assertTrue(feed,d.getPrime() == 0.6);
 			return null;
 		}
 	}

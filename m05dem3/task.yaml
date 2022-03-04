@@ -1,5 +1,8 @@
+accessible: true
 author: 'Clémentine Munyabarenzi (ressource : syllabus d''exercices LSINF1101), Olivier
     Martin'
+categories: []
+contact_url: ''
 context: |-
     Ecrivez la méthode suivante :
 
@@ -12,17 +15,30 @@ context: |-
          *       principale valent 1 et tous les autres valent 0
          */
         public static int[][] unite(int n)
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 5 : Question de démarrage 3 : Matrice unité'
 network_grading: false
 order: 88
 problems:
     q1:
-        language: java
-        header: Ecrivez ici le *corps* de la méthode.
         type: code
         name: ''
+        header: Ecrivez ici le *corps* de la méthode.
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

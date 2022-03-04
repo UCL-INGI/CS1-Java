@@ -3,7 +3,7 @@ package src;
  * @author Dubray Alexandre
  */
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -25,7 +25,7 @@ import static org.mockito.Mockito.verify;
 import org.mockito.exceptions.verification.WantedButNotInvoked;
 
 import StudentCode.Etudiant;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 import src.librairies.ConstructException;
 
 import java.text.MessageFormat;
@@ -33,19 +33,13 @@ import java.util.concurrent.Callable;
 import java.io.*;
 import java.util.Arrays;
 
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(Etudiant.class)
 public class TestCode{
 
 	@Rule
 	public TestName name = new TestName();
 	
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private String test_name() {
@@ -58,21 +52,21 @@ public class TestCode{
 		try {
 			f.call();
 		}catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}	
 
@@ -83,13 +77,13 @@ public class TestCode{
 		 */
 		public Void call() throws Exception, IOException{
 			try {
-				PowerMockito.whenNew(BufferedReader.class).withParameterTypes(Reader.class)
-					.withArguments(Mockito.any(Reader.class)).thenReturn(PowerMockito.mock(BufferedReader.class));
+				/*PowerMockito.whenNew(BufferedReader.class).withParameterTypes(Reader.class)
+					.withArguments(Mockito.any(Reader.class)).thenReturn(PowerMockito.mock(BufferedReader.class));*/
 				int [] v = Etudiant.readVector("./file1");
-				PowerMockito.verifyNew(BufferedReader.class).withArguments(Mockito.any(Reader.class));
+				//PowerMockito.verifyNew(BufferedReader.class).withArguments(Mockito.any(Reader.class));
 				return null;
 			} catch(AssertionError e){
-				String feed = MessageFormat.format(_("{0} : vous devez utiliser un BufferedReader !"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : vous devez utiliser un BufferedReader !"),test_name());
 				fail(feed);
 				return null;
 			}
@@ -103,22 +97,22 @@ public class TestCode{
 		 *			bien null en cas d'erreur.
 		 */
 		public Void call() throws Exception,IOException{
-			BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
-			PowerMockito.whenNew(BufferedReader.class).withParameterTypes(Reader.class).withArguments(Mockito.any(Reader.class)).thenReturn(mockedBr);
+			//BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
+			//PowerMockito.whenNew(BufferedReader.class).withParameterTypes(Reader.class).withArguments(Mockito.any(Reader.class)).thenReturn(mockedBr);
 
-			PowerMockito.doThrow(new IOException("Mock error")).when(mockedBr).readLine();
+			//PowerMockito.doThrow(new IOException("Mock error")).when(mockedBr).readLine();
 			try {
 				int [] v = Etudiant.readVector("./file1");
-				String feed = MessageFormat.format(_("{0} : vous ne renvoyez pas null lorsqu''une IOException se produit !"),test_name());
-				assertThat(feed,v,nullValue());
-				Mockito.verify(mockedBr,times(1)).close();
+				String feed = MessageFormat.format(Translator.translate("{0} : vous ne renvoyez pas null lorsqu''une IOException se produit !"),test_name());
+				//assertThat(feed,v,nullValue());
+				//Mockito.verify(mockedBr,times(1)).close();
 				return null;
 			} catch (IOException e) {
-				String feed = MessageFormat.format(_("{0} : vous ne gérez pas bien les IOExceptions !"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : vous ne gérez pas bien les IOExceptions !"),test_name());
 				fail(feed);
 				return null;
 			} catch (WantedButNotInvoked e){
-				String feed = MessageFormat.format(_("{0} : lorsqu''une IOException surgit, vous ne fermez pas le flux"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : lorsqu''une IOException surgit, vous ne fermez pas le flux"),test_name());
 				fail(feed);
 				return null;
 			}
@@ -133,26 +127,26 @@ public class TestCode{
 		 *			(Mauvais format de fichier)
 		 */
 		public Void call() {
-			BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
-			try {
+			//BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
+			/*try {
 				PowerMockito.whenNew(BufferedReader.class).withParameterTypes(Reader.class).withArguments(Mockito.any(Reader.class)).thenReturn(mockedBr);
 			} catch (Exception e) {
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
-			}
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+			}*/
 
 			try {
 				int [] v = Etudiant.readVector("./file_with_bad_format");
-				String feed = MessageFormat.format(_("{0} : vous ne renvoyez pas null lorsque le fichier a un mauvais format !"),test_name());
-				assertThat(feed,v,nullValue());
-				verify(mockedBr,times(1)).close();
+				String feed = MessageFormat.format(Translator.translate("{0} : vous ne renvoyez pas null lorsque le fichier a un mauvais format !"),test_name());
+				assertTrue(feed,v == null);
+				//verify(mockedBr,times(1)).close();
 			} catch (NumberFormatException e) {
-				fail(MessageFormat.format(_("{0} : vous ne gérez pas le cas ou le fichier a un mauvais format de chiffre !"),test_name()));
+				fail(MessageFormat.format(Translator.translate("{0} : vous ne gérez pas le cas ou le fichier a un mauvais format de chiffre !"),test_name()));
 			}  catch(WantedButNotInvoked e) {
-				fail(MessageFormat.format(_("{0} : vous ne fermez pas le flux lorsque le fichier a un mauvais format de chiffres !"),test_name()));
+				fail(MessageFormat.format(Translator.translate("{0} : vous ne fermez pas le flux lorsque le fichier a un mauvais format de chiffres !"),test_name()));
 			} catch (IOException e) {
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			} catch (ConstructException e) {
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			}
 
 			return null;
@@ -171,7 +165,7 @@ public class TestCode{
 			}
 			return str;
 		} catch(IOException e) {
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			return null;
 		} finally {
 			if(br != null)
@@ -179,7 +173,7 @@ public class TestCode{
 					br.close();
 					return str;
 				} catch(IOException e) {
-					fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+					fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 				}
 		}
 	}
@@ -197,20 +191,20 @@ public class TestCode{
 				v1 = Etudiant.readVector("./file1");
 				v2 = Etudiant.readVector("./file2");
 			} catch(IOException e){
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			} catch (ConstructException e) {
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			}
 
 			int [] r1 = new int [] {1,2,3};
 			int [] r2 = new int [] {1,1};
 
-			String msg = _("{0} : lorsque l''on lit le fichier suivant\n{1} avec votre méthode, vous renvoyez {2} au lieu de {3} !");
+			String msg = Translator.translate("{0} : lorsque l''on lit le fichier suivant\n{1} avec votre méthode, vous renvoyez {2} au lieu de {3} !");
 			String feed1 = MessageFormat.format(msg,test_name(),file_to_string("./file1"),Arrays.toString(v1),Arrays.toString(r1));
 			String feed2 = MessageFormat.format(msg,test_name(),file_to_string("./file2"),Arrays.toString(v2),Arrays.toString(r2));
 
-			assertThat(feed1,v1,is(r1));
-			assertThat(feed2,v2,is(r2));
+			assertTrue(feed1,v1 == r1);
+			assertTrue(feed2,v2 == r2);
 			return null;
 		}
 	}
@@ -222,28 +216,28 @@ public class TestCode{
 		 *			le flux lorsqu'il n'y a pas d'erreur.
 		 */
 		public Void call() {
-			BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
-			try {
+			//BufferedReader mockedBr = PowerMockito.mock(BufferedReader.class);
+			/*try {
 				PowerMockito.whenNew(BufferedReader.class).withParameterTypes(Reader.class).withArguments(Mockito.any(Reader.class)).thenReturn(mockedBr);
 			} catch(Exception e){
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
-			}
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+			}*/
 
 			try {
 				int v [] = Etudiant.readVector("./file1");
 			} catch (IOException e){
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			} catch (ConstructException e) {
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
 			}
 
-			try {
+			/*try {
 				verify(mockedBr,times(1)).close();
 			} catch( WantedButNotInvoked e) {
-				fail(MessageFormat.format(_("{0} : lorsque tout se déroule sans exception, vous ne fermez pas le flux !"),test_name()));
+				fail(MessageFormat.format(Translator.translate("{0} : lorsque tout se déroule sans exception, vous ne fermez pas le flux !"),test_name()));
 			} catch(IOException e) {
-				fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
-			}
+				fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+			}*/
 			return null;
 		}
 	}

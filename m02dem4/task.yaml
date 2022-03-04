@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL, Brandon NAITALI
+categories: []
+contact_url: ''
 context: |
     En programmation, il est souvent intéressant de connaitre le reste de la divison euclidienne de deux nombres, notamment pour savoir si un nombre est pair ou non. En java, pour connaître le reste d'une division, on utilise l'instruction "modulo" (se note "``%``"), ainsi ``5 % 3`` vaut ``2``. En sachant cela, utilisez une boucle ``for`` pour déterminer le plus grand diviseur entier de n (hormis lui-même).
 
@@ -8,18 +11,31 @@ context: |
 
         int n = // n est plus grand ou égal à 0
         int biggest = 0;
-environment: java7mockito
-limits:
-    memory: '100'
-    output: '2'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 2 : Question de démarrage 4 : Plus grand diviseur'
 network_grading: false
 order: 27
 problems:
     q1:
+        type: code
         name: Plus grand diviseur
         header: 'Écrivez ici le bout de programme permettant de calculer le plus grand
             diviseur entier de ``n`` '
         language: Java
-        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

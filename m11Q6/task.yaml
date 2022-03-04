@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Une liste est une structure de données permettant de stocker des objets. Les objets sont ajoutés à la liste via sa tete. Elle supporte trois commandes :
     ajout pour ajouter un objet à la liste
@@ -66,22 +69,36 @@ context: |-
         }
 
     Complétez cette classe.
-environment: java7mockito
-limits:
-    output: '1'
-    time: '30'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 11 : Q** List'
 network_grading: false
 order: 185
 problems:
     q1:
         type: code
-        header: Ecrivez le corps de la méthode contient
         name: Contient
+        header: Ecrivez le corps de la méthode contient
         language: Java
+        default: ''
     q2:
-        header: Ecrivez le corps de la méthode retire
-        name: Retire
         type: code
+        name: Retire
+        header: Ecrivez le corps de la méthode retire
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

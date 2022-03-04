@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN
+categories: []
+contact_url: ''
 context: |-
     Un étudiant a écrit la classe suivante, mais il lui manque une méthode pour qu'elle puisse être compilée. Pourriez-vous implémenter cette méthode ?
 
@@ -37,17 +40,30 @@ context: |-
       }
 
     Tel qu'il est écrit, ce code ne compile pas. Il manque une méthode. Pourriez-vous l'ajouter (signature et corps) ?
-environment: java7mockito
-limits:
-    time: '30'
-    output: '1'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 10 : Q* Fraction'
 network_grading: false
 order: 168
 problems:
     q1:
-        header: Ecrivez la/les méthode(s) manquante(s)
-        name: Fraction
         type: code
+        name: Fraction
+        header: Ecrivez la/les méthode(s) manquante(s)
         language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

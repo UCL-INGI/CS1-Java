@@ -8,7 +8,7 @@ import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.Rule;
@@ -27,14 +27,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import StudentCode.Pair;
 
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 public class TestCode{
 
 	@Rule public TestName name = new TestName();
 
 	private void printSucceed() {
-		System.err.println(MessageFormat.format(_("{0} : réussi"),test_name()));
+		System.err.println(MessageFormat.format(Translator.translate("{0} : réussi"),test_name()));
 	}
 
 	private class t1 implements Callable<Void> {
@@ -53,7 +53,7 @@ public class TestCode{
 				verify(spy,atLeast(1)).getB();
 				return null;
 			}catch (WantedButNotInvoked e) {
-				String feed = MessageFormat.format(_("{0} : vous devez utiliser les getters pour récupérer les valeurs des variables d''instances !"),test_name());
+				String feed = MessageFormat.format(Translator.translate("{0} : vous devez utiliser les getters pour récupérer les valeurs des variables d''instances !"),test_name());
 				fail(feed);
 				return null;
 			}
@@ -67,7 +67,7 @@ public class TestCode{
 		 *
 		 */
 		public Void call(){
-			String msg = _("{0} : Il semblerait que votre méthode renvoie un résultat incorrect. La méthode doit renvoyer une nouvelle paire !");
+			String msg = Translator.translate("{0} : Il semblerait que votre méthode renvoie un résultat incorrect. La méthode doit renvoyer une nouvelle paire !");
 			Random r = new Random();
 			int a = 0;
 			int b = 0;
@@ -75,7 +75,7 @@ public class TestCode{
 				Pair p = new Pair(a,b);
 				Pair res = p.opposite();
 				String feedback = MessageFormat.format(msg,test_name());
-				assertThat(feedback,res,not(sameInstance(p)));
+				assertTrue(feedback,res != p);
 				a = r.nextInt(1000);	
 				b = r.nextInt(1000);
 			}
@@ -89,7 +89,7 @@ public class TestCode{
 		 * @post Vérifie que le code de l'étudiant renvoie une paire avec les bon paramètres
 		 */
 		public Void call() {
-			String msg = _("{0} : Votre méthode ne renvoie pas une paire avec les bonne valeurs. Pour la pair ({1},{2}), vous renvoyez ({3},{4}) au lieu de ({5},{6}).");
+			String msg = Translator.translate("{0} : Votre méthode ne renvoie pas une paire avec les bonne valeurs. Pour la pair ({1},{2}), vous renvoyez ({3},{4}) au lieu de ({5},{6}).");
 			Random r = new Random();
 			int a = 0;
 			int b = 0;
@@ -97,7 +97,7 @@ public class TestCode{
 				Pair p = new Pair(a,b);
 				Pair res = p.opposite();
 				String feedback = MessageFormat.format(msg,test_name(),a,b,res.getA(),res.getB(),-a,-b);
-				assertThat(feedback,res,is(equalTo(new Pair(-a,-b))));
+				assertTrue(feedback,res.equals(new Pair(-a,-b)));
 				a = r.nextInt(1000);
 				b = r.nextInt(1000);
 			}
@@ -112,7 +112,7 @@ public class TestCode{
 		 * 			Lance une AssertionError lorsqu'il a été modifié.
 		 */
 		public Void call(){
-			String msg = _("{0} : Votre méthode semble modifier les variable d''instances de l''instance appelante. La paire appelante vallait ({1},{2}) et vaut maintenant ({3},{4}).");
+			String msg = Translator.translate("{0} : Votre méthode semble modifier les variable d''instances de l''instance appelante. La paire appelante vallait ({1},{2}) et vaut maintenant ({3},{4}).");
 			Random r = new Random();
 			int a = 0;
 			int b = 0;
@@ -120,8 +120,8 @@ public class TestCode{
 				Pair p = new Pair(a,b);
 				Pair res = p.opposite();
 				String feedback = MessageFormat.format(msg,test_name(),a,b,p.getA(),p.getB());
-				assertThat(feedback,p.getA(),is(a));
-				assertThat(feedback,p.getB(),is(b));
+				assertTrue(feedback,p.getA() == a);
+				assertTrue(feedback,p.getB() == b);
 				a = r.nextInt(1000);	
 				b = r.nextInt(1000);
 			}
@@ -133,21 +133,21 @@ public class TestCode{
 		try {
 			test.call();
         }catch (ArithmeticException e){
-            fail(_("Attention, il est interdit de diviser par zéro."));
+            fail(Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(_("Attention, certaines variables ont été mal castées !"));
+            fail(Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(_("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(_("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(_("Vous initialisez un tableau avec une taille négative."));
+            fail(Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(_("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(_("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
     }
 

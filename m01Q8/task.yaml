@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL & Ludovic TAFFIN & Olivier Martin
+categories: []
+contact_url: ''
 context: |+
     Considérons un programme utilisant trois variables entières : ``int a``, ``int b``, ``int c``.
 
@@ -13,18 +16,31 @@ context: |+
         int a, int b, int c; // Les valeurs entières à comparer
         int mediane; // La médiane à déterminer
 
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Médiane'
 network_grading: false
 order: 14
 problems:
     q1:
+        type: code
+        name: Trouver la médiane parmi 3 nombres
         header: 'Écrivez ici le bout de programme permettant de calculer la médiane
             :'
         language: Java
-        type: code
-        name: Trouver la médiane parmi 3 nombres
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

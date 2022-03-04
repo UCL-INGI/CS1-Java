@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic TAFFIN, Olivier Martin
+categories: []
+contact_url: ''
 context: |+
     Ecrivez la méthode ``mediane`` qui prend comme arguments trois entiers et retourne la `médiane <https://fr.wikipedia.org/wiki/Médiane_(statistiques)>`_ entre ces nombres.
 
@@ -21,17 +24,30 @@ context: |+
 
 
 
-environment: java7mockito
-limits:
-    time: '30'
-    memory: '200'
-    output: '2'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Q** Médiane'
 network_grading: false
 order: 56
 problems:
     q1:
-        language: Java
-        name: Trouver la médiane parmi 3 nombres
         type: code
+        name: Trouver la médiane parmi 3 nombres
         header: Écrivez ici la méthode permettant de calculer la médiane
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

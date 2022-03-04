@@ -14,7 +14,7 @@
  */
 package src;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Rule;
@@ -27,7 +27,7 @@ import java.text.MessageFormat;
 import java.util.concurrent.Callable;
 
 import StudentCode.Ticket;
-import static student.Translations.Translator._;
+import student.Translations.Translator;
 
 import org.mockito.Mockito;
 import static org.mockito.Mockito.atLeast;
@@ -46,7 +46,7 @@ public class TestCode {
 	}
 
 	private void printSucceed(String q) {
-		System.err.println(MessageFormat.format(q + _("{0} : réussi"), test_name()));
+		System.err.println(MessageFormat.format(q + " " + Translator.translate("{0} : réussi\n"), test_name()));
 	}
 
 	private class t2 implements Callable<Void> {
@@ -57,9 +57,9 @@ public class TestCode {
 		public Void call() {
 			Ticket t = new Ticket();
 			Ticket t2 = new Ticket();
-			String msg = "@2 :\n" + _("{0} : votre classe n''incrémente pas les tickets !");
+			String msg = "@2 :\n" + Translator.translate("{0} : votre classe n''incrémente pas les tickets !");
 			String feed = MessageFormat.format(msg,test_name());
-			assertThat(feed,t2.getNumero(),is(t.getNumero()+1));
+			assertTrue(feed,t2.getNumero() == t.getNumero()+1);
 			return null;
 		}
 	}
@@ -72,9 +72,9 @@ public class TestCode {
 		 */
 		public Void call() {
 			Ticket t = new Ticket();
-			String msg = "@1 :\n" + _("{0} : le premier ticket n''as pas le numéro 1, il a le numéro {1}");
+			String msg = "@1 :\n" + Translator.translate("{0} : le premier ticket n''as pas le numéro 1, il a le numéro {1}");
 			String feed = MessageFormat.format(msg,test_name(),t.getNumero());
-			assertThat(feed,t.getNumero(),is(1));
+			assertTrue(feed,t.getNumero() == 1);
 			return null;
 		}
 	}
@@ -83,21 +83,21 @@ public class TestCode {
 		try {
 			f.call();
         }catch (ArithmeticException e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Attention, il est interdit de diviser par zéro."));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Attention, il est interdit de diviser par zéro."));
         }catch(ClassCastException e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Attention, certaines variables ont été mal castées !"));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Attention, certaines variables ont été mal castées !"));
         }catch(StringIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un String ! (StringIndexOutOfBoundsException)"));
         }catch(ArrayIndexOutOfBoundsException e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Attention, vous tentez de lire en dehors des limites d'un tableau ! (ArrayIndexOutOfBoundsException)"));
         }catch(NullPointerException e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Attention, vous faites une opération sur un objet qui vaut null ! Veillez à bien gérer ce cas."));
         }catch(NegativeArraySizeException e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Vous initialisez un tableau avec une taille négative."));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Vous initialisez un tableau avec une taille négative."));
         }catch(StackOverflowError e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Il semble que votre code boucle. Ceci peut arriver si votre fonction s'appelle elle-même."));
         }catch(Exception e){
-            fail(MessageFormat.format("@{0} :\n", nbQ) + _("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
+            fail(MessageFormat.format("@{0} :\n", nbQ) + Translator.translate("Une erreur inattendue est survenue dans votre tâche : ") + e.toString());
         }
 	}
 

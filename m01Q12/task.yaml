@@ -1,4 +1,7 @@
+accessible: true
 author: Ludovic Taffin, Olivier Martin
+categories: []
+contact_url: ''
 context: |-
     Les variables ``a``, ``b`` et ``c`` contiennent un entier. Ecrivez le code Java permettant de stocker dans la variable ``maximum`` le plus grand de ces trois nombres.
 
@@ -8,17 +11,30 @@ context: |-
         int b;
         int c;
         int maximum; // le plus grand parmi a, b, c
-environment: java7mockito
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1 : Question supplémentaire : Maximum'
 network_grading: false
 order: 8
 problems:
     q1:
-        header: ''
-        language: java
         type: code
         name: Calcul le nombre le plus grand
+        header: ''
+        language: java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

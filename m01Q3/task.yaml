@@ -1,4 +1,7 @@
+accessible: true
 author: François MICHEL & Ludovic TAFFIN & Olivier MARTIN
+categories: []
+contact_url: ''
 context: |+
     L\'`indice de Quételet <https://fr.wikipedia.org/wiki/Indice_de_masse_corporelle>`_, utilisé par les diététiciens, est révélateur de l\'état d'’une personne.
 
@@ -16,18 +19,31 @@ context: |+
         int poids; // poids d'une personne en kg
         String etat; // état de la personne (mince, normal, embonpoint, obèse)
 
-environment: java7mockito
-limits:
-    time: '30'
-    output: '1'
-    memory: '200'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '200'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 1: Question supplémentaire : Indice de Quételet'
 network_grading: false
 order: 4
 problems:
     q1:
-        language: Java
         type: code
         name: Indice de Quételet
         header: 'Écrivez ici le bout de programme permettant de mettre dans la variable
             ``état`` l\''état d''une personne sur base de son indice de Quételet :'
+        language: Java
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

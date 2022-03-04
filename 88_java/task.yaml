@@ -1,4 +1,7 @@
+accessible: true
 author: Virginie Van den Schrieck
+categories: []
+contact_url: ''
 context: |+
     .. raw:: html
 
@@ -9,16 +12,24 @@ context: |+
           Vous devez définir la méthode <code>countDistinctInt</code> qui compte le nombre d'entiers uniques parmi les cinq paramètres a, b, c, d et e
         </p>
 
-environment: pythia0compat
-limits:
-    memory: '32'
-    output: '5210'
-    time: '30'
+environment_id: java8
+environment_parameters:
+    limits:
+        time: '30'
+        hard_time: ''
+        memory: '100'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
 name: 'Mission 3 : Exercice complémentaire 2'
 network_grading: false
 order: 60
 problems:
     q1:
+        type: code
         name: ''
         header: |+
             .. raw:: html
@@ -29,5 +40,9 @@ problems:
                 </p>public static int countDistinctInt (int a, int b, int c, int d, int e)
 
         language: java
-        type: code
-responseIsHTML: true
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
