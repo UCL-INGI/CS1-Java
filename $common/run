@@ -1,4 +1,0 @@
-#!/bin/python3
-import inginious_container_api.feedback
-
-inginious_container_api.feedback.set_global_result('success')
