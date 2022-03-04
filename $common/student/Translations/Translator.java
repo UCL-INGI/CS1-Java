@@ -22,7 +22,7 @@ import java.io.BufferedReader;
 public class Translator {
     
     // Localisation des fichiers .properties contenant les traduction
-    private static String bundleLocation = "Translations/translations_java/MessagesBundle";
+    private static String bundleLocation = "MessagesBundle";
     
     private static ResourceBundle myResources;
     private static boolean ok = true;
