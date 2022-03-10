@@ -5,6 +5,7 @@ import json
 from json import JSONDecodeError
 from distutils.file_util import copy_file
 import os
+import inginious_container_api.feedback
 
 # Dynamically load modules we need
 # Credits to https://stackoverflow.com/a/67692/6149867
@@ -16,6 +17,7 @@ def dynamically_load_module(module, path):
     return mod
 
 
+
 #####################################
 # Our import for common run file    #
 #####################################
@@ -23,15 +25,16 @@ sys.path.append("/course/common")
 
 runfile = dynamically_load_module("runfile", "/course/common/runfile.py")
 
-isExist = os.path.exists("./student/Translations")
+isExist = os.path.exists("/task/student/Translations")
+
 
 if not isExist:
-  os.makedirs("./student/Translations")
+    os.mkdir("/task/student/Translations")
 
-copy_file("/course/common/student/Translations/Translator.java", "./student/Translations/Translator.java")
+copy_file("/course/common/student/Translations/Translator.java", "/task/student/Translations/Translator.java")
 
 try:
-    task_options = json.load(open('config.json', 'r', encoding="utf-8"))
+    task_options = json.load(open('/task/config.json', 'r', encoding="utf-8"))
 except JSONDecodeError as e:
     print(_("Impossible de décoder le config.json"))
     print(e)
