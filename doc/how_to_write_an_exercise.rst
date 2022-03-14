@@ -9,7 +9,7 @@ This file must have the following fields :
 	
 - ``'execcustom': 0 or 1`` in order to indicate if the additionnal script should be executed (1) or not (0).if there are no additionnal script, you still need to have this information.
 	
-- `'nexercices'`` which represents the number of exercices in a single task.
+- ``'nexercices'`` which represents the number of exercices in a single task.
 
 Here is an example of the file ::
 
