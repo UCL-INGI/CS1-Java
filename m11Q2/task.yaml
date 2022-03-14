@@ -66,7 +66,7 @@ context: |-
         }
 
     Complétez cette classe.
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

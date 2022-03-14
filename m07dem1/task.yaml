@@ -29,7 +29,7 @@ context: |+
 
     .. _Object: http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
 
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

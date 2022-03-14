@@ -16,7 +16,7 @@ context: |-
         public int countLines(String fileName);
 
     Pour lire le fichier, nous vous demandons d'utilisez un ``BufferedReader``.
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -16,7 +16,7 @@ context: |-
 
     Il y a une méthode dans la classe Character
     qui devrait vous aider à vérifier qu'un caractère est un chiffre, voir https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

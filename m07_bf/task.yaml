@@ -72,7 +72,7 @@ context: |-
         [100001] Radiohead, The Bends (2917 s)
 
     Remarquez que chaque ``Item`` possède un serial qui est un numéro de série unique propre à l’objet (pour pouvoir différencier plusieurs exemplaires du même livre par exemple). Il doit être généré automatiquement et être supérieur à 100000 pour un CD.
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -9,7 +9,7 @@ context: |+
           Complétez la classe BioInfo conformément à l'énoncé de la phase de réalisation de la mission 4.
         </p>
 
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

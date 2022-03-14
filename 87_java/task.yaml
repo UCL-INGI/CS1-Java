@@ -40,7 +40,7 @@ context: |+
           Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
         </p>
 
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

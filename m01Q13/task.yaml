@@ -13,7 +13,7 @@ context: |-
         int c;
         int d;
         int min; // le plus petit parmi a, b, c, d
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

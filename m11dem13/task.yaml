@@ -6,7 +6,7 @@ context: |-
     A la suite de l'écriture de la classe ``DListTest`` faite aux questions précédentes, vous avez réussi à découvrir à l'aide de JUnit l'erreur contenue dans la classe testée. Soumettez pour finir une version corrigée de cette classe ``DList``.
 
     **Attention, vous devez soumettre la classe DList entière avec exactement les mêmes attributs et les mêmes méthodes. Seul le corps des méthodes et les valeurs des attributs peuvent être différents.**
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

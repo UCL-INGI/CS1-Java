@@ -20,7 +20,7 @@ context: |
         int hauteur; // la hauteur du X
 
     NB: Même un retour à la ligne est un caractère de trop!
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -12,7 +12,7 @@ context: |-
          * @pre v != null
          * @post retourne la moyenne arithmétique du tableau de réels v
          */
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

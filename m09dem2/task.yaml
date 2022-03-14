@@ -47,7 +47,7 @@ context: |-
         public static int premierPrenom(String filename){
             // À implémenter
         }
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'
