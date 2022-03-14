@@ -36,7 +36,7 @@ context: |-
     Affiche les valeurs 0, 1, 2, 3 et 4.
 
     Pour résoudre ce problème, pensez à la découper en sous-problèmes et n’hésitez pas à utiliser une ou plusieurs méthodes privées supplémentaires.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

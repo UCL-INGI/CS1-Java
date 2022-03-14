@@ -12,7 +12,7 @@ context: |-
          * @pre v != null, v contient au moins 2 éléments
          * @post retourne vrai si tous les éléments du tableau ont la même valeur, false sinon
          */
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

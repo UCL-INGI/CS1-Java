@@ -17,7 +17,7 @@ context: |+
 
     La méthode ci-dessous pourrait vous aider à résoudre facilement cette question : `<http://docs.oracle.com/javase/6/docs/api/java/lang/Character.html#getNumericValue(char)>`_
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

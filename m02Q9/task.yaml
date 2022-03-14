@@ -11,7 +11,7 @@ context: |
         int a; // l'entier a
         int b; // l'entier b
         int resultat = 0;
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

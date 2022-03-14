@@ -19,7 +19,7 @@ context: |+
         int i = // le nombre à vérifier (i >= 1)
         String temp = "" // fizz, buzz, fizzbuzz, non
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

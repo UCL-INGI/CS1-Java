@@ -36,7 +36,7 @@ context: |-
 
 
     On vous demande d'utiliser ``BufferedReader`` pour répondre à cette question.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

@@ -15,7 +15,7 @@ context: |-
         public static String repeat(String s, int n){
             // À implémenter
         }
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

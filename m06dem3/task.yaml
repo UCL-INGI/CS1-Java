@@ -53,7 +53,7 @@ context: |-
         }
 
     Aidez cet étudiant en détresse et implémentez la méthode ``same`` dont les spécifications sont fournies ci-dessus. Pensez à gérer le cas où ``d == null``, car les préconditions ne font aucune supposition.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

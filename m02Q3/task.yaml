@@ -20,7 +20,7 @@ context: |-
     .. code-block:: java
 
         int cote = // la longueur du cote
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

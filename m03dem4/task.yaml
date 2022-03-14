@@ -37,7 +37,7 @@ context: |+
           X
           XXXXX
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '20'

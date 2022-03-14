@@ -77,7 +77,7 @@ context: |-
     .. code-block:: console
 
         La chaîne de caractères passée à parseInt() ne contient pas que des chiffres.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

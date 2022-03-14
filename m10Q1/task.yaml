@@ -40,7 +40,7 @@ context: |-
       }
 
     Tel qu'il est écrit, ce code ne compile pas. Il manque une méthode. Pourriez-vous l'ajouter (signature et corps) ?
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'
