@@ -6,7 +6,7 @@ context: |-
     Ecrivez la méthode permettant de calculer le nombre de racine d'une équation du second degré
     On passe a,b et c en paramètre de votre méthode.
     La méthode s'appelle eqsecdeg1 pour la première partie et eqsecdeg2 pour la seconde.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

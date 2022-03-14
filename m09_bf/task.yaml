@@ -27,7 +27,7 @@ context: |
          *          3.1416
          */
         public static double getMax (String filename)
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

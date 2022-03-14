@@ -12,7 +12,7 @@ context: |
         char d = // un caractère de a à z, en majuscule ou non
         boolean b; // à assigner dans la Question 1
         char e;    // à assigner dans la Question 2
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

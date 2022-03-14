@@ -14,7 +14,7 @@ context: |-
          * @post retourne true uniquement si la chaine de caractères
          *       s ne contient que les caractères 0 ou 1
          */
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

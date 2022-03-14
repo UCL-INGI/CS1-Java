@@ -12,7 +12,7 @@ context: |-
 
         int reste = 0;
         int quotient = 0;
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

@@ -15,7 +15,7 @@ context: |-
          *       principale valent 1 et tous les autres valent 0
          */
         public static int[][] unite(int n)
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

@@ -45,7 +45,7 @@ context: |-
          *       (ex : un pourcentage de 100% double le salaire)
          */
         public void augmente(float pourcentage);
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

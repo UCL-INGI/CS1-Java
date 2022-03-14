@@ -20,7 +20,7 @@ context: |-
             }
             System.out.println("Le fichier a été lu entièrement.");
         }
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

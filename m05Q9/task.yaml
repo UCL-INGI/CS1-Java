@@ -14,7 +14,7 @@ context: |-
          *       d'une position vers la droite
          *       et v[0] est mis à la valeur '*' (étoile)
          */
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

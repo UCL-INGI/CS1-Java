@@ -32,7 +32,7 @@ context: |
     - ``chiffresPairs(5555)`` doit retourner ``true``
     - ``chiffresPairs(555)`` doit retourner ``false``
     - ``chiffresPairs(-555)`` doit retourner ``false``
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

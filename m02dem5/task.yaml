@@ -9,7 +9,7 @@ context: |
 
         int n = // n est plus grand ou égal à zéro
         boolean prime = true;
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

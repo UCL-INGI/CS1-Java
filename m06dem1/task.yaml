@@ -84,7 +84,7 @@ context: |+
         q = p.opposite();
         System.out.println(q.getA() +  ", " + q.getB());    // affiche "-10, 2"
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

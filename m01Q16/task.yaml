@@ -13,7 +13,7 @@ context: |-
         int minute; // le nombre de minutes
         int seconde; // le nombre de secondes
         int total = 0; // le nombre de secondes depuis minuit
-environment_id: java8
+environment_id: javajudgejudge
 environment_parameters:
     limits:
         time: '30'

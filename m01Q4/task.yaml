@@ -20,7 +20,7 @@ context: |-
     - Si ``sectionEntree`` vaut 3 et ``sectionSortie`` vaut 5, la voiture a parcouru 3 sections (les section 3, 4 et 5), donc le prix est 2.0€ (1€ + 0.5€ + 0.5€).
 
     - Si ``sectionEntree`` vaut 2 et ``sectionSortie`` vaut 2, la voiture a parcouru 1 section (la section 2), donc le prix est 1€.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

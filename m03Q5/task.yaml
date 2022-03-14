@@ -10,7 +10,7 @@ context: |+
 
     En Java, la constante :math:`\pi` est définie dans la classe `Math <https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html>`_ comme la constante ``Math.PI``
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

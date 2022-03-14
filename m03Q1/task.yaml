@@ -18,7 +18,7 @@ context: |+
     Votre méthode devra s'appeler ``intervalle`` et prendra comme premier argument ``a``, la borne inférieure de l'intervalle, comme deuxième argument, ``b``, la borne supérieure et comme dernier argument la valeur à tester. Ces trois arguments sont des entiers.
 
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

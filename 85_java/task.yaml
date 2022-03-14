@@ -15,7 +15,7 @@ context: |+
           Par exemple, le nombre d'entiers positifs compris entre -1 et 2, bornes non incluses, sera égal à 2.
         </p>
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

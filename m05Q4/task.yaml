@@ -12,7 +12,7 @@ context: |-
          * @pre t != null
          * @post retourne true si les éléments du tableau t sont croissants, false sinon
          */
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

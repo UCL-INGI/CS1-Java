@@ -28,7 +28,7 @@ context: |-
     ?
 
     Écrivez le corps de cette nouvelle méthode qui prend un argument de type ``Object`` au lieu d'un argument de type ``Integer``. Écrivez la réponse en une seule ligne. Notez que l'argument ``o`` sera toujours du type ``Integer``. Pensez à utiliser des méthodes qui sont déjà à votre disposition.
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

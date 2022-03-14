@@ -18,7 +18,7 @@ context: |
          boolean a;
          boolean b;
          boolean xor; // placer dans cette variable votre résultat
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

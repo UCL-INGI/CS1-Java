@@ -15,7 +15,7 @@ context: |+
         int a = // a peut prendre n'importe quelle valeur
         int valeur = 1;
 
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

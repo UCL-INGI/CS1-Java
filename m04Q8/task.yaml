@@ -13,7 +13,7 @@ context: |-
          * @post retourne true si la chaine de caractère in se trouve
          *     dans la chaîne de caractères s
          */
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

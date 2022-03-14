@@ -5,7 +5,7 @@ contact_url: ''
 context: |-
     Répondez aux questions simples suivantes au sujet de la syntaxe des tableaux. Vous *devez* respecter les noms de variables suggérés.
     (Nous utilisons le type ``int`` pour les entiers et le type ``double`` pour les réels.)
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

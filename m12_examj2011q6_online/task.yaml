@@ -23,7 +23,7 @@ context: |-
         */
 
         /*** VOTRE REPONSE ***/
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'

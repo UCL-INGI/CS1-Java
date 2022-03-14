@@ -12,7 +12,7 @@ context: |-
          * @pre v != null
          * @post retourne le maximum du tableau de réels v
          */
-environment_id: java8
+environment_id: javajudge
 environment_parameters:
     limits:
         time: '30'
