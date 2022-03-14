@@ -79,3 +79,16 @@ Here is an example of the 'Tests.java'::
     }
 
 Lastly, we need a 'student' folder with files called 'MessagesBundle_en.properties' for example which will hold the translations of the feedback. Each line should have the original feedback and the translated feedback.
+
+Here is the structure you should have ::
+
+	../id_exercise
+	├── config.json
+	├── src
+	│   ├── Correction.java
+	│   └── Tests.java
+	├── student
+	│   ├── MessagesBundle_en.properties
+	│   └── MessagesBundle_es.properties
+	└── Templates
+	    └── Student.tmpl
