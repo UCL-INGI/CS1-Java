@@ -21,7 +21,7 @@ context: |-
           *       dont les éléments sont dans l'ordre croissant
           *       et qui contient les n plus grands entiers du tableau v
           */
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

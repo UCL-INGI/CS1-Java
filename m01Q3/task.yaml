@@ -19,7 +19,7 @@ context: |+
         int poids; // poids d'une personne en kg
         String etat; // état de la personne (mince, normal, embonpoint, obèse)
 
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

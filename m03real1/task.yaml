@@ -3,7 +3,7 @@ author: François MICHEL
 categories: []
 contact_url: ''
 context: Soumettez l'archive zip contenant le fichier LibMath.java et README.txt
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

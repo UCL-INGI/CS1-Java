@@ -26,7 +26,7 @@ context: |-
         public void addProcess(Process p) throws UnavailableException {
             /*** VOTRE REPONSE ***/
         }
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

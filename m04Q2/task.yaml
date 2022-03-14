@@ -11,7 +11,7 @@ context: |-
         * @pre s!=null
         * @post retourne true si le caractère c est dans s, false sinon
         */
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

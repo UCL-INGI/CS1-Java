@@ -71,7 +71,7 @@ context: |-
         }
 
     Le but de l'exercice est d'implémenter les méthodes ``setA()`` et ``setB()`` sans oublier de mettre à jour ``ordered`` en fonction des nouvelles valeurs des nombres dans la paire.
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

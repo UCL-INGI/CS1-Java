@@ -18,7 +18,7 @@ context: |-
          * @post retourne la représentation entière du nombre binaire
          *      correspondant à cette chaîne
          */
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

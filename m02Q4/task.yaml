@@ -21,7 +21,7 @@ context: |+
         int hauteur; // la hauteur du H
         int largeur; // la largeur du H
 
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

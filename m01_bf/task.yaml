@@ -19,7 +19,7 @@ context: |-
     Afin d'aider les mathématiciens à éventuellement trouver un contre-exemple, écrivez un programme Java qui permet de calculer la suite de Syracuse pour n’importe quel naturel non-nul :math:`s_0`. Le programme s'arrête bien entendu lorsque le naturel 1 est atteint.
 
     Vous devez afficher chaque élément de la suite sur la sortie standard, avec ``System.out.println()``. La valeur de départ vous est déjà fournie et se trouve dans une variable de type ``int`` nommée ``s0``.
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

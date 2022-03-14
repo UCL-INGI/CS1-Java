@@ -25,7 +25,7 @@ context: |
 
             System.out.print("Entrez la valeur du coefficient c :");
             double c=TextIO.getlnDouble();
-environment_id: javajudge
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'
