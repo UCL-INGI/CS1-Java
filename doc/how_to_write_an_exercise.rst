@@ -93,8 +93,6 @@ Each line should have the original feedback and the translated feedback.
 
 An example of line is : ``Impossible\ de\ d\u00e9coder\ le\ config.json=Unable to decode config.json``
 
-Lastly, we need a 'student' folder with files called 'MessagesBundle_en.properties' for example which will hold the translations of the feedback. Each line should have the original feedback and the translated feedback.
-
 Here is the structure you should have ::
 
 	../id_exercise
