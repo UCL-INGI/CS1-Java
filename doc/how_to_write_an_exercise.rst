@@ -5,11 +5,21 @@ To write a java exercise, the first file you need is config.json at the root of 
 
 This file must have the following fields :
 
-- ``'customscript': nameScript`` in order to use an additionnal correction script (to check if Math is import for example). if there are no additionnal script, you still need to have this information.
+- ``'customscript': nameScript`` in order to use an additionnal correction script (to check if Math is imported for example).
+     If there are no additionnal script needed (nothing else than the test to check), you should set it to custom.sh else the code will not work.
 	
-- ``'execcustom': 0 or 1`` in order to indicate if the additionnal script should be executed (1) or not (0).if there are no additionnal script, you still need to have this information.
+- ``'execcustom': 0 or 1`` in order to indicate if the additionnal script should be executed (1) or not (0).
+     If there are no additionnal script, you should set it to 0.
+     If set to 1, the program that runs before the tests will execute the script.
+     If an error occurs in the custom script, the error message will be displayed but your script needs to set the message itself with::
+
+     feedback -i id_question -r failed -f "Your error message"
+     exit(1)
 	
-- ``'nexercices'`` which represents the number of exercices in a single task.
+- ``'nexercices'`` which represents the number of exercices in a single task. This will be helpful to indicate which question does not work in a single task.
+    In case of failure, the program that launches the tests will look for the one who failed and set the error message of the test as the global feedback message.
+    If you don't put the right number, it will still show the error message but it will be displayed in a code box with an additional sentence saying that "the code did not work"
+    rather than having just the error message displayed in the case you did put the right number of exercises.
 
 Here is an example of the file ::
 
@@ -78,7 +88,10 @@ Here is an example of the 'Tests.java'::
         }
     }
 
-Lastly, we need a 'student' folder with files called 'MessagesBundle_en.properties' for example which will hold the translations of the feedback. Each line should have the original feedback and the translated feedback.
+Lastly, we need a 'student' folder with files called 'MessagesBundle_en.properties' for example which will hold the translations of the feedback.
+Each line should have the original feedback and the translated feedback.
+
+An example of line is : ``Impossible\ de\ d\u00e9coder\ le\ config.json=Unable to decode config.json``
 
 
 Here is the structure you should have ::
@@ -92,4 +105,4 @@ Here is the structure you should have ::
 	│   ├── MessagesBundle_en.properties
 	│   └── MessagesBundle_es.properties
 	└── Templates
-	    └── Etudiant.tmpl
+	    └── Student.tmpl
