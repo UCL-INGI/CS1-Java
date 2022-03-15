@@ -32,7 +32,7 @@ context: |-
     **Comme l'examen est sur papier, il est préférable que vous rédigiez la réponse sur une feuille de papier et que vous la recopiiez ici une fois que vous êtes sûr de vous. INGInious vous permettra de vérifier si votre code est correct mais n'oubliez pas qu'à l'examen, vous n'aurez pas plusieurs essais. Il est donc important de s'entraîner à rédiger du code sur papier pour se mettre en situation d'examen et évaluer votre temps pour répondre.**
 
     **Souvenez-vous qu'une réponse correcte sur INGInious ne correspond pas d'office à un 20 à l'examen (la clarté, la simplicité du code, les spécifications sont aussi des critères importants non vérifiés par INGInious).**
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -11,7 +11,7 @@ context: |
         double y; // le pourcentage
         double base; // l'argent sur le compte sans les intérêts
         double resultat; // le resultat du calcul
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

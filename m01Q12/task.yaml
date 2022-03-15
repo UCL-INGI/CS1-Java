@@ -11,7 +11,7 @@ context: |-
         int b;
         int c;
         int maximum; // le plus grand parmi a, b, c
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

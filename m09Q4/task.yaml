@@ -16,7 +16,7 @@ context: |-
        public boolean contains(String s, String fileName)
 
     On vous demande d'utiliser un ``BufferedReader`` pour lire le fichier
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

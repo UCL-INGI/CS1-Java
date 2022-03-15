@@ -39,7 +39,7 @@ context: |-
 
             // Insérez le code manquant
       }
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -92,3 +92,4 @@ Here is the structure you should have ::
 	│   └── MessagesBundle_es.properties
 	└── Templates
 	    └── Student.tmpl
+

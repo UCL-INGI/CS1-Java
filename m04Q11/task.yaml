@@ -16,7 +16,7 @@ context: |-
          * @post retourne le caractère qui se trouve le plus grand
          *      nombre de fois dans la chaîne s
          */
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -12,7 +12,7 @@ context: |-
          * @pre n > 0
          * @post retourne un vecteur de n éléments tous initialisés à la valeur i
          */
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

@@ -11,7 +11,7 @@ context: |
 
         int n = // n est plus grand ou égal à 0
         int biggest = 0;
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'

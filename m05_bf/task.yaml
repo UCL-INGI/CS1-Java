@@ -34,7 +34,7 @@ context: |-
         }
 
     N'oubliez pas d'éviter la duplication de code, et d'éventuellement réutiliser l'une des deux méthodes dans l'autre.
-environment_id: java8
+environment_id: java8judge
 environment_parameters:
     limits:
         time: '30'
