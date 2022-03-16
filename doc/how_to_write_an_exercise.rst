@@ -107,3 +107,20 @@ Here is the structure you should have ::
 	│   └── MessagesBundle_es.properties
 	└── Templates
 	    └── Student.tmpl
+
+Environment
+-----------
+
+In the environment tab of the task, you should select Docker as the environment type if you plan to do a coding question.
+
+If that is the case you should then select java8judge as the environment which is a special container with different global files useful for exercises (the program to launch the tests for example).
+Those files will be used in your exercise, thus you do not need to think about those files.
+
+You must also precise the timeout limit and the memory limit in case of a 'malicious code' from a student. The other parameters are optional.
+
+
+Subproblem
+----------
+
+You should enter a problem id and the problem type (code). Once you added this, you must enter a name for the question (Average xith 3 numbers for example),
+a context to precise a specific detail, the language and then you can save the changes.
